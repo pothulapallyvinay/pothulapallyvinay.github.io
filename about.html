@@ -1,96 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover CompaniesBuilder’s mission to empower businesses through innovative web development and digital marketing.">
-    <meta name="keywords" content="CompaniesBuilder, about us, web development, digital marketing">
-    <title>About Us - CompaniesBuilder</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- 🔧 Added style to fix hero section cropping -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover CompaniesBuilder’s mission to empower businesses through innovative web development and digital marketing." />
+  <meta name="keywords" content="CompaniesBuilder, about us, web development, digital marketing" />
+  <title>About Us - CompaniesBuilder</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fix hero section cropping -->
   <style>
     .hero {
-      padding-top: 120px;
-      padding-bottom: 60px;
+      padding-top: 140px; /* space under fixed navbar */
+      padding-bottom: 80px;
     }
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">CompaniesBuilder</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="demo.html">Request a Demo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">CompaniesBuilder</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="demo.html">Request a Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <header class="hero bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">About CompaniesBuilder</h1>
-            <p class="lead">Driving Digital Success Since 2020</p>
-        </div>
-    </header>
+  <!-- Hero Section -->
+  <header class="hero bg-primary text-white text-center">
+    <div class="container">
+      <h1 class="display-4">About CompaniesBuilder</h1>
+      <p class="lead">Driving Digital Success Since 2020</p>
+    </div>
+  </header>
 
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Mission</h2>
-            <p>At CompaniesBuilder, we empower businesses to thrive in the digital age with tailored web development and marketing strategies. Founded in 2020, our team of experts delivers innovative solutions that drive growth and engagement.</p>
-            <p>From startups to enterprises, we partner with clients to create impactful online experiences, blending creativity, technology, and data-driven strategies.</p>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <img src="https://via.placeholder.com/400x300?text=Our+Team" class="img-fluid rounded" alt="CompaniesBuilder Team">
-                </div>
-                <div class="col-md-6">
-                    <h3>Our Team</h3>
-                    <p>Our diverse team of designers, developers, and marketers is passionate about delivering results. We stay ahead of industry trends to ensure your business shines online.</p>
-                </div>
-            </div>
+  <!-- Main Content -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Mission</h2>
+      <p>
+        At CompaniesBuilder, we empower businesses to thrive in the digital age with tailored web development and marketing strategies. Founded in 2020, our team of experts delivers innovative solutions that drive growth and engagement.
+      </p>
+      <p>
+        From startups to enterprises, we partner with clients to create impactful online experiences, blending creativity, technology, and data-driven strategies.
+      </p>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/400x300?text=Our+Team" class="img-fluid rounded" alt="CompaniesBuilder Team" />
         </div>
-    </section>
-
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>CompaniesBuilder</h5>
-                    <p>Your trusted partner for web development and digital marketing excellence.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="about.html" class="text-white">About Us</a></li>
-                        <li><a href="services.html" class="text-white">Services</a></li>
-                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
-                        <li><a href="demo.html" class="text-white">Request a Demo</a></li>
-                        <li><a href="blogs.html" class="text-white">Blogs</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p>Email: <a href="mailto:info@companiesbuilder.com" class="text-white">info@companiesbuilder.com</a><br>Phone: (123) 456-7890</p>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
-            </div>
+        <div class="col-md-6">
+          <h3>Our Team</h3>
+          <p>
+            Our diverse team of designers, developers, and marketers is passionate about delivering results. We stay ahead of industry trends to ensure your business shines online.
+          </p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="scripts.js"></script>
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>CompaniesBuilder</h5>
+          <p>Your trusted partner for web development and digital marketing excellence.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Home</a></li>
+            <li><a href="about.html" class="text-white">About Us</a></li>
+            <li><a href="services.html" class="text-white">Services</a></li>
+            <li><a href="contact.html" class="text-white">Contact Us</a></li>
+            <li><a href="demo.html" class="text-white">Request a Demo</a></li>
+            <li><a href="blogs.html" class="text-white">Blogs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>
+            Email: <a href="mailto:info@companiesbuilder.com" class="text-white">info@companiesbuilder.com</a><br />
+            Phone: (123) 456-7890
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
