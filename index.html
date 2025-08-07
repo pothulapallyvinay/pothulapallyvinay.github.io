@@ -2,32 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CompaniesBuilder - Coming Soon</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: white;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
+      padding: 20px;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
+      margin-bottom: 20px;
     }
     p {
-      font-size: 1.2rem;
-      color: #cccccc;
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      width: 250px;
+      max-width: 90%;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      background-color: #ff6a00;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e65c00;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      input[type="email"] {
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 100%;
+      }
+      button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Coming Soon</h1>
-  <p>We’re working on something awesome. Stay tuned!</p>
+  <h1>CompaniesBuilder</h1>
+  <p>We're building something amazing. Stay tuned for the launch!</p>
+  <form onsubmit="event.preventDefault(); alert('Thanks! We will notify you.');">
+    <input type="email" placeholder="Enter your email" required />
+    <button type="submit">Notify Me</button>
+  </form>
 </body>
 </html>
