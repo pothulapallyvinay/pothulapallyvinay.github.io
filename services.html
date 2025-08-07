@@ -1,120 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CompaniesBuilder offers expert web development and digital marketing services to grow your business online.">
-    <meta name="keywords" content="web development, digital marketing, SEO, PPC, CompaniesBuilder">
-    <title>Services - CompaniesBuilder</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- 🔧 Added style to fix hero section cropping -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CompaniesBuilder offers expert web development and digital marketing services to grow your business online." />
+  <meta name="keywords" content="web development, digital marketing, SEO, PPC, CompaniesBuilder" />
+  <title>Services - CompaniesBuilder</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
   <style>
+    /* Fix hero section top cropping */
     .hero {
-      padding-top: 120px;
+      padding-top: 140px;
       padding-bottom: 60px;
     }
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">CompaniesBuilder</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="demo.html">Request a Demo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">CompaniesBuilder</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="demo.html">Request a Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <header class="hero bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Our Services</h1>
-            <p class="lead">Tailored solutions to elevate your digital presence</p>
-        </div>
-    </header>
+  <!-- Hero Section -->
+  <header class="hero bg-primary text-white text-center">
+    <div class="container">
+      <h1 class="display-4">Our Services</h1>
+      <p class="lead">Tailored solutions to elevate your digital presence</p>
+    </div>
+  </header>
 
-    <section class="py-5">
-        <div class="container">
-            <div id="web-development" class="mb-5">
-                <h2>Web Development</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>Our web development services deliver custom, responsive websites optimized for performance and SEO. From e-commerce to corporate sites, we create user-friendly experiences that convert.</p>
-                        <ul>
-                            <li>Custom Website Design</li>
-                            <li>Mobile-First Development</li>
-                            <li>E-commerce Platforms</li>
-                            <li>CMS Integration (WordPress, Shopify)</li>
-                        </ul>
-                        <a href="demo.html" class="btn btn-primary">Request a Demo</a>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="https://via.placeholder.com/400x300?text=Web+Development" class="img-fluid rounded shadow-sm" alt="Web Development">
-                    </div>
-                </div>
-            </div>
-            <div id="digital-marketing">
-                <h2>Digital Marketing</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="https://via.placeholder.com/400x300?text=Digital+Marketing" class="img-fluid rounded shadow-sm" alt="Digital Marketing">
-                    </div>
-                    <div class="col-md-6">
-                        <p>Boost your brand with our data-driven digital marketing strategies. We specialize in SEO, PPC, social media, and content marketing to drive traffic and conversions.</p>
-                        <ul>
-                            <li>Search Engine Optimization (SEO)</li>
-                            <li>Pay-Per-Click (PPC) Campaigns</li>
-                            <li>Social Media Marketing</li>
-                            <li>Content Creation & Strategy</li>
-                        </ul>
-                        <a href="demo.html" class="btn btn-primary">Request a Demo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Services Section -->
+  <section class="py-5">
+    <div class="container">
 
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>CompaniesBuilder</h5>
-                    <p>Your trusted partner for web development and digital marketing excellence.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="about.html" class="text-white">About Us</a></li>
-                        <li><a href="services.html" class="text-white">Services</a></li>
-                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
-                        <li><a href="demo.html" class="text-white">Request a Demo</a></li>
-                        <li><a href="blogs.html" class="text-white">Blogs</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p>Email: <a href="mailto:info@companiesbuilder.com" class="text-white">info@companiesbuilder.com</a><br>Phone: (123) 456-7890</p>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
-            </div>
+      <!-- Web Development -->
+      <div class="mb-5">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2>Web Development</h2>
+            <p>Our web development services deliver custom, responsive websites optimized for performance and SEO. From e-commerce to corporate sites, we create user-friendly experiences that convert.</p>
+            <ul>
+              <li>Custom Website Design</li>
+              <li>Mobile-First Development</li>
+              <li>E-commerce Platforms</li>
+              <li>CMS Integration (WordPress, Shopify)</li>
+            </ul>
+            <a href="demo.html" class="btn btn-primary mt-2">Request a Demo</a>
+          </div>
+          <div class="col-md-6">
+            <img src="https://via.placeholder.com/500x350?text=Web+Development" class="img-fluid rounded shadow-sm" alt="Web Development">
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="scripts.js"></script>
+      <!-- Digital Marketing -->
+      <div>
+        <div class="row align-items-center">
+          <div class="col-md-6 order-md-2">
+            <h2>Digital Marketing</h2>
+            <p>Boost your brand with our data-driven digital marketing strategies. We specialize in SEO, PPC, social media, and content marketing to drive traffic and conversions.</p>
+            <ul>
+              <li>Search Engine Optimization (SEO)</li>
+              <li>Pay-Per-Click (PPC) Campaigns</li>
+              <li>Social Media Marketing</li>
+              <li>Content Creation & Strategy</li>
+            </ul>
+            <a href="demo.html" class="btn btn-primary mt-2">Request a Demo</a>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <img src="https://via.placeholder.com/500x350?text=Digital+Marketing" class="img-fluid rounded shadow-sm" alt="Digital Marketing">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>CompaniesBuilder</h5>
+          <p>Your trusted partner for web development and digital marketing excellence.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Home</a></li>
+            <li><a href="about.html" class="text-white">About Us</a></li>
+            <li><a href="services.html" class="text-white">Services</a></li>
+            <li><a href="contact.html" class="text-white">Contact Us</a></li>
+            <li><a href="demo.html" class="text-white">Request a Demo</a></li>
+            <li><a href="blogs.html" class="text-white">Blogs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: <a href="mailto:info@companiesbuilder.com" class="text-white">info@companiesbuilder.com</a><br>Phone: (123) 456-7890</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
