@@ -26,6 +26,13 @@
       font-weight: 700;
       font-size: 3.5rem;
     }
+    .card-title a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .card-title a:hover {
+      color: #0d6efd;
+    }
   </style>
 </head>
 <body>
@@ -52,6 +59,7 @@
       </div>
     </div>
   </nav>
+
   <!-- Hero Section -->
   <header class="hero bg-primary text-white text-center">
     <div class="container">
@@ -59,6 +67,7 @@
       <p class="lead">Stay updated with the latest in web development and digital marketing</p>
     </div>
   </header>
+
   <!-- Blog Cards -->
   <section class="py-5">
     <div class="container">
@@ -66,9 +75,13 @@
         <!-- Blog Post 1 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="/assets/images/Companies-builder-seo.jpg" class="card-img-top" alt="SEO Strategies 2025 Blog" />
+            <a href="/blogs/articles/SEO/">
+              <img src="/assets/images/Companies-builder-seo.jpg" class="card-img-top" alt="SEO Strategies 2025 Blog" />
+            </a>
             <div class="card-body">
-              <h4 class="card-title">Search Engine Optimization in 2025</h4>
+              <h4 class="card-title">
+                <a href="/blogs/articles/SEO/">Search Engine Optimization in 2025</a>
+              </h4>
               <p class="card-text">Boost your small business with top SEO strategies for 2025.</p>
               <a href="/blogs/articles/SEO/" class="btn btn-outline-primary">Read More</a>
             </div>
@@ -77,28 +90,37 @@
         <!-- Blog Post 2 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="/assets/images/Companies-builder-web.jpg" class="card-img-top" alt="Responsive Design Blog" />
+            <a href="#">
+              <img src="/assets/images/Companies-builder-web.jpg" class="card-img-top" alt="Responsive Design Blog" />
+            </a>
             <div class="card-body">
-              <h4 class="card-title">The Power of Responsive Design</h4>
+              <h4 class="card-title">
+                <a href="#">The Power of Responsive Design</a>
+              </h4>
               <p class="card-text">Why mobile-friendly websites are critical for success.</p>
-              <a href="/blogs/articles/web-development-with-responsive-design/" class="btn btn-outline-primary">Read More</a>
+              <a href="#" class="btn btn-outline-primary">Read More</a>
             </div>
           </div>
         </div>
         <!-- Blog Post 3 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="/assets/images/Companies-builder-ppc.jpg" class="card-img-top" alt="PPC Blog" />
+            <a href="/blogs/articles/maximizing-ppc-campaigns/">
+              <img src="/assets/images/Companies-builder-ppc.jpg" class="card-img-top" alt="PPC Blog" />
+            </a>
             <div class="card-body">
-              <h4 class="card-title">Maximizing PPC Campaigns</h4>
+              <h4 class="card-title">
+                <a href="/blogs/articles/maximizing-ppc-campaigns/">Maximizing PPC Campaigns</a>
+              </h4>
               <p class="card-text">Tips to optimize your ad spend for better ROI.</p>
-              <a href="#" class="btn btn-outline-primary">Read More</a>
+              <a href="/blogs/articles/maximizing-ppc-campaigns/" class="btn btn-outline-primary">Read More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Footer -->
   <footer class="bg-dark text-white py-4">
     <div class="container">
@@ -131,6 +153,7 @@
       </div>
     </div>
   </footer>
+
   <!-- Bootstrap Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/scripts.js"></script>
