@@ -37,6 +37,12 @@
     .hero p {
       font-size: 1.25rem;
     }
+    .success-message {
+      display: none;
+      color: green;
+      text-align: center;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -77,22 +83,22 @@
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <h2 class="mb-4 text-center">Schedule Your Demo</h2>
-          <form>
+          <form id="demoForm" method="POST">
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
             </div>
             <div class="mb-3">
               <label for="company" class="form-label">Company Name</label>
-              <input type="text" class="form-control" id="company" placeholder="Your Company" required>
+              <input type="text" class="form-control" id="company" name="company" placeholder="Your Company" required>
             </div>
             <div class="mb-3">
               <label for="service" class="form-label">Interested In</label>
-              <select class="form-select" id="service" required>
+              <select class="form-select" id="service" name="service" required>
                 <option value="">Select a Service</option>
                 <option value="web-development">Web Development</option>
                 <option value="digital-marketing">Digital Marketing</option>
@@ -101,6 +107,9 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Submit Request</button>
           </form>
+          <div id="successMessage" class="success-message">
+            Thank you for your submission! We'll be in touch soon.
+          </div>
         </div>
       </div>
     </div>
@@ -119,7 +128,7 @@
           <ul class="list-unstyled">
             <li><a href="/" class="text-white">Home</a></li>
             <li><a href="/about/" class="text-white">About Us</a></li>
-            <li><a href="/services/" class="text-white">Services</a></li>
+            <li><a href="/サービスの/" class="text-white">Services</a></li>
             <li><a href="/contact/" class="text-white">Contact Us</a></li>
             <li><a href="/demo/" class="text-white">Request a Demo</a></li>
             <li><a href="/blogs/" class="text-white">Blogs</a></li>
@@ -140,5 +149,44 @@
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/scripts.js"></script>
+  <script>
+    document.getElementById('demoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submitButton = document.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        service: document.getElementById('service').value,
+        timestamp: new Date().toISOString()
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbwdCXo0b0S2IGvU6u88rgOS7IZ1JFNYj0_lDarhLRLc4LX0quV9BvHZhqEyiSVfS7Zv5Q/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.text())
+      .then(text => {
+        if (text === 'Success') {
+          document.getElementById('successMessage').style.display = 'block';
+          document.getElementById('demoForm').reset();
+        } else {
+          alerttoxic
+          alert('Error submitting form. Please try again.');
+        }
+        submitButton.disabled = false;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error submitting form. Please try again.');
+        submitButton.disabled = false;
+      });
+    });
+  </script>
 </body>
 </html>
