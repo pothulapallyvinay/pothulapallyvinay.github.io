@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="/">
@@ -33,6 +34,7 @@
     </div>
   </nav>
 
+  <!-- Hero -->
   <header class="hero py-5 text-center text-white" style="background: url('/assets/images/BGhero.png') center/cover no-repeat; margin-top:60px;">
     <div class="container">
       <h1 class="display-4">Request a Free Demo</h1>
@@ -40,12 +42,13 @@
     </div>
   </header>
 
+  <!-- Form -->
   <section class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <h2 class="mb-4 text-center">Schedule Your Demo</h2>
-          <form id="demoForm">
+          <form id="demoForm" name="demo-form">
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" id="name" name="name" required>
@@ -77,47 +80,45 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-dark text-white py-4 mt-5">
     <div class="container text-center">
       <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Script -->
   <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwO1NpncTDGZhpKwyEkowmzBvcvd7UIMRSD3lwfcXE8MfR_RkQG0g_NB5HQ11KzmniAsw/exec'; // Replace with your actual /exec URL
+
     document.getElementById('demoForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
       const submitButton = document.querySelector('button[type="submit"]');
       submitButton.disabled = true;
 
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        company: document.getElementById('company').value,
-        service: document.getElementById('service').value,
-        timestamp: new Date().toISOString()
-      };
+      const formData = new FormData(document.forms['demo-form']);
+      formData.append('timestamp', new Date().toISOString());
 
-      fetch('https://script.google.com/macros/s/AKfycbwO1NpncTDGZhpKwyEkowmzBvcvd7UIMRSD3lwfcXE8MfR_RkQG0g_NB5HQ11KzmniAsw/exec', { // Replace with your Apps Script Web App URL
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(res => res.text())
-      .then(text => {
-        if (text.trim() === 'Success') {
-          document.getElementById('successMessage').style.display = 'block';
-          document.getElementById('demoForm').reset();
-        } else {
-          alert('Error: ' + text);
-        }
-        submitButton.disabled = false;
-      })
-      .catch(err => {
-        console.error('Error:', err);
-        alert('Error submitting form. Please try again.');
-        submitButton.disabled = false;
-      });
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(res => res.text())
+        .then(text => {
+          if (text.trim() === 'Success') {
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('demoForm').reset();
+            setTimeout(() => {
+              document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+          } else {
+            alert('Error submitting form: ' + text);
+          }
+          submitButton.disabled = false;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Error submitting form. Please try again.');
+          submitButton.disabled = false;
+        });
     });
   </script>
 </body>
