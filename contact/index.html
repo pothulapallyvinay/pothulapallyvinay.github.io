@@ -34,21 +34,52 @@
     .hero p {
       font-size: 1.25rem;
     }
-    .success-message {
-      display: none;
-      color: green;
-      text-align: center;
-      margin-top: 1rem;
+    .contact-form-container {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-control {
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      padding: 0.75rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-control:focus {
+      border-color: orangered;
+      box-shadow: 0 0 8px rgba(255, 69, 0, 0.2);
+      outline: none;
+    }
+    .form-label {
+      font-weight: 500;
+      color: #333;
     }
     #submit {
       border: none;
       background-color: orangered;
       color: white;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.2s;
     }
     #submit:hover {
-      background-color: #333333;
+      background-color: #e03e00;
+      transform: translateY(-2px);
+    }
+    #submit:active {
+      transform: translateY(0);
+    }
+    .success-message {
+      display: none;
+      color: #28a745;
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -90,27 +121,29 @@
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <h2 class="mb-4 text-center">Send Us a Message</h2>
-          <form id="contactForm" name="contact-form">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="your-name" required />
+          <div class="contact-form-container">
+            <form id="contactForm" name="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="your-name" required />
+              </div>
+              <div class="mb-3">
+                <label for="number" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="number" name="your-number" pattern="[0-9]{10}" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="your-email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" name="message" rows="7" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100" id="submit">Submit</button>
+            </form>
+            <div id="successMessage" class="success-message">
+              ✅ Thank you for your submission! We'll be in touch soon.
             </div>
-            <div class="mb-3">
-              <label for="number" class="form-label">Phone Number</label>
-              <input type="tel" class="form-control" id="number" name="your-number" pattern="[0-9]{10}" required />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="your-email" required />
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Your Message</label>
-              <textarea class="form-control" id="message" name="message" rows="7" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100" id="submit">Submit</button>
-          </form>
-          <div id="successMessage" class="success-message">
-            ✅ Thank you for your submission! We'll be in touch soon.
           </div>
         </div>
       </div>
