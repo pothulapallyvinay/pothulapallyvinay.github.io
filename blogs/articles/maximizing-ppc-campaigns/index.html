@@ -12,14 +12,39 @@
   <style>
     /* Specific styles for blog post page to fix alignment */
     .hero {
-      padding-top: 130px; /* Override to match fixed navbar height */
+      padding-top: 130px; /* Match fixed navbar height */
+      padding-bottom: 80px;
+      background-image: url('/assets/images/BGhero.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+    .hero h1 {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
     }
     .content {
-      padding: 40px 20px; /* Ensure consistent padding */
+      padding: 40px 20px;
+    }
+    .content img {
+      display: block; /* Center the image */
+      margin: 0 auto; /* Center horizontally */
+      max-width: 100%; /* Maintain responsiveness */
+      width: 800px; /* Increase size, adjust as needed */
+      height: auto; /* Maintain aspect ratio */
     }
     @media (max-width: 768px) {
       .hero {
-        padding: 90px 0; /* Adjusted for mobile with navbar */
+        padding: 90px 0;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .content img {
+        width: 100%; /* Full width on mobile */
       }
     }
   </style>
