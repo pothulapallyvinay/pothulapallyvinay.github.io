@@ -13,26 +13,9 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <style>
-    .hero {
-      padding-top: 130px;
-      padding-bottom: 80px;
-      font-weight: bold;
-      background-image: url('/assets/images/BGhero.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    }
-    .hero h1 {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
-    }
-    .card {
+    .service-card {
       border: none;
       border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
       margin-bottom: 20px;
       height: 250px;
       width: 100%;
@@ -41,26 +24,24 @@
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s; /* Moved from .card:hover to base style */
     }
-    .card:hover {
+    .service-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
-    .card-body {
+    .service-card .card-body {
       padding: 20px;
       flex-grow: 1;
     }
-    .card-title {
+    .service-card .card-title {
       font-size: 1.25rem;
       font-weight: 600;
       color: #2c3e50;
     }
-    .card-text {
+    .service-card .card-text {
       color: #7f8c8d;
       font-size: 0.95rem;
-    }
-    .service-section {
-      padding: 40px 0;
     }
     .sticky-form {
       position: -webkit-sticky;
@@ -128,6 +109,15 @@
         flex: 1;
       }
     }
+    /* Override hero style from styles.css to match your preference */
+    .hero {
+      background: linear-gradient(to right, #007bff, #004085);
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+    }
   </style>
 </head>
 <body>
@@ -155,7 +145,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero bg-primary text-white text-center">
+  <header class="hero text-white text-center">
     <div class="container">
       <h1 class="display-4">Web Development & Design Services by CompaniesBuilder</h1>
       <p class="lead">Elevate your business with tailored, professional digital solutions</p>
@@ -175,7 +165,7 @@
         <h2 class="text-center mb-4">Why Choose CompaniesBuilder for Web Development?</h2>
         <div class="row">
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="service-card">
               <div class="card-body">
                 <h5 class="card-title">Custom Designs Tailored to Your Brand</h5>
                 <p class="card-text">We don’t believe in one-size-fits-all solutions. Our team creates unique websites that reflect your brand identity.</p>
@@ -183,7 +173,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="service-card">
               <div class="card-body">
                 <h5 class="card-title">Mobile-First, Responsive Websites</h5>
                 <p class="card-text">With over 60% of traffic from mobile devices, we ensure seamless functionality across all platforms.</p>
@@ -191,7 +181,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="service-card">
               <div class="card-body">
                 <h5 class="card-title">SEO-Optimized for Maximum Visibility</h5>
                 <p class="card-text">We enhance your search engine rankings with expert on-page SEO techniques.</p>
@@ -199,7 +189,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="service-card">
               <div class="card-body">
                 <h5 class="card-title">Fast Turnaround Without Compromising Quality</h5>
                 <p class="card-text">Our streamlined processes deliver your website on time with top-notch quality.</p>
@@ -207,7 +197,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="service-card">
               <div class="card-body">
                 <h5 class="card-title">Affordable Solutions for Growing Businesses</h5>
                 <p class="card-text">Competitive pricing with flexible packages tailored to your budget.</p>
@@ -215,7 +205,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="service-card">
               <div class="card-body">
                 <h5 class="card-title">Dedicated Support Every Step of the Way</h5>
                 <p class="card-text">Ongoing support ensures your website remains secure and functional.</p>
