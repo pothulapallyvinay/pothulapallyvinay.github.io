@@ -104,20 +104,25 @@
     .left-align-block h2, .left-align-block h3 { text-align: left !important; }
     .left-align-block .svc-list, .left-align-block .why-list, .left-align-block p, .left-align-block ul { text-align: left; }
 
-    /* Sticky form (large screens) — keep form on right and reduce width/height slightly */
+    /* Sticky form (desktop only) */
     @media (min-width: 992px){
-      .sticky-lg-100{ position:relative; } /* start relative, JS will toggle fixed */
-      /* when JS adds .sticky-fixed we'll apply fixed positioning */
+      /* we start with relative positioning; JS will add .sticky-fixed class when needed */
+      .sticky-lg-100{ position: relative; }
+
       .sticky-fixed {
         position: fixed !important;
         top: 100px;
-        z-index: 1050;
+        z-index: 1100;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        border-radius: 12px;
+        transition: box-shadow .18s ease;
       }
+
       /* narrower form on desktop while remaining responsive */
       .sticky-lg-100 .svc-form-container{
         width:92%;
-        max-width:360px;       /* reduced width */
-        padding:1.25rem;       /* slightly reduced padding -> reduces visual height */
+        max-width:360px;
+        padding:1.25rem;
       }
     }
 
@@ -230,7 +235,7 @@
           <div class="card h-100 w-100">
             <div class="card-body">
               <h5 class="card-title"><i class="bi bi-megaphone-fill" aria-hidden="true"></i> Amplify Your Brand</h5>
-              <p class="card-text">Stand out across platforms-Facebook, Instagram, LinkedIn and Twitter, with tailored creative and ad strategies.</p>
+              <p class="card-text">Stand out across platforms—Facebook, Instagram, LinkedIn and Twitter—with tailored creative and ad strategies.</p>
             </div>
           </div>
         </div>
@@ -324,7 +329,6 @@
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Tell us about your business / goals</label>
-                  <!-- reduced rows from 6 -> 5 to reduce form height -->
                   <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary w-100" id="submit">Get Free Audit</button>
@@ -353,6 +357,7 @@
         </div>
         <div class="col-md-6">
           <p>Don’t let your business get lost in the social media noise. With Companies Builder’s social media marketing services in India, you’ll build a loyal audience, drive more leads, and grow your brand like never before.</p>
+          <p><a href="/portfolio/" class="text-decoration-underline">See our portfolio</a> to view examples of campaigns and results we’ve delivered for clients.</p>
         </div>
       </div>
     </div>
@@ -429,71 +434,104 @@
     });
   </script>
 
-  <!-- Sticky-between-sections behaviour (desktop only) -->
+  <!-- Improved Sticky-between-sections behaviour (desktop only) -->
   <script>
     (function(){
       const MIN_DESKTOP_WIDTH = 992;
-      let stickyWrapper = document.querySelector('.sticky-lg-100');
+      const stickyWrapper = document.querySelector('.sticky-lg-100');
       const startEl = document.getElementById('partner');
       const endEl = document.getElementById('ready');
 
       if (!stickyWrapper || !startEl || !endEl) return;
 
-      // placeholder to avoid layout jump when we fix the form
+      // Placeholder to preserve layout when the sticky element becomes fixed
       let placeholder = document.createElement('div');
       placeholder.style.display = 'none';
+      placeholder.style.width = 'auto';
+      placeholder.style.height = '0px';
       stickyWrapper.parentNode.insertBefore(placeholder, stickyWrapper);
+
+      function computeRects() {
+        // get fresh rects (must be called inside update so layout changes are handled)
+        return {
+          startTop: startEl.getBoundingClientRect().top + window.pageYOffset,
+          endTop: endEl.getBoundingClientRect().top + window.pageYOffset,
+          wrapperRect: stickyWrapper.getBoundingClientRect()
+        };
+      }
+
+      function activateFixed(wrapperRect) {
+        // set placeholder to reserve the form's original space (prevent content shift)
+        placeholder.style.width = wrapperRect.width + 'px';
+        placeholder.style.height = wrapperRect.height + 'px';
+        placeholder.style.display = 'block';
+        placeholder.style.visibility = 'hidden';
+
+        // lock width/left so it stays exactly where it was
+        const left = wrapperRect.left;
+        stickyWrapper.style.width = wrapperRect.width + 'px';
+        stickyWrapper.style.left = left + 'px';
+        stickyWrapper.classList.add('sticky-fixed');
+      }
+
+      function deactivateFixed() {
+        stickyWrapper.classList.remove('sticky-fixed');
+        stickyWrapper.style.left = '';
+        stickyWrapper.style.width = '';
+        placeholder.style.display = 'none';
+        placeholder.style.height = '0px';
+      }
 
       function updateSticky() {
         if (window.innerWidth < MIN_DESKTOP_WIDTH) {
-          // cleanup for mobile/tablet
-          stickyWrapper.classList.remove('sticky-fixed');
-          stickyWrapper.style.width = '';
-          placeholder.style.display = 'none';
+          // always reset on smaller screens
+          deactivateFixed();
           return;
         }
 
-        const topOffset = 100; // matches CSS top used earlier
-        const scrollY = window.scrollY || window.pageYOffset;
-        const start = startEl.getBoundingClientRect().top + scrollY;
-        const end = endEl.getBoundingClientRect().top + scrollY;
-        const wrapperRect = stickyWrapper.getBoundingClientRect();
+        const { startTop, endTop, wrapperRect } = computeRects();
+        const topOffset = 100; // same as CSS top
         const formHeight = wrapperRect.height;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Condition: stick when scrolled past start, and not past end - formHeight
-        if (scrollY + topOffset >= start && (scrollY + topOffset + formHeight) <= (end + 10)) {
+        // stick if scroll beyond the start section AND not overlapping the end section
+        const shouldStick = (scrollY + topOffset >= startTop) && ((scrollY + topOffset + formHeight) <= (endTop - 20));
+
+        if (shouldStick) {
           if (!stickyWrapper.classList.contains('sticky-fixed')) {
-            // set width to prevent collapsing when fixed
-            const computedWidth = Math.min(wrapperRect.width, 360) + 'px';
-            stickyWrapper.style.width = computedWidth;
-            stickyWrapper.classList.add('sticky-fixed');
-
-            // show placeholder same height to preserve document flow
-            placeholder.style.height = formHeight + 'px';
-            placeholder.style.display = 'block';
+            activateFixed(wrapperRect);
+          } else {
+            // ensure left/width remain accurate (in case of resize/zoom)
+            const freshRect = stickyWrapper.getBoundingClientRect();
+            // if width changed (rare), update it using original column's rect
+            // compute original left from placeholder's previous position
+            // Use parent column to compute left accurately:
+            const parentRect = placeholder.getBoundingClientRect();
+            // if parentRect.width is 0 (placeholder hidden), use wrapperRect.left saved earlier
+            // But we can simply re-calc left from current DOM by locating the column node:
+            const col = stickyWrapper.closest('.col-lg-5, [class*="col-"]');
+            if (col) {
+              const colRect = col.getBoundingClientRect();
+              // set left so the fixed element sits where the column is located
+              stickyWrapper.style.left = (colRect.left + (colRect.width - wrapperRect.width) + 'px');
+            }
           }
         } else {
+          // not in the sticky zone
           if (stickyWrapper.classList.contains('sticky-fixed')) {
-            stickyWrapper.classList.remove('sticky-fixed');
-            stickyWrapper.style.width = '';
-            placeholder.style.display = 'none';
-            placeholder.style.height = '0';
+            deactivateFixed();
           }
         }
       }
 
-      // run on load and scroll/resize
+      // run on load, scroll and resize
+      window.addEventListener('load', updateSticky);
       window.addEventListener('scroll', updateSticky, { passive: true });
       window.addEventListener('resize', function(){
-        // remove fixed state on resize to recalc properly
-        stickyWrapper.classList.remove('sticky-fixed');
-        stickyWrapper.style.width = '';
-        placeholder.style.display = 'none';
-        setTimeout(updateSticky, 60);
+        // small debounce to avoid thrash
+        deactivateFixed();
+        setTimeout(updateSticky, 80);
       });
-
-      // init
-      updateSticky();
     })();
   </script>
 
