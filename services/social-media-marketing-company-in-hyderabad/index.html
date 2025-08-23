@@ -106,7 +106,13 @@
 
     /* Sticky form (large screens) — keep form on right and reduce width/height slightly */
     @media (min-width: 992px){
-      .sticky-lg-100{ position:sticky; top:100px; display:flex; justify-content:flex-end; }
+      .sticky-lg-100{ position:relative; } /* start relative, JS will toggle fixed */
+      /* when JS adds .sticky-fixed we'll apply fixed positioning */
+      .sticky-fixed {
+        position: fixed !important;
+        top: 100px;
+        z-index: 1050;
+      }
       /* narrower form on desktop while remaining responsive */
       .sticky-lg-100 .svc-form-container{
         width:92%;
@@ -177,7 +183,7 @@
   <header class="hero text-white text-center">
     <div class="container">
       <p style="display:none;">social media marketing Hyderabad — social media management Bangalore — social media agency India</p>
-      <h1>Results-Driven Social Media Management for Businesses | Companies Builder</h1>
+      <h1>Results-Driven Social Media Marketing and Management for Businesses, Companies Builder</h1>
       <p class="lead">Grow your brand with targeted social media marketing solutions designed to convert followers into customers.</p>
     </div>
   </header>
@@ -224,7 +230,7 @@
           <div class="card h-100 w-100">
             <div class="card-body">
               <h5 class="card-title"><i class="bi bi-megaphone-fill" aria-hidden="true"></i> Amplify Your Brand</h5>
-              <p class="card-text">Stand out across platforms—Facebook, Instagram, LinkedIn and Twitter—with tailored creative and ad strategies.</p>
+              <p class="card-text">Stand out across platforms-Facebook, Instagram, LinkedIn and Twitter, with tailored creative and ad strategies.</p>
             </div>
           </div>
         </div>
@@ -234,7 +240,7 @@
 
   <!-- What Makes Us Your Go-To Partner -->
   <!-- <-- LEFT-ALIGNED from here ... -->
-  <section class="py-5 left-align-block">
+  <section class="py-5 left-align-block" id="partner">
     <div class="container">
       <h2 class="mb-4">What Makes Companies Builder Your Go-To Social Media Partner?</h2>
 
@@ -245,16 +251,8 @@
             <li><i class="bi bi-wallet2"></i><span><strong>Budget-Friendly Solutions:</strong> Affordable social media management in Hyderabad delivering high-impact results.</span></li>
             <li><i class="bi bi-geo-alt-fill"></i><span><strong>Local Expertise:</strong> As a social media agency in Hyderabad, we know how to connect with your community and drive local engagement.</span></li>
             <li><i class="bi bi-trophy-fill"></i><span><strong>Proven Success:</strong> From startups to established businesses, we’ve helped clients grow followers and boost conversions.</span></li>
+            <li><i class="bi bi-lightning-fill"></i><span><strong>Results-Focused Approach:</strong> Our strategies prioritize measurable outcomes—reach, engagement, lead generation and ROI—so you see real business impact.</span></li>
           </ul>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-lightning-fill" aria-hidden="true"></i> Results-Focused Approach</h5>
-              <p class="card-text">Our strategies prioritize measurable outcomes—reach, engagement, lead generation and ROI—so you see real business impact.</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -308,6 +306,7 @@
         <!-- Sticky form column (keeps same layout/design, updated CTA text) -->
         <div class="col-lg-5">
           <div class="sticky-lg-100">
+            <!-- heading above the form (left aligned on desktop) -->
             <h2 id="contact" class="mb-4 text-start">Get Your Free Social Media Audit</h2>
             <div class="svc-form-container">
               <form id="contactForm" name="contact-form">
@@ -331,7 +330,7 @@
                 <button type="submit" class="btn btn-primary w-100" id="submit">Get Free Audit</button>
               </form>
               <div id="successMessage" class="success-message">
-                ✅ Thanks — we received your request. We'll send your audit within 48 hours.
+                ✅ Thanks, we received your request. We'll send your audit within 24 hours.
               </div>
             </div>
           </div>
@@ -361,7 +360,7 @@
   </section>
 
   <!-- CTA (left-aligned per request) -->
-  <section class="py-4 left-align-block">
+  <section class="py-4 left-align-block" id="ready">
     <div class="container">
       <h3 class="mb-2">Ready to Elevate Your Social Media Game?</h3>
       <p>Fill out the form for a free social media audit and discover how we can help your business thrive online.</p>
@@ -429,6 +428,74 @@
           submitButton.disabled=false;
         });
     });
+  </script>
+
+  <!-- Sticky-between-sections behaviour (desktop only) -->
+  <script>
+    (function(){
+      const MIN_DESKTOP_WIDTH = 992;
+      let stickyWrapper = document.querySelector('.sticky-lg-100');
+      const startEl = document.getElementById('partner');
+      const endEl = document.getElementById('ready');
+
+      if (!stickyWrapper || !startEl || !endEl) return;
+
+      // placeholder to avoid layout jump when we fix the form
+      let placeholder = document.createElement('div');
+      placeholder.style.display = 'none';
+      stickyWrapper.parentNode.insertBefore(placeholder, stickyWrapper);
+
+      function updateSticky() {
+        if (window.innerWidth < MIN_DESKTOP_WIDTH) {
+          // cleanup for mobile/tablet
+          stickyWrapper.classList.remove('sticky-fixed');
+          stickyWrapper.style.width = '';
+          placeholder.style.display = 'none';
+          return;
+        }
+
+        const topOffset = 100; // matches CSS top used earlier
+        const scrollY = window.scrollY || window.pageYOffset;
+        const start = startEl.getBoundingClientRect().top + scrollY;
+        const end = endEl.getBoundingClientRect().top + scrollY;
+        const wrapperRect = stickyWrapper.getBoundingClientRect();
+        const formHeight = wrapperRect.height;
+
+        // Condition: stick when scrolled past start, and not past end - formHeight
+        if (scrollY + topOffset >= start && (scrollY + topOffset + formHeight) <= (end + 10)) {
+          if (!stickyWrapper.classList.contains('sticky-fixed')) {
+            // set width to prevent collapsing when fixed
+            const computedWidth = Math.min(wrapperRect.width, 360) + 'px';
+            stickyWrapper.style.width = computedWidth;
+            stickyWrapper.classList.add('sticky-fixed');
+
+            // show placeholder same height to preserve document flow
+            placeholder.style.height = formHeight + 'px';
+            placeholder.style.display = 'block';
+          }
+        } else {
+          if (stickyWrapper.classList.contains('sticky-fixed')) {
+            stickyWrapper.classList.remove('sticky-fixed');
+            stickyWrapper.style.width = '';
+            placeholder.style.display = 'none';
+            placeholder.style.height = '0';
+          }
+        }
+      }
+
+      // run on load and scroll/resize
+      window.addEventListener('scroll', updateSticky, { passive: true });
+      window.addEventListener('resize', function(){
+        // remove fixed state on resize to recalc properly
+        stickyWrapper.classList.remove('sticky-fixed');
+        stickyWrapper.style.width = '';
+        placeholder.style.display = 'none';
+        setTimeout(updateSticky, 60);
+      });
+
+      // init
+      updateSticky();
+    })();
   </script>
 
   <!-- Structured Data: Organization + LocalBusiness + BreadcrumbList (no FAQ schema) -->
