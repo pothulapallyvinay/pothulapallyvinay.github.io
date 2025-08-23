@@ -91,17 +91,19 @@
       box-shadow: 0 14px 30px rgba(18, 38, 63, 0.08);
       border: 1px solid rgba(34, 51, 66, 0.06);
       transition: transform .18s ease, box-shadow .18s ease;
+      position: relative; /* baseline */
     }
     .form-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(18,38,63,0.10); }
 
     .form-card h3 { font-size:1.125rem; margin-bottom:.6rem; }
     .form-card p { font-size:.95rem; color:#444; margin-bottom:.8rem; }
 
-    /* sticky right column behavior: sticky inside the blueprint section on desktop */
+    /* css fallback sticky (kept) */
     @media (min-width: 992px) {
       .form-sticky {
+        /* fallback sticky so browsers without JS still try */
         position: sticky;
-        top: 110px; /* aligns under navbar */
+        top: 110px;
         align-self: start;
       }
       .form-card { max-width: 320px; }
@@ -117,9 +119,19 @@
       .form-card .btn { padding:.6rem .8rem; font-weight:700; }
     }
 
+    /* .form-fixed applied by JS to make actual fixed sticky */
+    .form-fixed {
+      position: fixed !important;
+      top: 110px !important;
+      z-index: 9999 !important;
+      will-change: transform, right;
+      box-shadow: 0 18px 40px rgba(18,38,63,0.12);
+    }
+
     /* Mobile: stack and full width */
     @media (max-width: 991.98px) {
       .form-card { width:100%; max-width:100%; padding:14px; }
+      .form-fixed { position: static !important; top: auto !important; right: auto !important; box-shadow: none !important; width: 100% !important; }
     }
 
     /* keep existing input styles consistent */
@@ -136,7 +148,7 @@
     }
     .svc-form-container .form-label{ font-weight:500; color:#333; }
 
-    /* ====== BUTTON: changed to previous orange (orangered) and hover state ====== */
+    /* BUTTON: previous orange (orangered) */
     .form-card .btn {
       background-color: orangered;
       border: none;
@@ -335,7 +347,7 @@
         <!-- RIGHT: attractive sticky form card -->
         <div class="col-lg-4">
           <div class="form-sticky">
-            <div class="form-card">
+            <div class="form-card" id="formCard">
               <h3><i class="bi bi-file-earmark-text-fill me-2"></i> Get Your Free SEO Audit</h3>
               <p>Enter your details and we’ll send a prioritized SEO audit with quick wins for your website.</p>
 
@@ -443,6 +455,83 @@
           submitButton.disabled=false;
         });
     });
+  </script>
+
+  <!-- Sticky/Fixed behavior JS (robust) -->
+  <script>
+    (function() {
+      const blueprint = document.getElementById('blueprint');
+      const formCard = document.getElementById('formCard'); // inner card we fix
+      if (!blueprint || !formCard) return;
+
+      let fixedActive = false;
+
+      // compute right offset so form sits aligned to container right + gap
+      function computeRightOffset() {
+        const container = blueprint.querySelector('.container') || document.querySelector('.container');
+        const rect = container.getBoundingClientRect();
+        // distance from viewport right edge to container right + small gap (20px)
+        const gap = 20;
+        const offset = Math.max(gap, window.innerWidth - rect.right + gap);
+        return Math.round(offset);
+      }
+
+      // enable fixed: set width & right computed
+      function enableFixed() {
+        if (window.innerWidth < 992) { disableFixed(); return; }
+        const right = computeRightOffset();
+        // set width to current computed or cap
+        const width = Math.min(340, formCard.offsetWidth);
+        formCard.style.width = width + 'px';
+        formCard.style.right = right + 'px';
+        formCard.classList.add('form-fixed');
+        fixedActive = true;
+      }
+
+      function disableFixed() {
+        if (!fixedActive) return;
+        formCard.classList.remove('form-fixed');
+        formCard.style.right = '';
+        formCard.style.width = '';
+        fixedActive = false;
+      }
+
+      // determine when blueprint section is visible enough to activate
+      function checkAndToggle() {
+        const bpRect = blueprint.getBoundingClientRect();
+        const fcHeight = formCard.offsetHeight;
+        // activate when top of blueprint has scrolled into view (<= 120px)
+        // and there's enough space below to fit the fixed form (i.e. blueprint bottom > form height + top offset)
+        const topThreshold = 120;
+        if (bpRect.top <= topThreshold && bpRect.bottom > (fcHeight + topThreshold + 20) && window.innerWidth >= 992) {
+          enableFixed();
+        } else {
+          disableFixed();
+        }
+      }
+
+      // initial check
+      window.addEventListener('load', checkAndToggle);
+      // on scroll/resize recalc
+      window.addEventListener('scroll', function(){ requestAnimationFrame(checkAndToggle); }, { passive: true });
+      window.addEventListener('resize', function(){ 
+        // small debounce
+        clearTimeout(window._cbResize);
+        window._cbResize = setTimeout(function(){
+          disableFixed();
+          checkAndToggle();
+        }, 120);
+      });
+
+      // In case images or fonts change layout after load, observe container size
+      const resizeObserverTarget = blueprint.querySelector('.container') || blueprint;
+      if (window.ResizeObserver) {
+        const ro = new ResizeObserver(() => {
+          if (fixedActive) enableFixed();
+        });
+        ro.observe(resizeObserverTarget);
+      }
+    })();
   </script>
 
   <!-- Structured Data (unchanged) -->
