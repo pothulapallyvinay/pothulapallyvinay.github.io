@@ -91,8 +91,27 @@
     .why-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
     .why-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
 
+    /* Sticky form adjustments:
+       - place the sticky container to the right on large screens
+       - limit the form width and padding to reduce visual size
+       - on smaller screens keep full-width and centered
+    */
     @media (min-width: 992px){
-      .sticky-lg-100{ position:sticky; top:100px; }
+      .sticky-lg-100{ position:sticky; top:100px; display:flex; justify-content:flex-end; }
+      .sticky-lg-100 .svc-form-container{
+        max-width:340px;           /* reduce width slightly */
+        width:100%;
+        padding:1rem;              /* reduce vertical padding for smaller height */
+      }
+      .sticky-lg-100 .svc-form-container .form-control{ padding:.6rem; } /* slightly smaller inputs */
+      .sticky-lg-100 .svc-form-container #submit{ padding:.6rem; } /* slightly smaller button */
+    }
+
+    /* On smaller screens, center the form and let it be full width */
+    @media (max-width: 991.98px){
+      .sticky-lg-100{ display:flex; justify-content:center; position:static; }
+      .sticky-lg-100 .svc-form-container{ max-width:100%; padding:1.25rem; }
+      .sticky-lg-100 .svc-form-container .form-control{ padding:.7rem; }
     }
 
     .svc-form-container{
@@ -102,6 +121,8 @@
       box-shadow:0 4px 20px rgba(0,0,0,.1);
       border:1px solid rgba(0,0,0,.05);
     }
+
+    /* keep smaller padding baseline for non-sticky states (desktop fallback) */
     .svc-form-container .form-control{
       border:1px solid #ced4da;
       border-radius:8px;
@@ -314,32 +335,7 @@
     </div>
   </section>
 
-  <!-- Success Stories -->
-  <section class="py-4">
-    <div class="container">
-      <h2 class="text-center mb-4">Success Stories: Real Businesses, Real Growth</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card p-3 h-100">
-            <div class="card-body">
-              <blockquote class="mb-2">“Working with Companies Builder was a game-changer for my bakery. We went from barely showing up on Google to ranking on the first page for ‘cakes in Hyderabad’ in just three months!”</blockquote>
-              <p class="mb-0"><strong>— Priya, Bakery Owner</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-3 h-100">
-            <div class="card-body">
-              <blockquote class="mb-2">“As a startup, we needed affordable SEO that actually worked. Companies Builder delivered beyond our expectations, driving more leads to our site than ever before.”</blockquote>
-              <p class="mb-0"><strong>— Arjun, Tech Entrepreneur</strong></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA + Form (keeps same sticky form layout) -->
+  <!-- CTA + Form (keeps same sticky form layout; success stories removed) -->
   <section class="py-5">
     <div class="container">
       <div class="row g-4">
@@ -382,7 +378,7 @@
     </div>
   </section>
 
-  <!-- Footer (unchanged design) -->
+  <!-- Footer (unchanged) -->
   <footer class="bg-dark text-white py-4">
     <div class="container">
       <div class="row">
