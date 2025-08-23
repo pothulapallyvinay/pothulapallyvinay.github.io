@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO (from your brief) -->
+  <title>Best Social Media Marketing Services in India | Companies Builder</title>
+  <meta name="description" content="Grow your brand with expert social media marketing in Hyderabad & Bangalore. Affordable SMM services for small businesses by Companies Builder." />
+  <meta name="keywords" content="social media marketing Hyderabad, social media management Bangalore, social media agency India, affordable SMM Hyderabad, social media services Bangalore, social media management India, Companies Builder" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://companiesbuilder.com/services/social-media-marketing-&-management/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Best Social Media Marketing Services in India | Companies Builder" />
+  <meta property="og:description" content="Grow your brand with expert social media marketing in Hyderabad & Bangalore. Affordable SMM services for small businesses by Companies Builder." />
+  <meta property="og:url" content="https://companiesbuilder.com/services/social-media-marketing-&-management/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best Social Media Marketing Services in India | Companies Builder" />
+  <meta name="twitter:description" content="Grow your brand with expert social media marketing in Hyderabad & Bangalore. Affordable SMM services for small businesses by Companies Builder." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
+
+  <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons (used for cards & lists) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <style>
+    /* KEEPING YOUR ORIGINAL DESIGN/CSS (only icon/list tweaks added) */
+
+    /* HERO — restored with background + overlay so white text is visible */
+    .hero{
+      padding-top:130px;
+      padding-bottom:80px;
+      font-weight:700;
+      background-image:url('/assets/images/BGhero.png');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      color:#fff;
+      text-shadow:1px 1px 3px rgba(0,0,0,.7);
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.25);
+    }
+    .hero .container{ position:relative; z-index:1; }
+    .hero h1{
+      font-family:'Roboto', Arial, sans-serif;
+      font-weight:700;
+      font-size:3rem;
+      margin-bottom:.5rem;
+    }
+    .hero p.lead{ font-size:1.25rem; margin:0; }
+
+    /* Equal-height & aligned cards (scoped) */
+    .svc-grid .card{
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
+      box-shadow:0 3px 8px rgba(0,0,0,.05);
+      display:flex;
+      transition:transform .3s,box-shadow .3s;
+    }
+    .svc-grid .card:hover{
+      box-shadow:0 12px 25px rgba(0,0,0,.12);
+      transform:translateY(-5px);
+    }
+    .svc-grid .card.h-100{ height:100%; }
+    .svc-grid .card-body{
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      padding:24px;
+    }
+    .svc-grid .card-title{ font-size:1.2rem; font-weight:600; color:#2c3e50; display:flex; align-items:center; gap:.5rem; }
+    .svc-grid .card-text{ color:#555; font-size:.95rem; }
+
+    /* Icon tweak: keep icon sizes consistent in titles */
+    .svc-grid .card-title .bi { font-size:1.15rem; color:#0d6efd; }
+
+    /* Service list icons */
+    .svc-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
+    .svc-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
+
+    /* Why list icons (keeps design consistent) */
+    .why-list { list-style:none; padding-left:0; margin-bottom:1.25rem; }
+    .why-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
+    .why-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
+
+    /* Sticky form (large screens) */
+    @media (min-width: 992px){
+      .sticky-lg-100{ position:sticky; top:100px; }
+    }
+
+    /* Contact form (scoped) */
+    .svc-form-container{
+      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
+      border-radius:15px;
+      padding:1.75rem;
+      box-shadow:0 4px 20px rgba(0,0,0,.1);
+      border:1px solid rgba(0,0,0,.05);
+    }
+    .svc-form-container .form-control{
+      border:1px solid #ced4da;
+      border-radius:8px;
+      padding:.75rem;
+      transition:border-color .3s, box-shadow .3s;
+    }
+    .svc-form-container .form-control:focus{
+      border-color:orangered;
+      box-shadow:0 0 8px rgba(255,69,0,.2);
+      outline:none;
+    }
+    .svc-form-container .form-label{ font-weight:500; color:#333; }
+    .svc-form-container #submit{
+      border:none;
+      background-color:orangered;
+      color:#fff;
+      border-radius:8px;
+      padding:.75rem;
+      font-weight:600;
+      transition:background-color .3s, transform .2s;
+    }
+    .svc-form-container #submit:hover{ background-color:#e03e00; transform:translateY(-2px); }
+    .svc-form-container #submit:active{ transform:translateY(0); }
+    .success-message{ display:none; color:#28a745; text-align:center; margin-top:1rem; font-weight:500; }
+  </style>
+</head>
+<body>
+  <!-- Navbar (unchanged layout) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder" loading="lazy" />
+        CompaniesBuilder
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/services/">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero (with hidden SEO sentence early) -->
+  <header class="hero text-white text-center">
+    <div class="container">
+      <p style="display:none;">social media marketing Hyderabad — social media management Bangalore — social media agency India</p>
+      <h1>Results-Driven Social Media Management for Businesses | Companies Builder</h1>
+      <p class="lead">Grow your brand with targeted social media marketing solutions designed to convert followers into customers.</p>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="py-5">
+    <div class="container">
+      <div class="mb-5">
+        <h2 class="text-center mb-4">Grow Your Brand with Targeted Social Media Marketing Solutions</h2>
+
+        <p><strong>Companies Builder</strong> is a premier social media marketing agency based in Hyderabad and Bangalore. We provide affordable social media management in Hyderabad and professional social media services in Bangalore that help small and medium businesses build brand awareness and generate leads across India.</p>
+
+        <p>In a world where 70% of people are scrolling through social media daily, your business can’t afford to sit on the sidelines. Whether you’re a small startup or a growing medium-sized business, Companies Builder is here to help you connect with your audience, build your brand, and turn followers into loyal customers. Our social media marketing services in India are designed to deliver measurable results without the overwhelm.</p>
+
+        <p>Based in Hyderabad and Bangalore, we specialize in crafting affordable social media management in Hyderabad and professional social media services in Bangalore that resonate with your target market. Ready to take your social media game to the next level? Let’s explore how we can make your brand shine online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Social Media Management is a Must -->
+  <section class="py-2">
+    <div class="container">
+      <h2 class="text-center mb-4">Why Social Media Management is a Must for Your Business</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4 svc-grid">
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-people-fill" aria-hidden="true"></i> Build Relationships & Community</h5>
+              <p class="card-text">Engage your audience with relevant content, conversations, and community management that fosters loyalty.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-bar-chart-line" aria-hidden="true"></i> Data-Driven Growth</h5>
+              <p class="card-text">We use analytics and insights to drive decisions that increase reach, engagement, and conversions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-megaphone-fill" aria-hidden="true"></i> Amplify Your Brand</h5>
+              <p class="card-text">Stand out across platforms—Facebook, Instagram, LinkedIn and Twitter—with tailored creative and ad strategies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes Us Your Go-To Partner -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">What Makes Companies Builder Your Go-To Social Media Partner?</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <ul class="list-unstyled svc-list">
+            <li><i class="bi bi-gear-fill"></i><span><strong>Customized Campaigns:</strong> We tailor every post, ad, and strategy to reflect your unique brand voice.</span></li>
+            <li><i class="bi bi-wallet2"></i><span><strong>Budget-Friendly Solutions:</strong> Affordable social media management in Hyderabad delivering high-impact results.</span></li>
+            <li><i class="bi bi-geo-alt-fill"></i><span><strong>Local Expertise:</strong> As a social media agency in Hyderabad, we know how to connect with your community and drive local engagement.</span></li>
+            <li><i class="bi bi-trophy-fill"></i><span><strong>Proven Success:</strong> From startups to established businesses, we’ve helped clients grow followers and boost conversions.</span></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-lightning-fill" aria-hidden="true"></i> Results-Focused Approach</h5>
+              <p class="card-text">Our strategies prioritize measurable outcomes—reach, engagement, lead generation and ROI—so you see real business impact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services: Platform + Process (icon list similar to web dev page) -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Our Social Media Management Services: Your Path to Growth</h2>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <h3 class="mb-3">1. Strategic Planning and Research</h3>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-search"></i><span>Research your target audience to understand interests and behaviors.</span></li>
+            <li><i class="bi bi-tags"></i><span>Identify high-impact keywords like "social media marketing in Bangalore" and "social media agency in Hyderabad" to boost discoverability.</span></li>
+            <li><i class="bi bi-calendar-event"></i><span>Create a tailored content calendar to ensure consistent, engaging posts.</span></li>
+          </ul>
+
+          <h3 class="mb-3">2. Platform-Specific Content Creation</h3>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-facebook"></i><span><strong>Facebook:</strong> Build a vibrant community with eye-catching posts, stories, and targeted ads.</span></li>
+            <li><i class="bi bi-instagram"></i><span><strong>Instagram:</strong> Create stunning visuals, reels, and captions that capture attention.</span></li>
+            <li><i class="bi bi-linkedin"></i><span><strong>LinkedIn:</strong> Position your brand as an industry leader with thought leadership content.</span></li>
+            <li><i class="bi bi-twitter"></i><span><strong>Twitter/X:</strong> Engage with trends and spark conversations with concise, impactful posts.</span></li>
+          </ul>
+
+          <h3 class="mb-3">3. Social Media Advertising for Maximum Reach</h3>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-graph-up-arrow"></i><span>Design high-converting ad campaigns tailored to your budget and goals.</span></li>
+            <li><i class="bi bi-speedometer2"></i><span>Use real-time data to optimize ad performance and maximize ROI.</span></li>
+            <li><i class="bi bi-pin-map-fill"></i><span>Target local audiences in Hyderabad and Bangalore or expand nationwide.</span></li>
+          </ul>
+
+          <h3 class="mb-3">4. Engagement and Community Building</h3>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-chat-dots-fill"></i><span>Respond to comments, messages, and mentions to keep the conversation flowing.</span></li>
+            <li><i class="bi bi-people-fill"></i><span>Foster community growth by connecting with influencers and local audiences.</span></li>
+            <li><i class="bi bi-bar-chart-fill"></i><span>Monitor engagement metrics to refine strategy for better results.</span></li>
+          </ul>
+
+          <h3 class="mb-3">5. Reporting and Optimization</h3>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-file-earmark-text"></i><span>Deliver monthly reports on key metrics like reach, engagement, and conversions.</span></li>
+            <li><i class="bi bi-gear-fill"></i><span>Analyze what’s working and adjust strategies to improve performance.</span></li>
+            <li><i class="bi bi-chat-text"></i><span>Keep you informed with easy-to-understand updates—no jargon required.</span></li>
+          </ul>
+        </div>
+
+        <!-- Sticky form column (keeps same layout/design, updated CTA text) -->
+        <div class="col-lg-5">
+          <div class="sticky-lg-100">
+            <h2 id="contact" class="mb-4 text-center">Get Your Free Social Media Audit</h2>
+            <div class="svc-form-container">
+              <form id="contactForm" name="contact-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="your-name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="number" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="number" name="your-number" pattern="[0-9]{10}" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="your-email" required />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Tell us about your business / goals</label>
+                  <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" id="submit">Get Free Audit</button>
+              </form>
+              <div id="successMessage" class="success-message">
+                ✅ Thanks — we received your request. We'll send your audit within 48 hours.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Small & Medium Businesses Choose Us (icon list) -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="mb-4 text-center">Why Small and Medium Businesses Choose Companies Builder</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="why-list">
+            <li><i class="bi bi-cash-stack"></i><span><strong>Affordable Plans:</strong> Social media management packages that fit your budget.</span></li>
+            <li><i class="bi bi-globe"></i><span><strong>Local & National Reach:</strong> Target Hyderabad, Bangalore, or expand across India.</span></li>
+            <li><i class="bi bi-headset"></i><span><strong>Dedicated Support:</strong> Our team is a call or email away to support your growth.</span></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <p>Don’t let your business get lost in the social media noise. With Companies Builder’s social media marketing services in India, you’ll build a loyal audience, drive more leads, and grow your brand like never before.</p>
+          <p><a href="/portfolio/" class="text-decoration-underline">See our portfolio</a> to view examples of campaigns and results we’ve delivered for clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-4 text-center">
+    <div class="container">
+      <h3>Ready to Elevate Your Social Media Game?</h3>
+      <p>Fill out the form for a free social media audit and discover how we can help your business thrive online.</p>
+      <a href="#contact" class="btn btn-primary">Get Your Free Social Media Audit Now</a>
+    </div>
+  </section>
+
+  <!-- Footer (unchanged layout) -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>CompaniesBuilder</h5>
+          <p>Your trusted partner for web development and digital marketing excellence.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="/" class="text-white">Home</a></li>
+            <li><a href="/about/" class="text-white">About Us</a></li>
+            <li><a href="/services/" class="text-white">Services</a></li>
+            <li><a href="/contact/" class="text-white">Contact Us</a></li>
+            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white">companiesbuilder@gmail.com</a><br />
+            Phone: +91 6302787953</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS (unchanged) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+
+  <!-- Form JS: same Google Apps Script endpoint (keeps layout & behavior identical) -->
+  <script>
+    const scriptURL='https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+    document.getElementById('contactForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const submitButton=document.querySelector('button[type="submit"]');
+      submitButton.disabled=true;
+      const formData=new FormData(document.forms['contact-form']);
+      formData.append('timestamp',new Date().toISOString());
+      fetch(scriptURL,{method:'POST',body:formData})
+        .then(res=>res.text())
+        .then(text=>{
+          if(text.trim()==='Success'){
+            document.getElementById('successMessage').style.display='block';
+            document.getElementById('contactForm').reset();
+            setTimeout(()=>{document.getElementById('successMessage').style.display='none';},5000);
+          }else{ alert('Error submitting form: '+text); }
+          submitButton.disabled=false;
+        })
+        .catch(err=>{
+          console.error('Error:',err);
+          alert('Error submitting form. Please try again.');
+          submitButton.disabled=false;
+        });
+    });
+  </script>
+
+  <!-- Structured Data: Organization + LocalBusiness + BreadcrumbList (no FAQ schema as requested) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"CompaniesBuilder",
+    "url":"https://companiesbuilder.com",
+    "logo":"https://companiesbuilder.com/assets/images/CB-logo.png",
+    "sameAs":[]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"CompaniesBuilder - Social Media Marketing & Management",
+    "image":"https://companiesbuilder.com/assets/images/BGhero.png",
+    "@id":"https://companiesbuilder.com/services/social-media-marketing-&-management/",
+    "url":"https://companiesbuilder.com/services/social-media-marketing-&-management/",
+    "telephone":"+91 6302787953",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Hyderabad",
+      "addressLocality":"Hyderabad",
+      "addressRegion":"Telangana",
+      "postalCode":"500001",
+      "addressCountry":"IN"
+    },
+    "geo":{
+      "@type":"GeoCoordinates",
+      "latitude":17.385044,
+      "longitude":78.486671
+    },
+    "serviceArea":[
+      {"@type":"Place","name":"Hyderabad"},
+      {"@type":"Place","name":"Bangalore"},
+      {"@type":"Place","name":"Mumbai"},
+      {"@type":"Place","name":"India"}
+    ],
+    "priceRange":"$$"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://companiesbuilder.com/"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://companiesbuilder.com/services/"},
+      {"@type":"ListItem","position":3,"name":"Social Media Marketing & Management","item":"https://companiesbuilder.com/services/social-media-marketing-&-management/"}
+    ]
+  }
+  </script>
+</body>
+</html>
