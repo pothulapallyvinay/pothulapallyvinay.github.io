@@ -90,6 +90,11 @@
     .svc-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
     .svc-list .bi { font-size:1.25rem; margin-top:.15rem; color:#0d6efd; }
 
+    /* WHY list icons (keeps design consistent) */
+    .why-list { list-style:none; padding-left:0; margin-bottom:1.25rem; }
+    .why-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
+    .why-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
+
     /* Sticky form (large screens) */
     @media (min-width: 992px){
       .sticky-lg-100{ position:sticky; top:100px; }
@@ -174,9 +179,9 @@
 
         <!-- Insert a short SEO-focused sentence that includes locations/keywords
              (keeps original paragraphs intact; this line is added above them). -->
-        <p><strong>CompaniesBuilder</strong> is a web development company serving Hyderabad, Bangalore, Mumbai and clients across India, offering affordable custom website development, responsive web design, e-commerce development and SEO-optimized websites to help small and medium businesses generate leads.</p>
+        <p><strong>CompaniesBuilder</strong> is a web development company serving Hyderabad, Bangalore, Mumbai and clients across India — offering affordable custom website development, responsive web design, e-commerce development and SEO-optimized websites to help small and medium businesses generate leads.</p>
 
-        <p>In today’s digital-first world, your website is more than just an online presence, it’s the heartbeat of your brand. At CompaniesBuilder, we craft bespoke web development and design solutions tailored to small and medium businesses, helping you stand out, engage customers, and drive measurable results. Based in Hyderabad, our team combines creativity, technical expertise, and a passion for innovation to deliver websites that don’t just look good but work hard for your business.</p>
+        <p>In today’s digital-first world, your website is more than just an online presence—it’s the heartbeat of your brand. At CompaniesBuilder, we craft bespoke web development and design solutions tailored to small and medium businesses, helping you stand out, engage customers, and drive measurable results. Based in Hyderabad, our team combines creativity, technical expertise, and a passion for innovation to deliver websites that don’t just look good but work hard for your business.</p>
         <p>Whether you’re a startup looking to make your mark or an established business aiming to refresh your digital presence, our comprehensive services are designed to generate leads, enhance user experience, and boost your online visibility. Let’s explore how we can help you achieve your business goals.</p>
       </div>
     </div>
@@ -275,10 +280,26 @@
           </ul>
 
           <h2 class="mb-4 mt-5">Why a Great Website Matters for Small &amp; Medium Businesses</h2>
-          <p>A modern, visually appealing website creates a positive first impression.</p>
-          <p>A professional website signals reliability and expertise.</p>
-          <p>Optimized user journeys turn visitors into customers.</p>
-          <p>A fast, mobile-friendly site ensures visibility in today’s digital landscape.</p>
+
+          <!-- UPDATED: added icons for each point (visuals only; design/layout kept the same) -->
+          <ul class="why-list">
+            <li>
+              <i class="bi bi-palette-fill" aria-hidden="true"></i>
+              <span>A modern, visually appealing website creates a positive first impression.</span>
+            </li>
+            <li>
+              <i class="bi bi-award-fill" aria-hidden="true"></i>
+              <span>A professional website signals reliability and expertise.</span>
+            </li>
+            <li>
+              <i class="bi bi-people-fill" aria-hidden="true"></i>
+              <span>Optimized user journeys turn visitors into customers.</span>
+            </li>
+            <li>
+              <i class="bi bi-speedometer2" aria-hidden="true"></i>
+              <span>A fast, mobile-friendly site ensures visibility in today’s digital landscape.</span>
+            </li>
+          </ul>
 
           <h2 class="mb-4 mt-5">Ready to Transform Your Online Presence?</h2>
           <p>At CompaniesBuilder, we’re passionate about helping small and medium businesses thrive online. Our tailored web development and design services are designed to generate leads, enhance your brand, and deliver measurable results. Whether you’re starting from scratch or revamping an existing site, we’re here to guide you every step of the way.</p>
