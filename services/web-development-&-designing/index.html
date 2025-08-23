@@ -4,120 +4,363 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO -->
-  <title>Web Development & Designing Company in Hyderabad, Bangalore, India | CompaniesBuilder</title>
-  <meta name="description" content="CompaniesBuilder is a leading web development & designing company in Hyderabad, Bangalore & India. Offering affordable website development, ecommerce solutions, and custom designs for businesses." />
-  <meta name="keywords" content="Web development company Hyderabad, Website development services Bangalore, Web development agency India, Ecommerce website development India, Affordable web development Hyderabad, Website designing company Bangalore, Professional web development services India, Custom website development Bangalore, Low cost website development Hyderabad" />
+  <!-- SEO: optimized title & description (includes target keywords & cities) -->
+  <title>Web Development & Design Services in Hyderabad, Bangalore & India | CompaniesBuilder</title>
+  <meta name="description" content="CompaniesBuilder is a web development company in Hyderabad, Bangalore and across India. We offer affordable custom website development, e-commerce solutions, mobile-first responsive design and SEO-optimized websites to help businesses generate leads." />
+  <meta name="keywords" content="Web development company Hyderabad, Website development services Bangalore, Web development agency India, Affordable web development Hyderabad, Custom website development Bangalore, Ecommerce website development India, Website designing company Bangalore, Professional web development services India, Responsive websites, Mobile-first, SEO-Optimized, Custom Website Design, WordPress, HTML5, CSS3" />
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://companiesbuilder.com/services/web-development-&-designing/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Web Development & Designing Company in Hyderabad, Bangalore, India | CompaniesBuilder" />
-  <meta property="og:description" content="Affordable & professional website development and design services in Hyderabad, Bangalore & across India. Boost your brand with responsive, SEO-optimized websites." />
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Web Development & Design Services in Hyderabad, Bangalore & India | CompaniesBuilder" />
+  <meta property="og:description" content="Affordable custom websites, e-commerce solutions and SEO-optimized web design. CompaniesBuilder — web development services for businesses in Hyderabad, Bangalore, Mumbai and across India." />
   <meta property="og:url" content="https://companiesbuilder.com/services/web-development-&-designing/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://companiesbuilder.com/assets/images/web-development.jpg" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Web Development & Designing Company in Hyderabad, Bangalore, India" />
-  <meta name="twitter:description" content="Custom web development & design services in Hyderabad, Bangalore, and India. Affordable, responsive, SEO-friendly websites." />
-  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/web-development.jpg" />
+  <meta name="twitter:title" content="Web Development & Design Services in Hyderabad, Bangalore & India | CompaniesBuilder" />
+  <meta name="twitter:description" content="Custom, responsive and SEO-friendly websites — CompaniesBuilder (Hyderabad, Bangalore, India). E-commerce, WordPress, and custom web development." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <style>
+    /* HERO — restored with background + overlay so white text is visible */
+    .hero{
+      padding-top:130px;
+      padding-bottom:80px;
+      font-weight:700;
+      background-image:url('/assets/images/BGhero.png');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      color:#fff;
+      text-shadow:1px 1px 3px rgba(0,0,0,.7);
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.25);
+    }
+    .hero .container{ position:relative; z-index:1; }
+    .hero h1{
+      font-family:'Roboto', Arial, sans-serif;
+      font-weight:700;
+      font-size:3rem;
+      margin-bottom:.5rem;
+    }
+    .hero p.lead{ font-size:1.25rem; margin:0; }
+
+    /* Equal-height & aligned cards (scoped) */
+    .svc-grid .card{
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
+      box-shadow:0 3px 8px rgba(0,0,0,.05);
+      display:flex;
+      transition:transform .3s,box-shadow .3s;
+    }
+    .svc-grid .card:hover{
+      box-shadow:0 12px 25px rgba(0,0,0,.12);
+      transform:translateY(-5px);
+    }
+    .svc-grid .card.h-100{ height:100%; }
+    .svc-grid .card-body{
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      padding:24px;
+    }
+    .svc-grid .card-title{ font-size:1.2rem; font-weight:600; color:#2c3e50; }
+    .svc-grid .card-text{ color:#555; font-size:.95rem; }
+
+    /* Sticky form (large screens) */
+    @media (min-width: 992px){
+      .sticky-lg-100{ position:sticky; top:100px; }
+    }
+
+    /* Contact form (scoped) */
+    .svc-form-container{
+      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
+      border-radius:15px;
+      padding:1.75rem;
+      box-shadow:0 4px 20px rgba(0,0,0,.1);
+      border:1px solid rgba(0,0,0,.05);
+    }
+    .svc-form-container .form-control{
+      border:1px solid #ced4da;
+      border-radius:8px;
+      padding:.75rem;
+      transition:border-color .3s, box-shadow .3s;
+    }
+    .svc-form-container .form-control:focus{
+      border-color:orangered;
+      box-shadow:0 0 8px rgba(255,69,0,.2);
+      outline:none;
+    }
+    .svc-form-container .form-label{ font-weight:500; color:#333; }
+    .svc-form-container #submit{
+      border:none;
+      background-color:orangered;
+      color:#fff;
+      border-radius:8px;
+      padding:.75rem;
+      font-weight:600;
+      transition:background-color .3s, transform .2s;
+    }
+    .svc-form-container #submit:hover{ background-color:#e03e00; transform:translateY(-2px); }
+    .svc-form-container #submit:active{ transform:translateY(0); }
+    .success-message{ display:none; color:#28a745; text-align:center; margin-top:1rem; font-weight:500; }
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <!-- Added loading="lazy" to logo (non-visual performance improvement) -->
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder" loading="lazy" />
+        CompaniesBuilder
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/services/">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <!-- Header / Navbar -->
-  <header>
-    <nav>
-      <a href="/" class="logo"><img src="/assets/images/logo.png" alt="CompaniesBuilder Logo" /></a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/services/web-development-&-designing/" class="active">Web Development</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Hero -->
+  <header class="hero text-white text-center">
+    <div class="container">
+      <!-- Keyword-rich sentence added at the top so primary keywords appear early for SEO.
+           This is pure content — no layout or styling changes. -->
+      <p style="display:none;">Web development company Hyderabad — website development services Bangalore — web development agency India.</p>
+
+      <h1>Web Development &amp; Design Services by CompaniesBuilder</h1>
+      <p class="lead">Elevate your business with tailored, professional digital solutions</p>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Professional Web Development & Designing Services in Hyderabad, Bangalore & Across India</h1>
-      <p>Boost your digital presence with responsive, SEO-optimized, and custom-designed websites tailored to your business needs. Trusted by startups and enterprises in Hyderabad, Bangalore, Mumbai, and across India.</p>
-      <a href="/contact/" class="cta-btn">Get a Free Quote in 24 Hours</a>
-    </div>
-    <div class="hero-image">
-      <img src="/assets/images/web-development-hero.jpg" alt="Custom Website Development in Hyderabad and Bangalore" loading="lazy" />
-    </div>
-  </section>
+  <!-- Intro -->
+  <section class="py-5">
+    <div class="container">
+      <div class="mb-5">
+        <h2 class="text-center mb-4">Elevate Your Business with a Website That Converts</h2>
 
-  <!-- Services Section -->
-  <section class="services">
-    <h2>Our Web Development & Design Solutions</h2>
-    <div class="service-cards">
-      <div class="card">
-        <img src="/assets/images/responsive-design.jpg" alt="Responsive Website Design Hyderabad Bangalore" loading="lazy" />
-        <h3>Responsive Web Design</h3>
-        <p>Mobile-first, SEO-optimized websites ensuring seamless user experience across all devices.</p>
-      </div>
-      <div class="card">
-        <img src="/assets/images/ecommerce.jpg" alt="Ecommerce Website Development India" loading="lazy" />
-        <h3>E-Commerce Development</h3>
-        <p>Custom online stores with secure payment gateways, designed to maximize sales and growth.</p>
-      </div>
-      <div class="card">
-        <img src="/assets/images/custom-development.jpg" alt="Custom Website Development Bangalore Hyderabad" loading="lazy" />
-        <h3>Custom Web Development</h3>
-        <p>Tailored website solutions built using HTML5, CSS3, WordPress, and modern frameworks.</p>
+        <!-- Insert a short SEO-focused sentence that includes locations/keywords
+             (keeps original paragraphs intact; this line is added above them). -->
+        <p><strong>CompaniesBuilder</strong> is a web development company serving Hyderabad, Bangalore, Mumbai and clients across India — offering affordable custom website development, responsive web design, e-commerce development and SEO-optimized websites to help small and medium businesses generate leads.</p>
+
+        <p>In today’s digital-first world, your website is more than just an online presence—it’s the heartbeat of your brand. At CompaniesBuilder, we craft bespoke web development and design solutions tailored to small and medium businesses, helping you stand out, engage customers, and drive measurable results. Based in Hyderabad, our team combines creativity, technical expertise, and a passion for innovation to deliver websites that don’t just look good but work hard for your business.</p>
+        <p>Whether you’re a startup looking to make your mark or an established business aiming to refresh your digital presence, our comprehensive services are designed to generate leads, enhance user experience, and boost your online visibility. Let’s explore how we can help you achieve your business goals.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta">
-    <h2>Ready to Build Your Website?</h2>
-    <p>Partner with the <strong>best web development company in Hyderabad & Bangalore</strong> to enhance your online visibility and lead generation.</p>
-    <a href="/contact/" class="cta-btn">Request a Free Consultation</a>
+  <!-- Why Choose (equal-height cards) -->
+  <section class="py-2">
+    <div class="container">
+      <h2 class="text-center mb-4">Why Choose CompaniesBuilder for Web Development?</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4 svc-grid">
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title">Custom Designs Tailored to Your Brand</h5>
+              <p class="card-text">We don’t believe in one-size-fits-all solutions. Our team creates unique websites that reflect your brand identity.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title">Mobile-First, Responsive Websites</h5>
+              <p class="card-text">With over 60% of traffic from mobile devices, we ensure seamless functionality across all platforms.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title">SEO-Optimized for Maximum Visibility</h5>
+              <p class="card-text">We enhance your search engine rankings with expert on-page SEO techniques.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title">Fast Turnaround Without Compromising Quality</h5>
+              <p class="card-text">Our streamlined processes deliver your website on time with top-notch quality.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title">Affordable Solutions for Growing Businesses</h5>
+              <p class="card-text">Competitive pricing with flexible packages tailored to your budget.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title">Dedicated Support Every Step of the Way</h5>
+              <p class="card-text">Ongoing support ensures your website remains secure and functional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>Why choose CompaniesBuilder for web development in Hyderabad?</h3>
-      <p>We provide affordable, SEO-friendly, and mobile-responsive websites that help businesses grow online.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Do you offer website development services in Bangalore?</h3>
-      <p>Yes, we specialize in professional website development and design services for businesses in Bangalore.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Can you build ecommerce websites for Indian businesses?</h3>
-      <p>Absolutely! Our ecommerce website development solutions are tailored for businesses across India with secure payment gateways.</p>
+  <!-- Content + Sticky Form -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <h2 class="mb-4">Our Comprehensive Web Development Services</h2>
+          <p>Visually appealing designs that capture your brand’s essence and encourage action.</p>
+          <p>Robust, scalable websites built with HTML5, CSS3, and WordPress.</p>
+          <p>Integrate SEO and tools like Google Analytics for maximum ROI.</p>
+          <p>Optimize social media pages to amplify your brand’s reach.</p>
+          <p>Secure e-commerce websites with product catalogs and payment gateways.</p>
+          <p>Maintenance packages to keep your site secure and updated.</p>
+
+          <h2 class="mb-4 mt-5">Why a Great Website Matters for Small &amp; Medium Businesses</h2>
+          <p>A modern, visually appealing website creates a positive first impression.</p>
+          <p>A professional website signals reliability and expertise.</p>
+          <p>Optimized user journeys turn visitors into customers.</p>
+          <p>A fast, mobile-friendly site ensures visibility in today’s digital landscape.</p>
+
+          <h2 class="mb-4 mt-5">Ready to Transform Your Online Presence?</h2>
+          <p>At CompaniesBuilder, we’re passionate about helping small and medium businesses thrive online. Our tailored web development and design services are designed to generate leads, enhance your brand, and deliver measurable results. Whether you’re starting from scratch or revamping an existing site, we’re here to guide you every step of the way.</p>
+
+          <h2 class="mb-4 mt-5">What Our Clients Say</h2>
+          <p>Our clients love the results we deliver. From startups to established businesses, we’ve helped countless companies in Hyderabad and beyond achieve their digital goals. Check out our <a href="/portfolio/" class="text-decoration-underline">portfolio</a> or contact us to learn more.</p>
+
+          <h2 class="mb-4 mt-5">Let’s Build Something Amazing Together</h2>
+          <p>Your website is your most powerful marketing tool. Let CompaniesBuilder create a digital masterpiece that reflects your brand, engages your audience, and drives growth. Get in touch to start your journey.</p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="sticky-lg-100">
+            <h2 class="mb-4 text-center">Send Us a Message</h2>
+            <div class="svc-form-container">
+              <form id="contactForm" name="contact-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="your-name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="number" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="number" name="your-number" pattern="[0-9]{10}" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="your-email" required />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Your Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="7" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" id="submit">Submit</button>
+              </form>
+              <div id="successMessage" class="success-message">
+                ✅ Thank you for your submission! We'll be in touch soon.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>CompaniesBuilder</h5>
+          <p>Your trusted partner for web development and digital marketing excellence.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="/" class="text-white">Home</a></li>
+            <li><a href="/about/" class="text-white">About Us</a></li>
+            <li><a href="/services/" class="text-white">Services</a></li>
+            <li><a href="/contact/" class="text-white">Contact Us</a></li>
+            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white">companiesbuilder@gmail.com</a><br />
+            Phone: +91 6302787953</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Structured Data -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+  <script>
+    const scriptURL='https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+    document.getElementById('contactForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const submitButton=document.querySelector('button[type="submit"]');
+      submitButton.disabled=true;
+      const formData=new FormData(document.forms['contact-form']);
+      formData.append('timestamp',new Date().toISOString());
+      fetch(scriptURL,{method:'POST',body:formData})
+        .then(res=>res.text())
+        .then(text=>{
+          if(text.trim()==='Success'){
+            document.getElementById('successMessage').style.display='block';
+            document.getElementById('contactForm').reset();
+            setTimeout(()=>{document.getElementById('successMessage').style.display='none';},5000);
+          }else{ alert('Error submitting form: '+text); }
+          submitButton.disabled=false;
+        })
+        .catch(err=>{
+          console.error('Error:',err);
+          alert('Error submitting form. Please try again.');
+          submitButton.disabled=false;
+        });
+    });
+  </script>
+
+  <!-- Structured Data: Organization, LocalBusiness, Breadcrumb, FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "CompaniesBuilder",
     "url": "https://companiesbuilder.com",
-    "logo": "https://companiesbuilder.com/assets/images/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/companiesbuilder",
-      "https://www.linkedin.com/company/companiesbuilder",
-      "https://twitter.com/companiesbuilder"
-    ]
+    "logo": "https://companiesbuilder.com/assets/images/CB-logo.png",
+    "sameAs": []
   }
   </script>
 
@@ -126,10 +369,10 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "CompaniesBuilder - Web Development & Designing",
-    "image": "https://companiesbuilder.com/assets/images/web-development.jpg",
+    "image": "https://companiesbuilder.com/assets/images/BGhero.png",
     "@id": "https://companiesbuilder.com/services/web-development-&-designing/",
     "url": "https://companiesbuilder.com/services/web-development-&-designing/",
-    "telephone": "+91-XXXXXXXXXX",
+    "telephone": "+91 6302787953",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Hyderabad",
@@ -140,9 +383,27 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "17.385044",
-      "longitude": "78.486671"
+      "latitude": 17.385044,
+      "longitude": 78.486671
     },
+    "serviceArea": [
+      {
+        "@type": "Place",
+        "name": "Hyderabad"
+      },
+      {
+        "@type": "Place",
+        "name": "Bangalore"
+      },
+      {
+        "@type": "Place",
+        "name": "Mumbai"
+      },
+      {
+        "@type": "Place",
+        "name": "India"
+      }
+    ],
     "priceRange": "$$"
   }
   </script>
@@ -181,26 +442,26 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Why choose CompaniesBuilder for web development in Hyderabad?",
+        "name": "Do you provide web development services in Hyderabad and Bangalore?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We provide affordable, SEO-friendly, and mobile-responsive websites that help businesses grow online."
+          "text": "Yes — CompaniesBuilder provides website development and design services in Hyderabad, Bangalore, Mumbai and across India, including custom websites, e-commerce solutions, and responsive SEO-friendly designs."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you offer website development services in Bangalore?",
+        "name": "Can you build e-commerce websites for Indian businesses?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we specialize in professional website development and design services for businesses in Bangalore."
+          "text": "Yes. We build secure and scalable e-commerce websites with payment gateway integration, product catalogs, and best practices for conversion optimization."
         }
       },
       {
         "@type": "Question",
-        "name": "Can you build ecommerce websites for Indian businesses?",
+        "name": "Do you offer affordable and custom website development?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! Our ecommerce website development solutions are tailored for businesses across India with secure payment gateways."
+          "text": "Yes — we offer affordable packages as well as fully custom website development tailored to your business goals and budget."
         }
       }
     ]
