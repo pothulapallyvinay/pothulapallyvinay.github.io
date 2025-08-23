@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <style>
-    /* KEEPING YOUR ORIGINAL DESIGN/CSS (only icon/list tweaks added) */
+    /* KEEPING YOUR ORIGINAL DESIGN/CSS (only icon/list tweaks + alignment + form-size adjusted) */
 
     /* HERO — restored with background + overlay so white text is visible */
     .hero{
@@ -99,9 +99,20 @@
     .why-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
     .why-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
 
-    /* Sticky form (large screens) */
+    /* New: left-align wrapper used on the sections user requested */
+    .left-align-block { text-align: left; }
+    .left-align-block h2, .left-align-block h3 { text-align: left !important; }
+    .left-align-block .svc-list, .left-align-block .why-list, .left-align-block p, .left-align-block ul { text-align: left; }
+
+    /* Sticky form (large screens) — keep form on right and reduce width/height slightly */
     @media (min-width: 992px){
-      .sticky-lg-100{ position:sticky; top:100px; }
+      .sticky-lg-100{ position:sticky; top:100px; display:flex; justify-content:flex-end; }
+      /* narrower form on desktop while remaining responsive */
+      .sticky-lg-100 .svc-form-container{
+        width:92%;
+        max-width:360px;       /* reduced width */
+        padding:1.25rem;       /* slightly reduced padding -> reduces visual height */
+      }
     }
 
     /* Contact form (scoped) */
@@ -222,9 +233,10 @@
   </section>
 
   <!-- What Makes Us Your Go-To Partner -->
-  <section class="py-5">
+  <!-- <-- LEFT-ALIGNED from here ... -->
+  <section class="py-5 left-align-block">
     <div class="container">
-      <h2 class="text-center mb-4">What Makes Companies Builder Your Go-To Social Media Partner?</h2>
+      <h2 class="mb-4">What Makes Companies Builder Your Go-To Social Media Partner?</h2>
 
       <div class="row g-4">
         <div class="col-md-6">
@@ -247,9 +259,10 @@
       </div>
     </div>
   </section>
+  <!-- ... up to Ready to Elevate left-aligned -->
 
-  <!-- Services: Platform + Process (icon list similar to web dev page) -->
-  <section class="py-5">
+  <!-- Services: Platform + Process (left-aligned content) -->
+  <section class="py-5 left-align-block">
     <div class="container">
       <h2 class="mb-4">Our Social Media Management Services: Your Path to Growth</h2>
 
@@ -295,7 +308,7 @@
         <!-- Sticky form column (keeps same layout/design, updated CTA text) -->
         <div class="col-lg-5">
           <div class="sticky-lg-100">
-            <h2 id="contact" class="mb-4 text-center">Get Your Free Social Media Audit</h2>
+            <h2 id="contact" class="mb-4 text-start">Get Your Free Social Media Audit</h2>
             <div class="svc-form-container">
               <form id="contactForm" name="contact-form">
                 <div class="mb-3">
@@ -312,7 +325,8 @@
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Tell us about your business / goals</label>
-                  <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+                  <!-- reduced rows from 6 -> 5 to reduce form height -->
+                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary w-100" id="submit">Get Free Audit</button>
               </form>
@@ -326,10 +340,10 @@
     </div>
   </section>
 
-  <!-- Why Small & Medium Businesses Choose Us (icon list) -->
-  <section class="py-4">
+  <!-- Why Small & Medium Businesses Choose Us (left aligned) -->
+  <section class="py-4 left-align-block">
     <div class="container">
-      <h2 class="mb-4 text-center">Why Small and Medium Businesses Choose Companies Builder</h2>
+      <h2 class="mb-4">Why Small and Medium Businesses Choose Companies Builder</h2>
       <div class="row">
         <div class="col-md-6">
           <ul class="why-list">
@@ -346,10 +360,10 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-4 text-center">
+  <!-- CTA (left-aligned per request) -->
+  <section class="py-4 left-align-block">
     <div class="container">
-      <h3>Ready to Elevate Your Social Media Game?</h3>
+      <h3 class="mb-2">Ready to Elevate Your Social Media Game?</h3>
       <p>Fill out the form for a free social media audit and discover how we can help your business thrive online.</p>
       <a href="#contact" class="btn btn-primary">Get Your Free Social Media Audit Now</a>
     </div>
@@ -417,7 +431,7 @@
     });
   </script>
 
-  <!-- Structured Data: Organization + LocalBusiness + BreadcrumbList (no FAQ schema as requested) -->
+  <!-- Structured Data: Organization + LocalBusiness + BreadcrumbList (no FAQ schema) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
