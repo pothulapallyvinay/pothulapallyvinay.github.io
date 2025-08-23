@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- User-provided SEO meta -->
+  <title>Best SEO Services in India | Companies Builder Hyderabad &amp; Bangalore</title>
+  <meta name="description" content="Boost your business with affordable SEO services in Hyderabad & Bangalore. Companies Builder offers expert SEO strategies for small businesses." />
+  <meta name="keywords" content="SEO services India, SEO company Hyderabad, SEO experts Bangalore, affordable SEO Hyderabad, SEO for small business India, local SEO Hyderabad, SEO agency Bangalore" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://companiesbuilder.com/services/seo/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Best SEO Services in India | Companies Builder Hyderabad &amp; Bangalore" />
+  <meta property="og:description" content="Boost your business with affordable SEO services in Hyderabad & Bangalore. Companies Builder offers expert SEO strategies for small businesses." />
+  <meta property="og:url" content="https://companiesbuilder.com/services/seo/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/seo-hero.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best SEO Services in India | Companies Builder Hyderabad &amp; Bangalore" />
+  <meta name="twitter:description" content="Affordable SEO services in Hyderabad & Bangalore — Companies Builder helps small businesses get found online with proven SEO strategies." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/seo-hero.png" />
+
+  <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <style>
+    /* Keep the design/layout identical to your Web Development page */
+    .hero{
+      padding-top:130px;
+      padding-bottom:80px;
+      font-weight:700;
+      background-image:url('/assets/images/BGhero.png');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      color:#fff;
+      text-shadow:1px 1px 3px rgba(0,0,0,.7);
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.25);
+    }
+    .hero .container{ position:relative; z-index:1; }
+    .hero h1{
+      font-family:'Roboto', Arial, sans-serif;
+      font-weight:700;
+      font-size:3rem;
+      margin-bottom:.5rem;
+    }
+    .hero p.lead{ font-size:1.25rem; margin:0; }
+
+    .svc-grid .card{
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
+      box-shadow:0 3px 8px rgba(0,0,0,.05);
+      display:flex;
+      transition:transform .3s,box-shadow .3s;
+    }
+    .svc-grid .card:hover{
+      box-shadow:0 12px 25px rgba(0,0,0,.12);
+      transform:translateY(-5px);
+    }
+    .svc-grid .card.h-100{ height:100%; }
+    .svc-grid .card-body{
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      padding:24px;
+    }
+    .svc-grid .card-title{ font-size:1.2rem; font-weight:600; color:#2c3e50; display:flex; align-items:center; gap:.5rem; }
+    .svc-grid .card-text{ color:#555; font-size:.95rem; }
+
+    .svc-grid .card-title .bi { font-size:1.15rem; color:#007bff; }
+
+    .svc-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
+    .svc-list .bi { font-size:1.25rem; margin-top:.15rem; color:#0d6efd; }
+
+    .why-list { list-style:none; padding-left:0; margin-bottom:1.25rem; }
+    .why-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
+    .why-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
+
+    @media (min-width: 992px){
+      .sticky-lg-100{ position:sticky; top:100px; }
+    }
+
+    .svc-form-container{
+      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
+      border-radius:15px;
+      padding:1.75rem;
+      box-shadow:0 4px 20px rgba(0,0,0,.1);
+      border:1px solid rgba(0,0,0,.05);
+    }
+    .svc-form-container .form-control{
+      border:1px solid #ced4da;
+      border-radius:8px;
+      padding:.75rem;
+      transition:border-color .3s, box-shadow .3s;
+    }
+    .svc-form-container .form-control:focus{
+      border-color:orangered;
+      box-shadow:0 0 8px rgba(255,69,0,.2);
+      outline:none;
+    }
+    .svc-form-container .form-label{ font-weight:500; color:#333; }
+    .svc-form-container #submit{
+      border:none;
+      background-color:orangered;
+      color:#fff;
+      border-radius:8px;
+      padding:.75rem;
+      font-weight:600;
+      transition:background-color .3s, transform .2s;
+    }
+    .svc-form-container #submit:hover{ background-color:#e03e00; transform:translateY(-2px); }
+    .svc-form-container #submit:active{ transform:translateY(0); }
+    .success-message{ display:none; color:#28a745; text-align:center; margin-top:1rem; font-weight:500; }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .hero { padding-top: 90px; padding-bottom: 50px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder" loading="lazy" />
+        CompaniesBuilder
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/services/">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero text-white text-center">
+    <div class="container">
+      <!-- SEO: hidden keyword-rich line so primary keywords appear early (no layout change) -->
+      <p style="display:none;">SEO company Hyderabad — SEO services Bangalore — affordable SEO India</p>
+
+      <h1>Professional and Affordable SEO Services in India | Companies Builder</h1>
+      <p class="lead">Skyrocket your business with expert SEO strategies tailored for small and medium businesses in Hyderabad, Bangalore and across India.</p>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="py-5">
+    <div class="container">
+      <div class="mb-5">
+        <h2 class="text-center mb-4">Skyrocket Your Business with Expert SEO Strategies</h2>
+
+        <!-- SEO-rich intro paragraph (keeps original tone provided by user) -->
+        <p>Running a small or medium business is no small feat. You’re juggling countless tasks, and getting noticed online can feel like chasing a moving target. That’s where <strong>Companies Builder</strong>, a leading SEO company in India, steps in. Our professional SEO services in India are designed to put your business in front of the right customers at the right time—without breaking the bank. Whether you’re in <strong>Hyderabad</strong>, <strong>Bangalore</strong>, or anywhere else, we craft tailored SEO strategies to drive traffic, boost leads, and grow your brand.</p>
+
+        <p>Ready to make your business stand out? Let’s dive into how our SEO for small business solutions can transform your online presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why SEO Matters -->
+  <section class="py-2">
+    <div class="container">
+      <h2 class="text-center mb-4">Why SEO Matters for Your Business</h2>
+      <p class="text-center mb-4">In today’s digital world, being visible on search engines like Google is non-negotiable. Our SEO agency in Hyderabad and SEO experts in Bangalore combine data-driven insights with creative storytelling to ensure your business shines online.</p>
+
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <ul class="why-list">
+            <li><i class="bi bi-search" aria-hidden="true"></i><span><strong>75% of users</strong> never scroll past page one — ranking high drives traffic and meaningful leads.</span></li>
+            <li><i class="bi bi-graph-up" aria-hidden="true"></i><span>We build a roadmap to connect you with customers actively searching for your services.</span></li>
+            <li><i class="bi bi-people-fill" aria-hidden="true"></i><span>Local and national SEO strategies to reach customers in Hyderabad, Bangalore and across India.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Sets Us Apart -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="text-center mb-4">What Sets Companies Builder Apart?</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4 svc-grid">
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-sliders2" aria-hidden="true"></i> Tailored Strategies</h5>
+              <p class="card-text">No cookie-cutter plans — every SEO campaign is customized to your business goals.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-cash-stack" aria-hidden="true"></i> Affordable Solutions</h5>
+              <p class="card-text">High-impact SEO without the hefty price tag — ideal for small and medium businesses.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-award" aria-hidden="true"></i> Proven Results</h5>
+              <p class="card-text">We help clients climb search rankings and improve conversions with measurable ROI.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Local Expertise</h5>
+              <p class="card-text">As a local SEO company in Hyderabad, we know how to target your community and drive foot traffic.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-telephone-fill" aria-hidden="true"></i> Dedicated Support</h5>
+              <p class="card-text">We keep you informed with clear, jargon-free updates and ongoing support.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex">
+          <div class="card h-100 w-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-gear-fill" aria-hidden="true"></i> Technical Excellence</h5>
+              <p class="card-text">From site speed to structured data, we handle the technical SEO that drives results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Blueprint -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Our SEO Services: A Blueprint for Success</h2>
+
+      <!-- 1. Keyword Research -->
+      <h3 class="mb-3">1. In-Depth Keyword Research</h3>
+      <p>Great SEO starts with knowing what your customers are searching for. Our team uncovers keywords that balance search volume with opportunity — from local phrases like <em>"SEO company in Hyderabad"</em> to long-tail terms that capture ready-to-buy intent.</p>
+      <ul class="svc-list mb-4">
+        <li><i class="bi bi-search"></i><span>Analyze search trends specific to your industry.</span></li>
+        <li><i class="bi bi-geo-alt"></i><span>Target keywords like <strong>"SEO company in Hyderabad"</strong> and <strong>"SEO experts in Bangalore"</strong> to attract local customers.</span></li>
+        <li><i class="bi bi-flag-fill"></i><span>Prioritize long-tail keywords to capture high-converting traffic.</span></li>
+      </ul>
+
+      <!-- 2. Competitor Analysis -->
+      <h3 class="mb-3">2. Competitor Analysis Done Right</h3>
+      <p>We analyze competitors’ keywords, backlinks and content to identify gaps you can exploit and opportunities to outrank them.</p>
+      <ul class="svc-list mb-4">
+        <li><i class="bi bi-binoculars-fill"></i><span>Evaluate competitors’ keyword strategies and backlink profiles.</span></li>
+        <li><i class="bi bi-pie-chart-fill"></i><span>Identify gaps and untapped content opportunities.</span></li>
+        <li><i class="bi bi-lightning-fill"></i><span>Build a plan to boost domain authority and topical relevance.</span></li>
+      </ul>
+
+      <!-- 3. On-Page Optimization -->
+      <h3 class="mb-3">3. On-Page Optimization for Maximum Impact</h3>
+      <p>We optimize titles, meta descriptions, content and structure so your pages match search intent and convert visitors into customers.</p>
+      <ul class="svc-list mb-4">
+        <li><i class="bi bi-code-slash"></i><span>Optimize page titles, meta descriptions, headers and internal linking.</span></li>
+        <li><i class="bi bi-speedometer2"></i><span>Improve site speed, mobile responsiveness and navigation.</span></li>
+        <li><i class="bi bi-file-earmark-text"></i><span>Create helpful content that reduces bounce rates and increases CTR.</span></li>
+      </ul>
+
+      <!-- 4. Off-Page SEO -->
+      <h3 class="mb-3">4. Off-Page SEO to Amplify Your Reach</h3>
+      <p>We build authoritative backlinks, leverage Google Business and social signals to strengthen your presence.</p>
+      <ul class="svc-list mb-4">
+        <li><i class="bi bi-link-45deg"></i><span>Earn high-quality backlinks from trusted sites.</span></li>
+        <li><i class="bi bi-people"></i><span>Use social media and Google My Business to boost local SEO.</span></li>
+        <li><i class="bi bi-share-fill"></i><span>Create shareable content that drives referral traffic and brand awareness.</span></li>
+      </ul>
+
+      <!-- 5. Reporting & Optimization -->
+      <h3 class="mb-3">5. Ongoing Reporting and Optimization</h3>
+      <p>SEO is a journey. We provide transparent reporting and continually optimize based on performance.</p>
+      <ul class="svc-list mb-5">
+        <li><i class="bi bi-bar-chart-line-fill"></i><span>Track rankings, traffic and conversions with regular reports.</span></li>
+        <li><i class="bi bi-arrow-repeat"></i><span>Adjust strategies based on data to maximize ROI.</span></li>
+        <li><i class="bi bi-chat-left-text-fill"></i><span>Clear, jargon-free updates so you always know what's happening.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="text-center mb-4">Success Stories: Real Businesses, Real Growth</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <div class="card-body">
+              <blockquote class="mb-2">“Working with Companies Builder was a game-changer for my bakery. We went from barely showing up on Google to ranking on the first page for ‘cakes in Hyderabad’ in just three months!”</blockquote>
+              <p class="mb-0"><strong>— Priya, Bakery Owner</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-3 h-100">
+            <div class="card-body">
+              <blockquote class="mb-2">“As a startup, we needed affordable SEO that actually worked. Companies Builder delivered beyond our expectations, driving more leads to our site than ever before.”</blockquote>
+              <p class="mb-0"><strong>— Arjun, Tech Entrepreneur</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + Form (keeps same sticky form layout) -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <h2 class="mb-4">Ready to Grow Your Business?</h2>
+          <p>Don’t let your business get lost online. With Companies Builder’s SEO optimization in Hyderabad and Bangalore, you’ll attract more customers, generate more leads, and build a brand that stands out.</p>
+          <p><strong>Get Your Free SEO Audit Now</strong> — fill out the form and we’ll send a no-cost analysis with prioritized opportunities for your site.</p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="sticky-lg-100">
+            <h2 class="mb-4 text-center">Get a Free SEO Audit</h2>
+            <div class="svc-form-container">
+              <form id="contactForm" name="contact-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="your-name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="number" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="number" name="your-number" pattern="[0-9]{10}" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="your-email" required />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Website URL / Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" id="submit">Get Free Audit</button>
+              </form>
+              <div id="successMessage" class="success-message">
+                ✅ Thank you! We'll email your free SEO audit shortly.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (unchanged design) -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>CompaniesBuilder</h5>
+          <p>Your trusted partner for web development and digital marketing excellence.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="/" class="text-white">Home</a></li>
+            <li><a href="/about/" class="text-white">About Us</a></li>
+            <li><a href="/services/" class="text-white">Services</a></li>
+            <li><a href="/contact/" class="text-white">Contact Us</a></li>
+            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white">companiesbuilder@gmail.com</a><br />
+            Phone: +91 6302787953</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS (kept identical) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+
+  <script>
+    // same apps script endpoint used previously (keeps form functionality identical)
+    const scriptURL='https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+    document.getElementById('contactForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const submitButton=document.querySelector('button[type="submit"]');
+      submitButton.disabled=true;
+      const formData=new FormData(document.forms['contact-form']);
+      formData.append('timestamp',new Date().toISOString());
+      fetch(scriptURL,{method:'POST',body:formData})
+        .then(res=>res.text())
+        .then(text=>{
+          if(text.trim()==='Success'){
+            document.getElementById('successMessage').style.display='block';
+            document.getElementById('contactForm').reset();
+            setTimeout(()=>{document.getElementById('successMessage').style.display='none';},5000);
+          }else{ alert('Error submitting form: '+text); }
+          submitButton.disabled=false;
+        })
+        .catch(err=>{
+          console.error('Error:',err);
+          alert('Error submitting form. Please try again.');
+          submitButton.disabled=false;
+        });
+    });
+  </script>
+
+  <!-- Structured Data: Organization, LocalBusiness, Breadcrumb, FAQ (tailored to SEO service) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Companies Builder",
+    "url": "https://companiesbuilder.com",
+    "logo": "https://companiesbuilder.com/assets/images/CB-logo.png",
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Companies Builder - SEO Services",
+    "image": "https://companiesbuilder.com/assets/images/seo-hero.png",
+    "@id": "https://companiesbuilder.com/services/seo/",
+    "url": "https://companiesbuilder.com/services/seo/",
+    "telephone": "+91 6302787953",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hyderabad",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 17.385044,
+      "longitude": 78.486671
+    },
+    "serviceArea": [
+      { "@type": "Place", "name": "Hyderabad" },
+      { "@type": "Place", "name": "Bangalore" },
+      { "@type": "Place", "name": "Mumbai" },
+      { "@type": "Place", "name": "India" }
+    ],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://companiesbuilder.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://companiesbuilder.com/services/" },
+      { "@type": "ListItem", "position": 3, "name": "SEO Services", "item": "https://companiesbuilder.com/services/seo/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you offer affordable SEO services in Hyderabad and Bangalore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Companies Builder provides affordable SEO services in Hyderabad and Bangalore tailored for small and medium businesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does your SEO audit include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our free SEO audit includes technical SEO checks, on-page analysis, keyword opportunities, backlink profile overview, and prioritized recommendations to improve performance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help with local SEO for my business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — we optimize Google My Business, local citations and on-page signals to improve visibility for local searches in Hyderabad, Bangalore and other cities."
+        }
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>
