@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- User-provided SEO meta -->
+  <!-- SEO meta -->
   <title>Best SEO Services in India | Companies Builder Hyderabad &amp; Bangalore</title>
   <meta name="description" content="Boost your business with affordable SEO services in Hyderabad & Bangalore. Companies Builder offers expert SEO strategies for small businesses." />
   <meta name="keywords" content="SEO services India, SEO company Hyderabad, SEO experts Bangalore, affordable SEO Hyderabad, SEO for small business India, local SEO Hyderabad, SEO agency Bangalore" />
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://companiesbuilder.com/services/seo/" />
 
   <!-- Open Graph -->
@@ -19,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/seo-hero.png" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Best SEO Services in India | Companies Builder Hyderabad &amp; Bangalore" />
   <meta name="twitter:description" content="Affordable SEO services in Hyderabad & Bangalore — Companies Builder helps small businesses get found online with proven SEO strategies." />
@@ -32,7 +30,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <style>
-    /* Keep the design/layout identical to your Web Development page */
+    /* Core hero + card styles retained from previous pages */
     .hero{
       padding-top:130px;
       padding-bottom:80px;
@@ -60,6 +58,7 @@
     }
     .hero p.lead{ font-size:1.25rem; margin:0; }
 
+    /* service cards */
     .svc-grid .card{
       border:none;
       border-radius:12px;
@@ -72,72 +71,80 @@
       box-shadow:0 12px 25px rgba(0,0,0,.12);
       transform:translateY(-5px);
     }
-    .svc-grid .card.h-100{ height:100%; }
-    .svc-grid .card-body{
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      padding:24px;
+    .svc-grid .card-body{ padding:24px; }
+    .svc-grid .card-title{ font-size:1.15rem; font-weight:600; display:flex; gap:.6rem; align-items:center; }
+    .svc-grid .card-title .bi { color:#0d6efd; font-size:1.1rem; }
+
+    /* lists with icons */
+    .svc-list li, .why-list li { margin-bottom:.75rem; display:flex; gap:.8rem; align-items:flex-start; }
+    .svc-list .bi, .why-list .bi { color:#0d6efd; font-size:1.25rem; margin-top:.1rem; }
+
+    /* ---- New: blueprint two-column layout styling ---- */
+    #blueprint .content-col { text-align:left; }
+    /* make headings a bit tighter for left column */
+    #blueprint h2, #blueprint h3 { color:#223; }
+
+    /* Form card aesthetics */
+    .form-card {
+      background: linear-gradient(180deg,#ffffff,#fbfbfc);
+      border-radius:14px;
+      padding:18px;
+      box-shadow: 0 14px 30px rgba(18, 38, 63, 0.08);
+      border: 1px solid rgba(34, 51, 66, 0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
     }
-    .svc-grid .card-title{ font-size:1.2rem; font-weight:600; color:#2c3e50; display:flex; align-items:center; gap:.5rem; }
-    .svc-grid .card-text{ color:#555; font-size:.95rem; }
+    .form-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(18,38,63,0.10); }
 
-    .svc-grid .card-title .bi { font-size:1.15rem; color:#007bff; }
+    .form-card h3 { font-size:1.125rem; margin-bottom:.6rem; }
+    .form-card p { font-size:.95rem; color:#444; margin-bottom:.8rem; }
 
-    .svc-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
-    .svc-list .bi { font-size:1.25rem; margin-top:.15rem; color:#0d6efd; }
-
-    .why-list { list-style:none; padding-left:0; margin-bottom:1.25rem; }
-    .why-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
-    .why-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
-
-    /* Form small visual adjustments (keeps original look) */
-    .svc-form-container{
-      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
-      border-radius:15px;
-      padding:1.75rem;
-      box-shadow:0 4px 20px rgba(0,0,0,.1);
-      border:1px solid rgba(0,0,0,.05);
-      transition: box-shadow .2s ease;
+    /* sticky right column behavior: sticky inside the blueprint section on desktop */
+    @media (min-width: 992px) {
+      .form-sticky {
+        position: sticky;
+        top: 110px; /* aligns under navbar */
+        align-self: start;
+      }
+      /* make the form narrower visually */
+      .form-card { max-width: 320px; }
+      /* add a subtle accent bar */
+      .form-card::before {
+        content: "";
+        display: block;
+        width: 48px;
+        height: 4px;
+        background: linear-gradient(90deg,#007bff,#00a3ff);
+        border-radius: 3px;
+        margin-bottom: 10px;
+      }
+      .form-card .btn { padding:.6rem .8rem; font-weight:600; }
     }
 
+    /* mobile: stack and full width */
+    @media (max-width: 991.98px) {
+      .form-card { width:100%; max-width:100%; padding:14px; }
+    }
+
+    /* keep existing input styles consistent */
     .svc-form-container .form-control{
       border:1px solid #ced4da;
       border-radius:8px;
-      padding:.75rem;
+      padding:.65rem;
       transition:border-color .3s, box-shadow .3s;
     }
     .svc-form-container .form-control:focus{
       border-color:orangered;
-      box-shadow:0 0 8px rgba(255,69,0,.2);
+      box-shadow:0 0 8px rgba(255,69,0,.12);
       outline:none;
     }
     .svc-form-container .form-label{ font-weight:500; color:#333; }
     .svc-form-container #submit{
       border:none;
-      background-color:orangered;
+      background: linear-gradient(90deg,#007bff,#0056d6);
       color:#fff;
       border-radius:8px;
-      padding:.75rem;
-      font-weight:600;
-      transition:background-color .3s, transform .2s;
-    }
-    .svc-form-container #submit:hover{ background-color:#e03e00; transform:translateY(-2px); }
-    .svc-form-container #submit:active{ transform:translateY(0); }
-    .success-message{ display:none; color:#28a745; text-align:center; margin-top:1rem; font-weight:500; }
-
-    /* fixed state styling applied via JS (minimal) */
-    .form-fixed {
-      position: fixed;
-      top: 100px; /* aligns with earlier sticky top */
-      z-index: 9999;
-      width: 340px; /* keep same max-width as before */
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-    }
-
-    @media (max-width: 991.98px){
-      /* keep mobile behavior unchanged */
-      .form-fixed { position: static !important; width: 100% !important; box-shadow: none !important; }
+      padding:.6rem;
+      font-weight:700;
     }
 
     @media (max-width: 480px) {
@@ -270,99 +277,104 @@
     </div>
   </section>
 
-  <!-- Services / Blueprint (added id so JS can observe when this section enters view) -->
+  <!-- BLUEPRINT: left-aligned content column + right sticky form column -->
   <section id="blueprint" class="py-5">
     <div class="container">
-      <h2 class="mb-4">Our SEO Services: A Blueprint for Success</h2>
+      <div class="row gx-5 align-items-start">
+        <!-- LEFT: content (left-aligned) -->
+        <div class="col-lg-8 content-col">
+          <h2 class="mb-4">Our SEO Services: A Blueprint for Success</h2>
 
-      <!-- 1. Keyword Research -->
-      <h3 class="mb-3">1. In-Depth Keyword Research</h3>
-      <p>Great SEO starts with knowing what your customers are searching for. Our team uncovers keywords that balance search volume with opportunity — from local phrases like <em>"SEO company in Hyderabad"</em> to long-tail terms that capture ready-to-buy intent.</p>
-      <ul class="svc-list mb-4">
-        <li><i class="bi bi-search"></i><span>Analyze search trends specific to your industry.</span></li>
-        <li><i class="bi bi-geo-alt"></i><span>Target keywords like <strong>"SEO company in Hyderabad"</strong> and <strong>"SEO experts in Bangalore"</strong> to attract local customers.</span></li>
-        <li><i class="bi bi-flag-fill"></i><span>Prioritize long-tail keywords to capture high-converting traffic.</span></li>
-      </ul>
+          <h3 class="mb-2">1. In-Depth Keyword Research</h3>
+          <p>Great SEO starts with knowing what your customers are searching for. Our team uncovers keywords that balance search volume with opportunity — from local phrases like <em>"SEO company in Hyderabad"</em> to long-tail terms that capture ready-to-buy intent.</p>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-search"></i><span>Analyze search trends specific to your industry.</span></li>
+            <li><i class="bi bi-geo-alt"></i><span>Target keywords like <strong>"SEO company in Hyderabad"</strong> and <strong>"SEO experts in Bangalore"</strong> to attract local customers.</span></li>
+            <li><i class="bi bi-flag-fill"></i><span>Prioritize long-tail keywords to capture high-converting traffic.</span></li>
+          </ul>
 
-      <!-- 2. Competitor Analysis -->
-      <h3 class="mb-3">2. Competitor Analysis Done Right</h3>
-      <p>We analyze competitors’ keywords, backlinks and content to identify gaps you can exploit and opportunities to outrank them.</p>
-      <ul class="svc-list mb-4">
-        <li><i class="bi bi-binoculars-fill"></i><span>Evaluate competitors’ keyword strategies and backlink profiles.</span></li>
-        <li><i class="bi bi-pie-chart-fill"></i><span>Identify gaps and untapped content opportunities.</span></li>
-        <li><i class="bi bi-lightning-fill"></i><span>Build a plan to boost domain authority and topical relevance.</span></li>
-      </ul>
+          <h3 class="mb-2">2. Competitor Analysis Done Right</h3>
+          <p>We analyze competitors’ keywords, backlinks and content to identify gaps you can exploit and opportunities to outrank them.</p>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-binoculars-fill"></i><span>Evaluate competitors’ keyword strategies and backlink profiles.</span></li>
+            <li><i class="bi bi-pie-chart-fill"></i><span>Identify gaps and untapped content opportunities.</span></li>
+            <li><i class="bi bi-lightning-fill"></i><span>Build a plan to boost domain authority and topical relevance.</span></li>
+          </ul>
 
-      <!-- 3. On-Page Optimization -->
-      <h3 class="mb-3">3. On-Page Optimization for Maximum Impact</h3>
-      <p>We optimize titles, meta descriptions, content and structure so your pages match search intent and convert visitors into customers.</p>
-      <ul class="svc-list mb-4">
-        <li><i class="bi bi-code-slash"></i><span>Optimize page titles, meta descriptions, headers and internal linking.</span></li>
-        <li><i class="bi bi-speedometer2"></i><span>Improve site speed, mobile responsiveness and navigation.</span></li>
-        <li><i class="bi bi-file-earmark-text"></i><span>Create helpful content that reduces bounce rates and increases CTR.</span></li>
-      </ul>
+          <h3 class="mb-2">3. On-Page Optimization for Maximum Impact</h3>
+          <p>We optimize titles, meta descriptions, content and structure so your pages match search intent and convert visitors into customers.</p>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-code-slash"></i><span>Optimize page titles, meta descriptions, headers and internal linking.</span></li>
+            <li><i class="bi bi-speedometer2"></i><span>Improve site speed, mobile responsiveness and navigation.</span></li>
+            <li><i class="bi bi-file-earmark-text"></i><span>Create helpful content that reduces bounce rates and increases CTR.</span></li>
+          </ul>
 
-      <!-- 4. Off-Page SEO -->
-      <h3 class="mb-3">4. Off-Page SEO to Amplify Your Reach</h3>
-      <p>We build authoritative backlinks, leverage Google Business and social signals to strengthen your presence.</p>
-      <ul class="svc-list mb-4">
-        <li><i class="bi bi-link-45deg"></i><span>Earn high-quality backlinks from trusted sites.</span></li>
-        <li><i class="bi bi-people"></i><span>Use social media and Google My Business to boost local SEO.</span></li>
-        <li><i class="bi bi-share-fill"></i><span>Create shareable content that drives referral traffic and brand awareness.</span></li>
-      </ul>
+          <h3 class="mb-2">4. Off-Page SEO to Amplify Your Reach</h3>
+          <p>We build authoritative backlinks, leverage Google Business and social signals to strengthen your presence.</p>
+          <ul class="svc-list mb-4">
+            <li><i class="bi bi-link-45deg"></i><span>Earn high-quality backlinks from trusted sites.</span></li>
+            <li><i class="bi bi-people"></i><span>Use social media and Google My Business to boost local SEO.</span></li>
+            <li><i class="bi bi-share-fill"></i><span>Create shareable content that drives referral traffic and brand awareness.</span></li>
+          </ul>
 
-      <!-- 5. Reporting & Optimization -->
-      <h3 class="mb-3">5. Ongoing Reporting and Optimization</h3>
-      <p>SEO is a journey. We provide transparent reporting and continually optimize based on performance.</p>
-      <ul class="svc-list mb-5">
-        <li><i class="bi bi-bar-chart-line-fill"></i><span>Track rankings, traffic and conversions with regular reports.</span></li>
-        <li><i class="bi bi-arrow-repeat"></i><span>Adjust strategies based on data to maximize ROI.</span></li>
-        <li><i class="bi bi-chat-left-text-fill"></i><span>Clear, jargon-free updates so you always know what's happening.</span></li>
-      </ul>
+          <h3 class="mb-2">5. Ongoing Reporting and Optimization</h3>
+          <p>SEO is a journey. We provide transparent reporting and continually optimize based on performance.</p>
+          <ul class="svc-list mb-5">
+            <li><i class="bi bi-bar-chart-line-fill"></i><span>Track rankings, traffic and conversions with regular reports.</span></li>
+            <li><i class="bi bi-arrow-repeat"></i><span>Adjust strategies based on data to maximize ROI.</span></li>
+            <li><i class="bi bi-chat-left-text-fill"></i><span>Clear, jargon-free updates so you always know what's happening.</span></li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: attractive sticky form card -->
+        <div class="col-lg-4">
+          <div class="form-sticky">
+            <div class="form-card">
+              <h3><i class="bi bi-file-earmark-text-fill me-2"></i> Get Your Free SEO Audit</h3>
+              <p>Enter your details and we’ll send a prioritized SEO audit with quick wins for your website.</p>
+
+              <div class="svc-form-container p-0" style="background:transparent; box-shadow:none; border:none;">
+                <form id="contactForm" name="contact-form">
+                  <div class="mb-2">
+                    <label for="name" class="form-label visually-hidden">Name</label>
+                    <input type="text" class="form-control" id="name" name="your-name" placeholder="Your name" required />
+                  </div>
+                  <div class="mb-2">
+                    <label for="number" class="form-label visually-hidden">Phone</label>
+                    <input type="tel" class="form-control" id="number" name="your-number" placeholder="Phone number" pattern="[0-9]{10}" required />
+                  </div>
+                  <div class="mb-2">
+                    <label for="email" class="form-label visually-hidden">Email</label>
+                    <input type="email" class="form-control" id="email" name="your-email" placeholder="Email address" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label visually-hidden">Website / Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Website URL / Brief message" required></textarea>
+                  </div>
+                  <button type="submit" class="btn w-100" id="submit"><i class="bi bi-rocket-takeoff me-2"></i>Get Free Audit</button>
+                </form>
+              </div>
+
+              <div id="successMessage" class="success-message mt-3" style="display:none;">
+                ✅ Thank you! We'll email your free SEO audit shortly.
+              </div>
+              <p class="small text-muted mt-3 mb-0">No spam — just an actionable audit. We respect your privacy.</p>
+            </div>
+          </div>
+        </div> <!-- end right column -->
+
+      </div> <!-- row -->
     </div>
   </section>
 
-  <!-- CTA + Form: form remains in DOM as before; JS will fix it to right when #blueprint is visible -->
-  <section class="py-5">
+  <!-- CTA Reminder Section (keeps earlier CTA content if needed) -->
+  <section class="py-4">
     <div class="container">
       <div class="row g-4">
-        <div class="col-lg-7">
-          <h2 class="mb-4">Ready to Grow Your Business?</h2>
+        <div class="col-12">
+          <h2 class="mb-3">Ready to Grow Your Business?</h2>
           <p>Don’t let your business get lost online. With Companies Builder’s SEO optimization in Hyderabad and Bangalore, you’ll attract more customers, generate more leads, and build a brand that stands out.</p>
-          <p><strong>Get Your Free SEO Audit Now</strong> — fill out the form and we’ll send a no-cost analysis with prioritized opportunities for your site.</p>
         </div>
-
-        <div class="col-lg-5">
-          <!-- same wrapper class sticky-lg-100 kept for compatibility; JS will toggle fixed positioning -->
-          <div class="sticky-lg-100" id="formWrapper">
-            <h2 class="mb-4 text-center">Get a Free SEO Audit</h2>
-            <div class="svc-form-container" id="svcFormContainer">
-              <form id="contactForm" name="contact-form">
-                <div class="mb-3">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" name="your-name" required />
-                </div>
-                <div class="mb-3">
-                  <label for="number" class="form-label">Phone Number</label>
-                  <input type="tel" class="form-control" id="number" name="your-number" pattern="[0-9]{10}" required />
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="your-email" required />
-                </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label">Website URL / Message</label>
-                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100" id="submit">Get Free Audit</button>
-              </form>
-              <div id="successMessage" class="success-message">
-                ✅ Thank you! We'll email your free SEO audit shortly.
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -398,16 +410,14 @@
     </div>
   </footer>
 
-  <!-- JS (kept identical where possible) -->
+  <!-- JS (kept form handling identical) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/scripts.js"></script>
-
   <script>
-    // same apps script endpoint used previously (keeps form functionality identical)
     const scriptURL='https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
     document.getElementById('contactForm').addEventListener('submit',function(e){
       e.preventDefault();
-      const submitButton=document.querySelector('button[type="submit"]');
+      const submitButton=document.getElementById('submit');
       submitButton.disabled=true;
       const formData=new FormData(document.forms['contact-form']);
       formData.append('timestamp',new Date().toISOString());
@@ -429,79 +439,7 @@
     });
   </script>
 
-  <!-- New JS: makes the form fixed to the right when #blueprint section is visible (desktop only).
-       - calculates container right edge so the form aligns neatly to the right of main content.
-       - removes fixed behavior on mobile automatically.
-  -->
-  <script>
-    (function() {
-      // elements
-      const blueprint = document.getElementById('blueprint');
-      const formWrapper = document.getElementById('formWrapper');
-      const svcForm = document.getElementById('svcFormContainer');
-
-      if (!blueprint || !formWrapper || !svcForm) return;
-
-      // helper to enable fixed positioning with computed right offset
-      function enableFixed() {
-        // apply only on desktop widths
-        if (window.innerWidth < 992) return disableFixed();
-
-        // find the main container's bounding box to align the form to its right edge
-        const mainContainer = document.querySelector('section#blueprint .container') || document.querySelector('.container');
-        const containerRect = mainContainer.getBoundingClientRect();
-
-        // compute distance from viewport right edge
-        const rightOffset = Math.max(16, window.innerWidth - (containerRect.right) + 20); // 20px gap + fallback
-        svcForm.style.position = 'fixed';
-        svcForm.style.top = '100px';
-        svcForm.style.right = rightOffset + 'px';
-        svcForm.style.width = '340px'; // keep consistent width
-        svcForm.classList.add('form-fixed');
-      }
-
-      function disableFixed() {
-        svcForm.style.position = '';
-        svcForm.style.top = '';
-        svcForm.style.right = '';
-        svcForm.style.width = '';
-        svcForm.classList.remove('form-fixed');
-      }
-
-      // IntersectionObserver toggles when blueprint is on screen
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            enableFixed();
-          } else {
-            disableFixed();
-          }
-        });
-      }, { threshold: 0.05 });
-
-      observer.observe(blueprint);
-
-      // Recompute on resize so the right offset stays correct
-      let resizeTimer;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          // if currently fixed, recompute offset, else nothing
-          if (svcForm.classList.contains('form-fixed')) enableFixed();
-        }, 120);
-      });
-
-      // Also recompute on scroll (for some edge cases)
-      window.addEventListener('scroll', function() {
-        if (svcForm.classList.contains('form-fixed')) {
-          // ensure it remains aligned if something else changed
-          enableFixed();
-        }
-      });
-    })();
-  </script>
-
-  <!-- Structured Data: Organization, LocalBusiness, Breadcrumb, FAQ (tailored to SEO service) -->
+  <!-- Structured Data (unchanged) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
