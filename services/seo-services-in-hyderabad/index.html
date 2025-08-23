@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <style>
-    /* Core hero + card styles retained from previous pages */
+    /* Core hero + card styles retained */
     .hero{
       padding-top:130px;
       padding-bottom:80px;
@@ -79,9 +79,8 @@
     .svc-list li, .why-list li { margin-bottom:.75rem; display:flex; gap:.8rem; align-items:flex-start; }
     .svc-list .bi, .why-list .bi { color:#0d6efd; font-size:1.25rem; margin-top:.1rem; }
 
-    /* ---- New: blueprint two-column layout styling ---- */
+    /* ---- BLUEPRINT and form layout styling ---- */
     #blueprint .content-col { text-align:left; }
-    /* make headings a bit tighter for left column */
     #blueprint h2, #blueprint h3 { color:#223; }
 
     /* Form card aesthetics */
@@ -105,9 +104,7 @@
         top: 110px; /* aligns under navbar */
         align-self: start;
       }
-      /* make the form narrower visually */
       .form-card { max-width: 320px; }
-      /* add a subtle accent bar */
       .form-card::before {
         content: "";
         display: block;
@@ -117,10 +114,10 @@
         border-radius: 3px;
         margin-bottom: 10px;
       }
-      .form-card .btn { padding:.6rem .8rem; font-weight:600; }
+      .form-card .btn { padding:.6rem .8rem; font-weight:700; }
     }
 
-    /* mobile: stack and full width */
+    /* Mobile: stack and full width */
     @media (max-width: 991.98px) {
       .form-card { width:100%; max-width:100%; padding:14px; }
     }
@@ -138,14 +135,23 @@
       outline:none;
     }
     .svc-form-container .form-label{ font-weight:500; color:#333; }
-    .svc-form-container #submit{
-      border:none;
-      background: linear-gradient(90deg,#007bff,#0056d6);
-      color:#fff;
-      border-radius:8px;
-      padding:.6rem;
-      font-weight:700;
+
+    /* ====== BUTTON: changed to previous orange (orangered) and hover state ====== */
+    .form-card .btn {
+      background-color: orangered;
+      border: none;
+      color: #fff;
+      border-radius: 8px;
+      padding: .6rem;
+      width: 100%;
+      font-weight: 700;
+      transition: background-color .2s ease, transform .12s ease;
     }
+    .form-card .btn:hover {
+      background-color: #e03e00;
+      transform: translateY(-2px);
+    }
+    .form-card .btn:active { transform: translateY(0); }
 
     @media (max-width: 480px) {
       .hero h1 { font-size: 2rem; }
@@ -351,7 +357,7 @@
                     <label for="message" class="form-label visually-hidden">Website / Message</label>
                     <textarea class="form-control" id="message" name="message" rows="3" placeholder="Website URL / Brief message" required></textarea>
                   </div>
-                  <button type="submit" class="btn w-100" id="submit"><i class="bi bi-rocket-takeoff me-2"></i>Get Free Audit</button>
+                  <button type="submit" class="btn" id="submit"><i class="bi bi-rocket-takeoff me-2"></i>Get Free Audit</button>
                 </form>
               </div>
 
@@ -367,7 +373,7 @@
     </div>
   </section>
 
-  <!-- CTA Reminder Section (keeps earlier CTA content if needed) -->
+  <!-- CTA Reminder Section -->
   <section class="py-4">
     <div class="container">
       <div class="row g-4">
