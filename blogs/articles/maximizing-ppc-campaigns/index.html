@@ -6,76 +6,160 @@
   <meta name="description" content="Boost your PPC campaign optimization with expert strategies for 2025. Learn tips to reduce costs, improve performance, and grow your small business with Companies Builder!" />
   <title>Maximizing PPC Campaigns: Proven Strategies for Small Businesses in 2025 | CompaniesBuilder</title>
   <meta name="keywords" content="PPC,PPC campaign optimization, PPC strategies 2025, Best keywords for PPC, Improve PPC performance, Reduce PPC ad costs, PPC optimization tips, Hire PPC expert, PPC for small businesses, small business, digital marketing, CompaniesBuilder" />
-  <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
+  <link rel="icon" href="/assets/images/logo-cb.png" />
+  <link rel="mask-icon" href="/assets/images/logo-cb.svg" color="#0d6efd" />
+  <meta name="msapplication-TileColor" content="#0d6efd" />
+  <meta name="theme-color" content="#0d6efd" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Maximizing PPC Campaigns: Proven Strategies for Small Businesses in 2025" />
+  <meta property="og:description" content="Boost your PPC campaign optimization with expert strategies for 2025. Learn tips to reduce costs, improve performance, and grow your small business with Companies Builder!" />
+  <meta property="og:url" content="https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/Companies-builder-ppc.jpg" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Maximizing PPC Campaigns: Proven Strategies for Small Businesses in 2025" />
+  <meta name="twitter:description" content="Boost your PPC campaign optimization with expert strategies for 2025. Learn tips to reduce costs, improve performance, and grow your small business with Companies Builder!" />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/Companies-builder-ppc.jpg" />
+
+  <!-- Preconnect & fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Page-specific CSS -->
   <style>
-    /* Specific styles for blog post page to fix alignment */
+    :root {
+      --brand: #0d6efd;
+      --muted: #6c757d;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    /* Global link & button hover */
+    a:not(.btn), .nav-link, .dropdown-item {
+      transition: color .16s ease, transform .12s ease;
+    }
+    a:not(.btn):hover, .nav-link:hover, .dropdown-item:hover {
+      color: var(--brand) !important;
+      text-decoration: none;
+    }
+
+    /* Hero */
     .hero {
-      padding-top: 130px; /* Match fixed navbar height */
-      padding-bottom: 80px;
+      padding: 120px 0 70px;
       background-image: url('/assets/images/BGhero.png');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.28);
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
     .hero h1 {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: .5rem;
+      letter-spacing: -0.02em;
     }
+
+    /* Content */
     .content {
       padding: 40px 20px;
     }
     .content img {
-      display: block; /* Center the image */
-      margin: 0 auto; /* Center horizontally */
-      max-width: 100%; /* Maintain responsiveness */
-      width: 800px; /* Increase size, adjust as needed */
-      height: auto; /* Maintain aspect ratio */
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: 800px;
+      height: auto;
     }
-    @media (max-width: 768px) {
+    .muted-small {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 991px) {
       .hero {
-        padding: 90px 0;
+        padding-top: 100px;
+        padding-bottom: 50px;
       }
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
       .content img {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
+      }
+    }
+
+    /* NAV - open dropdown on hover for desktop */
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
       }
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder" />
-        CompaniesBuilder
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy">
+        <span class="fw-bold">CompaniesBuilder</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact/">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development & Designing</a></li>
+              <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
+              <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item fw-bold" href="/services/">All Services</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link active" href="/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero text-white text-center">
+  <header class="hero" role="banner" aria-label="Hero">
     <div class="container">
       <h1>Maximizing PPC Campaigns: Proven Strategies for Small Businesses in 2025</h1>
     </div>
@@ -84,7 +168,7 @@
   <!-- Blog Content -->
   <section class="content py-5">
     <div class="container">
-      <p><em>August 9, 2025</em></p>
+      <p class="muted-small"><em>August 9, 2025</em></p>
       <h2>Maximizing PPC Campaigns: Proven Strategies for Small Businesses in 2025</h2>
       <img src="/assets/images/Companies-builder-ppc.jpg" class="img-fluid mb-4" alt="PPC Campaign Optimization for Small Businesses" loading="lazy" />
 
@@ -216,15 +300,15 @@
 
         <h2>Conclusion & Call to Action</h2>
         <p>Maximizing PPC campaign optimization in 2025 is about working smarter, not harder. By choosing the best keywords for PPC, crafting compelling ads, optimizing landing pages, leveraging AI, and tracking performance, you can drive traffic, reduce costs, and grow your small business. These PPC optimization tips empower you to compete with bigger players without breaking the bank.</p>
-        <p>At Companies Builder, we’re passionate about helping small businesses succeed online. Our team of PPC experts is ready to transform your campaigns into high-ROI machines. Want to learn more? <a href="https://www.companiesbuilder.com/demo" target="_blank">Request a demo</a> at <a href="https://www.companiesbuilder.com" target="_blank">www.companiesbuilder.com</a> to see how we can boost your brand’s growth today.</p>
+        <p>At Companies Builder, we’re passionate about helping small businesses succeed online. Our team of PPC experts is ready to transform your campaigns into high-ROI machines. Want to learn more? <a href="/demo/" target="_blank">Request a demo</a> at <a href="https://www.companiesbuilder.com" target="_blank">www.companiesbuilder.com</a> to see how we can boost your brand’s growth today.</p>
       </article>
 
       <h2>Leave a Comment</h2>
       <div id="disqus_thread"></div>
       <script>
         var disqus_config = function () {
-          this.page.url = "https://www.companiesbuilder.com/blogs/articles/PPC/";
-          this.page.identifier = "/blogs/articles/PPC";
+          this.page.url = "https://www.companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/";
+          this.page.identifier = "/blogs/articles/maximizing-ppc-campaigns";
         };
         (function() {
           var d = document, s = d.createElement('script');
@@ -238,40 +322,107 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
+  <footer class="bg-dark text-white py-5">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+      <div class="row g-4">
+        <div class="col-md-3">
           <h5>CompaniesBuilder</h5>
-          <p>Your trusted partner for web development and digital marketing excellence.</p>
+          <p class="small text-white-50">Your trusted partner for web development and digital marketing excellence.</p>
         </div>
-        <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/about/" class="text-white">About Us</a></li>
-            <li><a href="/services/" class="text-white">Services</a></li>
-            <li><a href="/contact/" class="text-white">Contact Us</a></li>
-            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
-            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+        <div class="col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/" class="text-white-50">Home</a></li>
+            <li><a href="/about/" class="text-white-50">About</a></li>
+            <li><a href="/services/" class="text-white-50">Services</a></li>
+            <li><a href="/contact/" class="text-white-50">Contact</a></li>
+            <li><a href="/demo/" class="text-white-50">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white-50">Blogs</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h5>Contact Us</h5>
-          <p>
-            Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white">companiesbuilder@gmail.com</a><br />
-            Phone: +91 6302787953
-          </p>
+        <div class="col-md-3">
+          <h6>Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/services/web-development-&-designing/" class="text-white-50">Web Development & Designing</a></li>
+            <li><a href="/services/seo-services-in-hyderabad/" class="text-white-50">SEO Services</a></li>
+            <li><a href="/services/social-media-marketing-company-in-hyderabad/" class="text-white-50">Social Media Marketing</a></li>
+            <li><a href="/services/" class="text-white-50">All Services</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:info@companiesbuilder.com" class="text-white-50">info@companiesbuilder.com</a></p>
+          <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white-50">+91 6302787953</a></p>
         </div>
       </div>
-      <div class="text-center mt-3">
-        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
-      </div>
+      <div class="text-center mt-4 small">&copy; 2025 CompaniesBuilder. All rights reserved.</div>
     </div>
   </footer>
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Maximizing PPC Campaigns: Proven Strategies for Small Businesses in 2025",
+    "description": "Boost your PPC campaign optimization with expert strategies for 2025. Learn tips to reduce costs, improve performance, and grow your small business with Companies Builder!",
+    "datePublished": "2025-08-09",
+    "author": {
+      "@type": "Organization",
+      "name": "CompaniesBuilder",
+      "url": "https://companiesbuilder.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CompaniesBuilder",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://companiesbuilder.com/assets/images/CB-logo.png"
+      }
+    },
+    "image": "https://companiesbuilder.com/assets/images/Companies-builder-ppc.jpg",
+    "url": "https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CompaniesBuilder",
+    "url": "https://companiesbuilder.com",
+    "logo": "https://companiesbuilder.com/assets/images/CB-logo.png",
+    "sameAs": [
+      "https://www.facebook.com/companiesbuilder",
+      "https://www.instagram.com/companiesbuilder",
+      "https://www.linkedin.com/company/companiesbuilder"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91 6302787953",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["en"]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://companiesbuilder.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://companiesbuilder.com/blogs/"},
+      {"@type": "ListItem", "position": 3, "name": "Maximizing PPC Campaigns", "item": "https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/"}
+    ]
+  }
+  </script>
+
   <!-- Bootstrap Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="/assets/js/scripts.js" defer></script>
 </body>
 </html>
