@@ -51,7 +51,47 @@
       font-family: 'Roboto', Arial, sans-serif;
     }
 
-    /* Hero */
+    /* -------------------------
+       Global link & button hover
+       ------------------------- */
+    /* link hover: blue */
+    a, .nav-link, .dropdown-item {
+      transition: color .16s ease, transform .12s ease;
+    }
+    a:hover, .nav-link:hover, .dropdown-item:hover {
+      color: var(--brand) !important;
+      text-decoration: none;
+    }
+
+    /* Button hover for all buttons (adds lift & shadow) */
+    .btn {
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+    .btn:hover, .btn:focus {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(11,22,60,0.12);
+      text-decoration: none;
+    }
+    /* Outline buttons: on hover fill with brand */
+    .btn-outline-primary:hover, .btn-outline-primary:focus {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+    .btn-outline-secondary:hover, .btn-outline-secondary:focus {
+      background: #6c757d;
+      color: #fff;
+      border-color: #6c757d;
+    }
+    .btn-outline-light:hover, .btn-outline-light:focus {
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    /* -------------------------
+       Hero
+       ------------------------- */
     .hero {
       padding: 120px 0 70px;
       background-image: url('/assets/images/Hero bg.png');
@@ -78,11 +118,13 @@
     }
     .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
 
-    /* Hero CTAs - Explore uses premium accent */
+    /* Hero CTA variants */
     .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
     .btn-explore { background: linear-gradient(90deg,var(--accent),#e65300); border: none; color: #fff; box-shadow: 0 8px 30px rgba(255,106,26,.12); }
 
-    /* Services cards - premium backgrounds so they stand out from white body */
+    /* -------------------------
+       Service Cards
+       ------------------------- */
     .service-card {
       border: 0;
       border-radius: 14px;
@@ -99,15 +141,41 @@
     .service-card .card-icon { font-size: 2rem; color: var(--brand); margin-bottom: 12px; }
     .service-card .card-body { flex:1; padding:0; }
 
-    /* Make the "Learn more" buttons match premium look */
-    .service-card a { border-radius: 8px; }
+    /* adjust service buttons */
+    .service-card .btn.btn-sm {
+      padding: .4rem .6rem;
+    }
 
-    /* Why section tweaks */
-    .why-section { padding: 30px; background: transparent; }
-    .why-section .feature-list li { margin-bottom: .8rem; font-weight: 500; color: #222; }
-    .why-cta { margin-top: 18px; }
+    /* -------------------------
+       Why section (premium cards)
+       ------------------------- */
+    .why-section { padding: 30px 0; background: transparent; }
+    .why-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:18px; }
+    .why-card {
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid rgba(13,110,253,0.04);
+      box-shadow: 0 12px 30px rgba(11,22,60,0.04);
+      display:flex; gap:12px; align-items:flex-start;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .why-card:hover { transform: translateY(-6px); box-shadow: 0 26px 60px rgba(11,22,60,0.08); }
+    .why-badge {
+      width:56px; height:56px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(180deg, rgba(13,110,253,0.12), rgba(13,110,253,0.06));
+      color: var(--brand);
+      font-size:1.35rem;
+      flex:0 0 56px;
+      border:1px solid rgba(13,110,253,0.06);
+    }
+    .why-card h5 { margin:0 0 6px 0; font-size:1.05rem; }
+    .why-card p { margin:0; color:var(--muted); font-size:.95rem; }
 
-    /* Blog card movement */
+    /* -------------------------
+       Blog movement
+       ------------------------- */
     .blog-card {
       border-radius: 12px;
       overflow: hidden;
@@ -118,7 +186,9 @@
     .blog-card:hover { transform: translateY(-10px) scale(1.01); box-shadow: 0 22px 60px rgba(11,22,60,.08); }
     .blog-card img { height: 180px; object-fit: cover; width: 100%; display:block; }
 
-    /* Premium horizontal contact form */
+    /* -------------------------
+       Premium horizontal contact form
+       ------------------------- */
     .contact-premium {
       background: linear-gradient(90deg, rgba(14,39,107,0.03), rgba(255,255,255,0.5));
       border-radius: 14px;
@@ -154,6 +224,7 @@
     @media (max-width: 991px) {
       .hero { padding-top: 100px; padding-bottom: 50px; }
       .service-card { padding: 14px; }
+      .why-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -283,7 +354,7 @@
       </div>
     </section>
 
-    <!-- Why choose us (cleaner, testimonial removed and trusted results removed entirely) -->
+    <!-- Why choose us (premium card-based) -->
     <section class="py-5 bg-white">
       <div class="container why-section">
         <div class="row align-items-start g-4">
@@ -291,24 +362,58 @@
             <h2>Why CompaniesBuilder?</h2>
             <p class="muted-small">Practical, measurable, and affordable digital services built for small & medium businesses. We focus on performance, transparency, and delivering ROI.</p>
 
-            <div class="row">
-              <div class="col-md-6">
-                <ul class="list-unstyled feature-list">
-                  <li class="mb-2"><i class="bi bi-award-fill me-2 text-primary"></i><strong>Experienced Team</strong></li>
-                  <li class="mb-2"><i class="bi bi-rocket-takeoff-fill me-2 text-primary"></i><strong>Fast Turnaround</strong></li>
-                  <li class="mb-2"><i class="bi bi-wallet2 me-2 text-primary"></i><strong>Affordable Packages</strong></li>
-                </ul>
+            <!-- premium cards grid -->
+            <div class="why-grid">
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Experienced Team</h5>
+                  <p>Designers, developers and marketers with practical experience building growth engines.</p>
+                </div>
               </div>
-              <div class="col-md-6">
-                <ul class="list-unstyled feature-list">
-                  <li class="mb-2"><i class="bi bi-people-fill me-2 text-primary"></i><strong>Dedicated Support</strong></li>
-                  <li class="mb-2"><i class="bi bi-graph-up-arrow me-2 text-primary"></i><strong>Data-driven Growth</strong></li>
-                  <li class="mb-2"><i class="bi bi-shield-lock-fill me-2 text-primary"></i><strong>Secure & Maintained</strong></li>
-                </ul>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-rocket-takeoff-fill" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Fast Turnaround</h5>
+                  <p>Agile delivery and clear milestones so you launch quickly without compromise.</p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-wallet2" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Affordable Packages</h5>
+                  <p>Practical pricing and options for startups and SMBs — high value, low waste.</p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-people-fill" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Dedicated Support</h5>
+                  <p>Direct communication, onboarding and ongoing maintenance — we’re here for you.</p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Data-driven Growth</h5>
+                  <p>We prioritize measurable KPIs and continual optimization to improve ROI.</p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-shield-lock-fill" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Secure & Maintained</h5>
+                  <p>Security best-practices plus optional maintenance so your site stays safe and fast.</p>
+                </div>
               </div>
             </div>
 
-            <div class="why-cta">
+            <div class="why-cta mt-4">
               <a class="btn btn-demo" href="/demo/">Request a Free Demo</a>
             </div>
           </div>
@@ -364,6 +469,14 @@
     <!-- PREMIUM HORIZONTAL CONTACT FORM -->
     <section class="py-5 bg-light">
       <div class="container">
+        <!-- CTA heading above the form -->
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h3 class="mb-1">Start your digital growth — request a free audit</h3>
+            <p class="muted-small mb-0">Fill the quick form and we'll send a tailored audit & next-steps for your business.</p>
+          </div>
+        </div>
+
         <div class="contact-premium">
           <form id="homeContactForm" name="home-contact">
             <div class="row gx-3 gy-3 align-items-end">
