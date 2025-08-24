@@ -143,6 +143,14 @@
     /* small type adjustments */
     .muted-small { color: var(--muted); font-size: .95rem; }
 
+    /* NAV - open dropdown on hover for desktop while preserving mobile click */
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
     @media (max-width: 991px) {
       .hero { padding-top: 100px; padding-bottom: 50px; }
       .service-card { padding: 14px; }
@@ -275,11 +283,11 @@
       </div>
     </section>
 
-    <!-- Why choose us (cleaner, testimonial removed) -->
+    <!-- Why choose us (cleaner, testimonial removed and trusted results removed entirely) -->
     <section class="py-5 bg-white">
       <div class="container why-section">
         <div class="row align-items-start g-4">
-          <div class="col-lg-7">
+          <div class="col-lg-12">
             <h2>Why CompaniesBuilder?</h2>
             <p class="muted-small">Practical, measurable, and affordable digital services built for small & medium businesses. We focus on performance, transparency, and delivering ROI.</p>
 
@@ -302,28 +310,6 @@
 
             <div class="why-cta">
               <a class="btn btn-demo" href="/demo/">Request a Free Demo</a>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <!-- Instead of testimonial, show quick stats / trust -->
-            <div class="p-4 rounded-3" style="background: linear-gradient(180deg,#f8fbff,#f2f6ff); border:1px solid rgba(13,110,253,0.04);">
-              <h5 class="mb-3">Trusted Results</h5>
-              <div class="d-flex gap-3 flex-wrap">
-                <div>
-                  <h3 class="mb-0">+120</h3>
-                  <p class="small muted-small mb-0">Projects delivered</p>
-                </div>
-                <div>
-                  <h3 class="mb-0">+90%</h3>
-                  <p class="small muted-small mb-0">Client retention</p>
-                </div>
-                <div>
-                  <h3 class="mb-0">3x</h3>
-                  <p class="small muted-small mb-0">Avg. lead growth</p>
-                </div>
-              </div>
-              <p class="mt-3 muted-small mb-0">Serving startups and SMBs across Hyderabad, Bangalore, Mumbai and India.</p>
             </div>
           </div>
         </div>
@@ -420,33 +406,42 @@
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (updated per your request) -->
   <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="row g-4">
+        <!-- Left: brand + one-line -->
         <div class="col-md-4">
           <h5>CompaniesBuilder</h5>
-          <p class="small text-muted">Premium web development and digital marketing to grow your business online.</p>
-          <p class="small mb-0">Hyderabad - Bangalore - Mumbai - India</p>
+          <p class="small">Your trusted partner for web development and digital marketing excellence.</p>
         </div>
 
+        <!-- Middle: Quick Links -->
         <div class="col-md-4">
-          <h6>Services</h6>
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/" class="text-white-50">Home</a></li>
+            <li><a href="/about/" class="text-white-50">About Us</a></li>
+            <li><a href="/services/" class="text-white-50">Services</a></li>
+            <li><a href="/contact/" class="text-white-50">Contact Us</a></li>
+            <li><a href="/demo/" class="text-white-50">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white-50">Blogs</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Useful Links (services) + Contact details -->
+        <div class="col-md-4">
+          <h6>Useful Links</h6>
           <ul class="list-unstyled small">
             <li><a href="/services/web-development-&-designing/" class="text-white-50">Web Development & Designing</a></li>
             <li><a href="/services/seo-services-in-hyderabad/" class="text-white-50">SEO Services</a></li>
             <li><a href="/services/social-media-marketing-company-in-hyderabad/" class="text-white-50">Social Media Marketing</a></li>
             <li><a href="/services/" class="text-white-50">All Services</a></li>
           </ul>
-        </div>
 
-        <div class="col-md-4">
-          <h6>Contact</h6>
-          <p class="small mb-0">Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white-50">companiesbuilder@gmail.com</a><br>Phone: +91 6302787953</p>
-          <div class="mt-2">
-            <a class="text-white me-2" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a class="text-white me-2" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a class="text-white" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <div class="mt-3">
+            <p class="small mb-1">Email: <a href="mailto:info@companiesbuilder.com" class="text-white-50">info@companiesbuilder.com</a></p>
+            <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white-50">+91 6302787953</a></p>
           </div>
         </div>
       </div>
