@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO (from your brief) -->
+  <!-- Primary SEO -->
   <title>Best Social Media Marketing Services in India | Companies Builder</title>
   <meta name="description" content="Grow your brand with expert social media marketing in Hyderabad & Bangalore. Affordable SMM services for small businesses by Companies Builder." />
   <meta name="keywords" content="social media marketing Hyderabad, social media management Bangalore, social media agency India, affordable SMM Hyderabad, social media services Bangalore, social media management India, Companies Builder" />
@@ -12,31 +12,24 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://companiesbuilder.com/services/social-media-marketing-&-management/" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Best Social Media Marketing Services in India | Companies Builder" />
   <meta property="og:description" content="Grow your brand with expert social media marketing in Hyderabad & Bangalore. Affordable SMM services for small businesses by Companies Builder." />
   <meta property="og:url" content="https://companiesbuilder.com/services/social-media-marketing-&-management/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Best Social Media Marketing Services in India | Companies Builder" />
-  <meta name="twitter:description" content="Grow your brand with expert social media marketing in Hyderabad & Bangalore. Affordable SMM services for small businesses by Companies Builder." />
   <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
 
   <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Bootstrap Icons (used for cards & lists) -->
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <style>
-    /* KEEPING YOUR ORIGINAL DESIGN/CSS (only icon/list tweaks + alignment + form-size adjusted) */
+    /* KEEP DESIGN: only layout & sticky form sizing tweaks */
 
-    /* HERO — restored with background + overlay so white text is visible */
     .hero{
       padding-top:130px;
       padding-bottom:80px;
@@ -49,22 +42,11 @@
       text-shadow:1px 1px 3px rgba(0,0,0,.7);
       position:relative;
     }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.25);
-    }
+    .hero::after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.25); }
     .hero .container{ position:relative; z-index:1; }
-    .hero h1{
-      font-family:'Roboto', Arial, sans-serif;
-      font-weight:700;
-      font-size:3rem;
-      margin-bottom:.5rem;
-    }
+    .hero h1{ font-family:'Roboto', Arial, sans-serif; font-weight:700; font-size:3rem; margin-bottom:.5rem; }
     .hero p.lead{ font-size:1.25rem; margin:0; }
 
-    /* Equal-height & aligned cards (scoped) */
     .svc-grid .card{
       border:none;
       border-radius:12px;
@@ -73,60 +55,30 @@
       display:flex;
       transition:transform .3s,box-shadow .3s;
     }
-    .svc-grid .card:hover{
-      box-shadow:0 12px 25px rgba(0,0,0,.12);
-      transform:translateY(-5px);
-    }
+    .svc-grid .card:hover{ box-shadow:0 12px 25px rgba(0,0,0,.12); transform:translateY(-5px); }
     .svc-grid .card.h-100{ height:100%; }
-    .svc-grid .card-body{
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      padding:24px;
-    }
+    .svc-grid .card-body{ display:flex; flex-direction:column; justify-content:flex-start; padding:24px; }
     .svc-grid .card-title{ font-size:1.2rem; font-weight:600; color:#2c3e50; display:flex; align-items:center; gap:.5rem; }
     .svc-grid .card-text{ color:#555; font-size:.95rem; }
-
-    /* Icon tweak: keep icon sizes consistent in titles */
     .svc-grid .card-title .bi { font-size:1.15rem; color:#0d6efd; }
 
-    /* Service list icons */
     .svc-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
     .svc-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
 
-    /* Why list icons (keeps design consistent) */
     .why-list { list-style:none; padding-left:0; margin-bottom:1.25rem; }
     .why-list li { margin-bottom:.75rem; display:flex; align-items:flex-start; gap:.75rem; }
     .why-list .bi { font-size:1.25rem; margin-top:.12rem; color:#0d6efd; }
 
-    /* New: left-align wrapper used on the sections user requested */
-    .left-align-block { text-align: left; }
-    .left-align-block h2, .left-align-block h3 { text-align: left !important; }
-    .left-align-block .svc-list, .left-align-block .why-list, .left-align-block p, .left-align-block ul { text-align: left; }
+    .left-align-block { text-align:left; }
+    .left-align-block h2, .left-align-block h3 { text-align:left !important; }
+    .left-align-block .svc-list, .left-align-block .why-list, .left-align-block p, .left-align-block ul { text-align:left; }
 
-    /* Sticky form (desktop only) */
-    @media (min-width: 992px){
-      /* we start with relative positioning; JS will add .sticky-fixed class when needed */
-      .sticky-lg-100{ position: relative; }
-
-      .sticky-fixed {
-        position: fixed !important;
-        top: 100px;
-        z-index: 1100;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-        border-radius: 12px;
-        transition: box-shadow .18s ease;
-      }
-
-      /* narrower form on desktop while remaining responsive */
-      .sticky-lg-100 .svc-form-container{
-        width:92%;
-        max-width:360px;
-        padding:1.25rem;
-      }
+    /* Sticky form (like Web Dev page) — desktop only */
+    @media (min-width: 992px) {
+      .sticky-lg-100 { position: sticky; top: 100px; align-self: start; }
+      .sticky-lg-100 .svc-form-container { max-width: 360px; width: 100%; padding: 1.25rem; }
     }
 
-    /* Contact form (scoped) */
     .svc-form-container{
       background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);
       border-radius:15px;
@@ -134,34 +86,21 @@
       box-shadow:0 4px 20px rgba(0,0,0,.1);
       border:1px solid rgba(0,0,0,.05);
     }
-    .svc-form-container .form-control{
-      border:1px solid #ced4da;
-      border-radius:8px;
-      padding:.75rem;
-      transition:border-color .3s, box-shadow .3s;
-    }
-    .svc-form-container .form-control:focus{
-      border-color:orangered;
-      box-shadow:0 0 8px rgba(255,69,0,.2);
-      outline:none;
-    }
+    .svc-form-container .form-control{ border:1px solid #ced4da; border-radius:8px; padding:.75rem; transition:border-color .3s, box-shadow .3s; }
+    .svc-form-container .form-control:focus{ border-color:orangered; box-shadow:0 0 8px rgba(255,69,0,.2); outline:none; }
     .svc-form-container .form-label{ font-weight:500; color:#333; }
-    .svc-form-container #submit{
-      border:none;
-      background-color:orangered;
-      color:#fff;
-      border-radius:8px;
-      padding:.75rem;
-      font-weight:600;
-      transition:background-color .3s, transform .2s;
-    }
+    .svc-form-container #submit{ border:none; background-color:orangered; color:#fff; border-radius:8px; padding:.75rem; font-weight:600; transition:background-color .3s, transform .2s; }
     .svc-form-container #submit:hover{ background-color:#e03e00; transform:translateY(-2px); }
-    .svc-form-container #submit:active{ transform:translateY(0); }
     .success-message{ display:none; color:#28a745; text-align:center; margin-top:1rem; font-weight:500; }
+
+    /* small responsive tweak */
+    @media (max-width: 480px) {
+      .hero h1{ font-size:2rem; padding-top: 90px; padding-bottom: 50px; }
+    }
   </style>
 </head>
 <body>
-  <!-- Navbar (unchanged layout) -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="/">
@@ -184,11 +123,11 @@
     </div>
   </nav>
 
-  <!-- Hero (with hidden SEO sentence early) -->
+  <!-- Hero -->
   <header class="hero text-white text-center">
     <div class="container">
       <p style="display:none;">social media marketing Hyderabad — social media management Bangalore — social media agency India</p>
-      <h1>Results-Driven Social Media Marketing and Management for Businesses, Companies Builder</h1>
+      <h1>Results-Driven Social Media Marketing and Management for Businesses</h1>
       <p class="lead">Grow your brand with targeted social media marketing solutions designed to convert followers into customers.</p>
     </div>
   </header>
@@ -198,17 +137,14 @@
     <div class="container">
       <div class="mb-5">
         <h2 class="text-center mb-4">Grow Your Brand with Targeted Social Media Marketing Solutions</h2>
-
         <p><strong>Companies Builder</strong> is a premier social media marketing agency based in Hyderabad and Bangalore. We provide affordable social media management in Hyderabad and professional social media services in Bangalore that help small and medium businesses build brand awareness and generate leads across India.</p>
-
         <p>In a world where 70% of people are scrolling through social media daily, your business can’t afford to sit on the sidelines. Whether you’re a small startup or a growing medium-sized business, Companies Builder is here to help you connect with your audience, build your brand, and turn followers into loyal customers. Our social media marketing services in India are designed to deliver measurable results without the overwhelm.</p>
-
         <p>Based in Hyderabad and Bangalore, we specialize in crafting affordable social media management in Hyderabad and professional social media services in Bangalore that resonate with your target market. Ready to take your social media game to the next level? Let’s explore how we can make your brand shine online.</p>
       </div>
     </div>
   </section>
 
-  <!-- Why Social Media Management is a Must -->
+  <!-- Why Social Media Management is a Must (cards) -->
   <section class="py-2">
     <div class="container">
       <h2 class="text-center mb-4">Why Social Media Management is a Must for Your Business</h2>
@@ -216,7 +152,7 @@
         <div class="col d-flex">
           <div class="card h-100 w-100">
             <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-people-fill" aria-hidden="true"></i> Build Relationships & Community</h5>
+              <h5 class="card-title"><i class="bi bi-people-fill" aria-hidden="true"></i> Build Relationships &amp; Community</h5>
               <p class="card-text">Engage your audience with relevant content, conversations, and community management that fosters loyalty.</p>
             </div>
           </div>
@@ -235,7 +171,7 @@
           <div class="card h-100 w-100">
             <div class="card-body">
               <h5 class="card-title"><i class="bi bi-megaphone-fill" aria-hidden="true"></i> Amplify Your Brand</h5>
-              <p class="card-text">Stand out across platforms—Facebook, Instagram, LinkedIn and Twitter—with tailored creative and ad strategies.</p>
+              <p class="card-text">Stand out across platforms—Facebook, Instagram, LinkedIn and X—with tailored creative and ad strategies.</p>
             </div>
           </div>
         </div>
@@ -243,34 +179,15 @@
     </div>
   </section>
 
-  <!-- What Makes Us Your Go-To Partner -->
-  <!-- <-- LEFT-ALIGNED from here ... -->
-  <section class="py-5 left-align-block" id="partner">
-    <div class="container">
-      <h2 class="mb-4">What Makes Companies Builder Your Go-To Social Media Partner?</h2>
-
-      <div class="row g-4">
-        <div class="col-md-6">
-          <ul class="list-unstyled svc-list">
-            <li><i class="bi bi-gear-fill"></i><span><strong>Customized Campaigns:</strong> We tailor every post, ad, and strategy to reflect your unique brand voice.</span></li>
-            <li><i class="bi bi-wallet2"></i><span><strong>Budget-Friendly Solutions:</strong> Affordable social media management in Hyderabad delivering high-impact results.</span></li>
-            <li><i class="bi bi-geo-alt-fill"></i><span><strong>Local Expertise:</strong> As a social media agency in Hyderabad, we know how to connect with your community and drive local engagement.</span></li>
-            <li><i class="bi bi-trophy-fill"></i><span><strong>Proven Success:</strong> From startups to established businesses, we’ve helped clients grow followers and boost conversions.</span></li>
-            <li><i class="bi bi-lightning-fill"></i><span><strong>Results-Focused Approach:</strong> Our strategies prioritize measurable outcomes—reach, engagement, lead generation and ROI—so you see real business impact.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ... up to Ready to Elevate left-aligned -->
-
-  <!-- Services: Platform + Process (left-aligned content) -->
+  <!-- Main content + Sticky form (2-column layout like Web Dev page) -->
   <section class="py-5 left-align-block">
     <div class="container">
-      <h2 class="mb-4">Our Social Media Management Services: Your Path to Growth</h2>
-
       <div class="row g-4">
+        <!-- LEFT: Content (services + Why SMB choose us block placed here so form doesn't cover) -->
         <div class="col-lg-7">
+          <h2 class="mb-4">Our Social Media Management Services: <br /><small class="text-muted">Your Path to Growth</small></h2>
+
+          <!-- Service bullets (icon list) -->
           <h3 class="mb-3">1. Strategic Planning and Research</h3>
           <ul class="svc-list mb-4">
             <li><i class="bi bi-search"></i><span>Research your target audience to understand interests and behaviors.</span></li>
@@ -306,12 +223,15 @@
             <li><i class="bi bi-gear-fill"></i><span>Analyze what’s working and adjust strategies to improve performance.</span></li>
             <li><i class="bi bi-chat-text"></i><span>Keep you informed with easy-to-understand updates—no jargon required.</span></li>
           </ul>
+
+          <!-- The block the user wanted below the bullets on the left -->
+          <h2 class="mb-4 mt-4">Why Small and Medium Businesses<br />Choose Companies Builder</h2>
+          <p>Don’t let your business get lost in the social media noise. With Companies Builder’s social media marketing services in India, you’ll build a loyal audience, drive more leads, and grow your brand like never before.</p>
         </div>
 
-        <!-- Sticky form column (keeps same layout/design, updated CTA text) -->
+        <!-- RIGHT: Sticky form (heading above form) -->
         <div class="col-lg-5">
           <div class="sticky-lg-100">
-            <!-- heading above the form (left aligned on desktop) -->
             <h2 id="contact" class="mb-4 text-start">Get Your Free Social Media Audit</h2>
             <div class="svc-form-container">
               <form id="contactForm" name="contact-form">
@@ -339,31 +259,11 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div> <!-- row -->
+    </div> <!-- container -->
   </section>
 
-  <!-- Why Small & Medium Businesses Choose Us (left aligned) -->
-  <section class="py-4 left-align-block">
-    <div class="container">
-      <h2 class="mb-4">Why Small and Medium Businesses Choose Companies Builder</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <ul class="why-list">
-            <li><i class="bi bi-cash-stack"></i><span><strong>Affordable Plans:</strong> Social media management packages that fit your budget.</span></li>
-            <li><i class="bi bi-globe"></i><span><strong>Local & National Reach:</strong> Target Hyderabad, Bangalore, or expand across India.</span></li>
-            <li><i class="bi bi-headset"></i><span><strong>Dedicated Support:</strong> Our team is a call or email away to support your growth.</span></li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <p>Don’t let your business get lost in the social media noise. With Companies Builder’s social media marketing services in India, you’ll build a loyal audience, drive more leads, and grow your brand like never before.</p>
-          <p><a href="/portfolio/" class="text-decoration-underline">See our portfolio</a> to view examples of campaigns and results we’ve delivered for clients.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA (left-aligned per request) -->
+  <!-- CTA section (left aligned) -->
   <section class="py-4 left-align-block" id="ready">
     <div class="container">
       <h3 class="mb-2">Ready to Elevate Your Social Media Game?</h3>
@@ -372,7 +272,7 @@
     </div>
   </section>
 
-  <!-- Footer (unchanged layout) -->
+  <!-- Footer -->
   <footer class="bg-dark text-white py-4">
     <div class="container">
       <div class="row">
@@ -403,11 +303,11 @@
     </div>
   </footer>
 
-  <!-- JS (unchanged) -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/scripts.js"></script>
 
-  <!-- Form JS: same Google Apps Script endpoint (keeps layout & behavior identical) -->
+  <!-- Form submission (same Google Apps Script endpoint) -->
   <script>
     const scriptURL='https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
     document.getElementById('contactForm').addEventListener('submit',function(e){
@@ -434,108 +334,7 @@
     });
   </script>
 
-  <!-- Improved Sticky-between-sections behaviour (desktop only) -->
-  <script>
-    (function(){
-      const MIN_DESKTOP_WIDTH = 992;
-      const stickyWrapper = document.querySelector('.sticky-lg-100');
-      const startEl = document.getElementById('partner');
-      const endEl = document.getElementById('ready');
-
-      if (!stickyWrapper || !startEl || !endEl) return;
-
-      // Placeholder to preserve layout when the sticky element becomes fixed
-      let placeholder = document.createElement('div');
-      placeholder.style.display = 'none';
-      placeholder.style.width = 'auto';
-      placeholder.style.height = '0px';
-      stickyWrapper.parentNode.insertBefore(placeholder, stickyWrapper);
-
-      function computeRects() {
-        // get fresh rects (must be called inside update so layout changes are handled)
-        return {
-          startTop: startEl.getBoundingClientRect().top + window.pageYOffset,
-          endTop: endEl.getBoundingClientRect().top + window.pageYOffset,
-          wrapperRect: stickyWrapper.getBoundingClientRect()
-        };
-      }
-
-      function activateFixed(wrapperRect) {
-        // set placeholder to reserve the form's original space (prevent content shift)
-        placeholder.style.width = wrapperRect.width + 'px';
-        placeholder.style.height = wrapperRect.height + 'px';
-        placeholder.style.display = 'block';
-        placeholder.style.visibility = 'hidden';
-
-        // lock width/left so it stays exactly where it was
-        const left = wrapperRect.left;
-        stickyWrapper.style.width = wrapperRect.width + 'px';
-        stickyWrapper.style.left = left + 'px';
-        stickyWrapper.classList.add('sticky-fixed');
-      }
-
-      function deactivateFixed() {
-        stickyWrapper.classList.remove('sticky-fixed');
-        stickyWrapper.style.left = '';
-        stickyWrapper.style.width = '';
-        placeholder.style.display = 'none';
-        placeholder.style.height = '0px';
-      }
-
-      function updateSticky() {
-        if (window.innerWidth < MIN_DESKTOP_WIDTH) {
-          // always reset on smaller screens
-          deactivateFixed();
-          return;
-        }
-
-        const { startTop, endTop, wrapperRect } = computeRects();
-        const topOffset = 100; // same as CSS top
-        const formHeight = wrapperRect.height;
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-        // stick if scroll beyond the start section AND not overlapping the end section
-        const shouldStick = (scrollY + topOffset >= startTop) && ((scrollY + topOffset + formHeight) <= (endTop - 20));
-
-        if (shouldStick) {
-          if (!stickyWrapper.classList.contains('sticky-fixed')) {
-            activateFixed(wrapperRect);
-          } else {
-            // ensure left/width remain accurate (in case of resize/zoom)
-            const freshRect = stickyWrapper.getBoundingClientRect();
-            // if width changed (rare), update it using original column's rect
-            // compute original left from placeholder's previous position
-            // Use parent column to compute left accurately:
-            const parentRect = placeholder.getBoundingClientRect();
-            // if parentRect.width is 0 (placeholder hidden), use wrapperRect.left saved earlier
-            // But we can simply re-calc left from current DOM by locating the column node:
-            const col = stickyWrapper.closest('.col-lg-5, [class*="col-"]');
-            if (col) {
-              const colRect = col.getBoundingClientRect();
-              // set left so the fixed element sits where the column is located
-              stickyWrapper.style.left = (colRect.left + (colRect.width - wrapperRect.width) + 'px');
-            }
-          }
-        } else {
-          // not in the sticky zone
-          if (stickyWrapper.classList.contains('sticky-fixed')) {
-            deactivateFixed();
-          }
-        }
-      }
-
-      // run on load, scroll and resize
-      window.addEventListener('load', updateSticky);
-      window.addEventListener('scroll', updateSticky, { passive: true });
-      window.addEventListener('resize', function(){
-        // small debounce to avoid thrash
-        deactivateFixed();
-        setTimeout(updateSticky, 80);
-      });
-    })();
-  </script>
-
-  <!-- Structured Data: Organization + LocalBusiness + BreadcrumbList (no FAQ schema) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
