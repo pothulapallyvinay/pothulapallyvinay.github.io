@@ -49,11 +49,11 @@
     a, .nav-link, .dropdown-item { transition: color .18s ease, transform .12s ease; }
     a:hover, .nav-link:hover, .dropdown-item:hover { color: var(--brand) !important; text-decoration: none; }
 
-    /* Buttons: lift & shadow on hover; keep outline buttons text visible */
+    /* Buttons: lift & shadow on hover; keep text color consistent */
     .btn { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
-    .btn:hover, .btn:focus { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(11,22,60,.10); }
-    .btn-outline-primary:hover { background: var(--brand); color:#fff; border-color:var(--brand); }
-    .btn-outline-light:hover { background: rgba(255,255,255,.06); color:#fff; }
+    .btn:hover, .btn:focus { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,.12); }
+    .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
+    .btn-explore { background: linear-gradient(90deg,var(--accent),#e65300); border: none; color: #fff; box-shadow: 0 8px 30px rgba(255,106,26,.12); }
 
     /* Hero */
     .hero {
@@ -70,8 +70,6 @@
     .hero .container { position: relative; z-index: 2; }
     .hero h1{ font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
     .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
-    .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
-    .btn-explore { background: linear-gradient(90deg,var(--accent),#e65300); border: none; color: #fff; box-shadow: 0 8px 30px rgba(255,106,26,.12); }
 
     /* Page layout */
     .section-pad { padding: 60px 0; }
@@ -85,19 +83,47 @@
     }
 
     /* Values / process */
-    .values-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:18px; }
+    .values-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:18px; }
     .value {
-      background: linear-gradient(180deg,#fff,#f8fbff);
-      border-radius:12px; padding:16px; border:1px solid rgba(13,110,253,0.04);
-      box-shadow:0 10px 30px rgba(11,22,60,0.04);
+      border: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform .28s ease, box-shadow .28s ease;
+      min-height: 200px;
+      display:flex; flex-direction:column;
+      background: linear-gradient(180deg,var(--card-start), var(--card-end));
+      box-shadow: 0 10px 30px rgba(11,22,60,0.06);
+      border: 1px solid rgba(13,110,253,0.04);
+      padding: 18px;
     }
-    .value .icon { font-size:1.6rem; color:var(--brand); width:52px; height:52px; display:flex; align-items:center; justify-content:center; background: rgba(13,110,253,0.06); border-radius:10px; margin-right:12px; flex:0 0 52px; }
+    .value:hover { transform: translateY(-8px); box-shadow: 0 22px 60px rgba(11,22,60,.10); }
+    .value .icon { font-size: 2rem; color: var(--brand); margin-bottom: 12px; }
+    .value div { flex:1; }
 
     /* CTA / contact */
-    .about-contact { margin-top:28px; background: linear-gradient(90deg, rgba(13,110,253,0.03), rgba(255,255,255,0.5)); padding:18px; border-radius:12px; border:1px solid rgba(13,110,253,0.06); box-shadow:0 12px 40px rgba(11,22,60,0.05); }
-    .about-contact .form-control{ border-radius:8px; padding:10px; }
+    .contact-premium {
+      background: linear-gradient(90deg, rgba(14,39,107,0.03), rgba(255,255,255,0.5));
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 18px 50px rgba(2,6,23,0.06);
+      border: 1px solid rgba(13,110,253,0.06);
+    }
+    .contact-premium .form-control {
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid rgba(13,110,253,0.08);
+    }
+    .contact-premium .form-label { font-weight: 600; color: #333; font-size: .95rem; }
+    .contact-premium .btn-demo {
+      background: linear-gradient(90deg,var(--brand),#0a58ca);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(13,110,253,0.10);
+    }
 
-    footer .text-muted-small { color: #cfe1ff; }
+    /* Small type adjustments */
+    .muted-small { color: var(--muted); font-size: .95rem; }
 
     /* Dropdown hover */
     .nav-item.dropdown:hover .dropdown-menu { display: block; }
@@ -105,6 +131,7 @@
 
     @media (max-width: 991px){
       .hero{ padding-top:100px; padding-bottom:50px; }
+      .value { padding: 14px; }
     }
   </style>
 </head>
@@ -148,7 +175,7 @@
   <header class="hero" role="banner" aria-label="About - hero">
     <div class="container">
       <h1>About CompaniesBuilder</h1>
-      <p class="lead">We build premium websites and growth engines for businesses — combining design, technology and measurement.</p>
+      <p class="lead">We build premium websites and growth engines for businesses - combining design, technology and measurement.</p>
       <div class="d-flex justify-content-center gap-3 mt-3">
         <a class="btn btn-demo btn-lg" href="/demo/">Request a Free Demo</a>
         <a class="btn btn-explore btn-lg" href="/services/">Explore Services</a>
@@ -167,8 +194,8 @@
           <div class="col-lg-6">
             <div class="mission">
               <h2 class="mb-2">Our mission</h2>
-              <p class="muted-small">At CompaniesBuilder we empower startups and small & medium businesses to grow online with affordable, measurable and modern digital products — from high-performance websites to data-driven marketing campaigns.</p>
-              <p class="muted-small mb-0">Founded in 2020, we focus on clarity, speed and ROI: clear milestones, measurable KPIs and predictable delivery.</p>
+              <p class="muted-small">At CompaniesBuilder we empower startups and small & medium businesses to grow online with affordable, measurable and modern digital products, from high-performance websites to data-driven marketing campaigns.</p>
+              <p class="muted-small mb-0">Founded in 2025, we focus on clarity, speed and ROI: clear milestones, measurable KPIs and predictable delivery.</p>
             </div>
           </div>
 
@@ -240,18 +267,18 @@
           </div>
 
           <div class="col-lg-5">
-            <div class="about-contact">
+            <div class="contact-premium">
               <form id="aboutContactForm" name="about-contact">
-                <div class="mb-2">
-                  <label for="a_name" class="form-label small">Name</label>
+                <div class="mb-3">
+                  <label for="a_name" class="form-label">Name</label>
                   <input id="a_name" name="name" class="form-control" required />
                 </div>
-                <div class="mb-2">
-                  <label for="a_email" class="form-label small">Email</label>
+                <div class="mb-3">
+                  <label for="a_email" class="form-label">Email</label>
                   <input id="a_email" type="email" name="email" class="form-control" required />
                 </div>
-                <div class="mb-2">
-                  <label for="a_req" class="form-label small">Interested In</label>
+                <div class="mb-3">
+                  <label for="a_req" class="form-label">Interested In</label>
                   <select id="a_req" name="interest" class="form-control">
                     <option>Website review</option>
                     <option>SEO audit</option>
@@ -259,8 +286,8 @@
                     <option>Full digital plan</option>
                   </select>
                 </div>
-                <div class="mb-2">
-                  <label for="a_msg" class="form-label small">Message</label>
+                <div class="mb-3">
+                  <label for="a_msg" class="form-label">Message</label>
                   <textarea id="a_msg" name="message" rows="3" class="form-control" placeholder="Short description (optional)"></textarea>
                 </div>
 
@@ -268,7 +295,7 @@
                   <button type="submit" class="btn btn-demo">Request free audit</button>
                 </div>
 
-                <div id="aboutSuccess" class="text-success mt-2" style="display:none;">✅ Thanks — we'll get back to you shortly.</div>
+                <div id="aboutSuccess" class="text-success mt-3" style="display:none;">✅ Thanks — we'll get back to you shortly.</div>
               </form>
             </div>
           </div>
