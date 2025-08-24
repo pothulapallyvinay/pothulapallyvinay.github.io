@@ -3,15 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CompaniesBuilder offers expert web development and digital marketing services to grow your business online." />
-  <meta name="keywords" content="web development, digital marketing, SEO, PPC, CompaniesBuilder" />
-  <title>Services - CompaniesBuilder</title>
+
+  <!-- SEO: improved title & description (keeps original intent + target cities/services) -->
+  <title>Services - CompaniesBuilder | Web Development, SEO & Social Media Marketing</title>
+  <meta name="description" content="CompaniesBuilder offers web development, SEO, and social media marketing services in Hyderabad, Bangalore, Mumbai and across India. Affordable, results-driven digital services for small and medium businesses." />
+  <meta name="keywords" content="Web development company Hyderabad, SEO services Hyderabad, Social media marketing Hyderabad, Website development Bangalore, Social media management Bangalore, digital marketing India, CompaniesBuilder" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://companiesbuilder.com/services/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Services - CompaniesBuilder | Web Development, SEO & Social Media Marketing" />
+  <meta property="og:description" content="CompaniesBuilder offers web development, SEO, and social media marketing services in Hyderabad, Bangalore, Mumbai and across India. Affordable, results-driven digital services for small and medium businesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://companiesbuilder.com/services/" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services - CompaniesBuilder | Web Development, SEO & Social Media Marketing" />
+  <meta name="twitter:description" content="Web development, SEO & social media marketing services for small & medium businesses. Based in Hyderabad & Bangalore, serving clients across India." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons (used for list bullets) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <!-- Custom Styles -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
+
   <style>
     .hero {
       padding-top: 130px;
@@ -24,22 +47,33 @@
       color: white;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
-        .hero h1 {
+    .hero h1 {
       font-family: 'Roboto', Arial, sans-serif;
       font-weight: 700;
       font-size: 3.5rem;
     }
+
+    /* small icon-enhanced lists to match other pages */
+    .svc-list { padding-left: 0; list-style: none; }
+    .svc-list li { display:flex; gap:.75rem; align-items:flex-start; margin-bottom:.6rem; }
+    .svc-list .bi { color: #0d6efd; font-size: 1.15rem; margin-top:.15rem; }
+
+    .service-block { margin-bottom:2.5rem; }
+    .service-block img { max-width:100%; height:auto; display:block; }
+
+    /* keep footer spacing consistent */
+    footer p, footer ul { margin-bottom: .35rem; }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder" />
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" />
         CompaniesBuilder
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -56,57 +90,100 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero bg-primary text-white text-center">
+  <header class="hero text-center" role="banner">
     <div class="container">
       <h1 class="display-4">Our Services</h1>
-      <p class="lead">Tailored solutions to elevate your digital presence</p>
+      <p class="lead">Tailored web, SEO and social media solutions to elevate your digital presence</p>
     </div>
   </header>
 
-  <!-- Services Section -->
-  <section class="py-5">
-    <div class="container">
-      <!-- Web Development -->
-      <div class="mb-5">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h2>Web Development</h2>
-            <p>Our web development services deliver custom, responsive websites optimized for performance and SEO. From e-commerce to corporate sites, we create user-friendly experiences that convert.</p>
-            <ul>
-              <li>Custom Website Design</li>
-              <li>Mobile-First Development</li>
-              <li>E-commerce Platforms</li>
-              <li>CMS Integration (WordPress, Framer)</li>
-            </ul>
-            <a href="/demo/" class="btn btn-primary mt-2">Request a Demo</a>
-          </div>
-          <div class="col-md-6">
-            <img src="/assets/images/Companies-builder-web-development.jpg" class="img-fluid rounded shadow-sm" alt="Web Development" />
-          </div>
-        </div>
-      </div>
+  <main>
+    <!-- Services Section -->
+    <section class="py-5">
+      <div class="container">
 
-      <!-- Digital Marketing -->
-      <div>
-        <div class="row align-items-center">
-          <div class="col-md-6 order-md-2">
-            <h2>Digital Marketing</h2>
-            <p>Boost your brand with our data-driven digital marketing strategies. We specialize in SEO, PPC, social media, and content marketing to drive traffic and conversions.</p>
-            <ul>
-              <li>Search Engine Optimization (SEO)</li>
-              <li>Pay-Per-Click (PPC) Campaigns</li>
-              <li>Social Media Marketing</li>
-              <li>Content Creation & Strategy</li>
-            </ul>
-            <a href="/demo/" class="btn btn-primary mt-2">Request a Demo</a>
-          </div>
-          <div class="col-md-6 order-md-1">
-            <img src="/assets/images/Companies-builder-Digital-marketing.jpg" class="img-fluid rounded shadow-sm" alt="Digital Marketing" />
+        <!-- Introduction / quick links to main service pages -->
+        <div class="mb-5 text-center">
+          <p class="mb-2">We help businesses in Hyderabad, Bangalore, Mumbai and across India grow online. Explore our core services:</p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a class="btn btn-outline-primary" href="https://companiesbuilder.com/services/web-development-&-designing/" title="Web Development & Designing">Web Development & Designing</a>
+            <a class="btn btn-outline-primary" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/" title="SEO Services in Hyderabad">SEO Services</a>
+            <a class="btn btn-outline-primary" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/" title="Social Media Marketing">Social Media Marketing</a>
           </div>
         </div>
+
+        <!-- Web Development -->
+        <article class="service-block row align-items-center" aria-labelledby="svc-webdev">
+          <div class="col-md-6">
+            <h2 id="svc-webdev">Web Development</h2>
+            <p>Custom, responsive websites built to convert. We design and develop high-performance websites — from brochure sites to feature-rich e-commerce platforms — optimized for speed, accessibility and SEO.</p>
+
+            <ul class="svc-list">
+              <li><i class="bi bi-palette-fill" aria-hidden="true"></i><span>Custom Website Design & Brand-aligned UI/UX</span></li>
+              <li><i class="bi bi-phone-fill" aria-hidden="true"></i><span>Mobile-first, responsive development</span></li>
+              <li><i class="bi bi-cart-fill" aria-hidden="true"></i><span>E-commerce & payment gateway integration</span></li>
+              <li><i class="bi bi-wordpress" aria-hidden="true"></i><span>CMS integration: WordPress, Framer and custom solutions</span></li>
+            </ul>
+
+            <a class="btn btn-primary mt-2" href="https://companiesbuilder.com/services/web-development-&-designing/" aria-label="Learn more about Web Development">Learn more & Request a Demo</a>
+          </div>
+
+          <div class="col-md-6">
+            <img loading="lazy" src="/assets/images/Companies-builder-web-development.jpg" alt="Custom Web Development by CompaniesBuilder" class="img-fluid rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- SEO -->
+        <article class="service-block row align-items-center" aria-labelledby="svc-seo">
+          <div class="col-md-6 order-md-2">
+            <h2 id="svc-seo">Search Engine Optimization (SEO)</h2>
+            <p>Rank higher and attract qualified traffic. Our SEO services combine on-page optimization, local SEO, technical fixes and content strategy to improve visibility across search engines.</p>
+
+            <ul class="svc-list">
+              <li><i class="bi bi-search" aria-hidden="true"></i><span>Technical SEO & site audits</span></li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Local SEO (Hyderabad, Bangalore, Mumbai)</span></li>
+              <li><i class="bi bi-graph-up" aria-hidden="true"></i><span>Keyword research & content optimization</span></li>
+              <li><i class="bi bi-gear" aria-hidden="true"></i><span>Google Search Console & Analytics setup and monitoring</span></li>
+            </ul>
+
+            <a class="btn btn-primary mt-2" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/" aria-label="Learn more about SEO Services">Learn more & Request a Demo</a>
+          </div>
+
+          <div class="col-md-6 order-md-1">
+            <img loading="lazy" src="/assets/images/Companies-builder-Digital-marketing.jpg" alt="SEO & Digital Marketing Services" class="img-fluid rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- Social Media -->
+        <article class="service-block row align-items-center" aria-labelledby="svc-smm">
+          <div class="col-md-6">
+            <h2 id="svc-smm">Social Media Marketing & Management</h2>
+            <p>Build your brand, engage customers and generate leads with targeted social media strategies. From organic content to paid campaigns, we manage and optimize your social presence for results.</p>
+
+            <ul class="svc-list">
+              <li><i class="bi bi-chat-dots-fill" aria-hidden="true"></i><span>Social media strategy & content calendars</span></li>
+              <li><i class="bi bi-megaphone-fill" aria-hidden="true"></i><span>Paid social ads and audience targeting</span></li>
+              <li><i class="bi bi-people-fill" aria-hidden="true"></i><span>Community management & engagement</span></li>
+              <li><i class="bi bi-bar-chart-line" aria-hidden="true"></i><span>Reporting, optimization & growth metrics</span></li>
+            </ul>
+
+            <a class="btn btn-primary mt-2" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/" aria-label="Learn more about Social Media Marketing">Learn more & Request a Demo</a>
+          </div>
+
+          <div class="col-md-6">
+            <img loading="lazy" src="/assets/images/Companies-builder-Social-media.jpg" alt="Social Media Marketing Services" class="img-fluid rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- Short closing CTA -->
+        <div class="text-center mt-4">
+          <p class="lead mb-2">Looking for a custom digital plan? We work with startups and SMEs across India to build effective, affordable solutions.</p>
+          <a href="/demo/" class="btn btn-lg btn-primary">Request a Demo</a>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-dark text-white py-4">
@@ -138,6 +215,30 @@
       </div>
     </div>
   </footer>
+
+  <!-- Structured Data: Organization + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"CompaniesBuilder",
+    "url":"https://companiesbuilder.com",
+    "logo":"https://companiesbuilder.com/assets/images/CB-logo.png",
+    "sameAs":[]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://companiesbuilder.com/"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://companiesbuilder.com/services/"},
+      {"@type":"ListItem","position":3,"name":"All Services","item":"https://companiesbuilder.com/services/"}
+    ]
+  }
+  </script>
 
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
