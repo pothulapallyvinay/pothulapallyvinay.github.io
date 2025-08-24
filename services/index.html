@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -37,45 +37,51 @@
 
   <style>
     :root{
-      --brand:#0d6efd;
-      --accent:#ff6a1a;
-      --muted:#6c757d;
-      --card-start:#f6f9ff;
-      --card-end:#eef6ff;
+      --brand: #0d6efd;
+      --accent: #ff6a1a;
+      --muted: #6c757d;
+      --card-start: #f6f9ff;
+      --card-end: #eef6ff;
       font-family: 'Roboto', Arial, sans-serif;
     }
 
-    /* global link hover */
+    /* Global link hover */
     a, .nav-link, .dropdown-item { transition: color .16s ease, transform .12s ease; }
     a:hover, .nav-link:hover, .dropdown-item:hover { color: var(--brand) !important; text-decoration: none; }
+    a.btn-demo:hover, a.btn-explore:hover { color: #fff !important; } /* Override for button links */
+    a.btn-outline-primary:hover { color: #0d6efd !important; } /* Preserve blog button text color */
 
-    /* buttons: lift without switching text color for outline buttons */
+    /* Buttons: lift without switching text color */
     .btn { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
-    .btn:hover, .btn:focus { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(11,22,60,.10); }
-    .btn-outline-primary:hover { background: var(--brand); color:#fff; border-color:var(--brand); }
-    .btn-outline-light:hover { background: rgba(255,255,255,.06); color:#fff; }
+    .btn:hover, .btn:focus { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,.12); }
+    .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
+    .btn-demo:hover, .btn-demo:focus { color: #fff; background: linear-gradient(90deg,#0a58ca,var(--brand)); }
+    .btn-explore { background: linear-gradient(90deg,var(--accent),#e65300); border: none; color: #fff; box-shadow: 0 8px 30px rgba(255,106,26,.12); }
+    .btn-explore:hover, .btn-explore:focus { color: #fff; background: linear-gradient(90deg,#e65300,var(--accent)); }
 
-    /* hero */
+    /* Hero */
     .hero {
       padding: 120px 0 70px;
-      background-image: url('/assets/images/BGhero.png');
+      background-image: url('/assets/images/Hero bg.png');
       background-size: cover;
       background-position: center;
       color: #fff;
-      position: relative;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,.28); pointer-events:none; }
-    .hero h1 { font-weight:800; font-size:clamp(1.75rem,3.5vw,2.8rem); margin-bottom:.4rem; }
-    .hero p.lead { color:#eef2ff; margin-bottom:18px; }
+    .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.28); pointer-events:none; }
+    .hero .container { position: relative; z-index: 2; }
+    .hero h1 { font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
+    .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
 
-    /* layout: left content, right sticky form (desktop) */
+    /* Layout: left content, right sticky form (desktop) */
     .svc-grid .service-block { margin-bottom:2.5rem; }
     .svc-list { padding-left:0; list-style:none; }
     .svc-list li { display:flex; gap:.75rem; align-items:flex-start; margin-bottom:.6rem; color:var(--muted); }
     .svc-list .bi { color: var(--brand); font-size:1.15rem; margin-top:.12rem; }
 
-    /* service cards */
+    /* Service cards */
     .service-card {
       border-radius:14px;
       padding:18px;
@@ -86,20 +92,46 @@
     }
     .service-card:hover { transform:translateY(-6px); box-shadow:0 28px 72px rgba(11,22,60,0.08); }
 
-    /* blog card movement */
+    /* Blog card movement */
     .blog-card { border-radius:12px; overflow:hidden; transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s; border:1px solid rgba(13,110,253,0.04); background:#fff; }
     .blog-card:hover { transform:translateY(-10px) scale(1.01); box-shadow:0 22px 60px rgba(11,22,60,.08); }
     .blog-card img { height:180px; object-fit:cover; width:100%; display:block; }
 
-    /* sticky form (desktop) */
+    /* Sticky form (desktop) */
     @media (min-width: 992px){
       .sticky-form { position: sticky; top: 100px; }
-      .sticky-form .card { width:100%; max-width:420px; }
+      .sticky-form .contact-premium { width:100%; max-width:420px; }
     }
 
-    /* premium CTA footer spacing */
-    footer p, footer ul { margin-bottom:.35rem; color:#e9eefc; }
+    /* Premium contact form */
+    .contact-premium {
+      background: linear-gradient(90deg, rgba(14,39,107,0.03), rgba(255,255,255,0.5));
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 18px 50px rgba(2,6,23,0.06);
+      border: 1px solid rgba(13,110,253,0.06);
+    }
+    .contact-premium .form-control {
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid rgba(13,110,253,0.08);
+    }
+    .contact-premium .form-label { font-weight: 600; color: #333; font-size: .95rem; }
+    .contact-premium .btn-demo {
+      background: linear-gradient(90deg,var(--brand),#0a58ca);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(13,110,253,0.10);
+    }
+    .contact-premium .btn-demo:hover, .contact-premium .btn-demo:focus { color: #fff; background: linear-gradient(90deg,#0a58ca,var(--brand)); }
+
+    /* Small type adjustments */
     .muted-small { color:var(--muted); font-size:.95rem; }
+
+    /* Dropdown hover */
+    .nav-item.dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu { margin-top: 0; }
 
     @media (max-width:991px){
       .hero{ padding-top:100px; padding-bottom:50px; }
@@ -124,10 +156,8 @@
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
-
-          <!-- Services dropdown: hover works on desktop (Bootstrap still handles mobile click) -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <a class="nav-link dropdown-toggle active" href="/services/" id="servicesDrop" role="button" aria-expanded="false">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
               <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development &amp; Designing</a></li>
               <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
@@ -136,7 +166,6 @@
               <li><a class="dropdown-item fw-bold" href="/services/">All Services</a></li>
             </ul>
           </li>
-
           <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
           <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
@@ -150,9 +179,12 @@
     <div class="container">
       <h1>Our Services</h1>
       <p class="lead">Tailored web, SEO, and social media solutions to elevate your digital presence, serving Hyderabad, Bangalore, Mumbai, India.</p>
-      <div class="mt-3 d-flex justify-content-center gap-3">
-        <a class="btn btn-outline-light btn-lg" href="/demo/">Get a Free Demo</a>
-        <a class="btn btn-outline-primary btn-lg" href="/services/">Explore All Services</a>
+      <div class="d-flex justify-content-center gap-3 mt-3">
+        <a class="btn btn-demo btn-lg" href="/demo/">Request a Free Demo</a>
+        <a class="btn btn-explore btn-lg" href="/services/">Explore All Services</a>
+      </div>
+      <div class="mt-4 d-flex justify-content-center gap-3 align-items-center flex-wrap">
+        <small class="text-white-50">Serving Hyderabad, Bangalore, Mumbai, India</small>
       </div>
     </div>
   </header>
@@ -167,9 +199,9 @@
             <div class="mb-4 text-center text-lg-start">
               <p class="mb-2 muted-small">We help businesses in Hyderabad, Bangalore, Mumbai, and across India grow online. Choose a service to learn more or request a demo.</p>
               <div class="d-flex gap-2 justify-content-center justify-content-lg-start flex-wrap">
-                <a class="btn btn-outline-primary" href="https://companiesbuilder.com/services/web-development-&-designing/">Web Development & Designing</a>
-                <a class="btn btn-outline-primary" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO Services</a>
-                <a class="btn btn-outline-primary" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a>
+                <a class="btn btn-demo" href="https://companiesbuilder.com/services/web-development-&-designing/">Web Development & Designing</a>
+                <a class="btn btn-demo" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO Services</a>
+                <a class="btn btn-demo" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a>
               </div>
             </div>
 
@@ -190,7 +222,7 @@
                       <li><i class="bi bi-wordpress"></i><span>CMS solutions: WordPress, Framer or custom</span></li>
                     </ul>
                     <div class="mt-2">
-                      <a class="btn btn-primary me-2" href="https://companiesbuilder.com/services/web-development-&-designing/">Learn more & Request a Demo</a>
+                      <a class="btn btn-demo me-2" href="https://companiesbuilder.com/services/web-development-&-designing/">Learn more & Request a Demo</a>
                     </div>
                   </div>
                 </div>
@@ -214,7 +246,7 @@
                       <li><i class="bi bi-gear"></i><span>GSC, Analytics setup & monitoring</span></li>
                     </ul>
                     <div class="mt-2">
-                      <a class="btn btn-primary me-2" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">Learn more & Request a Demo</a>
+                      <a class="btn btn-demo me-2" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">Learn more & Request a Demo</a>
                     </div>
                   </div>
                 </div>
@@ -238,7 +270,7 @@
                       <li><i class="bi bi-bar-chart-line"></i><span>Reporting & KPI-driven optimization</span></li>
                     </ul>
                     <div class="mt-2">
-                      <a class="btn btn-primary me-2" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Learn more & Request a Demo</a>
+                      <a class="btn btn-demo me-2" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Learn more & Request a Demo</a>
                     </div>
                   </div>
                 </div>
@@ -248,13 +280,16 @@
             <!-- Short closing CTA -->
             <div class="text-center mt-4">
               <p class="lead mb-2">Looking for a custom digital plan? We work with startups and SMEs across India to build effective, affordable solutions.</p>
-              <a href="/demo/" class="btn btn-lg btn-outline-primary">Request a Demo</a>
+              <a href="/demo/" class="btn btn-demo btn-lg">Request a Demo</a>
             </div>
 
             <!-- Small blog teaser -->
             <div class="mt-5">
-              <h3>Latest insights</h3>
-              <div class="row g-3 mt-2">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0">Latest insights</h3>
+                <a href="/blogs/" class="small text-decoration-none">View all articles →</a>
+              </div>
+              <div class="row g-3">
                 <div class="col-md-4">
                   <article class="blog-card h-100">
                     <img loading="lazy" src="/assets/images/Companies-builder-web.jpg" alt="Web development responsive design" />
@@ -292,24 +327,24 @@
           <!-- Right: sticky contact form -->
           <aside class="col-lg-5 d-flex justify-content-lg-end">
             <div class="sticky-form">
-              <div class="card p-3">
+              <div class="contact-premium">
                 <h4 class="mb-2 text-center">Get a Free Consultation</h4>
                 <p class="muted-small text-center mb-3">Fill this short form and we'll send a tailored plan for your business.</p>
                 <form id="svcContactForm" name="svc-contact">
-                  <div class="mb-2">
-                    <label for="sname" class="form-label small">Name</label>
+                  <div class="mb-3">
+                    <label for="sname" class="form-label">Name</label>
                     <input id="sname" name="your-name" class="form-control" required />
                   </div>
-                  <div class="mb-2">
-                    <label for="semail" class="form-label small">Email</label>
+                  <div class="mb-3">
+                    <label for="semail" class="form-label">Email</label>
                     <input id="semail" name="your-email" type="email" class="form-control" required />
                   </div>
-                  <div class="mb-2">
-                    <label for="sphone" class="form-label small">Phone</label>
+                  <div class="mb-3">
+                    <label for="sphone" class="form-label">Phone</label>
                     <input id="sphone" name="your-number" type="tel" pattern="[0-9]{10}" class="form-control" />
                   </div>
-                  <div class="mb-2">
-                    <label for="sinterest" class="form-label small">Interested In</label>
+                  <div class="mb-3">
+                    <label for="sinterest" class="form-label">Interested In</label>
                     <select id="sinterest" name="interest" class="form-control">
                       <option>Web Development</option>
                       <option>SEO</option>
@@ -318,12 +353,12 @@
                     </select>
                   </div>
                   <div class="mb-3">
-                    <label for="smsg" class="form-label small">Message</label>
+                    <label for="smsg" class="form-label">Message</label>
                     <textarea id="smsg" name="message" rows="3" class="form-control" placeholder="Tell us briefly about your needs"></textarea>
                   </div>
 
-                  <button type="submit" id="svcSubmit" class="btn btn-primary w-100">Request Consultation</button>
-                  <div id="svcSuccess" class="text-success small text-center mt-2" style="display:none;">✅ Thanks — we'll be in touch shortly.</div>
+                  <button type="submit" id="svcSubmit" class="btn btn-demo w-100">Request Consultation</button>
+                  <div id="svcSuccess" class="text-success small text-center mt-3" style="display:none;">✅ Thanks — we'll be in touch shortly.</div>
                 </form>
               </div>
             </div>
@@ -334,28 +369,37 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-dark text-white py-4">
+  <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h5>CompaniesBuilder</h5>
-          <p>Your trusted partner for web development and digital marketing excellence.</p>
+          <p class="small text-white-50">Your trusted partner for web development and digital marketing excellence.</p>
         </div>
-        <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/about/" class="text-white">About Us</a></li>
-            <li><a href="/services/" class="text-white">Services</a></li>
-            <li><a href="/contact/" class="text-white">Contact Us</a></li>
-            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
-            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+        <div class="col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/" class="text-white-50">Home</a></li>
+            <li><a href="/about/" class="text-white-50">About Us</a></li>
+            <li><a href="/services/" class="text-white-50">Services</a></li>
+            <li><a href="/contact/" class="text-white-50">Contact Us</a></li>
+            <li><a href="/demo/" class="text-white-50">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white-50">Blogs</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h5>Contact</h5>
-          <p class="small mb-1">Email: <a href="mailto:info@companiesbuilder.com" class="text-white">info@companiesbuilder.com</a></p>
-          <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white">+91 6302787953</a></p>
+        <div class="col-md-3">
+          <h6>Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/services/web-development-&-designing/" class="text-white-50">Web Development &amp; Designing</a></li>
+            <li><a href="/services/seo-services-in-hyderabad/" class="text-white-50">SEO Services</a></li>
+            <li><a href="/services/social-media-marketing-company-in-hyderabad/" class="text-white-50">Social Media Marketing</a></li>
+            <li><a href="/services/" class="text-white-50">All Services</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:info@companiesbuilder.com" class="text-white-50">info@companiesbuilder.com</a></p>
+          <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white-50">+91 6302787953</a></p>
         </div>
       </div>
 
@@ -411,6 +455,6 @@
   </script>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
