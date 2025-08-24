@@ -1,123 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover CompaniesBuilder’s mission to empower businesses through innovative web development and digital marketing." />
-  <meta name="keywords" content="CompaniesBuilder, about us, web development, digital marketing" />
-  <title>About Us - CompaniesBuilder</title>
-  <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - CompaniesBuilder | Premium Web Development & Digital Marketing</title>
+  <meta name="description" content="CompaniesBuilder helps startups & SMBs grow with premium web development, SEO and social media marketing. Based in Hyderabad & Bangalore — we build websites and growth engines that convert." />
+  <meta name="keywords" content="CompaniesBuilder, web development Hyderabad, digital marketing, SEO, social media marketing, About Us" />
+  <link rel="canonical" href="https://companiesbuilder.com/about/" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
+  <link rel="icon" href="/assets/images/logo-cb.png" />
+  <meta name="theme-color" content="#0d6efd" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About CompaniesBuilder — Premium Web Development & Digital Marketing" />
+  <meta property="og:description" content="We build premium websites and growth engines for startups & SMBs. Based in Hyderabad & Bangalore — request a free demo." />
+  <meta property="og:url" content="https://companiesbuilder.com/about/" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preconnect & fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Local stylesheet (keeps your site wide styles) -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
   <style>
+    :root{
+      --brand: #0d6efd;
+      --accent: #ff6a1a;
+      --muted: #6c757d;
+      --card-start: #f5f8ff;
+      --card-end: #eef6ff;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    /* Global link hover (blue) */
+    a, .nav-link, .dropdown-item { transition: color .18s ease, transform .12s ease; }
+    a:hover, .nav-link:hover, .dropdown-item:hover { color: var(--brand) !important; text-decoration: none; }
+
+    /* Buttons: lift & shadow on hover; keep outline buttons text visible */
+    .btn { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
+    .btn:hover, .btn:focus { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(11,22,60,.10); }
+    .btn-outline-primary:hover { background: var(--brand); color:#fff; border-color:var(--brand); }
+    .btn-outline-light:hover { background: rgba(255,255,255,.06); color:#fff; }
+
+    /* Hero */
     .hero {
-      padding-top: 130px;
-      padding-bottom: 80px;
-      font-weight: bold;
+      padding: 130px 0 70px;
       background-image: url('/assets/images/BGhero.png');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      color: #fff;
+      position: relative;
+      text-align: center;
     }
-        .hero h1 {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
+    .hero::after{ content:""; position:absolute; inset:0; background: rgba(0,0,0,.28); pointer-events:none; }
+    .hero h1{ font-weight:800; font-size:clamp(1.75rem,3.5vw,2.6rem); margin-bottom:.4rem; letter-spacing:-0.02em; }
+    .hero p.lead { color: #eef2ff; margin-bottom: 18px; font-size:1.05rem; }
+
+    /* Page layout */
+    .section-pad { padding: 60px 0; }
+
+    /* Intro / mission box */
+    .mission {
+      background: linear-gradient(180deg, rgba(13,110,253,0.04), rgba(14,39,107,0.02));
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid rgba(13,110,253,0.06);
     }
-   
+
+    /* Team cards */
+    .team-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:18px; }
+    .team-card {
+      border-radius: 12px; overflow:hidden; background:#fff;
+      box-shadow: 0 12px 36px rgba(11,22,60,0.06);
+      border: 1px solid rgba(11,22,60,0.04);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .team-card:hover{ transform: translateY(-6px); box-shadow: 0 28px 72px rgba(11,22,60,0.10); }
+    .team-card .photo{ width:100%; height:200px; object-fit:cover; display:block; }
+    .team-card .p-3 { padding:18px; }
+
+    /* Values / process */
+    .values-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:18px; }
+    .value {
+      background: linear-gradient(180deg,#fff,#f8fbff);
+      border-radius:12px; padding:16px; border:1px solid rgba(13,110,253,0.04);
+      box-shadow:0 10px 30px rgba(11,22,60,0.04);
+    }
+    .value .icon { font-size:1.6rem; color:var(--brand); width:52px; height:52px; display:flex; align-items:center; justify-content:center; background: rgba(13,110,253,0.06); border-radius:10px; margin-right:12px; flex:0 0 52px; }
+
+    /* Stats */
+    .stats { display:flex; gap:18px; flex-wrap:wrap; margin-top:18px; }
+    .stat { background: linear-gradient(180deg,#fff,#fbfdff); padding:18px; border-radius:10px; border:1px solid rgba(13,110,253,0.04); min-width:140px; text-align:center; box-shadow:0 10px 30px rgba(11,22,60,0.04); }
+    .stat h3{ margin:0; color:var(--brand); }
+
+    /* CTA / contact */
+    .about-contact { margin-top:28px; background: linear-gradient(90deg, rgba(13,110,253,0.03), rgba(255,255,255,0.5)); padding:18px; border-radius:12px; border:1px solid rgba(13,110,253,0.06); box-shadow:0 12px 40px rgba(11,22,60,0.05); }
+    .about-contact .form-control{ border-radius:8px; padding:10px; }
+
+    footer .text-muted-small { color: #cfe1ff; }
+
+    @media (max-width: 991px){
+      .hero{ padding-top:100px; padding-bottom:40px; }
+      .team-card .photo{ height:160px; }
+    }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder" />
-      CompaniesBuilder
-    </a>
-    <!-- ✅ Keep only one toggle button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Menu Items -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="/about/">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact/">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="/demo/">Request a Demo</a></li>
-        <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <!-- Hero Section -->
-  <header class="hero bg-primary text-white text-center">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
-      <h1 class="display-4">About Us</h1>
-      <p class="lead">Crafting bold strategies that elevate brands and drive results.</p>
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy" />
+        <span class="fw-bold">CompaniesBuilder</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/about/">About Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
+              <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item fw-bold" href="/services/">All Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" role="banner" aria-label="About - hero">
+    <div class="container">
+      <h1>About CompaniesBuilder</h1>
+      <p class="lead">We build premium websites and growth engines for businesses — combining design, technology and measurement.</p>
+      <div class="mt-3 d-flex justify-content-center gap-3">
+        <a class="btn btn-lg btn-outline-light" href="/services/">Explore our services</a>
+        <a class="btn btn-lg btn-demo" href="/demo/">Request a free demo</a>
+      </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Our Mission</h2>
-      <p>
-        At CompaniesBuilder, we empower businesses to thrive in the digital age with tailored web development and marketing strategies. Founded in 2020, our team of experts delivers innovative solutions that drive growth and engagement.
-      </p>
-      <p>
-        From startups to enterprises, we partner with clients to create impactful online experiences, blending creativity, technology, and data-driven strategies.
-      </p>
-      <div class="row mt-4 align-items-center">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <img src="https://via.placeholder.com/400x300?text=Our+Team" alt="CompaniesBuilder Team" class="img-fluid rounded" />
-        </div>
-        <div class="col-md-6">
-          <h3>Our Team</h3>
-          <p>
-            Our diverse team of designers, developers, and marketers is passionate about delivering results. We stay ahead of industry trends to ensure your business shines online.
-          </p>
+  <main id="main" class="mt-5" tabindex="-1">
+    <!-- Mission -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <div class="mission">
+              <h2 class="mb-2">Our mission</h2>
+              <p class="muted-small">At CompaniesBuilder we empower startups and small & medium businesses to grow online with affordable, measurable and modern digital products — from high-performance websites to data-driven marketing campaigns.</p>
+              <p class="muted-small mb-0">Founded in 2020, we focus on clarity, speed and ROI: clear milestones, measurable KPIs and predictable delivery.</p>
+            </div>
+
+            <div class="stats mt-4">
+              <div class="stat">
+                <h3>+120</h3>
+                <div class="muted-small">Projects delivered</div>
+              </div>
+              <div class="stat">
+                <h3>+90%</h3>
+                <div class="muted-small">Client retention</div>
+              </div>
+              <div class="stat">
+                <h3>3x</h3>
+                <div class="muted-small">Avg. lead growth</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- team hero image -->
+            <img src="/assets/images/team-hero.jpg"
+                 srcset="/assets/images/team-hero.jpg 1x, /assets/images/team-hero@2x.jpg 2x"
+                 alt="CompaniesBuilder team working" class="img-fluid rounded" loading="lazy">
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
+    <!-- Team -->
+    <section class="section-pad bg-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="mb-0">Meet the team</h2>
+          <p class="muted-small mb-0">A small, experienced group focused on growth.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Replace image paths with your real team photos -->
+          <div class="team-card">
+            <img src="/assets/images/team1.jpg" alt="Team member 1" class="photo" loading="lazy" />
+            <div class="p-3">
+              <h5 class="mb-1">Ravi Kumar</h5>
+              <div class="muted-small">Founder &amp; Head — Product & Strategy</div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <img src="/assets/images/team2.jpg" alt="Team member 2" class="photo" loading="lazy" />
+            <div class="p-3">
+              <h5 class="mb-1">Anita Reddy</h5>
+              <div class="muted-small">Lead Designer</div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <img src="/assets/images/team3.jpg" alt="Team member 3" class="photo" loading="lazy" />
+            <div class="p-3">
+              <h5 class="mb-1">Vikram Sharma</h5>
+              <div class="muted-small">Head of Engineering</div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <img src="/assets/images/team4.jpg" alt="Team member 4" class="photo" loading="lazy" />
+            <div class="p-3">
+              <h5 class="mb-1">Priya N</h5>
+              <div class="muted-small">Performance Marketing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values / Process -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="mb-0">How we work</h2>
+          <p class="muted-small mb-0">Clear steps, predictable outcomes.</p>
+        </div>
+
+        <div class="values-grid mt-3">
+          <div class="value d-flex align-items-start">
+            <div class="icon"><i class="bi bi-search"></i></div>
+            <div>
+              <h5 class="mb-1">Discovery</h5>
+              <div class="muted-small">Research, audits and goal-setting to shape the roadmap.</div>
+            </div>
+          </div>
+
+          <div class="value d-flex align-items-start">
+            <div class="icon"><i class="bi bi-pencil-square"></i></div>
+            <div>
+              <h5 class="mb-1">Design</h5>
+              <div class="muted-small">User-first designs that convert and represent your brand.</div>
+            </div>
+          </div>
+
+          <div class="value d-flex align-items-start">
+            <div class="icon"><i class="bi bi-code-slash"></i></div>
+            <div>
+              <h5 class="mb-1">Build</h5>
+              <div class="muted-small">Fast, secure implementation using modern frameworks.</div>
+            </div>
+          </div>
+
+          <div class="value d-flex align-items-start">
+            <div class="icon"><i class="bi bi-graph-up"></i></div>
+            <div>
+              <h5 class="mb-1">Optimize</h5>
+              <div class="muted-small">Tracking, testing and continual improvements to grow ROI.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / contact -->
+    <section class="section-pad bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h3>Want us to review your site and growth plan?</h3>
+            <p class="muted-small">Request a free audit and we’ll send a short, actionable plan you can use immediately.</p>
+            <ul class="list-unstyled">
+              <li class="muted-small"><i class="bi bi-check2 me-2 text-success"></i>Free, no-obligation audit</li>
+              <li class="muted-small"><i class="bi bi-check2 me-2 text-success"></i>Clear next-steps you can act on</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="about-contact">
+              <form id="aboutContactForm" name="about-contact">
+                <div class="mb-2">
+                  <label for="a_name" class="form-label small">Name</label>
+                  <input id="a_name" name="name" class="form-control" required />
+                </div>
+                <div class="mb-2">
+                  <label for="a_email" class="form-label small">Email</label>
+                  <input id="a_email" type="email" name="email" class="form-control" required />
+                </div>
+                <div class="mb-2">
+                  <label for="a_req" class="form-label small">Interested In</label>
+                  <select id="a_req" name="interest" class="form-control">
+                    <option>Website review</option>
+                    <option>SEO audit</option>
+                    <option>Social strategy</option>
+                    <option>Full digital plan</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label for="a_msg" class="form-label small">Message</label>
+                  <textarea id="a_msg" name="message" rows="3" class="form-control" placeholder="Short description (optional)"></textarea>
+                </div>
+
+                <div class="text-end">
+                  <button type="submit" class="btn btn-demo">Request free audit</button>
+                </div>
+
+                <div id="aboutSuccess" class="text-success mt-2" style="display:none;">✅ Thanks — we'll get back to you shortly.</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5">
     <div class="container">
-      <div class="row">
+      <div class="row g-4">
         <div class="col-md-4">
           <h5>CompaniesBuilder</h5>
-          <p>Your trusted partner for web development and digital marketing excellence.</p>
+          <p class="small text-white-50">Your trusted partner for web development and digital marketing excellence.</p>
         </div>
+
         <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/about/" class="text-white">About Us</a></li>
-            <li><a href="/services/" class="text-white">Services</a></li>
-            <li><a href="/contact/" class="text-white">Contact Us</a></li>
-            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
-            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/" class="text-white-50">Home</a></li>
+            <li><a href="/about/" class="text-white-50">About Us</a></li>
+            <li><a href="/services/" class="text-white-50">Services</a></li>
+            <li><a href="/contact/" class="text-white-50">Contact Us</a></li>
+            <li><a href="/demo/" class="text-white-50">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white-50">Blogs</a></li>
           </ul>
         </div>
+
         <div class="col-md-4">
-          <h5>Contact Us</h5>
-          <p>Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white">companiesbuilder@gmail.com</a><br />
-            Phone: +91 6302787953</p>
+          <h6>Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:info@companiesbuilder.com" class="text-white-50">info@companiesbuilder.com</a></p>
+          <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white-50">+91 6302787953</a></p>
         </div>
       </div>
-      <div class="text-center mt-3">
-        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
-      </div>
+
+      <div class="text-center mt-4 small">&copy; 2025 CompaniesBuilder. All rights reserved.</div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JSON-LD (Organization + WebSite) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"CompaniesBuilder",
+    "url":"https://companiesbuilder.com",
+    "logo":"https://companiesbuilder.com/assets/images/CB-logo.png",
+    "contactPoint":[{"@type":"ContactPoint","telephone":"+91 6302787953","contactType":"customer service","areaServed":"IN","availableLanguage":["en"]}]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://companiesbuilder.com",
+    "name":"CompaniesBuilder",
+    "potentialAction":{"@type":"SearchAction","target":"https://companiesbuilder.com/?s={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
+
+  <!-- Form handlers: reuse your existing Google Apps Script endpoint -->
+  <script>
+    (function(){
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+      // about contact form
+      const aboutForm = document.getElementById('aboutContactForm');
+      const aboutSuccess = document.getElementById('aboutSuccess');
+      if (aboutForm) {
+        aboutForm.addEventListener('submit', function(e){
+          e.preventDefault();
+          const btn = aboutForm.querySelector('button[type="submit"]');
+          btn.disabled = true;
+          const data = new FormData(aboutForm);
+          data.append('timestamp', new Date().toISOString());
+          fetch(scriptURL, { method:'POST', body: data })
+            .then(res => res.text())
+            .then(text => {
+              if (text && text.trim() === 'Success') {
+                aboutSuccess.style.display = 'block';
+                aboutForm.reset();
+                setTimeout(()=> aboutSuccess.style.display = 'none', 6000);
+              } else {
+                alert('Error submitting form. Please try again.');
+                console.log('Form response:', text);
+              }
+              btn.disabled = false;
+            }).catch(err=>{
+              console.error('Form submit error', err);
+              alert('Error submitting form. Please try again.');
+              btn.disabled = false;
+            });
+        });
+      }
+    })();
+  </script>
+
+  <!-- Bootstrap (deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
