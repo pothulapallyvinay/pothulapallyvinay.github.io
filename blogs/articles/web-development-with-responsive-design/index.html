@@ -4,91 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Discover how web development with responsive design boosts your small business. Learn practical tips and how Companies Builder can help you succeed online." />
+  <meta name="keywords" content="web development, responsive web design, small business, digital marketing, Hyderabad web development, CompaniesBuilder" />
   <title>Web Development: Driving Business Growth Through Responsive Web Design | CompaniesBuilder</title>
-  <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
+  <link rel="icon" href="/assets/images/logo-cb.png" />
+  <link rel="mask-icon" href="/assets/images/logo-cb.svg" color="#0d6efd" />
+  <meta name="msapplication-TileColor" content="#0d6efd" />
+  <meta name="theme-color" content="#0d6efd" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Web Development: Driving Business Growth Through Responsive Web Design" />
+  <meta property="og:description" content="Discover how web development with responsive design boosts your small business. Learn practical tips and how Companies Builder can help you succeed online." />
+  <meta property="og:url" content="https://companiesbuilder.com/blogs/articles/responsive-web-design/" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/Companies-builder-web.jpg" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Web Development: Driving Business Growth Through Responsive Web Design" />
+  <meta name="twitter:description" content="Discover how web development with responsive design boosts your small business. Learn practical tips and how Companies Builder can help you succeed online." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/Companies-builder-web.jpg" />
+
+  <!-- Preconnect & fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Page-specific CSS -->
   <style>
-    /* Specific styles for this blog post page to fix alignment */
+    :root {
+      --brand: #0d6efd;
+      --muted: #6c757d;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    /* Global link & button hover */
+    a:not(.btn), .nav-link, .dropdown-item {
+      transition: color .16s ease, transform .12s ease;
+    }
+    a:not(.btn):hover, .nav-link:hover, .dropdown-item:hover {
+      color: var(--brand) !important;
+      text-decoration: none;
+    }
+
+    /* Hero */
     .hero {
-      padding-top: 130px; /* Match fixed navbar height */
-      padding-bottom: 80px;
-      font-weight: bold;
+      padding: 120px 0 70px;
       background-image: url('/assets/images/BGhero.png');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-      width: 100%;
-      overflow-x: hidden;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.28);
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
     .hero h1 {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-weight: 700;
-      font-size: clamp(2rem, 8vw, 3.5rem);
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: .5rem;
+      letter-spacing: -0.02em;
     }
+
+    /* Content */
     .content {
-      max-width: 100%;
-      width: 100%;
-      padding: 20px;
+      padding: 40px 20px;
+      max-width: 800px;
       margin: 0 auto;
-      box-sizing: border-box;
     }
     .content img {
-      display: block; /* Center the image */
-      margin: 0 auto; /* Center horizontally */
-      max-width: 100%; /* Maintain responsiveness */
-      width: 800px; /* Increase size, adjust as needed */
-      height: auto; /* Maintain aspect ratio */
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: 800px;
+      height: auto;
     }
-    @media (min-width: 768px) {
-      .content {
-        max-width: 800px;
-      }
+    .muted-small {
+      color: var(--muted);
+      font-size: .95rem;
     }
-    @media (max-width: 768px) {
+
+    /* Responsive tweaks */
+    @media (max-width: 991px) {
       .hero {
-        padding: 90px 0; /* Adjusted for mobile with navbar */
+        padding-top: 100px;
+        padding-bottom: 50px;
+      }
+      .hero h1 {
+        font-size: 2rem;
       }
       .content img {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
       }
     }
-    body {
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
+
+    /* NAV - open dropdown on hover for desktop */
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder" />
-        CompaniesBuilder
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy">
+        <span class="fw-bold">CompaniesBuilder</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact/">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development & Designing</a></li>
+              <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
+              <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item fw-bold" href="/services/">All Services</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link active" href="/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero text-center">
+  <header class="hero" role="banner" aria-label="Hero">
     <div class="container">
       <h1>Web Development: Driving Business Growth Through Responsive Web Design</h1>
     </div>
@@ -97,77 +170,62 @@
   <!-- Blog Content -->
   <section class="content py-5">
     <div class="container">
-      <p><em>August 9, 2025</em></p>
+      <p class="muted-small"><em>August 9, 2025</em></p>
       <h2>Web Development: Driving Business Growth Through Responsive Web Design</h2>
-      <img src="/assets/images/Companies-builder-web.jpg" class="img-fluid mb-4" alt="Responsive Web Design Example" />
-
-      <h2>Introduction: Why Responsive Web Design Matters for Your Business</h2>
-      <p>In today’s digital world, your website is often the first interaction a customer has with your brand. Whether they’re browsing on a smartphone, tablet, or desktop, they expect a seamless experience. This is where responsive web design, a cornerstone of modern web development, comes in. It ensures your website adapts effortlessly to any device, delivering a user-friendly experience that keeps visitors engaged and converts them into loyal customers.</p>
-      <p>For small business owners, especially in competitive markets like Hyderabad, a responsive website isn’t just a luxury; it’s a necessity. With over 50% of global web traffic coming from mobile devices (Statista, 2023), failing to optimize for all screens can cost you customers and revenue. At <a href="https://www.companiesbuilder.com">Companies Builder</a>, we specialize in web development in Hyderabad, crafting responsive websites that drive growth for small businesses. In this post, we’ll explore the power of responsive web design, its benefits, and how our marketing agency can help you stand out.</p>
-
-      <h2>What Is Responsive Web Design?</h2>
-      <p>Responsive web design is an approach that makes your website adapt to the user’s device, whether it’s a smartphone, tablet, or desktop. Unlike traditional designs that require separate versions for each device, responsive design uses flexible layouts, images, and CSS media queries to adjust content dynamically. This ensures your site looks great and functions smoothly, no matter the screen size.</p>
-      <p>Think of it like a chameleon: your website changes its appearance to suit its environment without losing its core identity. This flexibility is critical for small businesses aiming to capture a broad audience in today’s mobile-first world.</p>
-
-      <h3>Why It’s Essential for Small Businesses</h3>
-      <ul>
-        <li>Reach more customers: With mobile usage skyrocketing, a responsive site ensures you don’t miss out on the growing mobile audience.</li>
-        <li>Save time and money: One website for all devices reduces maintenance costs compared to managing multiple versions.</li>
-        <li>Boost credibility: A polished, user-friendly site builds trust and reflects professionalism.</li>
-      </ul>
-
-      <h2>The Benefits of Responsive Web Design for Small Businesses</h2>
-
-      <h3>1. Enhanced User Experience (UX)</h3>
-      <p>A responsive website ensures visitors can navigate, read, and interact with your content effortlessly. Whether they’re checking your services on a phone or filling out a contact form on a tablet, the experience remains consistent. A positive UX reduces bounce rates and increases time spent on your pages.</p>
-      <p>For example, imagine a potential customer in Hyderabad browsing your site on their phone during their commute. If the text is too small or buttons are hard to tap, they’ll likely leave. A responsive design fixes this, keeping them engaged.</p>
-
-      <h3>2. Improved SEO Performance</h3>
-      <p>Search engines like Google prioritize mobile-friendly websites. Since Google adopted mobile-first indexing in 2019, it evaluates the mobile version of your site first for ranking purposes. A responsive design ensures your site performs well on mobile, boosting your visibility in search results.</p>
-      <ul>
-        <li>Higher rankings: Mobile-optimized sites rank better, driving organic traffic.</li>
-        <li>Lower bounce rates: A seamless experience keeps users on your site longer, signaling quality to search engines.</li>
-      </ul>
-
-      <h3>3. Higher Conversion Rates</h3>
-      <p>A responsive website makes it easy for visitors to take action, whether it’s making a purchase, booking a consultation, or signing up for a newsletter. For small businesses, every conversion counts.</p>
-
-      <h3>4. Cost-Effectiveness</h3>
-      <p>Maintaining separate desktop and mobile websites is expensive and time-consuming. Responsive web design streamlines your efforts by creating one site that works everywhere.</p>
-
-      <h3>5. Future-Proofing Your Business</h3>
-      <p>Technology evolves rapidly, with new devices and screen sizes emerging regularly. A responsive website adapts to these changes, ensuring your site remains functional and relevant.</p>
-
-      <h2>How Responsive Web Design Drives Digital Marketing Success</h2>
-
-      <h3>1. Boosts Social Media Engagement</h3>
-      <p>Social media drives significant traffic to your website, especially from mobile users. A responsive site ensures that visitors clicking through have a smooth experience, increasing shares and conversions.</p>
-
-      <h3>2. Supports Multi-Channel Marketing</h3>
-      <p>Your customers interact with your brand across email, social media, and search engines. A responsive website ensures consistency across all channels.</p>
-
-      <h3>3. Enhances Local SEO for Hyderabad Businesses</h3>
-      <p>For small businesses in Hyderabad, local SEO is critical. A mobile-optimized site helps you rank for location-specific searches like “web development in Hyderabad.”</p>
-
-      <h2>Best Practices for Implementing Responsive Web Design</h2>
-      <ul>
-        <li>Prioritize Mobile-Friendly Navigation</li>
-        <li>Optimize Images and Media</li>
-        <li>Simplify Code for Faster Loading</li>
-        <li>Test Across Devices and Browsers</li>
-        <li>Create Mobile-Friendly Content</li>
-      </ul>
-
-      <h2>Why Partner with Companies Builder for Web Development in Hyderabad?</h2>
-      <p>At Companies Builder, we understand the unique challenges small businesses face. We offer tailored web design solutions, expertise in local SEO, full digital marketing support, and ongoing maintenance to keep your site fast, secure, and effective.</p>
-
-      <h2>Real-World Impact: A Hyderabad Success Story</h2>
-      <p>A local Hyderabad bakery saw a 40% traffic boost and doubled online orders after we redesigned their site responsively, optimized for mobile users, and improved navigation.</p>
-
-      <h2>Conclusion: Take Your Business to the Next Level with Responsive Web Design</h2>
-      <p>Responsive web design is a strategic investment in your business’s growth. For Hyderabad businesses, partnering with <a href="https://www.companiesbuilder.com">Companies Builder</a> ensures your site drives measurable results.</p>
-      <p>Ready to unlock the full potential of your online presence? Download our free whitepaper, <a href="https://www.companiesbuilder.com/services/">“10 Ways Responsive Web Design Can Grow Your Business,”</a> or <a href="https://www.companiesbuilder.com/demo/">request a demo</a> with our web development team today.</p>
-
+      <img src="/assets/images/Companies-builder-web.jpg" class="img-fluid mb-4" alt="Responsive Web Design Example" loading="lazy" />
+      <article>
+        <h2>Introduction: Why Responsive Web Design Matters for Your Business</h2>
+        <p>In today’s digital world, your website is often the first interaction a customer has with your brand. Whether they’re browsing on a smartphone, tablet, or desktop, they expect a seamless experience. This is where responsive web design, a cornerstone of modern web development, comes in. It ensures your website adapts effortlessly to any device, delivering a user-friendly experience that keeps visitors engaged and converts them into loyal customers.</p>
+        <p>For small business owners, especially in competitive markets like Hyderabad, a responsive website isn’t just a luxury; it’s a necessity. With over 50% of global web traffic coming from mobile devices (Statista, 2023), failing to optimize for all screens can cost you customers and revenue. At <a href="https://www.companiesbuilder.com">Companies Builder</a>, we specialize in web development in Hyderabad, crafting responsive websites that drive growth for small businesses. In this post, we’ll explore the power of responsive web design, its benefits, and how our marketing agency can help you stand out.</p>
+        <h2>What Is Responsive Web Design?</h2>
+        <p>Responsive web design is an approach that makes your website adapt to the user’s device, whether it’s a smartphone, tablet, or desktop. Unlike traditional designs that require separate versions for each device, responsive design uses flexible layouts, images, and CSS media queries to adjust content dynamically. This ensures your site looks great and functions smoothly, no matter the screen size.</p>
+        <p>Think of it like a chameleon: your website changes its appearance to suit its environment without losing its core identity. This flexibility is critical for small businesses aiming to capture a broad audience in today’s mobile-first world.</p>
+        <h3>Why It’s Essential for Small Businesses</h3>
+        <ul>
+          <li>Reach more customers: With mobile usage skyrocketing, a responsive site ensures you don’t miss out on the growing mobile audience.</li>
+          <li>Save time and money: One website for all devices reduces maintenance costs compared to managing multiple versions.</li>
+          <li>Boost credibility: A polished, user-friendly site builds trust and reflects professionalism.</li>
+        </ul>
+        <h2>The Benefits of Responsive Web Design for Small Businesses</h2>
+        <h3>1. Enhanced User Experience (UX)</h3>
+        <p>A responsive website ensures visitors can navigate, read, and interact with your content effortlessly. Whether they’re checking your services on a phone or filling out a contact form on a tablet, the experience remains consistent. A positive UX reduces bounce rates and increases time spent on your pages.</p>
+        <p>For example, imagine a potential customer in Hyderabad browsing your site on their phone during their commute. If the text is too small or buttons are hard to tap, they’ll likely leave. A responsive design fixes this, keeping them engaged.</p>
+        <h3>2. Improved SEO Performance</h3>
+        <p>Search engines like Google prioritize mobile-friendly websites. Since Google adopted mobile-first indexing in 2019, it evaluates the mobile version of your site first for ranking purposes. A responsive design ensures your site performs well on mobile, boosting your visibility in search results.</p>
+        <ul>
+          <li>Higher rankings: Mobile-optimized sites rank better, driving organic traffic.</li>
+          <li>Lower bounce rates: A seamless experience keeps users on your site longer, signaling quality to search engines.</li>
+        </ul>
+        <h3>3. Higher Conversion Rates</h3>
+        <p>A responsive website makes it easy for visitors to take action, whether it’s making a purchase, booking a consultation, or signing up for a newsletter. For small businesses, every conversion counts.</p>
+        <h3>4. Cost-Effectiveness</h3>
+        <p>Maintaining separate desktop and mobile websites is expensive and time-consuming. Responsive web design streamlines your efforts by creating one site that works everywhere.</p>
+        <h3>5. Future-Proofing Your Business</h3>
+        <p>Technology evolves rapidly, with new devices and screen sizes emerging regularly. A responsive website adapts to these changes, ensuring your site remains functional and relevant.</p>
+        <h2>How Responsive Web Design Drives Digital Marketing Success</h2>
+        <h3>1. Boosts Social Media Engagement</h3>
+        <p>Social media drives significant traffic to your website, especially from mobile users. A responsive site ensures that visitors clicking through have a smooth experience, increasing shares and conversions.</p>
+        <h3>2. Supports Multi-Channel Marketing</h3>
+        <p>Your customers interact with your brand across email, social media, and search engines. A responsive website ensures consistency across all channels.</p>
+        <h3>3. Enhances Local SEO for Hyderabad Businesses</h3>
+        <p>For small businesses in Hyderabad, local SEO is critical. A mobile-optimized site helps you rank for location-specific searches like “web development in Hyderabad.”</p>
+        <h2>Best Practices for Implementing Responsive Web Design</h2>
+        <ul>
+          <li>Prioritize Mobile-Friendly Navigation</li>
+          <li>Optimize Images and Media</li>
+          <li>Simplify Code for Faster Loading</li>
+          <li>Test Across Devices and Browsers</li>
+          <li>Create Mobile-Friendly Content</li>
+        </ul>
+        <h2>Why Partner with Companies Builder for Web Development in Hyderabad?</h2>
+        <p>At Companies Builder, we understand the unique challenges small businesses face. We offer tailored web design solutions, expertise in local SEO, full digital marketing support, and ongoing maintenance to keep your site fast, secure, and effective.</p>
+        <h2>Real-World Impact: A Hyderabad Success Story</h2>
+        <p>A local Hyderabad bakery saw a 40% traffic boost and doubled online orders after we redesigned their site responsively, optimized for mobile users, and improved navigation.</p>
+        <h2>Conclusion: Take Your Business to the Next Level with Responsive Web Design</h2>
+        <p>Responsive web design is a strategic investment in your business’s growth. For Hyderabad businesses, partnering with <a href="https://www.companiesbuilder.com">Companies Builder</a> ensures your site drives measurable results.</p>
+        <p>Ready to unlock the full potential of your online presence? Download our free whitepaper, <a href="/services/">“10 Ways Responsive Web Design Can Grow Your Business,”</a> or <a href="/demo/">request a demo</a> with our web development team today.</p>
+      </article>
+      
       <h2>Leave a Comment</h2>
       <div id="disqus_thread"></div>
       <script>
@@ -177,7 +235,7 @@
         };
         (function() {
           var d = document, s = d.createElement('script');
-          s.src = 'https://<your-disqus-shortname>.disqus.com/embed.js';
+          s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js'; // Replace with your Disqus shortname
           s.setAttribute('data-timestamp', +new Date());
           (d.head || d.body).appendChild(s);
         })();
@@ -187,36 +245,107 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
+  <footer class="bg-dark text-white py-5">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+      <div class="row g-4">
+        <div class="col-md-3">
           <h5>CompaniesBuilder</h5>
-          <p>Your trusted partner for web development and digital marketing excellence.</p>
+          <p class="small text-white-50">Your trusted partner for web development and digital marketing excellence.</p>
         </div>
-        <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/about/" class="text-white">About Us</a></li>
-            <li><a href="/services/" class="text-white">Services</a></li>
-            <li><a href="/contact/" class="text-white">Contact Us</a></li>
-            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
-            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+        <div class="col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/" class="text-white-50">Home</a></li>
+            <li><a href="/about/" class="text-white-50">About</a></li>
+            <li><a href="/services/" class="text-white-50">Services</a></li>
+            <li><a href="/contact/" class="text-white-50">Contact</a></li>
+            <li><a href="/demo/" class="text-white-50">Request a Demo</a></li>
+            <li><a href="/blogs/" class="text-white-50">Blogs</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h5>Contact Us</h5>
-          <p>Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white">companiesbuilder@gmail.com</a><br />Phone: +91 6302787953</p>
+        <div class="col-md-3">
+          <h6>Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/services/web-development-&-designing/" class="text-white-50">Web Development & Designing</a></li>
+            <li><a href="/services/seo-services-in-hyderabad/" class="text-white-50">SEO Services</a></li>
+            <li><a href="/services/social-media-marketing-company-in-hyderabad/" class="text-white-50">Social Media Marketing</a></li>
+            <li><a href="/services/" class="text-white-50">All Services</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Contact</h6>
+          <p class="small mb-1">Email: <a href="mailto:info@companiesbuilder.com" class="text-white-50">info@companiesbuilder.com</a></p>
+          <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white-50">+91 6302787953</a></p>
         </div>
       </div>
-      <div class="text-center mt-3">
-        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
-      </div>
+      <div class="text-center mt-4 small">&copy; 2025 CompaniesBuilder. All rights reserved.</div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/js/scripts.js"></script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Web Development: Driving Business Growth Through Responsive Web Design",
+    "description": "Discover how web development with responsive design boosts your small business. Learn practical tips and how Companies Builder can help you succeed online.",
+    "datePublished": "2025-08-09",
+    "author": {
+      "@type": "Organization",
+      "name": "CompaniesBuilder",
+      "url": "https://companiesbuilder.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CompaniesBuilder",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://companiesbuilder.com/assets/images/CB-logo.png"
+      }
+    },
+    "image": "https://companiesbuilder.com/assets/images/Companies-builder-web.jpg",
+    "url": "https://companiesbuilder.com/blogs/articles/responsive-web-design/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CompaniesBuilder",
+    "url": "https://companiesbuilder.com",
+    "logo": "https://companiesbuilder.com/assets/images/CB-logo.png",
+    "sameAs": [
+      "https://www.facebook.com/companiesbuilder",
+      "https://www.instagram.com/companiesbuilder",
+      "https://www.linkedin.com/company/companiesbuilder"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91 6302787953",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["en"]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://companiesbuilder.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://companiesbuilder.com/blogs/"},
+      {"@type": "ListItem", "position": 3, "name": "Responsive Web Design", "item": "https://companiesbuilder.com/blogs/articles/responsive-web-design/"}
+    ]
+  }
+  </script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="/assets/js/scripts.js" defer></script>
 </body>
 </html>
