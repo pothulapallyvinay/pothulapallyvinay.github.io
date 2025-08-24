@@ -57,22 +57,21 @@
 
     /* Hero */
     .hero {
-      padding: 130px 0 70px;
-      background-image: url('/assets/images/BGhero.png');
+      padding: 120px 0 70px;
+      background-image: url('/assets/images/Hero bg.png');
       background-size: cover;
       background-position: center;
       color: #fff;
-      position: relative;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .hero::after{ content:""; position:absolute; inset:0; background: rgba(0,0,0,.2); pointer-events:none; }
-    .hero h1{ font-weight:900; font-size:clamp(2.2rem,4.5vw,3.5rem); margin-bottom:.5rem; letter-spacing:-0.02em; text-shadow: 0 2px 6px rgba(0,0,0,0.7); color: #ffffff; }
-    .hero p.lead { color: #ffffff; margin-bottom: 24px; font-size:clamp(1.2rem,2vw,1.4rem); font-weight:500; text-shadow: 0 2px 6px rgba(0,0,0,0.7); }
-    .hero .btn { font-size: 1.15rem; padding: 14px 28px; border-radius: 8px; }
-    .hero .btn-outline-light { border: 2px solid #fff; color: #fff; background: rgba(255,255,255,0.15); font-weight: 600; }
-    .hero .btn-outline-light:hover { background: #fff; color: var(--brand); }
-    .hero .btn-demo { background: var(--accent); color: #fff; border: none; font-weight: 600; }
-    .hero .btn-demo:hover { background: #e65e17; }
+    .hero::after{ content:""; position:absolute; inset:0; background: rgba(0,0,0,0.28); pointer-events:none; }
+    .hero .container { position: relative; z-index: 2; }
+    .hero h1{ font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
+    .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
+    .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
+    .btn-explore { background: linear-gradient(90deg,var(--accent),#e65300); border: none; color: #fff; box-shadow: 0 8px 30px rgba(255,106,26,.12); }
 
     /* Page layout */
     .section-pad { padding: 60px 0; }
@@ -105,7 +104,7 @@
     .dropdown-menu { margin-top: 0; }
 
     @media (max-width: 991px){
-      .hero{ padding-top:100px; padding-bottom:40px; }
+      .hero{ padding-top:100px; padding-bottom:50px; }
     }
   </style>
 </head>
@@ -150,9 +149,12 @@
     <div class="container">
       <h1>About CompaniesBuilder</h1>
       <p class="lead">We build premium websites and growth engines for businesses — combining design, technology and measurement.</p>
-      <div class="mt-3 d-flex justify-content-center gap-3">
-        <a class="btn btn-lg btn-outline-light" href="/services/">Explore our services</a>
-        <a class="btn btn-lg btn-demo" href="/demo/">Request a free demo</a>
+      <div class="d-flex justify-content-center gap-3 mt-3">
+        <a class="btn btn-demo btn-lg" href="/demo/">Request a Free Demo</a>
+        <a class="btn btn-explore btn-lg" href="/services/">Explore Services</a>
+      </div>
+      <div class="mt-4 d-flex justify-content-center gap-3 align-items-center flex-wrap">
+        <small class="text-white-50">Serving Hyderabad, Bangalore, Mumbai, India</small>
       </div>
     </div>
   </header>
