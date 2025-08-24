@@ -1,239 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CompaniesBuilder: Premier web development and digital marketing services to elevate your brand online. Request a free demo today!" />
-  <meta name="keywords" content="web development, digital marketing, SEO, website design, CompaniesBuilder" />
-  <meta name="author" content="CompaniesBuilder" />
-  <title>CompaniesBuilder - Web Development & Digital Marketing</title>
-
-  <!-- Canonical to force non-www -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CompaniesBuilder — Web Development, SEO & Social Media Marketing (Hyderabad, Bangalore)</title>
+  <meta name="description" content="CompaniesBuilder: premium web development, SEO and social media marketing for startups & SMBs in Hyderabad, Bangalore and India. Request a free demo — we build responsive, SEO-optimized websites that convert." />
+  <meta name="keywords" content="web development Hyderabad, SEO services Hyderabad, social media marketing Bangalore, web design India, responsive websites, CompaniesBuilder" />
   <link rel="canonical" href="https://companiesbuilder.com/" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/images/logo-cb.png" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="CompaniesBuilder — Web Development, SEO & Social Media Marketing" />
+  <meta property="og:description" content="Premium web development, SEO and social media services for startups and SMBs. Based in Hyderabad & Bangalore. Request a free demo." />
+  <meta property="og:url" content="https://companiesbuilder.com/" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CompaniesBuilder — Web Development, SEO & Social Media Marketing" />
+  <meta name="twitter:description" content="Premium web development, SEO and social media services for startups and SMBs. Based in Hyderabad & Bangalore. Request a free demo." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
 
-  <!-- JSON-LD Structured Data for Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CompaniesBuilder",
-    "url": "https://companiesbuilder.com",
-    "logo": "https://companiesbuilder.com/assets/images/CB-logo.png",
-    "sameAs": [
-      "https://www.facebook.com/companiesbuilder",
-      "https://www.instagram.com/companiesbuilder",
-      "https://www.linkedin.com/company/companiesbuilder"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-6302787953",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": "en"
-    }
-  }
-  </script>
+  <!-- Preconnect & fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap and Styles -->
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Your main stylesheet -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Critical / page-specific CSS (kept small) -->
   <style>
+    :root {
+      --brand: #0d6efd;
+      --accent: #ff6000;
+      --muted: #6c757d;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #0d6efd;
+      color: #fff;
+      padding: 8px 12px;
+      z-index: 2000;
+      transition: top .18s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 8px; }
+
+    /* Hero */
     .hero {
-      padding-top: 130px;
-      padding-bottom: 80px;
-      font-weight: bold;
+      padding: 120px 0 70px;
       background-image: url('/assets/images/Hero bg.png');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+    .hero::after {
+      content: "";
+      position:absolute; inset:0;
+      background: rgba(0,0,0,0.28);
+      pointer-events:none;
+    }
+    .hero .container { position: relative; z-index: 2; }
     .hero h1 {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: .5rem;
+      letter-spacing: -0.02em;
     }
-    .card-img-top {
-      object-fit: cover;
-      height: 200px;
+    .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
+
+    /* Hero CTAs */
+    .hero .btn-primary { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
+    .hero .btn-outline-light { border-color: rgba(255,255,255,.18); color: #fff; }
+
+    /* Services cards */
+    .service-card {
+      border: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .28s ease, box-shadow .28s ease;
+      min-height: 360px;
+      display:flex; flex-direction:column;
     }
-    .equal-height-card {
-      min-height: 460px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .card-body {
-      flex-grow: 1;
-    }
-    /* Enable hover dropdown on desktop */
-    .nav-item.dropdown:hover .dropdown-menu {
-      display: block;
-      margin-top: 0;
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(15,23,42,.08); }
+    .service-card .card-icon { font-size: 2rem; color: var(--brand); margin-bottom: 12px; }
+    .service-card .card-body { flex:1; }
+
+    /* Featured blogs */
+    .blog-card img { height: 180px; object-fit:cover; width:100%; }
+
+    /* Testimonial */
+    .testimonial { background: linear-gradient(180deg,#fff,#f8fafc); border-radius:12px; padding: 24px; box-shadow: 0 8px 30px rgba(2,6,23,.04); }
+
+    /* Footer small */
+    footer .list-unstyled a { color: #fff; opacity: .95; text-decoration: none; }
+    footer .list-unstyled a:hover { text-decoration: underline; }
+
+    @media (max-width: 991px) {
+      .hero { padding-top: 100px; padding-bottom: 50px; }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder Logo" height="30" class="me-2" title="CompaniesBuilder">
-        CompaniesBuilder
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy">
+        <span class="fw-bold">CompaniesBuilder</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
 
-          <!-- Dropdown for Services -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Services
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li>
-                <a class="dropdown-item" href="/services/web-development-&-designing/">
-                  Web Development & Designing
-                </a>
-              </li>
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development & Designing</a></li>
+              <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
+              <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
             </ul>
           </li>
 
-          <li class="nav-item"><a class="nav-link" href="/contact/">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/demo/">Request a Demo</a></li>
           <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section with Background Image -->
-  <header class="hero text-white text-center">
+  <!-- HERO -->
+  <header class="hero" role="banner" aria-label="Hero">
     <div class="container">
-      <h1>TRANSFORM YOUR BUSINESS WITH COMPANIES BUILDER</h1>
-      <p class="lead">Cutting-edge web development and digital marketing solutions for maximum impact.</p>
-      <a href="/demo/" class="btn btn-light btn-lg mt-3">Get a Free Demo</a>
+      <h1>We build premium websites and growth engines for businesses.</h1>
+      <p class="lead">Custom web development, SEO & social media strategies — designed to generate leads and scale revenue.</p>
+      <div class="d-flex justify-content-center gap-3 mt-3">
+        <a class="btn btn-primary btn-lg" href="/demo/">Get a Free Demo</a>
+        <a class="btn btn-outline-light btn-lg" href="/services/">Explore Services</a>
+      </div>
+      <!-- trust badges -->
+      <div class="mt-4 d-flex justify-content-center gap-3 align-items-center flex-wrap">
+        <small class="text-white-50">Serving Hyderabad • Bangalore • Mumbai • India</small>
+      </div>
     </div>
   </header>
 
-  <!-- Services Section -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Our Services</h2>
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <div class="card shadow-sm h-100">
-            <img src="/assets/images/Companies-builder-web-development.jpg" class="card-img-top" alt="Web Development" />
-            <div class="card-body">
-              <h3 class="card-title">Web Development</h3>
-              <p class="card-text">Custom, responsive, SEO-friendly websites tailored to your business goals.</p>
-              <a href="/services/#web-development" class="btn btn-primary">Learn More</a>
-            </div>
+  <main id="main" tabindex="-1">
+    <!-- Key services -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">What We Do</h2>
+        <p class="text-center text-muted mb-4">End-to-end services for digital growth — from polished websites to measurable marketing campaigns.</p>
+
+        <div class="row g-4">
+          <!-- Web dev -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div>
+                  <i class="bi bi-code-slash card-icon" aria-hidden="true"></i>
+                  <h3 class="h5 mb-2">Web Development</h3>
+                  <p class="text-muted small">Custom, responsive websites built for speed, conversions and search visibility.</p>
+                </div>
+                <div class="mt-3">
+                  <ul class="list-unstyled small text-muted mb-3">
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Mobile-first & accessible</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>E-commerce & CMS</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Performance & SEO-ready</li>
+                  </ul>
+                  <a href="/services/web-development-&-designing/" class="btn btn-sm btn-outline-primary">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- SEO -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div>
+                  <i class="bi bi-bar-chart-line card-icon" aria-hidden="true"></i>
+                  <h3 class="h5 mb-2">Search Engine Optimization (SEO)</h3>
+                  <p class="text-muted small">Technical SEO, content strategy and local SEO to increase qualified traffic.</p>
+                </div>
+                <div class="mt-3">
+                  <ul class="list-unstyled small text-muted mb-3">
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Site audits & technical fixes</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Local SEO (Hyderabad, Bangalore)</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Analytics & GSC monitoring</li>
+                  </ul>
+                  <a href="/services/seo-services-in-hyderabad/" class="btn btn-sm btn-outline-primary">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Social -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div>
+                  <i class="bi bi-megaphone-fill card-icon" aria-hidden="true"></i>
+                  <h3 class="h5 mb-2">Social Media Marketing</h3>
+                  <p class="text-muted small">Managed content, community and paid social to grow your brand and leads.</p>
+                </div>
+                <div class="mt-3">
+                  <ul class="list-unstyled small text-muted mb-3">
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Content calendars & creative</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Targeted ads & optimization</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Community & influencer outreach</li>
+                  </ul>
+                  <a href="/services/social-media-marketing-company-in-hyderabad/" class="btn btn-sm btn-outline-primary">Learn more</a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
-        <div class="col-md-6 mb-4">
-          <div class="card shadow-sm h-100">
-            <img src="/assets/images/Companies-builder-Digital-marketing.jpg" class="card-img-top" alt="Digital Marketing" />
-            <div class="card-body">
-              <h3 class="card-title">Digital Marketing</h3>
-              <p class="card-text">Grow your brand with data-driven strategies in SEO, PPC, and social media.</p>
-              <a href="/services/#digital-marketing" class="btn btn-primary">Learn More</a>
+      </div>
+    </section>
+
+    <!-- Why choose us + CTA -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h2>Why CompaniesBuilder?</h2>
+            <p class="text-muted">Practical, measurable, and affordable digital services built for small & medium businesses. We focus on performance, transparency, and delivering ROI.</p>
+
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="bi bi-award-fill me-2 text-primary"></i><strong>Experienced Team</strong></li>
+                  <li class="mb-2"><i class="bi bi-rocket-takeoff-fill me-2 text-primary"></i><strong>Fast Turnaround</strong></li>
+                  <li class="mb-2"><i class="bi bi-wallet2 me-2 text-primary"></i><strong>Affordable Packages</strong></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="bi bi-people-fill me-2 text-primary"></i><strong>Dedicated Support</strong></li>
+                  <li class="mb-2"><i class="bi bi-graph-up-arrow me-2 text-primary"></i><strong>Data-driven Growth</strong></li>
+                  <li class="mb-2"><i class="bi bi-shield-lock-fill me-2 text-primary"></i><strong>Secure & Maintained</strong></li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-3"><a class="btn btn-primary" href="/demo/">Request a Free Demo</a> <a class="btn btn-outline-secondary ms-2" href="/portfolio/">See Portfolio</a></p>
+          </div>
+
+          <!-- Testimonial -->
+          <div class="col-lg-5">
+            <div class="testimonial">
+              <p class="mb-2 fw-bold">“CompaniesBuilder helped us rebuild our website and doubled our qualified leads in 3 months.”</p>
+              <p class="small text-muted mb-1">— Founder, SaaS Startup, Hyderabad</p>
+              <p class="small text-muted">Case study: <a href="/portfolio/" class="text-decoration-underline">View project details</a></p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About -->
-  <section class="bg-light py-5">
-    <div class="container text-center">
-      <h2>About CompaniesBuilder</h2>
-      <p>We help businesses establish a strong digital presence through professional websites and strategic marketing campaigns.</p>
-      <a href="/about/" class="btn btn-primary">Discover More</a>
-    </div>
-  </section>
+    <!-- Latest Blogs -->
+    <section class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Latest insights</h3>
+          <a href="/blogs/" class="small text-decoration-none">View all articles →</a>
+        </div>
 
-  <!-- Blogs -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Latest Blogs</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm">
-            <img src="/assets/images/Companies-builder-web.jpg" class="card-img-top" alt="Blog 1" />
-            <div class="card-body">
-              <h4 class="card-title">Top 5 Web Dev Trends 2025</h4>
-              <p class="card-text">Stay ahead of the curve with these must-know trends in web development.</p>
-              <a href="/blogs/" class="btn btn-outline-primary">Read More</a>
-            </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="card blog-card h-100">
+              <img loading="lazy" src="/assets/images/Companies-builder-web.jpg" alt="Web development responsive design" class="card-img-top">
+              <div class="card-body">
+                <h4 class="h6">Web development with responsive design</h4>
+                <p class="small text-muted">How to make sites that look great and perform well on every device.</p>
+                <a href="https://companiesbuilder.com/blogs/articles/web-development-with-responsive-design/" class="btn btn-outline-primary btn-sm">Read</a>
+              </div>
+            </article>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm">
-            <img src="/assets/images/Companies-builder-seo.jpg" class="card-img-top" alt="Blog 2" />
-            <div class="card-body">
-              <h4 class="card-title">Search Engine Optimization in 2025</h4>
-              <p class="card-text">Boost your small business with top SEO strategies for 2025.</p>
-              <a href="/blogs/" class="btn btn-outline-primary">Read More</a>
-            </div>
+
+          <div class="col-md-4">
+            <article class="card blog-card h-100">
+              <img loading="lazy" src="/assets/images/Companies-builder-seo.jpg" alt="SEO 2025" class="card-img-top">
+              <div class="card-body">
+                <h4 class="h6">SEO: What matters in 2025</h4>
+                <p class="small text-muted">A practical guide for small businesses to improve search visibility.</p>
+                <a href="https://companiesbuilder.com/blogs/articles/seo/" class="btn btn-outline-primary btn-sm">Read</a>
+              </div>
+            </article>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm">
-            <img src="/assets/images/Companies-builder-marketing.jpg" class="card-img-top" alt="Blog 3" />
-            <div class="card-body">
-              <h4 class="card-title">Marketing for Startups</h4>
-              <p class="card-text">Find out how startups can compete and win with smart digital marketing.</p>
-              <a href="/blogs/" class="btn btn-outline-primary">Read More</a>
-            </div>
+
+          <div class="col-md-4">
+            <article class="card blog-card h-100">
+              <img loading="lazy" src="/assets/images/Companies-builder-marketing.jpg" alt="Maximizing PPC" class="card-img-top">
+              <div class="card-body">
+                <h4 class="h6">Maximizing PPC campaigns</h4>
+                <p class="small text-muted">Get better ROI from your paid campaigns with these optimizations.</p>
+                <a href="https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/" class="btn btn-outline-primary btn-sm">Read</a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
+    <!-- Small CTA / contact -->
+    <section class="py-5 bg-light">
+      <div class="container text-center">
+        <h3>Start your digital growth today</h3>
+        <p class="text-muted mb-3">Book a free discovery call and social / SEO audit — no obligations.</p>
+        <a href="/demo/" class="btn btn-lg btn-primary">Get a Free Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5">
     <div class="container">
-      <div class="row">
+      <div class="row g-4">
         <div class="col-md-4">
           <h5>CompaniesBuilder</h5>
-          <p>Expert web development and digital marketing to grow your business.</p>
+          <p class="small text-muted">Premium web development and digital marketing to grow your business online.</p>
+          <p class="small mb-0">Hyderabad · Bangalore · Mumbai · India</p>
         </div>
+
         <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/about/" class="text-white">About Us</a></li>
-            <li><a href="/services/" class="text-white">Services</a></li>
-            <li><a href="/contact/" class="text-white">Contact Us</a></li>
-            <li><a href="/demo/" class="text-white">Request a Demo</a></li>
-            <li><a href="/blogs/" class="text-white">Blogs</a></li>
+          <h6>Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/services/web-development-&-designing/" class="text-white-50">Web Development & Designing</a></li>
+            <li><a href="/services/seo-services-in-hyderabad/" class="text-white-50">SEO Services</a></li>
+            <li><a href="/services/social-media-marketing-company-in-hyderabad/" class="text-white-50">Social Media Marketing</a></li>
           </ul>
         </div>
+
         <div class="col-md-4">
-          <h5>Contact Us</h5>
-          <p>Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white">companiesbuilder@gmail.com</a><br />
-            Phone: +91 6302787953</p>
+          <h6>Contact</h6>
+          <p class="small mb-0">Email: <a href="mailto:companiesbuilder@gmail.com" class="text-white-50">companiesbuilder@gmail.com</a><br>Phone: +91 6302787953</p>
+          <div class="mt-2">
+            <a class="text-white me-2" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a class="text-white me-2" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="text-white" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
       </div>
-      <div class="text-center mt-3">
-        <p>&copy; 2025 CompaniesBuilder. All rights reserved.</p>
+
+      <div class="text-center mt-4 small">
+        &copy; 2025 CompaniesBuilder. All rights reserved.
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/js/scripts.js"></script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"CompaniesBuilder",
+    "url":"https://companiesbuilder.com",
+    "logo":"https://companiesbuilder.com/assets/images/CB-logo.png",
+    "sameAs":[
+      "https://www.facebook.com/companiesbuilder",
+      "https://www.instagram.com/companiesbuilder",
+      "https://www.linkedin.com/company/companiesbuilder"
+    ],
+    "contactPoint":[
+      {"@type":"ContactPoint","telephone":"+91 6302787953","contactType":"customer service","areaServed":"IN","availableLanguage":["en"]}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://companiesbuilder.com",
+    "name":"CompaniesBuilder",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://companiesbuilder.com/?s={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://companiesbuilder.com/"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://companiesbuilder.com/services/"}
+    ]
+  }
+  </script>
+
+  <!-- Optional: Add your GA / GTM snippet here (deferred). Example placeholder:
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date()); gtag('config','GA_MEASUREMENT_ID');</script>
+  -->
+
+  <!-- Scripts (defer) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script>
+    // simple enhancement: close mobile menu after click
+    document.addEventListener('click', function(e) {
+      const navCollapse = document.getElementById('mainNav');
+      if (!navCollapse) return;
+      if (e.target.closest('.navbar-nav .nav-link')) {
+        const bsOffcanvas = bootstrap.Collapse.getInstance(navCollapse);
+        if (bsOffcanvas && window.innerWidth < 992) bsOffcanvas.hide();
+      }
+    });
+  </script>
 </body>
 </html>
