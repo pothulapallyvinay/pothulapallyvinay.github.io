@@ -74,7 +74,6 @@
       text-decoration: none;
       /* deliberately NOT changing color to preserve text contrast */
     }
-    /* Outline buttons: subtle background and border change on hover, don't change text color */
     .btn-outline-primary:hover, .btn-outline-primary:focus {
       background: rgba(13,110,253,0.06);
       border-color: var(--brand);
@@ -177,6 +176,35 @@
     }
     .why-card h5 { margin:0 0 6px 0; font-size:1.05rem; }
     .why-card p { margin:0; color:var(--muted); font-size:.95rem; }
+
+    /* DesignRush badge styling */
+    .designrush-badge {
+      max-width: 120px;
+      transition: transform .18s ease, box-shadow .18s ease;
+      display: block;
+      margin: 0 10px;
+    }
+    .designrush-badge:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(11,22,60,0.12);
+    }
+    .why-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 576px) {
+      .designrush-badge {
+        max-width: 100px;
+        margin: 10px auto;
+      }
+      .why-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
     /* -------------------------
        Blog movement
@@ -367,7 +395,7 @@
             <h2>Why CompaniesBuilder?</h2>
             <p class="muted-small">Practical, measurable, and affordable digital services built for small & medium businesses. We focus on performance, transparency, and delivering ROI.</p>
 
-            <!-- premium cards grid (dedicated support removed so five cards fit on one line) -->
+            <!-- premium cards grid -->
             <div class="why-grid">
               <div class="why-card">
                 <div class="why-badge"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
@@ -412,6 +440,9 @@
 
             <div class="why-cta mt-4">
               <a class="btn btn-demo" href="/demo/">Request a Free Demo</a>
+              <a href="https://www.designrush.com/agency/profile/companies-builder" target="_blank">
+                <img src="/assets/images/design-rush-logo-companies-builder.png" alt="Companies Builder's rating on Digital Marketing Agency Listing by DesignRush, the industry-leading B2B Marketplace connecting brands with agencies" class="designrush-badge">
+              </a>
             </div>
           </div>
         </div>
@@ -516,7 +547,7 @@
 
   </main>
 
-  <!-- FOOTER (Updated to match Web Development & Design Services page) -->
+  <!-- FOOTER -->
   <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="row g-4">
@@ -598,7 +629,7 @@
   }
   </script>
 
-  <!-- Form JS (uses same Google Apps Script endpoint you provided earlier) -->
+  <!-- Form JS -->
   <script>
     (function(){
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
