@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blogs - CompaniesBuilder | Web Development, SEO & Social Media Marketing</title>
-  <meta name="description" content="Explore CompaniesBuilder’s blog for expert insights on web development, SEO, and digital marketing trends in Hyderabad, Bangalore, Mumbai, and across India." />
-  <meta name="keywords" content="blogs, articles, web development, SEO, digital marketing, CompaniesBuilder, Hyderabad, Bangalore, Mumbai, India" />
+
+  <!-- Title (brand at the end for clarity) -->
+  <title>Blogs | Companies Builder — Web Development, SEO & Social Media Marketing</title>
+
+  <meta name="description" content="Explore Companies Builder’s blog for expert insights on web development, SEO, and digital marketing trends in Hyderabad, Bangalore, Mumbai, and across India." />
+  <meta name="keywords" content="blogs, articles, web development, SEO, digital marketing, Companies Builder, Hyderabad, Bangalore, Mumbai, India" />
   <link rel="canonical" href="https://companiesbuilder.com/blogs/" />
 
   <!-- Favicons -->
@@ -15,13 +18,18 @@
   <link rel="icon" href="/assets/images/logo-cb.png" />
   <meta name="theme-color" content="#0d6efd" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Blogs - CompaniesBuilder | Web Development, SEO & Social Media Marketing" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="Companies Builder" />
+  <meta property="og:title" content="Blogs - Companies Builder | Web Development, SEO & Social Media Marketing" />
   <meta property="og:description" content="Expert insights on web development, SEO, and digital marketing trends for businesses in Hyderabad, Bangalore, Mumbai, and across India." />
   <meta property="og:url" content="https://companiesbuilder.com/blogs/" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@companiesbuilder" />
+  <meta name="twitter:title" content="Blogs - Companies Builder | Web Development, SEO & Social Media Marketing" />
+  <meta name="twitter:description" content="Expert insights on web development, SEO, and digital marketing trends for businesses in Hyderabad, Bangalore, Mumbai, and across India." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
 
   <!-- Preconnect & fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,14 +65,14 @@
 
     /* Blog buttons: no text or background color change on hover */
     .blog-card .btn-outline-primary {
-      color: #0d6efd;
-      border-color: #0d6efd;
+      color: var(--brand);
+      border-color: var(--brand);
       background-color: transparent;
     }
     .blog-card .btn-outline-primary:hover,
     .blog-card .btn-outline-primary:focus {
-      color: #0d6efd !important;
-      border-color: #0d6efd;
+      color: var(--brand) !important;
+      border-color: var(--brand);
       background-color: transparent !important;
       transform: translateY(-4px);
       box-shadow: 0 14px 40px rgba(11,22,60,.12);
@@ -108,8 +116,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy" />
-        <span class="fw-bold">CompaniesBuilder</span>
+        <img src="/assets/images/CB-logo.png" alt="Companies Builder" height="34" class="me-2" loading="lazy" />
+        <span class="fw-bold">Companies Builder</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -205,7 +213,7 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-3">
-          <h5>CompaniesBuilder</h5>
+          <h5>Companies Builder</h5>
           <p class="small text-white-50">Your trusted partner for web development and digital marketing excellence.</p>
         </div>
         <div class="col-md-3">
@@ -234,19 +242,29 @@
           <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white-50">+91 6302787953</a></p>
         </div>
       </div>
-      <div class="text-center mt-4 small">&copy; 2025 CompaniesBuilder. All rights reserved.</div>
+      <div class="text-center mt-4 small">&copy; 2025 Companies Builder. All rights reserved.</div>
     </div>
   </footer>
 
-  <!-- Structured Data -->
+  <!-- Structured Data (Organization + WebSite) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
-    "name":"CompaniesBuilder",
+    "name":"Companies Builder",
     "url":"https://companiesbuilder.com",
     "logo":"https://companiesbuilder.com/assets/images/CB-logo.png",
     "contactPoint":[{"@type":"ContactPoint","telephone":"+91 6302787953","contactType":"customer service","areaServed":"IN","availableLanguage":["en"]}]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://companiesbuilder.com",
+    "name":"Companies Builder",
+    "potentialAction":{"@type":"SearchAction","target":"https://companiesbuilder.com/?s={search_term_string}","query-input":"required name=search_term_string"}
   }
   </script>
 
