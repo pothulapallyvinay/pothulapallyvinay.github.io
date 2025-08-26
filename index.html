@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-563QE3BQWN');
+  </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
@@ -654,6 +663,18 @@
               if (text && text.trim() === 'Success') {
                 success.style.display = 'block';
                 form.reset();
+
+                // Send a GA4 event for successful leads (optional)
+                if (window.gtag) {
+                  try {
+                    gtag('event', 'generate_lead', {
+                      'event_category': 'Contact Form',
+                      'event_label': 'Home Contact Form',
+                      'value': 1
+                    });
+                  } catch(e) { /* ignore */ }
+                }
+
                 setTimeout(()=> success.style.display = 'none', 7000);
               } else {
                 alert('Error submitting form. Please try again.');
