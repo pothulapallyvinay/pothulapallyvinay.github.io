@@ -5,19 +5,17 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
-
   gtag('config', 'G-563QE3BQWN');
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- Title (brand at the end for clarity) -->
-  <title>Services | Companies Builder - Web Development, SEO & Social Media Marketing</title>
-
-  <meta name="description" content="Companies Builder offers web development, SEO and social media marketing services in Hyderabad, Bangalore, Mumbai and across India. Affordable, results-driven digital services for small and medium businesses." />
-  <meta name="keywords" content="Web development company Hyderabad, SEO services Hyderabad, Social media marketing Hyderabad, Website development Bangalore, Social media management Bangalore, digital marketing India, Companies Builder" />
+  <!-- SEO: concise title + explicit index directive -->
+  <title>Companies Builder — Web Development, SEO & Social Media (India)</title>
+  <meta name="description" content="Custom web development, local & technical SEO, and social media marketing for startups & SMEs in Hyderabad, Bangalore, Mumbai and across India. Request a free demo." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://companiesbuilder.com/services/" />
 
   <!-- Favicons -->
@@ -29,15 +27,15 @@
 
   <!-- Open Graph / Twitter -->
   <meta property="og:site_name" content="Companies Builder" />
-  <meta property="og:title" content="Services - Companies Builder | Web Development, SEO & Social Media Marketing" />
-  <meta property="og:description" content="Web development, SEO & social media marketing services for small & medium businesses. Based in Hyderabad, Bangalore, Mumbai and serving clients across India." />
+  <meta property="og:title" content="Companies Builder - Web Development, SEO & Social Media (India)" />
+  <meta property="og:description" content="Custom web development, local & technical SEO, and social media marketing for startups & SMEs in Hyderabad, Bangalore, Mumbai and across India." />
   <meta property="og:url" content="https://companiesbuilder.com/services/" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@companiesbuilder" />
-  <meta name="twitter:title" content="Services - Companies Builder | Web Development, SEO & Social Media Marketing" />
-  <meta name="twitter:description" content="Web development, SEO & social media marketing services for small & medium businesses. Based in Hyderabad, Bangalore, Mumbai and serving clients across India." />
+  <meta name="twitter:title" content="Companies Builder — Web Development, SEO & Social Media (India)" />
+  <meta name="twitter:description" content="Custom web development, local & technical SEO, and social media marketing for startups & SMEs in Hyderabad, Bangalore, Mumbai and across India." />
   <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
 
   <!-- Preconnect & fonts -->
@@ -53,106 +51,35 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <style>
-    :root{
-      --brand: #0d6efd;
-      --accent: #ff6a1a;
-      --muted: #6c757d;
-      --card-start: #f6f9ff;
-      --card-end: #eef6ff;
-      font-family: 'Roboto', Arial, sans-serif;
-    }
-
-    /* Global link hover */
+    :root{ --brand: #0d6efd; --accent: #ff6a1a; --muted: #6c757d; --card-start: #f6f9ff; --card-end: #eef6ff; font-family: 'Roboto', Arial, sans-serif; }
     a, .nav-link, .dropdown-item { transition: color .16s ease, transform .12s ease; }
     a:hover, .nav-link:hover, .dropdown-item:hover { color: var(--brand) !important; text-decoration: none; }
-    a.btn-demo:hover, a.btn-explore:hover { color: #fff !important; } /* Override for button links */
-    a.btn-outline-primary:hover { color: var(--brand) !important; } /* Preserve blog button text color */
-
-    /* Buttons: lift without switching text color */
     .btn { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
     .btn:hover, .btn:focus { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,.12); }
     .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
-    .btn-demo:hover, .btn-demo:focus { color: #fff; background: linear-gradient(90deg,#0a58ca,var(--brand)); }
-    .btn-explore { background: linear-gradient(90deg,var(--accent),#e65300); border: none; color: #fff; box-shadow: 0 8px 30px rgba(255,106,26,.12); }
-    .btn-explore:hover, .btn-explore:focus { color: #fff; background: linear-gradient(90deg,#e65300,var(--accent)); }
-
-    /* Hero */
-    .hero {
-      padding: 120px 0 70px;
-      background-image: url('/assets/images/Hero bg.png');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+    .hero { padding: 120px 0 70px; background-image: url('/assets/images/Hero bg.png'); background-size: cover; background-position: center; color: #fff; text-align: center; position: relative; overflow: hidden; }
     .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.28); pointer-events:none; }
     .hero .container { position: relative; z-index: 2; }
     .hero h1 { font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
     .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
-
-    /* Layout: left content, right sticky form (desktop) */
     .svc-grid .service-block { margin-bottom:2.5rem; }
     .svc-list { padding-left:0; list-style:none; }
     .svc-list li { display:flex; gap:.75rem; align-items:flex-start; margin-bottom:.6rem; color:var(--muted); }
     .svc-list .bi { color: var(--brand); font-size:1.15rem; margin-top:.12rem; }
-
-    /* Service cards */
-    .service-card {
-      border-radius:14px;
-      padding:18px;
-      background: linear-gradient(180deg,var(--card-start),var(--card-end));
-      border:1px solid rgba(13,110,253,0.04);
-      box-shadow:0 12px 36px rgba(11,22,60,0.04);
-      transition: transform .24s ease, box-shadow .24s ease;
-    }
+    .service-card { border-radius:14px; padding:18px; background: linear-gradient(180deg,var(--card-start),var(--card-end)); border:1px solid rgba(13,110,253,0.04); box-shadow:0 12px 36px rgba(11,22,60,0.04); transition: transform .24s ease, box-shadow .24s ease; }
     .service-card:hover { transform:translateY(-6px); box-shadow:0 28px 72px rgba(11,22,60,0.08); }
-
-    /* Blog card movement */
     .blog-card { border-radius:12px; overflow:hidden; transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s; border:1px solid rgba(13,110,253,0.04); background:#fff; }
     .blog-card:hover { transform:translateY(-10px) scale(1.01); box-shadow:0 22px 60px rgba(11,22,60,.08); }
     .blog-card img { height:180px; object-fit:cover; width:100%; display:block; }
-
-    /* Sticky form (desktop) */
-    @media (min-width: 992px){
-      .sticky-form { position: sticky; top: 100px; }
-      .sticky-form .contact-premium { width:100%; max-width:420px; }
-    }
-
-    /* Premium contact form */
-    .contact-premium {
-      background: linear-gradient(90deg, rgba(14,39,107,0.03), rgba(255,255,255,0.5));
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 18px 50px rgba(2,6,23,0.06);
-      border: 1px solid rgba(13,110,253,0.06);
-    }
-    .contact-premium .form-control {
-      border-radius: 10px;
-      padding: 12px;
-      border: 1px solid rgba(13,110,253,0.08);
-    }
+    @media (min-width: 992px){ .sticky-form { position: sticky; top: 100px; } .sticky-form .contact-premium { width:100%; max-width:420px; } }
+    .contact-premium { background: linear-gradient(90deg, rgba(14,39,107,0.03), rgba(255,255,255,0.5)); border-radius: 14px; padding: 22px; box-shadow: 0 18px 50px rgba(2,6,23,0.06); border: 1px solid rgba(13,110,253,0.06); }
+    .contact-premium .form-control { border-radius: 10px; padding: 12px; border: 1px solid rgba(13,110,253,0.08); }
     .contact-premium .form-label { font-weight: 600; color: #333; font-size: .95rem; }
-    .contact-premium .btn-demo {
-      background: linear-gradient(90deg,var(--brand),#0a58ca);
-      border: none;
-      border-radius: 10px;
-      padding: 12px 18px;
-      box-shadow: 0 10px 30px rgba(13,110,253,0.10);
-    }
-    .contact-premium .btn-demo:hover, .contact-premium .btn-demo:focus { color: #fff; background: linear-gradient(90deg,#0a58ca,var(--brand)); }
-
-    /* Small type adjustments */
+    .contact-premium .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; border-radius: 10px; padding: 12px 18px; box-shadow: 0 10px 30px rgba(13,110,253,0.10); }
     .muted-small { color:var(--muted); font-size:.95rem; }
-
-    /* Dropdown hover */
     .nav-item.dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu { margin-top: 0; }
-
-    @media (max-width:991px){
-      .hero{ padding-top:100px; padding-bottom:50px; }
-    }
+    @media (max-width:991px){ .hero{ padding-top:100px; padding-bottom:50px; } }
   </style>
 </head>
 <body>
@@ -176,7 +103,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="/services/" id="servicesDrop" role="button" aria-expanded="false">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
-              <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="/services/web-development-%26-designing/">Web Development &amp; Designing</a></li>
               <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
               <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
               <li><hr class="dropdown-divider" /></li>
@@ -194,8 +121,8 @@
   <!-- HERO -->
   <header class="hero" role="banner" aria-label="Services hero">
     <div class="container">
-      <h1>Our Services</h1>
-      <p class="lead">Tailored web, SEO, and social media solutions to elevate your digital presence, serving Hyderabad, Bangalore, Mumbai, India.</p>
+      <h1>Full-service Web, SEO & Social Media Solutions for Indian Startups & SMEs</h1>
+      <p class="lead">Custom web development, local SEO, and data-driven social media marketing to grow traffic, leads, and sales — serving Hyderabad, Bangalore, Mumbai and clients across India.</p>
       <div class="d-flex justify-content-center gap-3 mt-3">
         <a class="btn btn-demo btn-lg" href="/demo/">Request a Free Demo</a>
         <a class="btn btn-explore btn-lg" href="/services/">Explore All Services</a>
@@ -214,11 +141,11 @@
           <div class="col-lg-7">
             <!-- Intro CTA row -->
             <div class="mb-4 text-center text-lg-start">
-              <p class="mb-2 muted-small">We help businesses in Hyderabad, Bangalore, Mumbai, and across India grow online. Choose a service to learn more or request a demo.</p>
+              <p class="mb-2 muted-small">We help startups and small businesses across India build high-performing websites and digital strategies that deliver measurable results. Choose a service to learn more or request a demo.</p>
               <div class="d-flex gap-2 justify-content-center justify-content-lg-start flex-wrap">
-                <a class="btn btn-demo" href="https://companiesbuilder.com/services/web-development-&-designing/">Web Development & Designing</a>
-                <a class="btn btn-demo" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO Services</a>
-                <a class="btn btn-demo" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a>
+                <a class="btn btn-demo" href="/services/web-development-%26-designing/">Web Development &amp; Designing</a>
+                <a class="btn btn-demo" href="/services/seo-services-in-hyderabad/">SEO Services</a>
+                <a class="btn btn-demo" href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a>
               </div>
             </div>
 
@@ -231,15 +158,16 @@
                   </div>
                   <div class="col-md-6">
                     <h2>Web Development</h2>
-                    <p class="muted-small">Custom, responsive websites built to convert — from brochure sites to robust e-commerce platforms. We deliver fast, accessible, and SEO-friendly builds.</p>
+                    <p class="muted-small">We design and build fast, accessible, SEO-friendly websites tailored to your business goals. Our focus is on conversions: clear user journeys, fast load times, and reliable infrastructure so your site ranks and converts.</p>
+                    <p class="muted-small">Typical deliverables include responsive UI/UX, CMS integration (WordPress, Framer, or custom), e-commerce with secure payment gateways, performance optimization, and basic on-page SEO to make sure search engines can crawl and index your pages effectively.</p>
                     <ul class="svc-list">
                       <li><i class="bi bi-palette-fill"></i><span>Custom UI/UX design aligned with your brand</span></li>
                       <li><i class="bi bi-phone-fill"></i><span>Mobile-first responsive implementation</span></li>
-                      <li><i class="bi bi-cart-fill"></i><span>Ecommerce & payment gateway integration</span></li>
+                      <li><i class="bi bi-cart-fill"></i><span>Ecommerce &amp; payment gateway integration</span></li>
                       <li><i class="bi bi-wordpress"></i><span>CMS solutions: WordPress, Framer or custom</span></li>
                     </ul>
                     <div class="mt-2">
-                      <a class="btn btn-demo me-2" href="https://companiesbuilder.com/services/web-development-&-designing/">Learn more & Request a Demo</a>
+                      <a class="btn btn-demo me-2" href="/services/web-development-%26-designing/">Learn more &amp; Request a Demo</a>
                     </div>
                   </div>
                 </div>
@@ -255,15 +183,16 @@
                   </div>
                   <div class="col-md-6 order-md-1">
                     <h2>Search Engine Optimization (SEO)</h2>
-                    <p class="muted-small">Grow qualified organic traffic with technical SEO, content strategy and local SEO tailored to Hyderabad, Bangalore and India-wide markets.</p>
+                    <p class="muted-small">Our SEO services combine technical fixes, content strategy, and local SEO to help your business appear for relevant searches. We begin with a site audit to find crawlability issues, slow pages, and technical blockers — then fix, optimize, and measure.</p>
+                    <p class="muted-small">Services include keyword research, content optimization, on-page and technical SEO, Google Business Profile optimization for local visibility, citation cleanup, and reporting through Google Search Console and Analytics. We focus on driving qualified traffic that leads to real business outcomes.</p>
                     <ul class="svc-list">
-                      <li><i class="bi bi-search"></i><span>Technical SEO & site audits</span></li>
+                      <li><i class="bi bi-search"></i><span>Technical SEO &amp; site audits</span></li>
                       <li><i class="bi bi-geo-alt"></i><span>Local SEO (Hyderabad, Bangalore, Mumbai)</span></li>
-                      <li><i class="bi bi-graph-up"></i><span>Keyword research & content optimization</span></li>
-                      <li><i class="bi bi-gear"></i><span>GSC, Analytics setup & monitoring</span></li>
+                      <li><i class="bi bi-graph-up"></i><span>Keyword research &amp; content optimization</span></li>
+                      <li><i class="bi bi-gear"></i><span>GSC, Analytics setup &amp; monitoring</span></li>
                     </ul>
                     <div class="mt-2">
-                      <a class="btn btn-demo me-2" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">Learn more & Request a Demo</a>
+                      <a class="btn btn-demo me-2" href="/services/seo-services-in-hyderabad/">Learn more &amp; Request a Demo</a>
                     </div>
                   </div>
                 </div>
@@ -279,28 +208,29 @@
                   </div>
                   <div class="col-md-6">
                     <h2>Social Media Marketing & Management</h2>
-                    <p class="muted-small">Build a loyal audience and generate leads - we handle content, community and paid social with measurable campaigns.</p>
+                    <p class="muted-small">We build and execute social strategies that grow brand awareness and generate leads. Our approach mixes organic content, community engagement, and targeted paid social campaigns for measurable ROI.</p>
+                    <p class="muted-small">Services include content calendars, creative production, paid social (campaign setup and optimization), influencer outreach, and monthly performance reporting. We tailor tactics for platform-specific audiences (Meta, Instagram, LinkedIn) and test creative to improve results over time.</p>
                     <ul class="svc-list">
-                      <li><i class="bi bi-chat-dots-fill"></i><span>Strategy & content calendars</span></li>
-                      <li><i class="bi bi-megaphone-fill"></i><span>Paid social ads & optimization</span></li>
-                      <li><i class="bi bi-people-fill"></i><span>Community management & influencer outreach</span></li>
-                      <li><i class="bi bi-bar-chart-line"></i><span>Reporting & KPI-driven optimization</span></li>
+                      <li><i class="bi bi-chat-dots-fill"></i><span>Strategy &amp; content calendars</span></li>
+                      <li><i class="bi bi-megaphone-fill"></i><span>Paid social ads &amp; optimization</span></li>
+                      <li><i class="bi bi-people-fill"></i><span>Community management &amp; influencer outreach</span></li>
+                      <li><i class="bi bi-bar-chart-line"></i><span>Reporting &amp; KPI-driven optimization</span></li>
                     </ul>
                     <div class="mt-2">
-                      <a class="btn btn-demo me-2" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Learn more & Request a Demo</a>
+                      <a class="btn btn-demo me-2" href="/services/social-media-marketing-company-in-hyderabad/">Learn more &amp; Request a Demo</a>
                     </div>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- Short closing CTA -->
+            <!-- Closing CTA -->
             <div class="text-center mt-4">
-              <p class="lead mb-2">Looking for a custom digital plan? We work with startups and SMEs across India to build effective, affordable solutions.</p>
+              <p class="lead mb-2">Looking for a custom digital plan? We work with startups and SMEs across India to build effective, affordable solutions tailored to your industry.</p>
               <a href="/demo/" class="btn btn-demo btn-lg">Request a Demo</a>
             </div>
 
-            <!-- Small blog teaser -->
+            <!-- Blog teaser -->
             <div class="mt-5">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h3 class="mb-0">Latest insights</h3>
@@ -313,7 +243,7 @@
                     <div class="p-3">
                       <h4 class="h6 mb-1">Web development with responsive design</h4>
                       <p class="small muted-small mb-2">How to make sites that look great and perform well on every device.</p>
-                      <a class="btn btn-outline-primary btn-sm" href="https://companiesbuilder.com/blogs/articles/web-development-with-responsive-design/">Read</a>
+                      <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/web-development-with-responsive-design/">Read</a>
                     </div>
                   </article>
                 </div>
@@ -323,7 +253,7 @@
                     <div class="p-3">
                       <h4 class="h6 mb-1">SEO: What matters in 2025</h4>
                       <p class="small muted-small mb-2">A practical guide for small businesses to improve search visibility.</p>
-                      <a class="btn btn-outline-primary btn-sm" href="https://companiesbuilder.com/blogs/articles/seo/">Read</a>
+                      <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/seo/">Read</a>
                     </div>
                   </article>
                 </div>
@@ -333,7 +263,7 @@
                     <div class="p-3">
                       <h4 class="h6 mb-1">Maximizing PPC campaigns</h4>
                       <p class="small muted-small mb-2">Get better ROI from your paid campaigns with these optimizations.</p>
-                      <a class="btn btn-outline-primary btn-sm" href="https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/">Read</a>
+                      <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/maximizing-ppc-campaigns/">Read</a>
                     </div>
                   </article>
                 </div>
@@ -407,7 +337,7 @@
         <div class="col-md-3">
           <h6>Services</h6>
           <ul class="list-unstyled small">
-            <li><a href="/services/web-development-&-designing/" class="text-white-50">Web Development &amp; Designing</a></li>
+            <li><a href="/services/web-development-%26-designing/" class="text-white-50">Web Development &amp; Designing</a></li>
             <li><a href="/services/seo-services-in-hyderabad/" class="text-white-50">SEO Services</a></li>
             <li><a href="/services/social-media-marketing-company-in-hyderabad/" class="text-white-50">Social Media Marketing</a></li>
             <li><a href="/services/" class="text-white-50">All Services</a></li>
@@ -424,19 +354,78 @@
     </div>
   </footer>
 
-  <!-- Structured Data -->
+  <!-- Structured Data: LocalBusiness, Services & FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Organization",
+    "@type":"LocalBusiness",
     "name":"Companies Builder",
-    "url":"https://companiesbuilder.com",
-    "logo":"https://companiesbuilder.com/assets/images/CB-logo.png",
-    "contactPoint":[{"@type":"ContactPoint","telephone":"+91 6302787953","contactType":"customer service","areaServed":"IN","availableLanguage":["en"]}]
+    "image":"https://companiesbuilder.com/assets/images/BGhero.png",
+    "@id":"https://companiesbuilder.com/",
+    "url":"https://companiesbuilder.com/",
+    "telephone":"+91 6302787953",
+    "priceRange":"$$",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Hyderabad",
+      "addressRegion":"Telangana",
+      "addressCountry":"IN"
+    },
+    "areaServed":["Hyderabad","Bangalore","Mumbai","India"],
+    "sameAs":["https://www.linkedin.com/in/companiesbuilder","https://www.facebook.com/companiesbuilder"]
   }
   </script>
 
-  <!-- Form submit (Google Apps Script endpoint you used previously) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Web Development & Designing",
+    "description":"Custom responsive websites, e-commerce, and CMS solutions optimized for speed and conversions.",
+    "provider":{"@type":"LocalBusiness","name":"Companies Builder","url":"https://companiesbuilder.com/"},
+    "serviceType":"Web Development",
+    "areaServed":["Hyderabad","Bangalore","Mumbai","India"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Search Engine Optimization (SEO)",
+    "description":"Technical SEO, local SEO, content strategy and analytics to improve organic visibility and qualified traffic.",
+    "provider":{"@type":"LocalBusiness","name":"Companies Builder","url":"https://companiesbuilder.com/"},
+    "serviceType":"SEO",
+    "areaServed":["Hyderabad","Bangalore","Mumbai","India"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Social Media Marketing & Management",
+    "description":"Organic social, paid campaigns and community management to grow brand awareness and leads.",
+    "provider":{"@type":"LocalBusiness","name":"Companies Builder","url":"https://companiesbuilder.com/"},
+    "serviceType":"Social Media Marketing",
+    "areaServed":["Hyderabad","Bangalore","Mumbai","India"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How long does a custom website take to build?","acceptedAnswer":{"@type":"Answer","text":"A typical brochure website takes 2–4 weeks; e-commerce or custom platforms may take 6–12 weeks depending on requirements and integrations."}},
+      {"@type":"Question","name":"Do you offer local SEO for Hyderabad businesses?","acceptedAnswer":{"@type":"Answer","text":"Yes — we offer local SEO packages including Google Business Profile setup, citation management, and local content optimization to improve local discoverability."}},
+      {"@type":"Question","name":"What platforms do you build on?","acceptedAnswer":{"@type":"Answer","text":"We build on WordPress, Framer, and custom frameworks depending on client needs; we choose the platform that best balances speed, cost, and extensibility."}},
+      {"@type":"Question","name":"How do you measure SEO success?","acceptedAnswer":{"@type":"Answer","text":"We track rankings, organic traffic, and goal conversions using Google Search Console and Analytics, and report performance monthly with clear recommendations."}}
+    ]
+  }
+  </script>
+
+  <!-- Form submit (Google Apps Script endpoint) -->
   <script>
     (function() {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
