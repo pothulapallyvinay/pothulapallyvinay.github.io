@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voice Search Optimization in 2025: Essential Strategies for Small Businesses | Companies Builder</title>
-  <link rel="canonical" href="https://companiesbuilder.com/blogs/articles/voice-search-optimization-2025/">
-  <meta name="description" content="Voice search optimization guide for small businesses in 2025. Natural language keywords, local SEO, featured snippets, speed, AI tools and a free downloadable guide from Companies Builder." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  <!-- Favicons (added) -->
+    gtag('config', 'G-563QE3BQWN');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Search Optimization in 2025: Essential Strategies for Small Businesses | Companies Builder</title>
+  <link rel="canonical" href="https://companiesbuilder.com/blogs/articles/voice-search-optimization-2025/" />
+  <meta name="description" content="Voice search optimization guide for small businesses in 2025. Natural language keywords, local SEO, featured snippets, speed, AI tools and a free downloadable guide from Companies Builder." />
+  <meta name="keywords" content="voice search, voice search optimization, SEO, local SEO, CompaniesBuilder, Hyderabad" />
+
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
@@ -20,39 +31,46 @@
   <meta property="og:title" content="Voice Search Optimization in 2025: Essential Strategies for Small Businesses" />
   <meta property="og:description" content="Voice search optimization guide for small businesses in 2025. Natural language keywords, local SEO, featured snippets, speed, AI tools and a free downloadable guide from Companies Builder." />
   <meta property="og:url" content="https://companiesbuilder.com/blogs/articles/voice-search-optimization-2025/" />
-  <meta property="og:image" content="https://companiesbuilder.com/assets/images/Companies-builder-voice-search.jpg" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/Companies-builder-voice-search.png" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Voice Search Optimization in 2025: Essential Strategies for Small Businesses" />
+  <meta name="twitter:description" content="Voice search optimization guide for small businesses in 2025. Natural language keywords, local SEO, featured snippets, speed, AI tools and a free downloadable guide from Companies Builder." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/Companies-builder-voice-search.png" />
 
   <!-- Preconnect & fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- Preload hero image for LCP (if you keep voice-specific image) -->
-  <link rel="preload" href="/assets/images/BGhero-voice.jpg" as="image">
-
   <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 
+  <!-- Page-specific CSS (matches your original SEO page style) -->
   <style>
-    :root { --brand:#0d6efd; --muted:#6c757d; font-family:'Roboto', Arial, sans-serif; }
+    :root {
+      --brand: #0d6efd;
+      --muted: #6c757d;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
 
-    /* Keep same fixed-top body offset as SEO page */
-    body { padding-top: 68px; }
-    @media (max-width:991px){ body { padding-top: 56px; } }
+    /* Global link & button hover */
+    a:not(.btn), .nav-link, .dropdown-item {
+      transition: color .16s ease, transform .12s ease;
+    }
+    a:not(.btn):hover, .nav-link:hover, .dropdown-item:hover {
+      color: var(--brand) !important;
+      text-decoration: none;
+    }
 
-    .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus{ left:10px; top:10px; width:auto; height:auto; background:#fff; color:#000; padding:8px; z-index:9999; border-radius:6px; }
-
-    /* HERO - restored to same style as your original SEO page (background-image + overlay) */
+    /* Hero (background image + overlay as in your original) */
     .hero {
       padding: 120px 0 70px;
-      background-image: url('/assets/images/BGhero-voice.jpg'); /* voice-specific hero image */
+      background-image: url('/assets/images/BGhero.png'); /* original BGhero */
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -67,47 +85,60 @@
       background: rgba(0,0,0,0.28);
       pointer-events: none;
     }
-    .hero .container { position: relative; z-index: 2; }
-    .hero h1 { font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
-    .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: .5rem;
+      letter-spacing: -0.02em;
+    }
 
-    .content{ padding:40px 20px; max-width:900px; margin:0 auto; }
-    .content img{ display:block; margin:0 auto; max-width:100%; height:auto; }
+    /* Content */
+    .content {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .content img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: 800px;
+      height: auto;
+    }
+    .muted-small {
+      color: var(--muted);
+      font-size: .95rem;
+    }
 
-    @media (min-width:992px){ .navbar .dropdown:hover>.dropdown-menu{ display:block; margin-top:0; } }
+    /* Responsive tweaks */
+    @media (max-width: 991px) {
+      .hero {
+        padding-top: 100px;
+        padding-bottom: 50px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .content img {
+        width: 100%;
+      }
+    }
 
-    .author-box{ display:flex; gap:12px; align-items:center; margin-bottom:1rem; }
-    .author-box img{ width:56px; height:56px; border-radius:50%; object-fit:cover; }
+    /* NAV - open dropdown on hover for desktop */
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
   </style>
-
-  <!-- Structured data: BlogPosting (publisher & org name updated to 'Companies Builder') -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://companiesbuilder.com/blogs/articles/voice-search-optimization-2025/" },
-    "headline": "Voice Search Optimization in 2025: Essential Strategies for Small Businesses",
-    "description": "Voice search optimization guide for small businesses in 2025. Natural language keywords, local SEO, featured snippets, speed, AI tools and a free downloadable guide from Companies Builder.",
-    "image": "https://companiesbuilder.com/assets/images/Companies-builder-voice-search.jpg",
-    "author": { "@type": "Person", "name": "Companies Builder Team", "url": "https://companiesbuilder.com/about/" },
-    "publisher": { "@type": "Organization", "name": "Companies Builder", "logo": { "@type": "ImageObject", "url": "https://companiesbuilder.com/assets/images/CB-logo.png", "width":600, "height":60 } },
-    "datePublished": "2025-08-30",
-    "dateModified": "2025-08-30"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  { "@context":"https://schema.org", "@type":"Organization", "name":"Companies Builder", "url":"https://companiesbuilder.com", "logo":"https://companiesbuilder.com/assets/images/CB-logo.png", "sameAs":["https://www.facebook.com/companiesbuilder","https://www.instagram.com/companiesbuilder","https://www.linkedin.com/company/companiesbuilder"] }
-  </script>
-
-  <script type="application/ld+json">
-  { "@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[ {"@type":"ListItem","position":1,"name":"Home","item":"https://companiesbuilder.com/"},{"@type":"ListItem","position":2,"name":"Blogs","item":"https://companiesbuilder.com/blogs/"},{"@type":"ListItem","position":3,"name":"Voice Search Optimization 2025","item":"https://companiesbuilder.com/blogs/articles/voice-search-optimization-2025/"} ] }
-  </script>
-
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
@@ -125,7 +156,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
-              <li><a class="dropdown-item" href="/services/web-development-designing/">Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development & Designing</a></li>
               <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
               <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
               <li><hr class="dropdown-divider"></li>
@@ -140,71 +171,111 @@
     </div>
   </nav>
 
-  <!-- HERO restored to background-image style -->
+  <!-- Hero Section (same style as your original SEO page) -->
   <header class="hero" role="banner" aria-label="Hero">
     <div class="container">
       <h1>Voice Search Optimization in 2025: Essential Strategies for Small Businesses</h1>
-      <p class="lead">Natural language SEO, featured snippet tactics, local voice strategies & AI insights for Hyderabad businesses.</p>
     </div>
   </header>
 
-  <main id="main-content" class="content" role="main">
+  <!-- Blog Content -->
+  <section class="content py-5">
     <div class="container">
-      <p class="muted-small"><em>Published August 30, 2025 • Estimated reading time: 6 minutes</em></p>
+      <p class="muted-small"><em>August 30, 2025</em></p>
+      <h2>Voice Search Optimization in 2025: Essential Strategies for Small Businesses</h2>
 
-      <article itemscope itemtype="https://schema.org/Article">
-        <h2 itemprop="headline">Voice Search Optimization in 2025: Essential Strategies for Small Businesses</h2>
+      <img src="/assets/images/Companies-builder-voice-search.png" class="img-fluid mb-4" alt="Voice Search Optimization Strategies" loading="lazy" />
 
-        <!-- Featured image responsive -->
-        <picture>
-          <source type="image/avif" srcset="/assets/images/Companies-builder-voice-search-600.avif 600w, /assets/images/Companies-builder-voice-search-1200.avif 1200w" sizes="(max-width:991px) 100vw, 900px">
-          <source type="image/webp" srcset="/assets/images/Companies-builder-voice-search-600.webp 600w, /assets/images/Companies-builder-voice-search-1200.webp 1200w" sizes="(max-width:991px) 100vw, 900px">
-          <img src="/assets/images/Companies-builder-voice-search.jpg" class="img-fluid mb-4" alt="Voice Search Optimization Strategies" loading="lazy" itemprop="image">
-        </picture>
+      <article>
+        <h2>Introduction</h2>
+        <p>The rise of voice search is transforming online information discovery, offering small business owners a vital opportunity to enhance their visibility. With 153.5 million people in the U.S. projected to use voice assistants by the end of 2025, and 58.6% of U.S. residents having tried voice search at least once, adapting your website for voice queries is key to remaining competitive. Users now pose full questions to assistants like Siri, Google Assistant, and Alexa, moving beyond simple typed keywords.</p>
 
-        <div class="author-box">
-          <img src="/assets/images/team-avatar.jpg" alt="Companies Builder Team" loading="lazy">
-          <div>
-            <div class="small text-muted">By <strong>Companies Builder Team</strong></div>
-            <div class="small text-muted">Hyderabad • Digital Marketing & SEO</div>
-          </div>
-        </div>
+        <p>At <a href="https://www.companiesbuilder.com">Companies Builder</a>, we assist small businesses in Hyderabad and elsewhere to leverage digital marketing, including advanced voice search techniques. This guide explains the importance of voice search and delivers practical strategies to elevate your SEO in 2025, increasing organic traffic and leads.</p>
 
-        <nav aria-label="Table of contents" class="mb-4">
-          <strong>On this page</strong>
-          <ul class="small">
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#why-voice">Why voice search matters</a></li>
-            <li><a href="#nl-keywords">Natural language & long-tail keywords</a></li>
-            <li><a href="#local-seo">Optimize for local SEO</a></li>
-            <li><a href="#snippets">Featured snippets</a></li>
-            <li><a href="#speed-mobile">Speed & mobile-first</a></li>
-            <li><a href="#ai-tools">AI & voice tools</a></li>
-            <li><a href="#cta">Conclusion & CTA</a></li>
-          </ul>
-        </nav>
+        <h2>Why Voice Search Optimization Matters for Small Businesses in 2025</h2>
+        <p>Voice search represents a fundamental change in user habits. Projections indicate that 50% of searches will be voice-based by 2025, with global voice commerce reaching $81.8 billion. For small businesses, this opens doors to local customers via "near me" queries, such as "best SEO services in Hyderabad." Without proper adaptation, you may lose ground to optimized competitors appearing in featured snippets or voice replies.</p>
+        <p>Voice search optimization boosts visibility by utilizing natural language understanding and emphasizing mobile-responsive designs, in line with Google's focus on user intent. Small enterprises can compete effectively by crafting content that directly addresses queries, resulting in greater engagement and sales.</p>
 
-        <!-- (rest of article content unchanged) -->
+        <h2>1. Use Natural Language and Long-Tail Keywords</h2>
+        <p>Voice queries are typically spoken in full sentences, like "What are the leading digital marketing firms in Hyderabad?" This highlights the need for long-tail keywords—detailed phrases that align with user intent.</p>
+        <h3>How to Do It</h3>
+        <ul>
+          <li><strong>Research Spoken Queries:</strong> Employ keyword research tools to uncover question-oriented terms in your field.</li>
+          <li><strong>Integrate Naturally:</strong> Develop content with a approachable, verbal style. For instance, begin articles with "Did you know..." to echo voice patterns.</li>
+          <li><strong>Target Question Phrases:</strong> Emphasize starters like "who," "what," "where," "when," "why," and "how" to match search goals.</li>
+        </ul>
+        <h3>Companies Builder Tip</h3>
+        <p>At Companies Builder, we customize keyword analysis for voice search, adapting approaches for regional areas like Hyderabad to secure rankings for verbal inquiries.</p>
 
-        <section id="intro"> ... </section>
-        <section id="why-voice"> ... </section>
-        <section id="nl-keywords"> ... </section>
-        <section id="local-seo"> ... </section>
-        <section id="snippets"> ... </section>
-        <section id="speed-mobile"> ... </section>
-        <section id="ai-tools"> ... </section>
-        <section id="cta"> ... </section>
+        <h2>2. Optimize for Local SEO</h2>
+        <p>76% of smart speaker owners conduct local voice searches weekly, underscoring the value of local tuning. Voice often incorporates location details, amplifying exposure for Hyderabad-based operations.</p>
+        <h3>Actionable Steps</h3>
+        <ul>
+          <li><strong>Update Google My Business:</strong> Verify NAP (Name, Address, Phone) accuracy, operating times, and images for local voice appearances.</li>
+          <li><strong>Incorporate Local Terms:</strong> Embed expressions like "SEO in Hyderabad" or "digital marketing nearby" into your site and materials.</li>
+          <li><strong>Promote Reviews:</strong> Favorable local feedback builds credibility and elevates voice search positions.</li>
+        </ul>
+        <h3>Companies Builder Advantage</h3>
+        <p>We refine your local SEO setups and produce location-specific materials to lead voice searches in Hyderabad, seamlessly drawing in local clientele.</p>
 
+        <h2>3. Focus on Featured Snippets</h2>
+        <p>Voice systems frequently source responses from featured snippets—Google's top "position zero" highlights. Targeting these positions can position your content as the primary voice answer.</p>
+        <h3>Best Practices</h3>
+        <ul>
+          <li><strong>Organize Content Logically:</strong> Apply headings, lists, and brief sections to respond to queries straightforwardly.</li>
+          <li><strong>Develop FAQ-Style Materials:</strong> Build specific FAQ areas with prompt, precise replies.</li>
+          <li><strong>Apply Schema Markup:</strong> Introduce structured data to aid search engines in comprehending and showcasing your materials.</li>
+        </ul>
+        <h3>Companies Builder Support</h3>
+        <p>Our specialists create snippet-tuned content and deploy schema to boost your visibility in voice search outcomes.</p>
+
+        <h2>4. Ensure Your Website Loads Quickly and Is Mobile-First</h2>
+        <p>27% of the world's online users engage in voice search via mobile, making speed and mobile compatibility essential. Delayed sites deter users and diminish rankings.</p>
+        <h3>Key Tactics</h3>
+        <ul>
+          <li><strong>Assess Site Speed:</strong> Target load times below 3 seconds with performance evaluation tools.</li>
+          <li><strong>Implement Responsive Layouts:</strong> Confirm seamless functionality across devices, favoring mobile views.</li>
+          <li><strong>Reduce File Sizes:</strong> Compress visuals and scripts to enhance speed while preserving quality.</li>
+        </ul>
+        <h3>Companies Builder Expertise</h3>
+        <p>We perform in-depth evaluations and refinements to render your site rapid and mobile-prepared, optimizing voice search efficacy.</p>
+
+        <h2>5. Leverage AI and Additional Voice Search Tools</h2>
+        <p>With 8.4 billion voice assistants active globally in 2025, AI resources can sharpen your approach. Monitor voice query patterns and refine content as needed.</p>
+        <h3>Steps to Optimize</h3>
+        <ul>
+          <li><strong>Review Analytics:</strong> Utilize search consoles to identify voice-linked queries generating visits.</li>
+          <li><strong>Add Voice-Compatible Elements:</strong> Include features like interactive bots where suitable.</li>
+        </ul>
+        <h3>Companies Builder’s Edge</h3>
+        <p>We incorporate AI-based analysis into voice search enhancements, maintaining your lead in digital marketing.</p>
+
+        <h2>Conclusion & Call to Action</h2>
+        <p>In 2025, voice search optimization involves aligning with natural speech patterns, from detailed keywords to local emphasis and swift sites. Adopting these methods allows small businesses to heighten visibility, secure additional leads, and foster enduring growth.</p>
+        <p>At Companies Builder, we commit to supporting small businesses via customized SEO and digital solutions. If you're preparing for voice search in Hyderabad or further afield, our professionals are prepared to assist.</p>
+        <p>Eager to adapt your site for voice? Access our complimentary resource, “Voice Search Optimization for Small Businesses in 2025,” or schedule a demo now. Contact us via <a href="mailto:info@companiesbuilder.com">info@companiesbuilder.com</a> to begin!</p>
       </article>
 
       <h2>Leave a Comment</h2>
       <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = "https://www.companiesbuilder.com/blogs/articles/voice-search-optimization-2025/";
+          this.page.identifier = "/blogs/articles/voice-search-optimization-2025";
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js'; // Replace with your Disqus shortname
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     </div>
-  </main>
+  </section>
 
-  <!-- Footer (company name fixed) -->
+  <!-- Footer -->
   <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="row g-4">
@@ -226,7 +297,7 @@
         <div class="col-md-3">
           <h6>Services</h6>
           <ul class="list-unstyled small">
-            <li><a href="/services/web-development-designing/" class="text-white-50">Web Development &amp; Designing</a></li>
+            <li><a href="/services/web-development-&-designing/" class="text-white-50">Web Development &amp; Designing</a></li>
             <li><a href="/services/seo-services-in-hyderabad/" class="text-white-50">SEO Services</a></li>
             <li><a href="/services/social-media-marketing-company-in-hyderabad/" class="text-white-50">Social Media Marketing</a></li>
             <li><a href="/services/" class="text-white-50">All Services</a></li>
@@ -242,33 +313,7 @@
     </div>
   </footer>
 
-  <!-- Cookie consent & analytics loader (unchanged) -->
-  <div id="cookie-consent" style="position:fixed;right:12px;bottom:12px;z-index:9999;max-width:360px;">
-    <div class="card p-3 shadow-sm">
-      <div class="small mb-2">We use analytics to improve the site. By clicking "Accept" you consent to load analytics.</div>
-      <div class="d-flex gap-2">
-        <button id="accept-analytics" class="btn btn-sm btn-primary">Accept</button>
-        <button id="reject-analytics" class="btn btn-sm btn-outline-secondary">Reject</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function setLocal(name,val){ try{ localStorage.setItem(name,val);}catch(e){} }
-    function getLocal(name){ try{ return localStorage.getItem(name);}catch(e){return null} }
-    function loadGtag(){ if(window.gtagLoaded) return; var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN'; document.head.appendChild(s); window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag; gtag('js',new Date()); gtag('config','G-563QE3BQWN'); window.gtagLoaded=true; }
-    document.getElementById('accept-analytics').addEventListener('click',function(){ setLocal('cb_analytics','accepted'); loadGtag(); document.getElementById('cookie-consent').style.display='none'; });
-    document.getElementById('reject-analytics').addEventListener('click',function(){ setLocal('cb_analytics','rejected'); document.getElementById('cookie-consent').style.display='none'; });
-    if(getLocal('cb_analytics')==='accepted'){ loadGtag(); document.getElementById('cookie-consent').style.display='none'; }
-  </script>
-
-  <!-- Disqus embed (unchanged) -->
-  <script>
-    var disqus_config = function () { this.page.url = "https://www.companiesbuilder.com/blogs/articles/voice-search-optimization-2025/"; this.page.identifier = "/blogs/articles/voice-search-optimization-2025"; };
-    (function(){ var d=document,s=d.createElement('script'); s.src='https://companiesbuilder.disqus.com/embed.js'; s.setAttribute('data-timestamp',+new Date()); (d.head||d.body).appendChild(s); })();
-  </script>
-
-  <!-- Bootstrap -->
+  <!-- Bootstrap Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="/assets/js/scripts.js" defer></script>
 </body>
