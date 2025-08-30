@@ -35,7 +35,8 @@
   <!-- Preconnect & fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Keep Roboto for site body; add Poppins for hero -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Bootstrap & icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -115,15 +116,17 @@
       background-image: url('/assets/images/companies-builder-demo-hero-bg.webp');
       background-size: cover;
       background-position: center;
-      color: #fff;
+      color: #000; /* changed to black per request */
       text-align: center;
       position: relative;
       overflow: hidden;
+      font-family: 'Poppins', Arial, sans-serif; /* hero uses Poppins only */
     }
-    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.28); pointer-events: none; }
+    /* Remove fade/shade overlay on hero */
+    .hero::after { display: none; content: none; }
     .hero .container { position: relative; z-index: 2; }
-    .hero h1 { font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
-    .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; color: #000; }
+    .hero p.lead { font-size: 1.05rem; color: #000; margin-bottom: 18px; font-weight: 600; } /* sub-heading semi-bold, black */
 
     /* Form container */
     .demo-form-container {
