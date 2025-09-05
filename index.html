@@ -103,22 +103,31 @@
     }
 
     /* -------------------------
-      Hero
+      Hero (improved responsiveness & focal control)
       ------------------------- */
     .hero {
       padding: 120px 0 70px;
       background-image: url('/assets/images/Hero bg.png');
-      background-size: cover;
-      background-position: center;
+      background-size: cover;              /* keep aspect ratio and fill */
+      background-repeat: no-repeat;
+      background-position: center right;   /* prefer right side (hand) on wide screens */
+      background-attachment: scroll;        /* avoid mobile issues with fixed */
       color: #fff;
       text-align: center;
       position: relative;
       overflow: hidden;
+      min-height: 72vh;                     /* ensures image fills visible area */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 16px;
+      padding-right: 16px;
     }
+    /* slightly stronger overlay so text stays readable on any crop */
     .hero::after {
       content: "";
       position:absolute; inset:0;
-      background: rgba(0,0,0,0.28);
+      background: rgba(0,0,0,0.30);
       pointer-events:none;
     }
     .hero .container { position: relative; z-index: 2; }
@@ -268,11 +277,55 @@
       }
     }
 
+    /* ---------- Responsive hero adjustments ---------- */
+    /* keep previous responsive tweaks but expand them with focal control */
     @media (max-width: 991px) {
-      .hero { padding-top: 100px; padding-bottom: 50px; }
+      .hero {
+        padding-top: 100px;
+        padding-bottom: 50px;
+        /* shift focal area a bit to the right so the hand remains visible on narrow viewports */
+        background-position: 80% 30%;
+        min-height: 64vh;
+      }
       .service-card { padding: 14px; }
       .why-grid { grid-template-columns: 1fr; }
     }
+
+    @media (max-width: 767px) {
+      .hero {
+        /* more aggressive right focus for phones where width is narrow */
+        background-position: 90% 40%;
+        min-height: 60vh;
+        padding-top: 80px;
+        padding-bottom: 40px;
+      }
+      .hero h1 {
+        font-size: clamp(1.35rem, 7vw, 2rem);
+        line-height: 1.08;
+      }
+      .hero p.lead {
+        font-size: 4.4vw;
+        margin-bottom: 12px;
+      }
+      .hero .d-flex.justify-content-center {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hero .text-white-50 {
+        font-size: 3.6vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        background-position: 95% 45%;
+        min-height: 56vh;
+      }
+      .hero h1 {
+        font-size: 7.5vw;
+      }
+    }
+    /* ---------- end hero responsive tweaks ---------- */
   </style>
 </head>
 <body>
