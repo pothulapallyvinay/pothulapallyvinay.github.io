@@ -5,134 +5,230 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-563QE3BQWN');
   </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India. Learn how we help businesses grow with tailored SEO, social media, and website solutions." />
-  <meta name="keywords" content="web development, digital marketing, SEO, social media marketing, Hyderabad, CompaniesBuilder" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing | CompaniesBuilder</title>
+  <meta name="description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India." />
+  <meta name="keywords" content="web development, digital marketing, SEO, Hyderabad, CompaniesBuilder" />
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
-  <link rel="icon" href="/assets/images/logo-cb.png" />
-  <link rel="mask-icon" href="/assets/images/logo-cb.svg" color="#0d6efd" />
-  <meta name="msapplication-TileColor" content="#0d6efd" />
-  <meta name="theme-color" content="#0d6efd" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing" />
-  <meta property="og:description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India. Learn how we help businesses grow with tailored SEO, social media, and website solutions." />
-  <meta property="og:url" content="https://companiesbuilder.com/blogs/articles/meet-companies-builder/" />
-  <meta property="og:image" content="https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg" />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing" />
-  <meta name="twitter:description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India. Learn how we help businesses grow with tailored SEO, social media, and website solutions." />
-  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg" />
-
-  <!-- Preconnect & fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Fonts: Poppins for headings, Roboto for body -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <!-- Main stylesheet (optional) -->
+  <!-- Optional main stylesheet (keeps site-level overrides) -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <!-- Page-specific CSS -->
   <style>
-    :root {
+    :root{
       --brand: #0d6efd;
-      --muted: #6c757d;
-      --card-bg: #ffffff;
-      --surface: #f8fafc;
-      font-family: 'Roboto', Arial, sans-serif;
+      --brand-dark: #0b63d6;
+      --muted: #667085;
+      --bg: #f6f9fc;
+      --card: #ffffff;
+      --faq-band-start: #f0f7ff;
+      --faq-band-end: #f8fbff;
+      --accent: #0b63d6;
+      --max-width: 1200px;
     }
 
-    /* Reset and base */
-    body { background: linear-gradient(180deg, #fbfdff 0%, #f6f9fc 100%); color: #222831; }
-    a { color: var(--brand); }
+    /* Base */
+    html,body { height:100%; }
+    body{
+      margin:0;
+      font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--bg);
+      color: #0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Headings use Poppins */
+    h1,h2,h3,h4 { font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif; color: #0f172a; margin-top:0; }
+    h1 { font-weight:800; font-size: clamp(1.8rem, 3.6vw, 3.2rem); line-height:1.02; }
+    h2 { font-weight:700; font-size: 1.5rem; margin-bottom:.6rem; }
 
     /* Navbar */
-    .navbar { background: linear-gradient(90deg,#111827 0%, #0b1220 100%); }
+    .navbar { background: linear-gradient(90deg,#071129 0%, #081429 100%); }
+    .navbar .navbar-brand img { height:34px; }
 
     /* Hero */
     .hero {
-      padding: 100px 0 60px;
+      padding: 96px 0 52px;
       background-image: url('/assets/images/BGhero.png');
       background-size: cover;
       background-position: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color:#fff;
+      position:relative;
+      text-align:center;
+      overflow:hidden;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(3,7,18,0.5), rgba(3,7,18,0.35));
-      pointer-events: none;
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(3,7,18,0.46), rgba(3,7,18,0.28));
+      pointer-events:none;
     }
-    .hero .container { position: relative; z-index: 2; }
-    .hero h1 { font-size: clamp(1.8rem, 3.6vw, 3.2rem); line-height: 1.02; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
 
-    /* Content wrapper: increased width and premium card */
-    .content-wrap { max-width: 1150px; margin: 0 auto; padding: 48px 20px; }
-    .content-card { background: var(--card-bg); border-radius: 14px; box-shadow: 0 10px 30px rgba(15,23,42,0.08); padding: 48px; border: 1px solid rgba(13,110,253,0.04); }
+    /* Content wrapper (wider + premium card) */
+    .content-wrap { max-width: var(--max-width); margin: 0 auto; padding: 36px 20px; }
+    .content-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 18px 40px rgba(11,18,30,0.06);
+      border: 1px solid rgba(13,110,253,0.04);
+    }
 
-    /* Article typography */
-    .content article h2 { margin-top: 1.25rem; margin-bottom: .6rem; font-weight:700; }
-    .content article p, .content article li { color: #334155; font-size: 1rem; line-height: 1.68; }
-    .content img.feature { display:block; margin: 18px auto; max-width:100%; border-radius: 8px; }
+    /* Article */
+    .feature { display:block; width:100%; max-width:100%; border-radius:10px; margin:18px auto; }
+    .muted-small { color: var(--muted); font-size:.95rem; }
+    .content article p, .content article li { color:#334155; line-height:1.7; font-size:1rem; }
 
-    /* FAQ & Accordion premium style */
-    .accordion { border-radius: 8px; overflow: hidden; }
-    .accordion-item { border: none; }
+    /* --- PREMIUM FAQ BAND --- */
+    .faq-band {
+      margin-top:34px;
+      border-radius:14px;
+      overflow:hidden;
+      background: linear-gradient(180deg, var(--faq-band-start), var(--faq-band-end));
+      border: 1px solid rgba(11,99,198,0.06);
+      padding: 28px;
+    }
+
+    .faq-inner {
+      display:flex;
+      gap:28px;
+      align-items:flex-start;
+      padding:22px;
+    }
+
+    /* left illustration / label */
+    .faq-left {
+      flex: 0 0 200px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      text-align:center;
+    }
+    .faq-left .illustration {
+      width:120px; height:120px; border-radius:16px;
+      background: linear-gradient(180deg, #fff, #eef7ff);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 8px 28px rgba(11,18,44,0.06);
+      border:1px solid rgba(11,99,198,0.06);
+    }
+    .faq-left .illustration i { font-size:36px; color: var(--accent); }
+    .faq-left .chip {
+      display:inline-flex; gap:8px; align-items:center;
+      background: linear-gradient(90deg,var(--brand),var(--brand-dark));
+      color:#fff; padding:8px 12px; border-radius:999px; font-weight:700;
+      font-size:.9rem;
+      box-shadow: 0 6px 20px rgba(11,99,198,0.12);
+    }
+
+    /* right: accordion area */
+    .faq-right { flex:1; }
+
+    /* Accordion item design */
+    .accordion { gap:12px; display:block; }
+    .accordion-item { border:none; background:transparent; }
+    .faq-qa {
+      display:flex;
+      align-items:center;
+      gap:16px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      border-left: 4px solid transparent;
+      box-shadow: 0 8px 30px rgba(12,18,36,0.04);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .faq-qa:hover { transform: translateY(-4px); box-shadow: 0 18px 46px rgba(12,18,36,0.06); }
+    .faq-qa .icon-circle {
+      width:52px; height:52px; border-radius:12px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: linear-gradient(180deg,#f8fbff,#ffffff);
+      border: 1px solid rgba(11,99,198,0.06);
+      flex-shrink:0;
+    }
+    .faq-qa .icon-circle i { font-size:20px; color: var(--accent); }
+
+    /* question text area */
+    .faq-question {
+      font-weight:700; color:#0f172a; font-size:1rem;
+      display:flex; align-items:center; gap:12px; width:100%;
+    }
+
+    /* chevron */
+    .faq-chevron { margin-left:auto; color:var(--muted); transition: transform .24s ease; font-size:1.05rem; }
+
+    /* collapsed & open states styling */
     .accordion-button {
-      background: transparent; border: none; padding: 1rem 1.25rem; font-weight:700; color: #0f172a; box-shadow: none;
+      display:block;
+      width:100%;
+      text-align:left;
+      background:transparent;
+      border:none;
+      padding:0;
+      box-shadow:none;
     }
-    .accordion-button::after { /* custom caret */
-      font-family: "Bootstrap Icons"; content: "0d7"; /* fallback */
-      transition: transform .25s ease; transform: rotate(0deg); font-size: 1rem; margin-left: .5rem; color: var(--brand);
+    .accordion-button:focus { outline: none; box-shadow: 0 0 0 4px rgba(13,110,253,0.08); border-radius:12px; }
+
+    .accordion-collapse { background: transparent; padding:0; margin-top:12px; }
+    .accordion-body {
+      padding: 14px 18px;
+      background: #fbfdff;
+      border-radius: 10px;
+      color: #334155;
+      line-height: 1.65;
+      border:1px solid rgba(11,99,198,0.03);
     }
-    .accordion-button:not(.collapsed)::after { transform: rotate(180deg); }
-    .accordion-body { background: var(--surface); padding: 1rem 1.25rem 1.5rem; color: #344054; }
 
-    /* Comments area */
-    .comments-wrapper { margin-top: 2rem; }
-    .comment-box { border-radius: 10px; padding: 18px; background: linear-gradient(180deg,#fff 0,#fbfdff 100%); border: 1px solid rgba(15,23,42,0.04); }
-    .comment { padding: 12px; border-bottom: 1px solid rgba(15,23,42,0.04); }
-    .comment:last-child { border-bottom: none; }
-    .comment .meta { font-size: .84rem; color: var(--muted); }
+    /* active item accent */
+    .accordion-item.show .faq-qa { border-left-color: var(--accent); }
+    .accordion-item.show .faq-chevron { transform: rotate(180deg); color: var(--brand-dark); }
 
-    .btn-outline-secondary { border-radius: 999px; }
-    .btn-primary { border-radius: 8px; padding: .5rem .9rem; }
+    /* small screens */
+    @media (max-width: 991px) {
+      .faq-inner { flex-direction: column; padding:12px; }
+      .faq-left { flex:0 0 auto; flex-direction:row; gap:12px; align-items:center; justify-content:flex-start; }
+      .faq-left .illustration { width:72px; height:72px; }
+      .faq-left .chip { padding:7px 10px; font-size:.86rem; }
+      .faq-qa { padding:12px; }
+      .content-card { padding:24px; }
+    }
 
-    /* Responsive */
-    @media (max-width: 1199px) { .content-wrap{ padding: 32px 18px; } .content-card{ padding: 28px; } }
-    @media (max-width: 991px) { .hero { padding-top: 90px; padding-bottom: 40px; } .hero h1 { font-size: 1.8rem; } .content-wrap{ padding: 20px; } }
+    /* comments area */
+    .comment-box {
+      background: linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:10px;
+      padding:18px;
+      border:1px solid rgba(15,23,42,0.03);
+      box-shadow: 0 8px 24px rgba(15,23,42,0.04);
+    }
 
-    /* Accessibility focus */
-    .accordion-button:focus { box-shadow: 0 0 0 3px rgba(13,110,253,0.12); }
-
+    /* small visual polish */
+    .btn-pill { border-radius:999px; }
+    .mb-4 { margin-bottom:1.5rem !important; }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy">
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" class="me-2" style="height:34px;">
         <span class="fw-bold">CompaniesBuilder</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -154,142 +250,169 @@
           </li>
           <li class="nav-item"><a class="nav-link active" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light btn-pill" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <header class="hero" role="banner" aria-label="Hero">
     <div class="container">
       <h1>Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing</h1>
     </div>
   </header>
 
-  <!-- Blog Content (wider & premium) -->
-  <section class="py-5">
-    <div class="content-wrap">
-      <div class="content-card">
-        <div class="container-fluid content">
-          <p class="muted-small"><em>September 6, 2025</em></p>
-          <h2>Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing in India, Hyderabad</h2>
-          <img src="/assets/images/Companies-builder-growth-partner.jpg" class="feature mb-4" alt="Companies Builder Growth Partner" loading="lazy" />
+  <!-- MAIN CONTENT -->
+  <main class="content-wrap" role="main">
+    <div class="content-card">
+      <div class="container-fluid content">
+        <p class="muted-small"><em>September 6, 2025</em></p>
+        <h2>Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing in India, Hyderabad</h2>
+        <img src="/assets/images/Companies-builder-growth-partner.jpg" alt="Companies Builder Growth Partner" class="feature" loading="lazy">
 
-          <article>
-            <!-- Full article content should be here (same as your original). For brevity we keep the main sections but keep the content same as your page. -->
+        <article>
+          <!-- Full article - keep your content here (unchanged) -->
+          <h2>Introduction</h2>
+          <p>There’s a moment in every business’s life when the website stops being a brochure and starts trying to do real work—generate leads, close sales, build trust. For some, it happens slowly: a drop in organic traffic, a few dead leads, flaky page speed reports. For others, it arrives like a wakeup call: a competitor steals your best client because their site converted better. That moment is exactly where <a href="https://www.companiesbuilder.com">Companies Builder</a> steps in.</p>
 
-            <h2>Introduction</h2>
-            <p>There’s a moment in every business’s life when the website stops being a brochure and starts trying to do real work—generate leads, close sales, build trust. For some, it happens slowly: a drop in organic traffic, a few dead leads, flaky page speed reports. For others, it arrives like a wakeup call: a competitor steals your best client because their site converted better. That moment is exactly where <a href="https://www.companiesbuilder.com">Companies Builder</a> steps in.</p>
+          <!-- ... (keep the rest of your article content here verbatim) ... -->
 
-            <!-- (rest of your article here — keep as before) -->
-
-            <!-- FAQ accordion -->
-            <h2 class="mt-4">FAQs: Quick Answers to Common Questions</h2>
-            <div class="accordion mb-4" id="faqAccordion" role="tablist">
-
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="faq-heading-1">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">
-                    Do you build WordPress sites or custom apps?
-                  </button>
-                </h3>
-                <div id="faq-1" class="accordion-collapse collapse" aria-labelledby="faq-heading-1" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    Yes — we build both. WordPress is ideal for fast, content-driven sites and admin-friendly editing; custom apps are used when your product requires complex business logic, integrations, or unique flows.
-                  </div>
+          <!-- PREMIUM FAQ BAND (separate visual section) -->
+          <section class="faq-band" aria-labelledby="faq-heading">
+            <div class="faq-inner">
+              <div class="faq-left">
+                <div class="illustration" aria-hidden="true">
+                  <i class="bi bi-life-preserver"></i>
                 </div>
+                <div class="chip"><i class="bi bi-check-circle-fill"></i> Frequently asked</div>
+                <div class="small text-muted mt-2">Short, actionable answers for busy teams.</div>
               </div>
 
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="faq-heading-2">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
-                    How long does it take to see results from SEO?
-                  </button>
-                </h3>
-                <div id="faq-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    SEO is a marathon. Some technical fixes (speed, markup, on-page improvements) can give immediate UX and ranking lifts; meaningful keyword movement typically shows over 3–6 months depending on competition and content volume.
-                  </div>
-                </div>
-              </div>
+              <div class="faq-right">
+                <h3 id="faq-heading">Got questions? We’ve got concise answers.</h3>
+                <p class="small text-muted mb-3">Practical, direct answers to common questions — written for founders and busy teams.</p>
 
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="faq-heading-3">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
-                    Can you manage our social media and ads?
-                  </button>
-                </h3>
-                <div id="faq-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    Absolutely — we offer social media strategy, organic content creation, and paid ad management across platforms like Google and Meta. We tie campaigns to measurable goals (leads, revenue) rather than vanity metrics.
-                  </div>
-                </div>
-              </div>
+                <div class="accordion" id="faqAccordion" role="tablist">
+                  <!-- FAQ 1 -->
+                  <div class="accordion-item">
+                    <div class="faq-qa" id="faq1-wrapper">
+                      <div class="icon-circle"><i class="bi bi-pc-display"></i></div>
 
-              <div class="accordion-item">
-                <h3 class="accordion-header" id="faq-heading-4">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
-                    What do your website maintenance plans include?
-                  </button>
-                </h3>
-                <div id="faq-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    Maintenance plans typically include regular backups, plugin and core updates, performance monitoring, security hardening, and a fixed number of small content edits each month. Plans can be customized to your needs.
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- End article -->
-          </article>
-
-          <!-- Comments -->
-          <h2 class="mt-4">Leave a Comment</h2>
-          <div class="comments-wrapper">
-            <div class="mb-3 small text-muted">Choose comment method — use Disqus (external) or Local comments (browser-only)</div>
-            <div class="d-flex gap-2 mb-3">
-              <button id="btn-load-disqus" class="btn btn-outline-secondary btn-sm" type="button">Load Disqus</button>
-              <button id="btn-use-local" class="btn btn-outline-secondary btn-sm" type="button">Use Local Comments</button>
-            </div>
-
-            <div id="disqus_container" style="display:none">
-              <div id="disqus_thread"></div>
-            </div>
-
-            <div id="local_comments_container" style="display:none">
-              <div class="comment-box">
-                <form id="commentForm" class="comment-form">
-                  <div class="row g-2">
-                    <div class="col-12 col-md-4">
-                      <label for="commentName" class="form-label small">Name</label>
-                      <input id="commentName" class="form-control form-control-sm" placeholder="Your name" required />
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">
+                        <div class="faq-question">Do you build WordPress sites or custom apps?</div>
+                        <div class="faq-chevron"><i class="bi bi-chevron-down"></i></div>
+                      </button>
                     </div>
-                    <div class="col-12 col-md-8">
-                      <label for="commentText" class="form-label small">Comment</label>
-                      <textarea id="commentText" class="form-control form-control-sm" rows="3" placeholder="Write a thoughtful comment..." required></textarea>
+
+                    <div id="faq-1" class="accordion-collapse collapse" aria-labelledby="faq1-wrapper" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Yes — we build both. WordPress is ideal for fast, content-driven sites and admin-friendly editing; custom apps are used when your product requires complex business logic, integrations, or unique flows.
+                      </div>
                     </div>
                   </div>
-                  <div class="d-flex gap-2 mt-3">
-                    <button class="btn btn-primary btn-sm" type="submit">Post comment</button>
-                    <button id="clearLocalComments" class="btn btn-outline-danger btn-sm" type="button">Clear local comments</button>
+
+                  <!-- FAQ 2 -->
+                  <div class="accordion-item">
+                    <div class="faq-qa" id="faq2-wrapper">
+                      <div class="icon-circle"><i class="bi bi-clock-history"></i></div>
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
+                        <div class="faq-question">How long does it take to see results from SEO?</div>
+                        <div class="faq-chevron"><i class="bi bi-chevron-down"></i></div>
+                      </button>
+                    </div>
+
+                    <div id="faq-2" class="accordion-collapse collapse" aria-labelledby="faq2-wrapper" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        SEO is a marathon. Some technical fixes (speed, markup, on-page improvements) can give immediate UX and ranking lifts; meaningful keyword movement typically shows over 3–6 months depending on competition and content volume.
+                      </div>
+                    </div>
                   </div>
-                </form>
 
-                <div id="localCommentsList" class="mt-3" aria-live="polite"></div>
-              </div>
-            </div>
+                  <!-- FAQ 3 -->
+                  <div class="accordion-item">
+                    <div class="faq-qa" id="faq3-wrapper">
+                      <div class="icon-circle"><i class="bi bi-megaphone"></i></div>
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
+                        <div class="faq-question">Can you manage our social media and ads?</div>
+                        <div class="faq-chevron"><i class="bi bi-chevron-down"></i></div>
+                      </button>
+                    </div>
 
+                    <div id="faq-3" class="accordion-collapse collapse" aria-labelledby="faq3-wrapper" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Absolutely — we offer social media strategy, organic content creation, and paid ad management across platforms like Google and Meta. We tie campaigns to measurable goals (leads, revenue) rather than vanity metrics.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- FAQ 4 -->
+                  <div class="accordion-item">
+                    <div class="faq-qa" id="faq4-wrapper">
+                      <div class="icon-circle"><i class="bi bi-shield-lock-fill"></i></div>
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
+                        <div class="faq-question">What do your website maintenance plans include?</div>
+                        <div class="faq-chevron"><i class="bi bi-chevron-down"></i></div>
+                      </button>
+                    </div>
+
+                    <div id="faq-4" class="accordion-collapse collapse" aria-labelledby="faq4-wrapper" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Maintenance plans typically include regular backups, plugin and core updates, performance monitoring, security hardening, and a fixed number of small content edits each month. Plans can be customized to your needs.
+                      </div>
+                    </div>
+                  </div>
+
+                </div> <!-- accordion -->
+              </div> <!-- faq-right -->
+            </div> <!-- faq-inner -->
+          </section>
+
+          <!-- continue article if any -->
+        </article>
+
+        <!-- COMMENTS -->
+        <h2 class="mt-4">Leave a Comment</h2>
+        <div class="comments-wrapper">
+          <div class="mb-2 small text-muted">Choose comment method — use Disqus (external) or Local comments (browser-only)</div>
+          <div class="d-flex gap-2 mb-3">
+            <button id="btn-load-disqus" class="btn btn-outline-secondary btn-sm btn-pill" type="button">Load Disqus</button>
+            <button id="btn-use-local" class="btn btn-outline-secondary btn-sm btn-pill" type="button">Use Local Comments</button>
           </div>
 
-        </div>
-      </div>
-    </div>
-  </section>
+          <div id="disqus_container" style="display:none"><div id="disqus_thread"></div></div>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-5">
+          <div id="local_comments_container" style="display:none">
+            <div class="comment-box">
+              <form id="commentForm" class="comment-form">
+                <div class="row g-2">
+                  <div class="col-12 col-md-4">
+                    <label for="commentName" class="form-label small">Name</label>
+                    <input id="commentName" class="form-control form-control-sm" placeholder="Your name" required />
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <label for="commentText" class="form-label small">Comment</label>
+                    <textarea id="commentText" class="form-control form-control-sm" rows="3" placeholder="Write a thoughtful comment..." required></textarea>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 mt-3">
+                  <button class="btn btn-primary btn-sm" type="submit">Post comment</button>
+                  <button id="clearLocalComments" class="btn btn-outline-danger btn-sm" type="button">Clear local comments</button>
+                </div>
+              </form>
+
+              <div id="localCommentsList" class="mt-3" aria-live="polite"></div>
+            </div>
+          </div>
+
+        </div> <!-- comments-wrapper -->
+
+      </div> <!-- container-fluid -->
+    </div> <!-- content-card -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5" role="contentinfo">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-3">
@@ -326,75 +449,28 @@
     </div>
   </footer>
 
-  <!-- Structured Data (keep as-is) -->
+  <!-- Structured Data (keep as needed) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing",
-    "description": "Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India. Learn how we help businesses grow with tailored SEO, social media, and website solutions.",
-    "datePublished": "2025-09-06",
-    "author": {
-      "@type": "Organization",
-      "name": "CompaniesBuilder",
-      "url": "https://companiesbuilder.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "CompaniesBuilder",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://companiesbuilder.com/assets/images/CB-logo.png"
-      }
-    },
-    "image": "https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg",
-    "url": "https://companiesbuilder.com/blogs/articles/meet-companies-builder/"
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing",
+    "description":"Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India.",
+    "datePublished":"2025-09-06",
+    "author":{"@type":"Organization","name":"CompaniesBuilder","url":"https://companiesbuilder.com"},
+    "publisher":{"@type":"Organization","name":"CompaniesBuilder","logo":{"@type":"ImageObject","url":"https://companiesbuilder.com/assets/images/CB-logo.png"}},
+    "image":"https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg",
+    "url":"https://companiesbuilder.com/blogs/articles/meet-companies-builder/"
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CompaniesBuilder",
-    "url": "https://companiesbuilder.com",
-    "logo": "https://companiesbuilder.com/assets/images/CB-logo.png",
-    "sameAs": [
-      "https://www.facebook.com/companiesbuilder",
-      "https://www.instagram.com/companiesbuilder",
-      "https://www.linkedin.com/company/companiesbuilder"
-    ],
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+91 6302787953",
-        "contactType": "customer service",
-        "areaServed": "IN",
-        "availableLanguage": ["en"]
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://companiesbuilder.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://companiesbuilder.com/blogs/"},
-      {"@type": "ListItem", "position": 3, "name": "Meet Companies Builder", "item": "https://companiesbuilder.com/blogs/articles/meet-companies-builder/"}
-    ]
-  }
-  </script>
-
-  <!-- Bootstrap Scripts -->
+  <!-- Bootstrap JS (deferred) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-  <!-- Inline script to handle Disqus dynamic load + local comments fallback -->
+  <!-- Comments script (Disqus dynamic loader + Local fallback) -->
   <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Edit this value: replace with your Disqus shortname or leave as 'YOUR_DISQUS_SHORTNAME' to use local comments
+    // Replace with your Disqus shortname to enable Disqus; otherwise local comments are used.
     var DISQUS_SHORTNAME = 'YOUR_DISQUS_SHORTNAME';
     var pageUrl = 'https://www.companiesbuilder.com/blogs/articles/meet-companies-builder/';
     var pageIdentifier = '/blogs/articles/meet-companies-builder';
@@ -404,9 +480,9 @@
     var disqusContainer = document.getElementById('disqus_container');
     var localContainer = document.getElementById('local_comments_container');
 
-    function safeText(s) { var div = document.createElement('div'); div.textContent = s; return div.innerHTML; }
+    function safeText(s) { var d=document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
-    // --- Local comments implementation (stores comments in localStorage) ---
+    // Local comments (localStorage)
     var localStorageKey = 'cb_comments_' + pageIdentifier;
     var commentForm = document.getElementById('commentForm');
     var commentsList = document.getElementById('localCommentsList');
@@ -417,85 +493,82 @@
     function loadLocalComments() {
       var raw = localStorage.getItem(localStorageKey);
       var arr = [];
-      try { arr = raw ? JSON.parse(raw) : []; } catch(e) { arr = []; }
+      try { arr = raw ? JSON.parse(raw) : []; } catch(e){ arr = []; }
       renderLocalComments(arr);
     }
 
     function renderLocalComments(arr) {
       commentsList.innerHTML = '';
-      if (!arr.length) {
-        commentsList.innerHTML = '<div class="small text-muted">No comments yet — be the first to comment.</div>';
-        return;
-      }
-      arr.slice().reverse().forEach(function(c) {
-        var outer = document.createElement('div');
-        outer.className = 'comment';
-        outer.innerHTML = '<div class="fw-bold">' + safeText(c.name) + '</div>' +
-                          '<div class="meta mb-1">' + safeText(new Date(c.t).toLocaleString()) + '</div>' +
-                          '<div>' + safeText(c.text) + '</div>';
+      if (!arr.length) { commentsList.innerHTML = '<div class="small text-muted">No comments yet — be the first to comment.</div>'; return; }
+      arr.slice().reverse().forEach(function(c){
+        var outer = document.createElement('div'); outer.className='comment mb-2 p-2 rounded';
+        outer.innerHTML = '<div class="fw-bold">'+safeText(c.name)+'</div><div class="meta small text-muted mb-1">'+safeText(new Date(c.t).toLocaleString())+'</div><div>'+safeText(c.text)+'</div>';
         commentsList.appendChild(outer);
       });
     }
 
     if (commentForm) {
-      commentForm.addEventListener('submit', function(e) {
+      commentForm.addEventListener('submit', function(e){
         e.preventDefault();
-        var name = inputName.value.trim();
-        var text = inputText.value.trim();
+        var name = inputName.value.trim(), text = inputText.value.trim();
         if (!name || !text) return;
-        var raw = localStorage.getItem(localStorageKey);
-        var arr = [];
-        try { arr = raw ? JSON.parse(raw) : []; } catch(e) { arr = []; }
-        arr.push({name: name, text: text, t: Date.now()});
-        try { localStorage.setItem(localStorageKey, JSON.stringify(arr)); } catch(e) { console.warn('Could not save comment', e); }
-        inputName.value = ''; inputText.value = '';
+        var raw = localStorage.getItem(localStorageKey), arr = [];
+        try { arr = raw ? JSON.parse(raw) : []; } catch(e) { arr=[]; }
+        arr.push({name:name, text:text, t:Date.now()});
+        try { localStorage.setItem(localStorageKey, JSON.stringify(arr)); } catch(e){ console.warn('Could not save comment', e); }
+        inputName.value=''; inputText.value='';
         renderLocalComments(arr);
       });
     }
 
     if (clearBtn) {
-      clearBtn.addEventListener('click', function() {
+      clearBtn.addEventListener('click', function(){
         if (!confirm('Clear all local comments for this page? This cannot be undone.')) return;
         localStorage.removeItem(localStorageKey);
         loadLocalComments();
       });
     }
 
-    // --- Disqus dynamic loader ---
-    function loadDisqus() {
+    // Disqus loader
+    function loadDisqus(){
       if (!DISQUS_SHORTNAME || DISQUS_SHORTNAME === 'YOUR_DISQUS_SHORTNAME') {
-        alert('Disqus shortname not configured. Please replace DISQUS_SHORTNAME variable in the script with your Disqus shortname. Falling back to local comments.');
-        showLocalComments();
-        return;
+        alert('Disqus shortname not configured. Replace DISQUS_SHORTNAME in the script to enable Disqus. Falling back to local comments.');
+        showLocalComments(); return;
       }
       disqusContainer.style.display = '';
       localContainer.style.display = 'none';
-
-      window.disqus_config = function () {
-        this.page.url = pageUrl;
-        this.page.identifier = pageIdentifier;
-      };
-
+      window.disqus_config = function () { this.page.url = pageUrl; this.page.identifier = pageIdentifier; };
       if (window.DISQUS) {
-        try { window.DISQUS.reset({ reload: true, config: window.disqus_config }); return; } catch (e) { console.warn('Disqus reset error', e); }
+        try { window.DISQUS.reset({reload:true, config: window.disqus_config}); return; } catch(e){ console.warn(e); }
       }
-
-      var d = document, s = d.createElement('script');
+      var d=document, s=d.createElement('script');
       s.src = 'https://' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
       s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
+      (d.head||d.body).appendChild(s);
     }
 
-    function showLocalComments() { localContainer.style.display = ''; disqusContainer.style.display = 'none'; loadLocalComments(); }
+    function showLocalComments(){ localContainer.style.display=''; disqusContainer.style.display='none'; loadLocalComments(); }
 
-    btnLoadDisqus && btnLoadDisqus.addEventListener('click', function() { loadDisqus(); });
-    btnUseLocal && btnUseLocal.addEventListener('click', function() { showLocalComments(); });
+    btnLoadDisqus && btnLoadDisqus.addEventListener('click', loadDisqus);
+    btnUseLocal && btnUseLocal.addEventListener('click', showLocalComments);
 
-    // Auto-detect: if DISQUS not configured, show local comments by default
-    if (!DISQUS_SHORTNAME || DISQUS_SHORTNAME === 'YOUR_DISQUS_SHORTNAME') { showLocalComments(); }
+    // default: show local comments if DISQUS unset
+    if (!DISQUS_SHORTNAME || DISQUS_SHORTNAME === 'YOUR_DISQUS_SHORTNAME') showLocalComments();
+
+    // small enhancement: rotate chevrons when accordion shown
+    var accordion = document.getElementById('faqAccordion');
+    if (accordion) {
+      accordion.addEventListener('show.bs.collapse', function(e){
+        var item = e.target.closest('.accordion-item');
+        if (item) item.classList.add('show');
+      });
+      accordion.addEventListener('hide.bs.collapse', function(e){
+        var item = e.target.closest('.accordion-item');
+        if (item) item.classList.remove('show');
+      });
+    }
 
   });
   </script>
-
 </body>
 </html>
