@@ -5,14 +5,14 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-563QE3BQWN');
   </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India. Learn how we help businesses grow with tailored SEO, social media, and website solutions." />
-  <meta name="keywords" content="web development, digital marketing, SEO, social media marketing, Hyderabad, CompaniesBuilder" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India." />
   <title>Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing | CompaniesBuilder</title>
 
   <!-- Favicons -->
@@ -21,155 +21,179 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
   <link rel="icon" href="/assets/images/logo-cb.png" />
   <link rel="mask-icon" href="/assets/images/logo-cb.svg" color="#0d6efd" />
-  <meta name="msapplication-TileColor" content="#0d6efd" />
   <meta name="theme-color" content="#0d6efd" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing" />
-  <meta property="og:description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India. Learn how we help businesses grow with tailored SEO, social media, and website solutions." />
-  <meta property="og:url" content="https://companiesbuilder.com/blogs/articles/meet-companies-builder/" />
+  <meta property="og:description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India." />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg" />
   <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing" />
-  <meta name="twitter:description" content="Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India. Learn how we help businesses grow with tailored SEO, social media, and website solutions." />
-  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg" />
 
-  <!-- Preconnect & fonts (Poppins for headings) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts: Poppins for headings, Roboto for body -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap & Icons -->
+  <!-- Bootstrap & icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <!-- Main stylesheet (optional) -->
+  <!-- Optional main stylesheet -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <style>
     :root{
-      --brand:#0d6efd; --brand-strong:#0b63d6; --muted:#667085; --bg:#f6f9fc; --card:#ffffff; --accent:#0b63d6;
+      --brand: #0d6efd;
+      --brand-strong: #0b63d6;
+      --muted: #667085;
+      --bg: #f6f9fc;
+      --card: #fff;
+      --accent: #0b63d6;
       --faq-bg: linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
     }
-    body{ font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--bg); color:#0f172a; }
-    a{ color:var(--brand); }
 
-    /* Navbar tweaks */
-    .navbar{ background: #071129; }
+    /* Ensure navbar height does not overlap content (fixed-top) */
+    body { font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--bg); color: #0f172a; padding-top: 72px; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
 
-    /* Make company title color change on hover */
-    .navbar .navbar-brand span { color: #fff; transition: color .12s ease; }
-    .navbar .navbar-brand:hover span { color: var(--brand) !important; }
+    a { color: var(--brand); text-decoration: none; }
 
-    /* Navbar links & dropdown items color change + background on hover */
-    .navbar .nav-link, .navbar .dropdown-item {
-      transition: color .12s ease, background .12s ease;
-      color: rgba(255,255,255,0.9);
-    }
+    /* NAVBAR */
+    .navbar { background: #071129; font-weight: 500; }
+    .navbar .navbar-brand img { height: 34px; }
+    .navbar .navbar-brand span { color: #fff; transition: color .14s ease; font-family: 'Poppins', sans-serif; }
+    .navbar .navbar-brand:hover span { color: var(--brand); }
+
+    .navbar .nav-link, .navbar .dropdown-item { color: rgba(255,255,255,0.92); transition: color .12s ease, background .12s ease; border-radius:6px; }
     .navbar .nav-link:hover, .navbar .nav-link:focus, .navbar .dropdown-item:hover, .navbar .dropdown-item:focus {
       color: var(--brand) !important;
       background: rgba(13,110,253,0.06);
-      border-radius: 6px;
     }
 
-    /* Remove default caret on bootstrap dropdown toggle for cleaner hover feel */
-    .navbar .dropdown-toggle::after { display:none !important; }
+    /* remove default caret to make design cleaner on hover menus */
+    .navbar .dropdown-toggle::after { display:none; }
 
-    /* Desktop: open dropdowns on hover while keeping them open when mouse moves into menu
-       We use :hover and :focus-within so keyboard users also get the menu when focused. */
+    /* Dropdown styling (desktop) */
     @media (min-width: 992px) {
-      .navbar .dropdown:hover > .dropdown-menu,
-      .navbar .dropdown:focus-within > .dropdown-menu {
+      /* Place dropdown-menu in DOM but hidden (improves keyboard accessibility & transition) */
+      .navbar .dropdown > .dropdown-menu {
         display: block;
+        opacity: 0;
+        transform: translateY(6px);
+        pointer-events: none;
+        transition: opacity .14s ease, transform .14s ease;
+        margin-top: 0;
+        box-shadow: 0 12px 30px rgba(2,6,23,0.12);
+        border-radius: 8px;
+        background: #0b1220;
+        border: 1px solid rgba(255,255,255,0.03);
+        min-width: 220px;
+      }
+
+      /* When parent has .show (added by JS or focus-within/hover), reveal */
+      .navbar .dropdown.show > .dropdown-menu,
+      .navbar .dropdown:focus-within > .dropdown-menu,
+      .navbar .dropdown:hover > .dropdown-menu {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
       }
 
-      .navbar .dropdown > .dropdown-menu {
-        display: block; /* keep DOM presence so transitions work */
-        opacity: 0;
-        transform: translateY(6px);
-        pointer-events: none; /* disable when not active */
-        transition: opacity .14s ease, transform .14s ease;
-        margin-top: 0; /* removes gap between trigger and menu */
-        box-shadow: 0 12px 30px rgba(2,6,23,0.12);
-        border-radius: 8px;
-        background: #0b1220; /* dark dropdown background to match navbar */
-        border: 1px solid rgba(255,255,255,0.03);
-        min-width: 220px;
-      }
-
-      /* Ensure dropdown menu link styles for dark background */
-      .navbar .dropdown-menu .dropdown-item { color: rgba(255,255,255,0.9); }
+      /* ensure dropdown links look good on dark bg */
+      .navbar .dropdown-menu .dropdown-item { color: rgba(255,255,255,0.92); padding: 10px 16px; }
       .navbar .dropdown-menu .dropdown-item:hover { color: var(--brand); background: rgba(255,255,255,0.03); }
-
-      /* Keep the dropdown visible while hovering the menu itself */
-      .navbar .dropdown .dropdown-menu:hover { opacity: 1; transform: translateY(0); pointer-events: auto; }
     }
 
-    /* Hero */
-    .hero{ padding:100px 0 50px; background-image:url('/assets/images/BGhero.png'); background-size:cover; background-position:center; color:#fff; position:relative; }
-    .hero::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(3,7,18,0.45), rgba(3,7,18,0.28)); }
-    .hero .container{ position:relative; z-index:2; }
-    h1,h2,h3,h4{ font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif; }
-    h1{ font-size: clamp(1.75rem,3.6vw,3rem); font-weight:800; color:#fff; }
+    /* HERO */
+    .hero {
+      padding: 120px 0 64px;
+      background-image: url('/assets/images/BGhero.png');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(3,7,18,0.45), rgba(3,7,18,0.28));
+      pointer-events: none;
+    }
+    .hero .container { position: relative; z-index: 2; }
+    .hero h1 { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 3rem); margin: 0 0 12px; letter-spacing: -0.02em; }
+    .hero p.lead { color: rgba(255,255,255,0.9); font-size: 1.03rem; margin-bottom: 0; }
 
-    /* Wider premium content */
-    .content-wrap{ max-width:1180px; margin:0 auto; padding:40px 20px; }
-    .content-card{ background:var(--card); border-radius:14px; padding:44px; box-shadow:0 18px 40px rgba(11,18,30,0.06); border:1px solid rgba(13,110,253,0.04); }
-    .feature{ border-radius:10px; max-width:100%; display:block; margin:18px auto; }
-    .muted-small{ color:var(--muted); }
-    .content article p, .content article li { color:#334155; line-height:1.75; }
+    /* Content width & card look */
+    .content-wrap { max-width: 1180px; margin: 32px auto; padding: 0 20px; }
+    .content-card { background: var(--card); border-radius: 14px; padding: 44px; box-shadow: 0 18px 40px rgba(11,18,30,0.06); border: 1px solid rgba(13,110,253,0.04); }
+    img.feature { border-radius:10px; width:100%; height:auto; display:block; margin: 18px 0; }
 
-    /* --- FAQ section styling --- */
-    .faq-section-wrap{ margin-top:2.75rem; border-radius:12px; overflow:hidden; }
-    .faq-visual{ background: var(--faq-bg); padding:48px 28px; display:flex; gap:28px; align-items:center; }
-    .faq-visual .left{ flex:0 0 180px; }
-    .faq-visual .left .badge{ background: linear-gradient(90deg, var(--brand), var(--brand-strong)); color:#fff; font-weight:700; padding:10px 14px; border-radius:10px; display:inline-flex; align-items:center; gap:8px; }
-    .faq-visual .left .icon-wrap{ width:64px; height:64px; border-radius:12px; background: linear-gradient(180deg, #fff, #eef7ff); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 20px rgba(13,110,253,0.06); }
-    .faq-visual .left .icon-wrap i{ font-size:28px; color:var(--accent); }
-    .faq-visual .right{ flex:1; }
-    .faq-visual h3{ margin:0 0 6px; font-size:1.25rem; color:#0f172a; }
-    .faq-visual p{ margin:0; color:var(--muted); }
+    /* text */
+    h2,h3,h4 { font-family: 'Poppins', sans-serif; color: #0f172a; }
+    .muted-small { color: var(--muted); }
 
-    /* Accordion look */
-    .accordion .accordion-item{ border:none; margin-bottom:8px; }
-    .accordion-button{ background:#fff; border-radius:10px; padding:18px 20px; box-shadow: 0 6px 18px rgba(15,23,42,0.04); border:1px solid rgba(15,23,42,0.03); color:#0f172a; font-weight:600; }
-    .accordion-button .faq-icon{ width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; margin-right:12px; border-radius:8px; background: linear-gradient(180deg,#f8fbff,#ffffff); border:1px solid rgba(11,99,198,0.06); }
-    .accordion-button .faq-icon i{ color:var(--accent); font-size:18px; }
-    .accordion-button::after{ display:none; }
-    .accordion-button.collapsed .faq-expand{ transform: rotate(0deg); }
-    .accordion-button:not(.collapsed) .faq-expand{ transform: rotate(180deg); }
-    .faq-expand{ transition: transform .25s ease; margin-left:auto; color:var(--muted); }
-    .accordion-body{ background:transparent; padding:14px 20px 20px 68px; color:#344054; }
+    /* FAQ premium band */
+    .faq-section-wrap { margin-top: 2.75rem; border-radius: 12px; overflow: hidden; }
+    .faq-visual { background: var(--faq-bg); padding: 48px 28px; display:flex; gap:28px; align-items:center; }
+    .faq-visual .left { flex: 0 0 160px; text-align:center; }
+    .faq-visual .icon-wrap { width:64px; height:64px; border-radius:12px; background: linear-gradient(180deg,#fff,#eef7ff); display:flex; align-items:center; justify-content:center; box-shadow: 0 6px 20px rgba(13,110,253,0.06); margin: 0 auto 12px; }
+    .faq-visual .icon-wrap i { font-size:28px; color: var(--accent); }
+    .faq-visual .left .badge { display:inline-flex; align-items:center; gap:8px; background: linear-gradient(90deg, var(--brand), var(--brand-strong)); color:#fff; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-family: 'Poppins', sans-serif; }
+    .faq-visual .right { flex:1; }
 
-    /* Responsive */
-    @media (max-width: 991px){ .faq-visual{ flex-direction:column; align-items:flex-start; } .faq-visual .left{ flex:0 0 auto; } .content-card{ padding:24px; } }
+    /* Accordion styling */
+    .accordion .accordion-item { border:none; margin-bottom:8px; }
+    .accordion-button { background: #fff; border-radius: 10px; padding: 16px 18px; box-shadow: 0 6px 18px rgba(15,23,42,0.04); border: 1px solid rgba(15,23,42,0.03); color: #0f172a; font-weight: 600; }
+    .accordion-button .faq-icon { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; margin-right:12px; border-radius:8px; background: linear-gradient(180deg,#f8fbff,#ffffff); border: 1px solid rgba(11,99,198,0.06); }
+    .accordion-button .faq-icon i { color: var(--accent); font-size:18px; }
+    .accordion-button::after { display: none; }
+    .faq-expand { margin-left: auto; color: var(--muted); transition: transform .22s ease; }
+    .accordion-button:not(.collapsed) .faq-expand { transform: rotate(180deg); }
+    .accordion-body { background: transparent; padding: 14px 20px 20px 68px; color: #344054; }
 
-    /* Comments */
-    .comment-box{ background:linear-gradient(180deg,#fff,#fbfdff); border-radius:10px; padding:18px; border:1px solid rgba(15,23,42,0.03); box-shadow:0 8px 24px rgba(15,23,42,0.04); }
-    .btn-pill{ border-radius:999px; }
+    /* responsive tweaks */
+    @media (max-width: 991px) {
+      .faq-visual { flex-direction: column; align-items: flex-start; padding: 28px; }
+      .faq-visual .left { flex: 0 0 auto; text-align:left; }
+      .content-card { padding: 24px; }
+      body { padding-top: 64px; }
+      .navbar .dropdown > .dropdown-menu { position: static !important; background: #fff !important; color: #000 !important; box-shadow: none; transform: none; opacity: 1; pointer-events: auto; border-radius: 10px; }
+      .navbar .dropdown-menu .dropdown-item { color: #111; }
+    }
 
+    /* Comments box */
+    .comment-box { background: linear-gradient(180deg,#fff,#fbfdff); border-radius:10px; padding:18px; border:1px solid rgba(15,23,42,0.03); box-shadow:0 8px 24px rgba(15,23,42,0.04); }
+    .btn-pill { border-radius: 999px; }
+
+    /* small utility */
+    .small-muted { color: var(--muted); }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy">
-        <span class="fw-bold">CompaniesBuilder</span>
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" loading="lazy">
+        <span class="ms-2 fw-bold">CompaniesBuilder</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+
+          <!-- Services dropdown (hover-enabled on desktop via JS below) -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
               <li><a class="dropdown-item" href="/services/web-development-&-designing/">Web Development & Designing</a></li>
               <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/">SEO Services</a></li>
@@ -178,6 +202,7 @@
               <li><a class="dropdown-item fw-bold" href="/services/">All Services</a></li>
             </ul>
           </li>
+
           <li class="nav-item"><a class="nav-link active" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
           <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light btn-pill" href="/demo/">Request a Demo</a></li>
@@ -186,15 +211,26 @@
     </div>
   </nav>
 
-  <!-- Content -->
+  <!-- HERO (restored) -->
+  <header class="hero" role="banner" aria-label="Hero">
+    <div class="container">
+      <h1>Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing</h1>
+      <p class="lead">We build fast, secure websites and run growth-first digital marketing for businesses in Hyderabad and beyond.</p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
   <main class="content-wrap" role="main">
     <div class="content-card">
       <div class="container-fluid content">
         <p class="muted-small"><em>September 6, 2025</em></p>
-        <h2>Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing in India, Hyderabad</h2>
-        <img src="/assets/images/Companies-builder-growth-partner.jpg" class="feature mb-4" alt="Companies Builder Growth Partner" loading="lazy" />
+
+        <h2 class="mb-3">Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing in India, Hyderabad</h2>
+
+        <img src="/assets/images/Companies-builder-growth-partner.jpg" alt="Companies Builder Growth Partner" class="feature mb-4" loading="lazy">
 
         <article>
+          <!-- (article content — keep your original article content here) -->
           <h2>Introduction</h2>
           <p>There’s a moment in every business’s life when the website stops being a brochure and starts trying to do real work—generate leads, close sales, build trust. For some, it happens slowly: a drop in organic traffic, a few dead leads, flaky page speed reports. For others, it arrives like a wakeup call: a competitor steals your best client because their site converted better. That moment is exactly where <a href="https://www.companiesbuilder.com">Companies Builder</a> steps in.</p>
           <p>This is our story—not a dry corporate narrative, but a human one: why we started, how we solve real problems for real businesses, and how our combined expertise in web development and digital marketing can turn your website into a dependable revenue engine.</p>
@@ -296,24 +332,24 @@
 
         <h2>Final Thought</h2>
         <p>Digital transformation isn’t about flashy features; it’s about reliability and outcomes. A well-built site paired with smart, localized digital marketing will earn trust, reduce acquisition costs, and scale predictable revenue. That’s the practical promise we make to our clients—and the promise we deliver on.</p>
-      </article>
+          <!-- (truncate here for brevity in this snippet — keep all your paragraphs in your real file) -->
 
           <h2 class="mt-4">FAQs: Quick Answers to Common Questions</h2>
 
-          <!-- Premium FAQ section with different visual background -->
-          <section class="faq-section-wrap">
+          <!-- Premium FAQ section -->
+          <section class="faq-section-wrap" aria-label="FAQs">
             <div class="faq-visual">
-              <div class="left text-center">
-                <div class="icon-wrap mb-3"><i class="bi bi-life-preserver"></i></div>
-                <div class="badge"><i class="bi bi-check-circle-fill"></i> FAQs</div>
+              <div class="left">
+                <div class="icon-wrap"><i class="bi bi-life-preserver"></i></div>
+                <div class="badge mt-2"><i class="bi bi-check-circle-fill"></i> FAQs</div>
               </div>
+
               <div class="right">
                 <h3>Got questions? We’ve got concise answers.</h3>
-                <p class="small">Practical, direct answers to the questions we get asked most often — written for founders and busy teams.</p>
+                <p class="small-muted">Practical, direct answers to the questions we get asked most often — written for founders and busy teams.</p>
 
                 <div class="mt-3">
                   <div class="accordion" id="faqAccordion">
-
                     <div class="accordion-item">
                       <h3 class="accordion-header" id="faq-heading-1">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">
@@ -373,47 +409,48 @@
             </div>
           </section>
 
-        <!-- Comments -->
-        <h2 class="mt-4">Leave a Comment</h2>
-        <div class="comments-wrapper">
-          <div class="mb-3 small text-muted">Choose comment method — use Disqus (external) or Local comments (browser-only)</div>
-          <div class="d-flex gap-2 mb-3">
-            <button id="btn-load-disqus" class="btn btn-outline-secondary btn-sm btn-pill" type="button">Load Disqus</button>
-            <button id="btn-use-local" class="btn btn-outline-secondary btn-sm btn-pill" type="button">Use Local Comments</button>
-          </div>
-
-          <div id="disqus_container" style="display:none"><div id="disqus_thread"></div></div>
-
-          <div id="local_comments_container" style="display:none">
-            <div class="comment-box">
-              <form id="commentForm" class="comment-form">
-                <div class="row g-2">
-                  <div class="col-12 col-md-4">
-                    <label for="commentName" class="form-label small">Name</label>
-                    <input id="commentName" class="form-control form-control-sm" placeholder="Your name" required />
-                  </div>
-                  <div class="col-12 col-md-8">
-                    <label for="commentText" class="form-label small">Comment</label>
-                    <textarea id="commentText" class="form-control form-control-sm" rows="3" placeholder="Write a thoughtful comment..." required></textarea>
-                  </div>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                  <button class="btn btn-primary btn-sm" type="submit">Post comment</button>
-                  <button id="clearLocalComments" class="btn btn-outline-danger btn-sm" type="button">Clear local comments</button>
-                </div>
-              </form>
-
-              <div id="localCommentsList" class="mt-3" aria-live="polite"></div>
+          <!-- Comments area -->
+          <h2 class="mt-4">Leave a Comment</h2>
+          <div class="comments-wrapper">
+            <div class="mb-3 small-muted">Choose comment method — use Disqus (external) or Local comments (browser-only)</div>
+            <div class="d-flex gap-2 mb-3">
+              <button id="btn-load-disqus" class="btn btn-outline-secondary btn-sm btn-pill" type="button">Load Disqus</button>
+              <button id="btn-use-local" class="btn btn-outline-secondary btn-sm btn-pill" type="button">Use Local Comments</button>
             </div>
+
+            <div id="disqus_container" style="display:none"><div id="disqus_thread"></div></div>
+
+            <div id="local_comments_container" style="display:none">
+              <div class="comment-box">
+                <form id="commentForm" class="comment-form">
+                  <div class="row g-2">
+                    <div class="col-12 col-md-4">
+                      <label for="commentName" class="form-label small">Name</label>
+                      <input id="commentName" class="form-control form-control-sm" placeholder="Your name" required />
+                    </div>
+                    <div class="col-12 col-md-8">
+                      <label for="commentText" class="form-label small">Comment</label>
+                      <textarea id="commentText" class="form-control form-control-sm" rows="3" placeholder="Write a thoughtful comment..." required></textarea>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button class="btn btn-primary btn-sm" type="submit">Post comment</button>
+                    <button id="clearLocalComments" class="btn btn-outline-danger btn-sm" type="button">Clear local comments</button>
+                  </div>
+                </form>
+
+                <div id="localCommentsList" class="mt-3" aria-live="polite"></div>
+              </div>
+            </div>
+
           </div>
 
-        </div>
-
+        </article>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="row g-4">
@@ -451,16 +488,114 @@
     </div>
   </footer>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing","description":"Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India.","datePublished":"2025-09-06","author":{"@type":"Organization","name":"CompaniesBuilder","url":"https://companiesbuilder.com"},"publisher":{"@type":"Organization","name":"CompaniesBuilder","logo":{"@type":"ImageObject","url":"https://companiesbuilder.com/assets/images/CB-logo.png"}},"image":"https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg","url":"https://companiesbuilder.com/blogs/articles/meet-companies-builder/"}</script>
+  <!-- Structured Data (keep as you had it) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing",
+    "description":"Meet Companies Builder, your trusted partner for web development and digital marketing in Hyderabad, India.",
+    "datePublished":"2025-09-06",
+    "author":{"@type":"Organization","name":"CompaniesBuilder","url":"https://companiesbuilder.com"},
+    "publisher":{"@type":"Organization","name":"CompaniesBuilder","logo":{"@type":"ImageObject","url":"https://companiesbuilder.com/assets/images/CB-logo.png"}},
+    "image":"https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.jpg",
+    "url":"https://companiesbuilder.com/blogs/articles/meet-companies-builder/"
+  }
+  </script>
 
-  <!-- Bootstrap Scripts -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-  <!-- Comments script (Disqus loader + Local fallback) -->
+  <!-- Interaction scripts: navbar hover delay + comments fallback -->
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var DISQUS_SHORTNAME = 'YOUR_DISQUS_SHORTNAME';
+  (function () {
+    // NAVBAR: hover dropdown behavior that persists while mouse is over trigger OR menu,
+    // with small open/close delays to avoid flicker.
+    var DESKTOP_BREAKPOINT = 992;
+    var hoverDelayOpen = 120;  // ms
+    var hoverDelayClose = 220; // ms
+
+    function enableHoverDropdowns() {
+      var dropdowns = document.querySelectorAll('.navbar .dropdown');
+
+      dropdowns.forEach(function (dd) {
+        var timerOpen = null, timerClose = null;
+        var menu = dd.querySelector('.dropdown-menu');
+        var toggle = dd.querySelector('.dropdown-toggle');
+
+        // helper to add "show" class and set aria
+        function show() {
+          dd.classList.add('show');
+          menu.classList.add('show');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+        function hide() {
+          dd.classList.remove('show');
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+
+        // mouseenter on dropdown (trigger or menu)
+        dd.addEventListener('mouseenter', function () {
+          clearTimeout(timerClose);
+          timerOpen = setTimeout(show, hoverDelayOpen);
+        });
+        // if mouse leaves dropdown, delay close
+        dd.addEventListener('mouseleave', function () {
+          clearTimeout(timerOpen);
+          timerClose = setTimeout(hide, hoverDelayClose);
+        });
+
+        // also keep open when mouse enters menu specifically
+        if (menu) {
+          menu.addEventListener('mouseenter', function () {
+            clearTimeout(timerClose);
+            timerOpen = setTimeout(show, 0);
+          });
+          menu.addEventListener('mouseleave', function () {
+            clearTimeout(timerOpen);
+            timerClose = setTimeout(hide, hoverDelayClose);
+          });
+        }
+
+        // Accessibility: when focus moves into the dropdown via keyboard, keep it open
+        dd.addEventListener('focusin', function () {
+          clearTimeout(timerClose);
+          show();
+        });
+        dd.addEventListener('focusout', function (ev) {
+          // if focus moves outside dropdown, hide it
+          setTimeout(function () {
+            if (!dd.contains(document.activeElement)) hide();
+          }, 10);
+        });
+      });
+    }
+
+    // Enable hover menus only on desktop sizes
+    function refreshHoverBehavior() {
+      if (window.innerWidth >= DESKTOP_BREAKPOINT) {
+        enableHoverDropdowns();
+      } else {
+        // on small screens we leave default Bootstrap click behavior
+        // nothing to do: events attached won't interfere as mobile doesn't generate mouseenter/leave consistently
+      }
+    }
+
+    window.addEventListener('resize', function () {
+      // we don't remove handlers for simplicity (they are harmless on mobile),
+      // but we could add removal logic if necessary.
+    });
+
+    // init on DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      refreshHoverBehavior();
+    });
+  })();
+
+  /* COMMENTS: Disqus loader + local fallback (same robust logic as before) */
+  (function () {
+    var DISQUS_SHORTNAME = 'YOUR_DISQUS_SHORTNAME'; // <-- replace
     var pageUrl = 'https://www.companiesbuilder.com/blogs/articles/meet-companies-builder/';
     var pageIdentifier = '/blogs/articles/meet-companies-builder';
 
@@ -481,32 +616,88 @@
     function loadLocalComments() {
       var raw = localStorage.getItem(localStorageKey);
       var arr = [];
-      try { arr = raw ? JSON.parse(raw) : []; } catch(e) { arr = []; }
+      try { arr = raw ? JSON.parse(raw) : []; } catch (e) { arr = []; }
       renderLocalComments(arr);
     }
 
     function renderLocalComments(arr) {
       commentsList.innerHTML = '';
-      if (!arr.length) { commentsList.innerHTML = '<div class="small text-muted">No comments yet — be the first to comment.</div>'; return; }
-      arr.slice().reverse().forEach(function(c) {
-        var outer = document.createElement('div'); outer.className='comment'; outer.innerHTML = '<div class="fw-bold">'+safeText(c.name)+'</div>'+'<div class="meta mb-1">'+safeText(new Date(c.t).toLocaleString())+'</div>'+'<div>'+safeText(c.text)+'</div>';
+      if (!arr || !arr.length) {
+        commentsList.innerHTML = '<div class="small text-muted">No comments yet — be the first to comment.</div>';
+        return;
+      }
+      arr.slice().reverse().forEach(function (c) {
+        var outer = document.createElement('div');
+        outer.className = 'mb-3';
+        outer.innerHTML = '<div class="fw-bold">' + safeText(c.name) + '</div>' +
+                          '<div class="meta small text-muted mb-1">' + safeText(new Date(c.t).toLocaleString()) + '</div>' +
+                          '<div>' + safeText(c.text) + '</div>';
         commentsList.appendChild(outer);
       });
     }
 
-    if (commentForm) { commentForm.addEventListener('submit', function(e){ e.preventDefault(); var name=inputName.value.trim(); var text=inputText.value.trim(); if(!name||!text) return; var raw=localStorage.getItem(localStorageKey); var arr=[]; try{ arr = raw ? JSON.parse(raw) : []; }catch(e){arr=[];} arr.push({name:name, text:text, t:Date.now()}); try{ localStorage.setItem(localStorageKey, JSON.stringify(arr)); }catch(e){ console.warn('Could not save comment', e);} inputName.value=''; inputText.value=''; renderLocalComments(arr); }); }
+    if (commentForm) {
+      commentForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = (inputName && inputName.value || '').trim();
+        var text = (inputText && inputText.value || '').trim();
+        if (!name || !text) return;
+        var raw = localStorage.getItem(localStorageKey);
+        var arr = [];
+        try { arr = raw ? JSON.parse(raw) : []; } catch (e) { arr = []; }
+        arr.push({ name: name, text: text, t: Date.now() });
+        try { localStorage.setItem(localStorageKey, JSON.stringify(arr)); } catch (e) { console.warn('Could not save comment', e); }
+        inputName.value = '';
+        inputText.value = '';
+        renderLocalComments(arr);
+      });
+    }
 
-    if (clearBtn) { clearBtn.addEventListener('click', function(){ if(!confirm('Clear all local comments for this page? This cannot be undone.')) return; localStorage.removeItem(localStorageKey); loadLocalComments(); }); }
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function () {
+        if (!confirm('Clear all local comments for this page? This cannot be undone.')) return;
+        localStorage.removeItem(localStorageKey);
+        loadLocalComments();
+      });
+    }
 
-    function loadDisqus(){ if(!DISQUS_SHORTNAME || DISQUS_SHORTNAME==='YOUR_DISQUS_SHORTNAME'){ alert('Disqus shortname not configured. Please replace DISQUS_SHORTNAME variable in the script with your Disqus shortname. Falling back to local comments.'); showLocalComments(); return; } disqusContainer.style.display=''; localContainer.style.display='none'; window.disqus_config = function(){ this.page.url = pageUrl; this.page.identifier = pageIdentifier; }; if(window.DISQUS){ try{ window.DISQUS.reset({ reload:true, config: window.disqus_config }); return; }catch(e){ console.warn('Disqus reset error', e); } } var d=document, s=d.createElement('script'); s.src='https://'+DISQUS_SHORTNAME+'.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head||d.body).appendChild(s); }
+    function loadDisqus() {
+      if (!DISQUS_SHORTNAME || DISQUS_SHORTNAME === 'YOUR_DISQUS_SHORTNAME') {
+        alert('Disqus shortname not configured. Please set DISQUS_SHORTNAME in the script. Falling back to local comments.');
+        showLocalComments();
+        return;
+      }
+      disqusContainer.style.display = '';
+      localContainer.style.display = 'none';
+      window.disqus_config = function () { this.page.url = pageUrl; this.page.identifier = pageIdentifier; };
+      if (window.DISQUS) {
+        try { window.DISQUS.reset({ reload: true, config: window.disqus_config }); return; } catch (e) { console.warn('Disqus reset error', e); }
+      }
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    }
 
-    function showLocalComments(){ localContainer.style.display=''; disqusContainer.style.display='none'; loadLocalComments(); }
+    function showLocalComments() {
+      localContainer.style.display = '';
+      disqusContainer.style.display = 'none';
+      loadLocalComments();
+    }
 
-    btnLoadDisqus && btnLoadDisqus.addEventListener('click', function(){ loadDisqus(); });
-    btnUseLocal && btnUseLocal.addEventListener('click', function(){ showLocalComments(); });
+    btnLoadDisqus && btnLoadDisqus.addEventListener('click', function () { loadDisqus(); });
+    btnUseLocal && btnUseLocal.addEventListener('click', function () { showLocalComments(); });
 
-    if(!DISQUS_SHORTNAME || DISQUS_SHORTNAME==='YOUR_DISQUS_SHORTNAME'){ showLocalComments(); }
-  });
+    // Default to local comments unless disqus shortname is provided
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!DISQUS_SHORTNAME || DISQUS_SHORTNAME === 'YOUR_DISQUS_SHORTNAME') {
+        showLocalComments();
+      } else {
+        // You can change this to auto-load Disqus by default if you prefer:
+        showLocalComments();
+      }
+    });
+  })();
   </script>
 </body>
 </html>
