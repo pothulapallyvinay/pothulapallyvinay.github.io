@@ -27,7 +27,7 @@
   <meta property="og:locale" content="en_IN" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Small Business Website Design, SEO & Digital Marketing - Affordable Packages" />
-  <meta property="og:description" content="One-time websites from ₹6,999. Optional monthly website management, local SEO, social media and content add-ons to grow traffic and conversions." />
+  <meta property="og:description" content="One-time websites from ₹6,999. Optional monthly website management, local SEO, social media and content add-ons." />
   <meta property="og:url" content="https://companiesbuilder.com/pricing/" />
   <meta property="og:site_name" content="Companies Builder" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/pricing-og.png" />
@@ -312,7 +312,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
-        <!-- height restored to original behaviour; width removed -->
         <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="eager">
         <span class="fw-bold">CompaniesBuilder</span>
       </a>
@@ -346,7 +345,6 @@
     <div class="container">
       <h1>Small Business Website Design, SEO & Digital Marketing</h1>
       <p class="lead">Affordable one-time website builds from ₹5,999 with optional monthly website management, local SEO, social media and content packages to keep your site growing.</p>
-      <!-- intentionally no CTA buttons in hero - cleaner & faster for SEO -->
     </div>
   </header>
 
@@ -710,7 +708,7 @@
     // Utility: format INR
     function formatINR(n){ return '₹' + Number(n).toLocaleString('en-IN'); }
 
-    // ---------- ADD-ONS logic (summary, copy, submit) ----------
+    // ---------- ADD-ONS logic (summary, copy) ----------
     const checks = Array.from(document.querySelectorAll('#cb-addons .addon-check'));
     const totalEl = document.getElementById('cb-total-price');
     const summaryEl = document.getElementById('cb-summary');
@@ -751,8 +749,9 @@
       });
     }
 
+    // ---------- MERGE Add-ons into Contact Form + trigger submit (recommended approach) ----------
     if (submitBtn) {
-      submitBtn.addEventListener('click', async function(){
+      submitBtn.addEventListener('click', function(){
         const selected = checks.filter(c => c.checked).map(c => {
           const labelEl = c.nextElementSibling && c.nextElementSibling.querySelector('strong');
           const label = labelEl ? labelEl.innerText : (c.getAttribute('aria-label') || c.name);
@@ -760,47 +759,54 @@
           return { label, price };
         });
 
-        // collect basic contact fields if present
-        const name = document.querySelector('#name') ? document.querySelector('#name').value.trim() : '';
-        const email = document.querySelector('#email') ? document.querySelector('#email').value.trim() : '';
-        const phone = document.querySelector('#number') ? document.querySelector('#number').value.trim() : '';
-        const planType = document.querySelector('#plan-type') ? document.querySelector('#plan-type').value : '';
+        // find contact form
+        const contactForm = document.getElementById('contactForm');
+        if (!contactForm) {
+          alert('Contact form not found. Please try the contact form directly.');
+          return;
+        }
 
-        if (selected.length === 0 && !confirm('No add-ons selected. Submit empty?')) return;
+        // ensure email is entered (contact form validation)
+        const emailInput = document.querySelector('#email');
+        if (!emailInput || !emailInput.value.trim()) {
+          alert('Please enter your email in the contact form so we can reply.');
+          if (emailInput) emailInput.focus();
+          return;
+        }
 
-        const fd = new FormData();
-        fd.append('timestamp', new Date().toISOString());
-        fd.append('your-name', name);
-        fd.append('your-email', email);
-        fd.append('your-number', phone);
-        fd.append('plan-type', planType);
-        fd.append('addons', JSON.stringify(selected.map(a => `${a.label} - ₹${a.price}`)));
-        fd.append('total', selected.reduce((s,a) => s + a.price, 0));
+        // create/update hidden inputs for addons & total inside contact form
+        let hiddenAddons = document.getElementById('hidden-addons');
+        if (!hiddenAddons) {
+          hiddenAddons = document.createElement('input');
+          hiddenAddons.type = 'hidden';
+          hiddenAddons.name = 'addons';
+          hiddenAddons.id = 'hidden-addons';
+          contactForm.appendChild(hiddenAddons);
+        }
+        hiddenAddons.value = JSON.stringify(selected.map(a => `${a.label} - ₹${a.price}`));
 
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Sending...';
+        let hiddenTotal = document.getElementById('hidden-total');
+        if (!hiddenTotal) {
+          hiddenTotal = document.createElement('input');
+          hiddenTotal.type = 'hidden';
+          hiddenTotal.name = 'total';
+          hiddenTotal.id = 'hidden-total';
+          contactForm.appendChild(hiddenTotal);
+        }
+        hiddenTotal.value = selected.reduce((s,a) => s + a.price, 0);
 
-        try {
-          const res = await fetch(SCRIPT_URL, { method: 'POST', body: fd });
-          const text = await res.text();
-          if (text.trim() === 'Success') {
-            alert('Thanks - add-ons submission received. We will follow up shortly.');
-            checks.forEach(c => c.checked = false);
-            updateAddonsSummary();
-          } else {
-            alert('Submission error: ' + text);
-          }
-        } catch (err) {
-          console.error('Add-ons submit error', err);
-          alert('Network error sending submission. Please try again.');
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.innerText = 'Request with selected add-ons';
+        // trigger contact form submission using requestSubmit when available (respects HTML validation)
+        if (typeof contactForm.requestSubmit === 'function') {
+          contactForm.requestSubmit();
+        } else {
+          const btn = contactForm.querySelector('[type="submit"]');
+          if (btn) btn.click();
+          else contactForm.submit();
         }
       });
     }
 
-    // ---------- CONTACT FORM submit (includes selected add-ons) ----------
+    // ---------- CONTACT FORM submit (single canonical path; includes selected add-ons) ----------
     (function(){
       const form = document.getElementById('contactForm');
       const submitButton = document.getElementById('submit');
@@ -816,20 +822,21 @@
         const fd = new FormData(form);
         fd.append('timestamp', new Date().toISOString());
 
-        // gather selected add-ons
+        // If the form does not already include addons (hidden field), append selected addons from the UI.
+        // We check if a form element with name="addons" exists to avoid duplicate entries.
         try {
-          const selected = checks.filter(c => c.checked).map(c => {
-            const labelEl = c.nextElementSibling && c.nextElementSibling.querySelector('strong');
-            const label = labelEl ? labelEl.innerText : (c.getAttribute('aria-label') || c.name);
-            const price = Number(c.dataset.price || 0);
-            return `${label} - ₹${price}`;
-          });
-          if (selected.length) {
-            fd.append('addons', JSON.stringify(selected));
-            fd.append('total', selected.reduce((s,a) => {
-              const m = a.match(/₹([\d,]+)/);
-              return s + (m ? Number(m[1].replace(/,/g,'')) : 0);
-            }, 0));
+          const existingAddonsEl = form.querySelector('[name="addons"]');
+          if (!existingAddonsEl) {
+            const selected = checks.filter(c => c.checked).map(c => {
+              const labelEl = c.nextElementSibling && c.nextElementSibling.querySelector('strong');
+              const label = labelEl ? labelEl.innerText : (c.getAttribute('aria-label') || c.name);
+              const price = Number(c.dataset.price || 0);
+              return `${label} - ₹${price}`;
+            });
+            if (selected.length) {
+              fd.append('addons', JSON.stringify(selected));
+              fd.append('total', selected.reduce((s,a) => s + Number((a.match(/₹([\d,]+)/)||[])[1] ? Number(a.match(/₹([\d,]+)/)[1].replace(/,/g,'')) : 0), 0));
+            }
           }
         } catch (err) {
           console.warn('Error collecting add-ons for contact submit', err);
@@ -841,10 +848,18 @@
           if (text.trim() === 'Success') {
             successMessage.style.display = 'block';
             form.reset();
-            // clear selected-plan + addons UI
-            document.getElementById('selected-plan').value = '';
+            // clear selected-plan + addons UI states and hidden fields
+            const selectedPlanEl = document.getElementById('selected-plan');
+            if (selectedPlanEl) selectedPlanEl.value = '';
             checks.forEach(c => c.checked = false);
             updateAddonsSummary();
+
+            // remove hidden fields if present (cleanup)
+            const hiddenAddons = document.getElementById('hidden-addons');
+            if (hiddenAddons && hiddenAddons.parentNode) hiddenAddons.parentNode.removeChild(hiddenAddons);
+            const hiddenTotal = document.getElementById('hidden-total');
+            if (hiddenTotal && hiddenTotal.parentNode) hiddenTotal.parentNode.removeChild(hiddenTotal);
+
             // scroll into view and auto-hide message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             setTimeout(() => successMessage.style.display = 'none', 6000);
