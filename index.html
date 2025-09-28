@@ -13,13 +13,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <!-- Primary title (brand at the end for clarity) -->
   <title>Web Development & Digital Marketing Agency | Companies Builder</title>
 
   <meta name="description" content="Companies Builder: premium web development, digital marketing, SEO and social media marketing for startups & SMBs in Hyderabad, Bangalore and India. Request a free demo - we build responsive, SEO-optimized websites that convert." />
   <meta name="keywords" content="web development Hyderabad, digital marketing agency, digital marketing services, SEO services Hyderabad, social media marketing Bangalore, web design India, responsive websites, Companies Builder" />
   <link rel="canonical" href="https://companiesbuilder.com/" />
 
-  <!-- Favicons -->
+  <!-- Favicons (multiple sizes/formats to avoid missing icon issues) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
@@ -44,8 +45,7 @@
   <!-- Preconnect & fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <!-- Poppins (primary) + Roboto (kept for navbar/hero/footer) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -69,106 +69,126 @@
   <style>
     :root {
       --brand: #0d6efd;
-      --accent: #ff6a1a;
+      --accent: #ff6a1a; /* premium accent */
       --card-grad-start: #f5f8ff;
       --card-grad-end: #eef6ff;
       --muted: #6c757d;
-      /* Primary: Poppins (site), Roboto used where specified */
-      font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
     }
 
-    /* Apply Poppins globally, but keep Roboto for navbar, hero & footer */
-    html, body { font-family: 'Poppins', 'Roboto', Arial, sans-serif; background-color: #03101a; } /* dark fallback */
-    .navbar, .hero, footer { font-family: 'Roboto', Arial, sans-serif; }
-
-    /* NAV button styles */
-    .nav-btn {
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:6px 12px; height:34px; border-radius:6px; color:#fff !important;
-      font-weight:600; text-decoration:none; border:0; transition:transform .16s ease, box-shadow .16s ease;
-      font-size:.9rem;
+    /* -------------------------
+       Global link & button hover
+       ------------------------- */
+    /* link hover: blue, but don't affect buttons */
+    a:not(.btn), .nav-link, .dropdown-item {
+      transition: color .16s ease, transform .12s ease;
     }
-    .nav-pricing{ background: linear-gradient(90deg,#ffd54f 0%,#ff9800 100%); box-shadow:0 6px 16px rgba(255,152,0,0.12); }
-    .nav-pricing:hover{ transform:translateY(-2px); filter:brightness(.98); }
-    .nav-demo{ background: linear-gradient(90deg,#0b8a69 0%,#38ef7d 100%); box-shadow:0 6px 16px rgba(56,239,125,0.12); }
-    .nav-demo:hover{ transform:translateY(-2px); filter:brightness(.98); }
+    a:not(.btn):hover, .nav-link:hover, .dropdown-item:hover {
+      color: var(--brand) !important;
+      text-decoration: none;
+    }
 
-    /* Links & buttons */
-    a:not(.btn), .nav-link, .dropdown-item { transition: color .16s ease, transform .12s ease; }
-    a:not(.btn):hover, .nav-link:hover, .dropdown-item:hover { color: var(--brand) !important; text-decoration: none; }
-    .btn { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; will-change: transform, box-shadow; }
-    .btn:hover, .btn:focus { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,0.12); }
+    /* Button hover for all buttons (adds lift & shadow) - do NOT change text color */
+    .btn {
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+      will-change: transform, box-shadow;
+    }
+    .btn:hover, .btn:focus {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(11,22,60,0.12);
+      text-decoration: none;
+      /* deliberately NOT changing color to preserve text contrast */
+    }
+    .btn-outline-primary:hover, .btn-outline-primary:focus {
+      background: rgba(13,110,253,0.06);
+      border-color: var(--brand);
+      /* keep color as-is so text remains readable */
+    }
+    .btn-outline-secondary:hover, .btn-outline-secondary:focus {
+      background: rgba(108,117,125,0.06);
+      border-color: #6c757d;
+    }
+    .btn-outline-light:hover, .btn-outline-light:focus {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.12);
+    }
 
-    /* HERO (kept visually same; Roboto preserved) */
+    /* -------------------------
+      Hero (improved responsiveness & focal control)
+      ------------------------- */
     .hero {
       padding: 120px 0 70px;
       background-image: url('/assets/images/companies-builder-hero-bg.webp');
-      background-size: cover;
+      background-size: cover;              /* keep aspect ratio and fill */
       background-repeat: no-repeat;
-      background-position: center right;
-      background-attachment: scroll;
+      background-position: center right;   /* prefer right side (hand) on wide screens */
+      background-attachment: scroll;        /* avoid mobile issues with fixed */
       color: #fff;
       text-align: center;
       position: relative;
       overflow: hidden;
-      min-height: 72vh;
+      min-height: 72vh;                     /* ensures image fills visible area */
       display: flex;
       align-items: center;
       justify-content: center;
       padding-left: 16px;
       padding-right: 16px;
     }
-    .hero::after { content: ""; position:absolute; inset:0; background: rgba(0,0,0,0.30); pointer-events:none; }
-    .hero .container { position: relative; z-index: 2; }
-    .hero h1, .hero p.lead { font-family: 'Roboto', Arial, sans-serif; }
-
-    /* -------------------------
-      Wrapper for user-supplied background (image / video)
-      ------------------------- */
-    /* Everything that should sit on the image/video is inside #bg-section */
-    #bg-section {
-      background: transparent; /* default - replace with your image or use a <video> element (see instruction below) */
-      color: #e6eef8; /* light text suitable for dark backgrounds */
-      padding-bottom: 40px;
+    /* slightly stronger overlay so text stays readable on any crop */
+    .hero::after {
+      content: "";
+      position:absolute; inset:0;
+      background: rgba(0,0,0,0.30);
+      pointer-events:none;
     }
-    #bg-section {
-  background-image: url('/assets/images/companies-builder-body-bg.jpeg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  color: #e6eef8;
-  padding-bottom: 40px;
-}
+    .hero .container { position: relative; z-index: 2; }
+    .hero h1 {
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: .5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
 
+    /* Hero CTA variants */
+    .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
+    .btn-explore { background: linear-gradient(90deg,var(--accent),#e65300); border: none; color: #fff; box-shadow: 0 8px 30px rgba(255,106,26,.12); }
 
     /* -------------------------
-      Translucent service cards (good on dark background)
+      Service Cards
       ------------------------- */
     .service-card {
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.04); /* translucent */
-      color: #eaf4ff;
+      border: 0;
       border-radius: 14px;
       overflow: hidden;
       transition: transform .28s ease, box-shadow .28s ease;
       min-height: 360px;
       display:flex; flex-direction:column;
+      background: linear-gradient(180deg,var(--card-grad-start), var(--card-grad-end));
+      box-shadow: 0 10px 30px rgba(11,22,60,0.06);
+      border: 1px solid rgba(13,110,253,0.04);
       padding: 18px;
-      box-shadow: 0 8px 30px rgba(2,6,23,0.45);
-      backdrop-filter: blur(6px);
     }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 22px 60px rgba(11,22,60,.10); }
     .service-card .card-icon { font-size: 2rem; color: var(--brand); margin-bottom: 12px; }
-    .service-card .card-body, .service-card p, .service-card h3 { color: inherit; }
-    .service-card .muted-small { color: rgba(255,255,255,0.78); }
-    .service-card:hover { transform: translateY(-8px); box-shadow: 0 22px 60px rgba(2,6,23,0.55); }
+    .service-card .card-body { flex:1; padding:0; }
+
+    /* adjust service buttons */
+    .service-card .btn.btn-sm {
+      padding: .4rem .6rem;
+    }
 
     /* -------------------------
-      WHY cards: restored to your original white gradient style
+      Why section (premium cards)
       ------------------------- */
     .why-section { padding: 30px 0; background: transparent; }
+    /* default grid for mid/low widths */
     .why-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:18px; }
-    @media (min-width: 1200px) { .why-grid { grid-template-columns: repeat(5, 1fr); } }
-
+    /* force single-line of 5 columns on wide screens */
+    @media (min-width: 1200px) {
+      .why-grid { grid-template-columns: repeat(5, 1fr); }
+    }
     .why-card {
       background: linear-gradient(180deg, #ffffff, #f8fbff);
       border-radius: 12px;
@@ -177,70 +197,151 @@
       box-shadow: 0 12px 30px rgba(11,22,60,0.04);
       display:flex; gap:12px; align-items:flex-start;
       transition: transform .22s ease, box-shadow .22s ease;
-      color: #0f1724;
     }
     .why-card:hover { transform: translateY(-6px); box-shadow: 0 26px 60px rgba(11,22,60,0.08); }
     .why-badge {
       width:56px; height:56px; border-radius:12px;
       display:flex; align-items:center; justify-content:center;
       background: linear-gradient(180deg, rgba(13,110,253,0.12), rgba(13,110,253,0.06));
-      color: var(--brand); font-size:1.35rem; flex:0 0 56px;
+      color: var(--brand);
+      font-size:1.35rem;
+      flex:0 0 56px;
       border:1px solid rgba(13,110,253,0.06);
     }
     .why-card h5 { margin:0 0 6px 0; font-size:1.05rem; }
     .why-card p { margin:0; color:var(--muted); font-size:.95rem; }
 
-    .designrush-badge { max-width:120px; transition: transform .18s ease, box-shadow .18s ease; display:block; margin:0 10px; }
-    .designrush-badge:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,0.12); }
-    .why-cta { display:flex; align-items:center; justify-content:center; gap:15px; flex-wrap:wrap; }
+    /* DesignRush badge styling */
+    .designrush-badge {
+      max-width: 120px;
+      transition: transform .18s ease, box-shadow .18s ease;
+      display: block;
+      margin: 0 10px;
+    }
+    .designrush-badge:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(11,22,60,0.12);
+    }
+    .why-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 576px) {
+      .designrush-badge {
+        max-width: 100px;
+        margin: 10px auto;
+      }
+      .why-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
     /* -------------------------
-      Contact form: removed background (transparent)
+      Blog movement
+      ------------------------- */
+    .blog-card {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s;
+      border: 1px solid rgba(13,110,253,0.04);
+      background: #fff;
+    }
+    .blog-card:hover { transform: translateY(-10px) scale(1.01); box-shadow: 0 22px 60px rgba(11,22,60,.08); }
+    .blog-card img { height: 180px; object-fit: cover; width: 100%; display:block; }
+
+    /* -------------------------
+      Premium horizontal contact form
       ------------------------- */
     .contact-premium {
-      background: transparent !important;
+      background: linear-gradient(90deg, rgba(14,39,107,0.03), rgba(255,255,255,0.5));
       border-radius: 14px;
-      padding: 0;
-      box-shadow: none;
-      border: none;
+      padding: 22px;
+      box-shadow: 0 18px 50px rgba(2,6,23,0.06);
+      border: 1px solid rgba(13,110,253,0.06);
     }
     .contact-premium .form-control {
       border-radius: 10px;
       padding: 12px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.02);
-      color: #eaf4ff;
+      border: 1px solid rgba(13,110,253,0.08);
     }
-    .contact-premium .form-label { font-weight:600; color: #eaf4ff; font-size:.95rem; }
-    .contact-premium .btn-primary { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; border-radius:10px; padding:12px 18px; }
+    .contact-premium .form-label { font-weight: 600; color: #333; font-size: .95rem; }
+    .contact-premium .btn-primary {
+      background: linear-gradient(90deg,var(--brand),#0a58ca);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(13,110,253,0.10);
+    }
 
-    /* Muted small text */
+    /* small type adjustments */
     .muted-small { color: var(--muted); font-size: .95rem; }
 
-    /* NAV dropdown hover for desktop */
+    /* NAV - open dropdown on hover for desktop while preserving mobile click */
     @media (min-width: 992px) {
-      .navbar .dropdown:hover > .dropdown-menu { display:block; margin-top:0; }
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
     }
 
-    /* responsive hero adjustments */
+    /* ---------- Responsive hero adjustments ---------- */
+    /* keep previous responsive tweaks but expand them with focal control */
     @media (max-width: 991px) {
-      .hero { padding-top: 100px; padding-bottom: 50px; background-position: 80% 30%; min-height: 64vh; }
+      .hero {
+        padding-top: 100px;
+        padding-bottom: 50px;
+        /* shift focal area a bit to the right so the hand remains visible on narrow viewports */
+        background-position: 80% 30%;
+        min-height: 64vh;
+      }
       .service-card { padding: 14px; }
+      .why-grid { grid-template-columns: 1fr; }
     }
+
     @media (max-width: 767px) {
-      .hero { background-position: 90% 40%; min-height: 60vh; padding-top: 80px; padding-bottom: 40px; }
-      .hero h1 { font-size: clamp(1.35rem, 7vw, 2rem); line-height: 1.08; }
-      .hero p.lead { font-size: 4.4vw; margin-bottom: 12px; }
+      .hero {
+        /* more aggressive right focus for phones where width is narrow */
+        background-position: 90% 40%;
+        min-height: 60vh;
+        padding-top: 80px;
+        padding-bottom: 40px;
+      }
+      .hero h1 {
+        font-size: clamp(1.35rem, 7vw, 2rem);
+        line-height: 1.08;
+      }
+      .hero p.lead {
+        font-size: 4.4vw;
+        margin-bottom: 12px;
+      }
+      .hero .d-flex.justify-content-center {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hero .text-white-50 {
+        font-size: 3.6vw;
+      }
     }
+
     @media (max-width: 480px) {
-      .hero { background-position: 95% 45%; min-height: 56vh; }
-      .hero h1 { font-size: 7.5vw; }
+      .hero {
+        background-position: 95% 45%;
+        min-height: 56vh;
+      }
+      .hero h1 {
+        font-size: 7.5vw;
+      }
     }
+    /* ---------- end hero responsive tweaks ---------- */
   </style>
-
-  <!-- HubSpot tracking code -->
-  <script id="hs-script-loader" async defer src="https://js-na2.hs-scripts.com/243796428.js"></script>
-
+  
+<!-- HubSpot tracking code (use your portal ID) -->
+<script id="hs-script-loader" async defer src="https://js-na2.hs-scripts.com/243796428.js"></script>
+  
 </head>
 <body>
   <!-- NAVBAR -->
@@ -273,12 +374,7 @@
 
           <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
-
-          <!-- Pricing button (yellow->orange) -->
-          <li class="nav-item ms-2"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
-
-          <!-- Request a Demo (forest green) -->
-          <li class="nav-item ms-2"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
@@ -299,237 +395,238 @@
     </div>
   </header>
 
-  <!-- MAIN: everything below hero sits inside #bg-section so you can add image/video backgrounds -->
   <main id="main" tabindex="-1">
-    <div id="bg-section">
+    <!-- Key services -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">What We Do</h2>
+        <p class="text-center muted-small mb-4">End-to-end services for digital growth, from polished websites to measurable marketing campaigns.</p>
 
-      <!-- Key services -->
-      <section class="py-5">
-        <div class="container">
-          <h2 class="text-center mb-4">What We Do</h2>
-          <p class="text-center muted-small mb-4">End-to-end services for digital growth, from polished websites to measurable marketing campaigns.</p>
-
-          <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-              <article class="service-card h-100">
-                <div class="card-body d-flex flex-column">
-                  <div>
-                    <i class="bi bi-code-slash card-icon" aria-hidden="true"></i>
-                    <h3 class="h5 mb-2">Web Development</h3>
-                    <p class="muted-small">Custom, responsive websites built for speed, conversions and search visibility.</p>
-                  </div>
-                  <div class="mt-3">
-                    <ul class="list-unstyled small muted-small mb-3">
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Mobile-first & accessible</li>
-                      <li><i class="bi bi-check2 me-2 text-success"></i>E-commerce & CMS</li>
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Performance & SEO-ready</li>
-                    </ul>
-                    <a href="/services/web-development-and-designing/" class="btn btn-sm btn-outline-light">Learn more</a>
-                  </div>
+        <div class="row g-4">
+          <!-- Web dev -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div>
+                  <i class="bi bi-code-slash card-icon" aria-hidden="true"></i>
+                  <h3 class="h5 mb-2">Web Development</h3>
+                  <p class="muted-small">Custom, responsive websites built for speed, conversions and search visibility.</p>
                 </div>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <article class="service-card h-100">
-                <div class="card-body d-flex flex-column">
-                  <div>
-                    <i class="bi bi-bar-chart-line card-icon" aria-hidden="true"></i>
-                    <h3 class="h5 mb-2">Search Engine Optimization (SEO)</h3>
-                    <p class="muted-small">Technical SEO, content strategy and local SEO to increase qualified traffic.</p>
-                  </div>
-                  <div class="mt-3">
-                    <ul class="list-unstyled small muted-small mb-3">
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Site audits & technical fixes</li>
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Local SEO (Hyderabad, Bangalore)</li>
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Analytics & GSC monitoring</li>
-                    </ul>
-                    <a href="/services/seo-services-in-hyderabad/" class="btn btn-sm btn-outline-light">Learn more</a>
-                  </div>
+                <div class="mt-3">
+                  <ul class="list-unstyled small muted-small mb-3">
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Mobile-first & accessible</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>E-commerce & CMS</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Performance & SEO-ready</li>
+                  </ul>
+                  <a href="/services/web-development-and-designing/" class="btn btn-sm btn-outline-primary">Learn more</a>
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
+          </div>
 
-            <div class="col-md-6 col-lg-4">
-              <article class="service-card h-100">
-                <div class="card-body d-flex flex-column">
-                  <div>
-                    <i class="bi bi-megaphone-fill card-icon" aria-hidden="true"></i>
-                    <h3 class="h5 mb-2">Social Media Marketing</h3>
-                    <p class="muted-small">Managed content, community and paid social to grow your brand and leads.</p>
-                  </div>
-                  <div class="mt-3">
-                    <ul class="list-unstyled small muted-small mb-3">
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Content calendars & creative</li>
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Targeted ads & optimization</li>
-                      <li><i class="bi bi-check2 me-2 text-success"></i>Community & influencer outreach</li>
-                    </ul>
-                    <a href="/services/social-media-marketing-company-in-hyderabad/" class="btn btn-sm btn-outline-light">Learn more</a>
-                  </div>
+          <!-- SEO -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div>
+                  <i class="bi bi-bar-chart-line card-icon" aria-hidden="true"></i>
+                  <h3 class="h5 mb-2">Search Engine Optimization (SEO)</h3>
+                  <p class="muted-small">Technical SEO, content strategy and local SEO to increase qualified traffic.</p>
                 </div>
-              </article>
-            </div>
+                <div class="mt-3">
+                  <ul class="list-unstyled small muted-small mb-3">
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Site audits & technical fixes</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Local SEO (Hyderabad, Bangalore)</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Analytics & GSC monitoring</li>
+                  </ul>
+                  <a href="/services/seo-services-in-hyderabad/" class="btn btn-sm btn-outline-primary">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Social -->
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div>
+                  <i class="bi bi-megaphone-fill card-icon" aria-hidden="true"></i>
+                  <h3 class="h5 mb-2">Social Media Marketing</h3>
+                  <p class="muted-small">Managed content, community and paid social to grow your brand and leads.</p>
+                </div>
+                <div class="mt-3">
+                  <ul class="list-unstyled small muted-small mb-3">
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Content calendars & creative</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Targeted ads & optimization</li>
+                    <li><i class="bi bi-check2 me-2 text-success"></i>Community & influencer outreach</li>
+                  </ul>
+                  <a href="/services/social-media-marketing-company-in-hyderabad/" class="btn btn-sm btn-outline-primary">Learn more</a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Why choose us (white cards - restored) -->
-      <section class="py-5 bg-white">
-        <div class="container why-section">
-          <div class="row align-items-start g-4">
-            <div class="col-lg-12">
-              <h2>Why Companies Builder?</h2>
-              <p class="muted-small">Practical, measurable, and affordable digital services built for small & medium businesses. We focus on performance, transparency, and delivering ROI.</p>
+    <!-- Why choose us (premium card-based) -->
+    <section class="py-5 bg-white">
+      <div class="container why-section">
+        <div class="row align-items-start g-4">
+          <div class="col-lg-12">
+            <h2>Why Companies Builder?</h2>
+            <p class="muted-small">Practical, measurable, and affordable digital services built for small & medium businesses. We focus on performance, transparency, and delivering ROI.</p>
 
-              <div class="why-grid">
-                <div class="why-card">
-                  <div class="why-badge"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
-                  <div>
-                    <h5>Experienced Team</h5>
-                    <p>Designers, developers and marketers with practical experience building growth engines.</p>
-                  </div>
-                </div>
-
-                <div class="why-card">
-                  <div class="why-badge"><i class="bi bi-rocket-takeoff-fill" aria-hidden="true"></i></div>
-                  <div>
-                    <h5>Fast Turnaround</h5>
-                    <p>Agile delivery and clear milestones so you launch quickly without compromise.</p>
-                  </div>
-                </div>
-
-                <div class="why-card">
-                  <div class="why-badge"><i class="bi bi-wallet2" aria-hidden="true"></i></div>
-                  <div>
-                    <h5>Affordable Packages</h5>
-                    <p>Practical pricing and options for startups and SMBs, high value, low waste.</p>
-                  </div>
-                </div>
-
-                <div class="why-card">
-                  <div class="why-badge"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></div>
-                  <div>
-                    <h5>Data-driven Growth</h5>
-                    <p>We prioritize measurable KPIs and continual optimization to improve ROI.</p>
-                  </div>
-                </div>
-
-                <div class="why-card">
-                  <div class="why-badge"><i class="bi bi-shield-lock-fill" aria-hidden="true"></i></div>
-                  <div>
-                    <h5>Secure & Maintained</h5>
-                    <p>Security best-practices plus optional maintenance so your site stays safe and fast.</p>
-                  </div>
+            <!-- premium cards grid -->
+            <div class="why-grid">
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-award-fill" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Experienced Team</h5>
+                  <p>Designers, developers and marketers with practical experience building growth engines.</p>
                 </div>
               </div>
 
-              <div class="why-cta mt-4">
-                <a class="btn btn-demo" href="/demo/">Request a Free Demo</a>
-                <a href="https://www.designrush.com/agency/profile/companies-builder" target="_blank">
-                  <img src="/assets/images/companies-builder-verified_agency.svg" alt="Companies Builder's rating on DesignRush" class="designrush-badge">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Latest Blogs -->
-      <section class="py-5">
-        <div class="container">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="mb-0">Latest insights</h3>
-            <a href="/blogs/" class="small text-decoration-none">View all articles →</a>
-          </div>
-
-          <div class="row g-4">
-            <div class="col-md-4">
-              <article class="blog-card h-100">
-                <img loading="lazy" src="/assets/images/Companies-builder-web.webp" alt="Web development responsive design">
-                <div class="p-3">
-                  <h4 class="h6 mb-2">Web development with responsive design</h4>
-                  <p class="small muted-small mb-2">How to make sites that look great and perform well on every device.</p>
-                  <a href="https://companiesbuilder.com/blogs/articles/web-development-with-responsive-design/" class="btn btn-outline-primary btn-sm">Read</a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-4">
-              <article class="blog-card h-100">
-                <img loading="lazy" src="/assets/images/Companies-builder-seo.webp" alt="SEO 2025">
-                <div class="p-3">
-                  <h4 class="h6 mb-2">SEO: What matters in 2025</h4>
-                  <p class="small muted-small mb-2">A practical guide for small businesses to improve search visibility.</p>
-                  <a href="https://companiesbuilder.com/blogs/articles/seo/" class="btn btn-outline-primary btn-sm">Read</a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-4">
-              <article class="blog-card h-100">
-                <img loading="lazy" src="/assets/images/Companies-builder-marketing.webp" alt="Maximizing PPC">
-                <div class="p-3">
-                  <h4 class="h6 mb-2">Maximizing PPC campaigns</h4>
-                  <p class="small muted-small mb-2">Get better ROI from your paid campaigns with these optimizations.</p>
-                  <a href="https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/" class="btn btn-outline-primary btn-sm">Read</a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT FORM (no background) -->
-      <section class="py-5">
-        <div class="container">
-          <div class="row mb-3">
-            <div class="col-12 text-center">
-              <h3 class="mb-1">Start your digital growth, request a free audit</h3>
-              <p class="muted-small mb-0">Fill the quick form and we'll send a tailored audit & next-steps for your business.</p>
-            </div>
-          </div>
-
-          <div class="contact-premium">
-            <form id="homeContactForm" name="home-contact">
-              <div class="row gx-3 gy-3 align-items-end" style="padding:18px;">
-                <div class="col-md-3">
-                  <label for="hname" class="form-label">Name</label>
-                  <input id="hname" name="your-name" class="form-control" required />
-                </div>
-                <div class="col-md-3">
-                  <label for="hemail" class="form-label">Email</label>
-                  <input id="hemail" type="email" name="your-email" class="form-control" required />
-                </div>
-                <div class="col-md-3">
-                  <label for="hphone" class="form-label">Phone</label>
-                  <input id="hphone" type="tel" name="your-number" pattern="[0-9]{10}" class="form-control" required />
-                </div>
-                <div class="col-md-3">
-                  <label for="hcta" class="form-label">Interested In</label>
-                  <select id="hcta" name="interest" class="form-control">
-                    <option>Web Development</option>
-                    <option>SEO</option>
-                    <option>Social Media</option>
-                    <option>Full Digital Plan</option>
-                  </select>
-                </div>
-
-                <div class="col-12 mt-2">
-                  <label for="hmessage" class="form-label">Message</label>
-                  <textarea id="hmessage" name="message" rows="3" class="form-control" placeholder="Tell us briefly about your project or goals"></textarea>
-                </div>
-
-                <div class="col-12 text-end mt-2">
-                  <button type="submit" class="btn btn-primary">Request Free Audit</button>
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-rocket-takeoff-fill" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Fast Turnaround</h5>
+                  <p>Agile delivery and clear milestones so you launch quickly without compromise.</p>
                 </div>
               </div>
-            </form>
-            <div id="homeSuccess" style="display:none; margin-top:12px;" class="text-success">✅ Thanks — we received your request. We will contact you shortly.</div>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-wallet2" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Affordable Packages</h5>
+                  <p>Practical pricing and options for startups and SMBs, high value, low waste.</p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Data-driven Growth</h5>
+                  <p>We prioritize measurable KPIs and continual optimization to improve ROI.</p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-badge"><i class="bi bi-shield-lock-fill" aria-hidden="true"></i></div>
+                <div>
+                  <h5>Secure & Maintained</h5>
+                  <p>Security best-practices plus optional maintenance so your site stays safe and fast.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="why-cta mt-4">
+              <a class="btn btn-demo" href="/demo/">Request a Free Demo</a>
+              <a href="https://www.designrush.com/agency/profile/companies-builder" target="_blank">
+                <img src="/assets/images/companies-builder-verified_agency.svg" alt="Companies Builder's rating on Digital Marketing Agency Listing by DesignRush, the industry-leading B2B Marketplace connecting brands with agencies" class="designrush-badge">
+              </a>
+            </div>
+          </div>
+</div>
+      </div>
+    </section>
+
+    <!-- Latest Blogs -->
+    <section class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Latest insights</h3>
+          <a href="/blogs/" class="small text-decoration-none">View all articles →</a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="blog-card h-100">
+              <img loading="lazy" src="/assets/images/Companies-builder-web.webp" alt="Web development responsive design">
+              <div class="p-3">
+                <h4 class="h6 mb-2">Web development with responsive design</h4>
+                <p class="small muted-small mb-2">How to make sites that look great and perform well on every device.</p>
+                <a href="https://companiesbuilder.com/blogs/articles/web-development-with-responsive-design/" class="btn btn-outline-primary btn-sm">Read</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="blog-card h-100">
+              <img loading="lazy" src="/assets/images/Companies-builder-seo.webp" alt="SEO 2025">
+              <div class="p-3">
+                <h4 class="h6 mb-2">SEO: What matters in 2025</h4>
+                <p class="small muted-small mb-2">A practical guide for small businesses to improve search visibility.</p>
+                <a href="https://companiesbuilder.com/blogs/articles/seo/" class="btn btn-outline-primary btn-sm">Read</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="blog-card h-100">
+              <img loading="lazy" src="/assets/images/Companies-builder-marketing.webp" alt="Maximizing PPC">
+              <div class="p-3">
+                <h4 class="h6 mb-2">Maximizing PPC campaigns</h4>
+                <p class="small muted-small mb-2">Get better ROI from your paid campaigns with these optimizations.</p>
+                <a href="https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/" class="btn btn-outline-primary btn-sm">Read</a>
+              </div>
+            </article>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </div> <!-- /#bg-section -->
+    <!-- PREMIUM HORIZONTAL CONTACT FORM -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <!-- CTA heading above the form -->
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h3 class="mb-1">Start your digital growth, request a free audit</h3>
+            <p class="muted-small mb-0">Fill the quick form and we'll send a tailored audit & next-steps for your business.</p>
+          </div>
+        </div>
+
+        <div class="contact-premium">
+          <form id="homeContactForm" name="home-contact">
+            <div class="row gx-3 gy-3 align-items-end">
+              <div class="col-md-3">
+                <label for="hname" class="form-label">Name</label>
+                <input id="hname" name="your-name" class="form-control" required />
+              </div>
+              <div class="col-md-3">
+                <label for="hemail" class="form-label">Email</label>
+                <input id="hemail" type="email" name="your-email" class="form-control" required />
+              </div>
+              <div class="col-md-3">
+                <label for="hphone" class="form-label">Phone</label>
+                <input id="hphone" type="tel" name="your-number" pattern="[0-9]{10}" class="form-control" required />
+              </div>
+              <div class="col-md-3">
+                <label for="hcta" class="form-label">Interested In</label>
+                <select id="hcta" name="interest" class="form-control">
+                  <option>Web Development</option>
+                  <option>SEO</option>
+                  <option>Social Media</option>
+                  <option>Full Digital Plan</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-2">
+                <label for="hmessage" class="form-label">Message</label>
+                <textarea id="hmessage" name="message" rows="3" class="form-control" placeholder="Tell us briefly about your project or goals"></textarea>
+              </div>
+
+              <div class="col-12 text-end mt-2">
+                <button type="submit" class="btn btn-primary">Request Free Audit</button>
+              </div>
+            </div>
+          </form>
+          <div id="homeSuccess" style="display:none; margin-top:12px;" class="text-success">✅ Thanks — we received your request. We will contact you shortly.</div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -570,7 +667,7 @@
     </div>
   </footer>
 
-  <!-- Structured Data (kept) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -614,7 +711,7 @@
   }
   </script>
 
-  <!-- Form JS (kept) -->
+  <!-- Form JS -->
   <script>
     (function(){
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
@@ -635,6 +732,7 @@
                 success.style.display = 'block';
                 form.reset();
 
+                // Send a GA4 event for successful leads (optional)
                 if (window.gtag) {
                   try {
                     gtag('event', 'generate_lead', {
@@ -662,51 +760,7 @@
     })();
   </script>
 
-  <!-- Dropdown hover accessibility (keeps ARIA in sync) -->
-  <script>
-  (function(){
-    const dropdown = document.querySelector('.navbar .dropdown');
-    const toggle = document.getElementById('servicesDrop');
-    if (!dropdown || !toggle) return;
-
-    function setExpanded(val){ toggle.setAttribute('aria-expanded', val ? 'true' : 'false'); }
-
-    dropdown.addEventListener('mouseenter', () => {
-      if (window.innerWidth >= 992) {
-        dropdown.classList.add('show');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        if (menu) menu.classList.add('show');
-        setExpanded(true);
-      }
-    });
-    dropdown.addEventListener('mouseleave', () => {
-      if (window.innerWidth >= 992) {
-        dropdown.classList.remove('show');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        if (menu) menu.classList.remove('show');
-        setExpanded(false);
-      }
-    });
-
-    toggle.addEventListener('click', () => {
-      setTimeout(() => {
-        const isOpen = dropdown.classList.contains('show') || (dropdown.querySelector('.dropdown-menu') && dropdown.querySelector('.dropdown-menu').classList.contains('show'));
-        setExpanded(!!isOpen);
-      }, 20);
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth < 992) {
-        dropdown.classList.remove('show');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        if (menu) menu.classList.remove('show');
-        setExpanded(false);
-      }
-    });
-  })();
-  </script>
-
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap JS (deferred) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
 </body>
