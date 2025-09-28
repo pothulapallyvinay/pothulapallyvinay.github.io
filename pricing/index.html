@@ -59,7 +59,7 @@
   <!-- site stylesheet -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <!-- inline CSS (unchanged from your current file) -->
+  <!-- inline CSS (kept from your current file) -->
   <style>
     :root{ --brand:#0d6efd; --muted:#6c757d; --radius:12px; }
     body{font-family:Roboto,Arial,sans-serif;color:#0f1724;background:#f6fbff;-webkit-font-smoothing:antialiased}
@@ -93,10 +93,105 @@
     @media(max-width:575px){.hero{padding-top:100px;padding-bottom:50px}.hero h1{font-size:2rem}.cb-total{flex-direction:column;gap:8px;align-items:stretch}}
   </style>
 
+  <!-- Extra CSS: hover & dropdown & card hover enhancements (RESTORED) -->
+  <style>
+    /* Navbar link hover: subtle brand highlight and smooth transition */
+    .navbar .nav-link {
+      transition: color .18s ease, background-color .18s ease;
+      border-radius: 6px;
+      padding: .45rem .6rem;
+    }
+    /* Brand color on hover + soft background so it's visible on dark navbar */
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+      color: var(--brand) !important;
+      background-color: rgba(13,110,253,0.06);
+      text-decoration: none;
+    }
+
+    /* Make the outline Request a Demo button fill with brand on hover */
+    .navbar .btn-outline-light {
+      transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+    }
+    .navbar .btn-outline-light:hover,
+    .navbar .btn-outline-light:focus {
+      background-color: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
+    }
+
+    /* Dropdown menu item hover */
+    .dropdown-menu .dropdown-item {
+      transition: background-color .18s ease, color .18s ease;
+    }
+    .dropdown-menu .dropdown-item:hover,
+    .dropdown-menu .dropdown-item:focus {
+      background-color: rgba(13,110,253,0.06);
+      color: var(--brand);
+    }
+
+    /* Desktop: show dropdown on hover with a smooth fade/slide */
+    @media (min-width: 992px) {
+      /* Start with dropdown menu visually hidden but present in layout so transitions work */
+      .navbar .dropdown > .dropdown-menu {
+        display: block; /* keep it present; we'll use opacity/transform to hide */
+        visibility: visible;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .20s ease, transform .20s ease;
+        pointer-events: none;
+      }
+      /* On hover, reveal the menu */
+      .navbar .dropdown:hover > .dropdown-menu,
+      .navbar .dropdown:focus-within > .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      /* Slightly emphasize hovered nav link when dropdown opens */
+      .navbar .dropdown:hover > .nav-link,
+      .navbar .dropdown:focus-within > .nav-link {
+        color: var(--brand) !important;
+        background-color: rgba(13,110,253,0.04);
+      }
+    }
+
+    /* Smooth hover effect for plan cards */
+    .card-plan {
+      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s cubic-bezier(.2,.9,.3,1);
+      will-change: transform;
+    }
+    .card-plan:hover,
+    .card-plan:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 48px rgba(11,22,60,0.12);
+    }
+
+    /* Make focus styles visible for keyboard users */
+    .nav-link:focus {
+      outline: 3px solid rgba(13,110,253,0.14);
+      outline-offset: 2px;
+    }
+    .card-plan:focus-within {
+      outline: 3px solid rgba(13,110,253,0.08);
+      outline-offset: 6px;
+    }
+
+    /* Small screens: ensure dropdown still uses click (we didn't change behavior on mobile) */
+    @media (max-width: 991px) {
+      .navbar .dropdown > .dropdown-menu {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        display: none; /* let Bootstrap JS toggle .show on mobile */
+      }
+    }
+  </style>
+
 </head>
 <body>
 
-  <!-- Navbar (unchanged) -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
@@ -133,13 +228,14 @@
     <div class="container">
       <h1>Small Business Website Design, SEO & Digital Marketing</h1>
       <p class="lead">Affordable one-time website builds from ₹5,999 with optional monthly website management, local SEO, social media and content packages to keep your site growing.</p>
+      <!-- intentionally no CTA buttons in hero - cleaner & faster for SEO -->
     </div>
   </header>
 
   <main class="py-5" id="pricing">
     <div class="container">
 
-      <!-- One-time projects (unchanged) -->
+      <!-- One-time projects -->
       <section class="section">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <div>
@@ -149,11 +245,12 @@
         </div>
 
         <div class="cards mt-3">
-          <!-- Plans (unchanged) -->
+          <!-- Basic One-time -->
           <div class="card-plan" aria-label="Basic one-time">
             <h3>Basic - One-time</h3>
             <div class="plan-price">₹5,999</div>
             <div class="plan-sub">Brochure site / landing page</div>
+
             <ul class="features">
               <li><span class="tick">✓</span> Up to 4 responsive pages</li>
               <li><span class="tick">✓</span> Basic on-page SEO</li>
@@ -161,76 +258,89 @@
               <li><span class="tick">✓</span> 1 round of revisions</li>
               <li><span class="tick">✓</span> Delivery ~2 weeks</li>
             </ul>
+
             <div class="cta">
               <button type="button" class="btn btn-primary w-100 order-btn" data-plan="Basic" aria-label="Order Basic plan">Order Basic - ₹5,999</button>
             </div>
           </div>
 
+          <!-- Standard One-time -->
           <div class="card-plan best" aria-label="Standard one-time">
             <h3>Standard - One-time</h3>
             <div class="plan-price">₹10,999</div>
             <div class="plan-sub">Business site + starter SEO</div>
+
             <ul class="features">
               <li><span class="tick">✓</span> Up to 8 pages + blog setup</li>
               <li><span class="tick">✓</span> On-page SEO + sitemap</li>
               <li><span class="tick">✓</span> 2 rounds of revisions</li>
               <li><span class="tick">✓</span> Delivery ~3–4 weeks</li>
             </ul>
+
             <div class="cta">
               <button type="button" class="btn btn-primary w-100 order-btn" data-plan="Standard" aria-label="Order Standard plan">Order Standard - ₹10,999</button>
             </div>
           </div>
 
+          <!-- Premium One-time -->
           <div class="card-plan" aria-label="Premium one-time">
             <h3>Premium - One-time</h3>
             <div class="plan-price">₹24,999</div>
             <div class="plan-sub">Custom site + technical SEO setup</div>
+
             <ul class="features">
               <li><span class="tick">✓</span> Custom design, unlimited pages</li>
               <li><span class="tick">✓</span> Technical & on-page SEO fixes</li>
               <li><span class="tick">✓</span> Speed & mobile optimisation</li>
               <li><span class="tick">✓</span> 3 revisions + handover</li>
             </ul>
+
             <div class="cta">
               <button type="button" class="btn btn-primary w-100 order-btn" data-plan="Premium" aria-label="Order Premium plan">Order Premium - ₹24,999</button>
             </div>
           </div>
         </div>
 
-        <!-- ADD-ONS UI (unchanged markup) -->
+        <!-- ADD-ONS UI -->
         <div id="cb-addons" class="cb-card mt-4" aria-label="Add-ons checklist">
           <h3 class="mb-1">Optional Monthly Add-ons (select per your one-time plan)</h3>
           <p class="cb-note mb-3">Choose add-ons when you sign off on the project - we’ll invoice monthly. Prices in INR.</p>
 
           <div class="cb-addons-grid">
-            <!-- Basic -->
+            <!-- Basic add-ons -->
             <div class="cb-card">
               <h5>For Basic - One-time</h5>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_basic_maintenance" aria-label="Basic Maintenance & Backups" data-plan="basic" data-price="1499" id="b-maint">
                 <label for="b-maint" class="meta"><strong>Basic Maintenance &amp; Backups</strong><div class="cb-note">₹1,499 /mo - Weekly backups, CMS/plugin updates, 72-hr support.</div></label>
                 <div class="cb-price">₹1,499</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_basic_gbp" aria-label="Local Listings and GBP Management" data-plan="basic" data-price="999" id="b-gbp">
                 <label for="b-gbp" class="meta"><strong>Local Listings &amp; GBP Management</strong><div class="cb-note">₹999 /mo - GBP updates & citation checks.</div></label>
                 <div class="cb-price">₹999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_basic_social" aria-label="Social Starter 4 posts" data-plan="basic" data-price="1999" id="b-social">
                 <label for="b-social" class="meta"><strong>Social Starter (4 posts / mo)</strong><div class="cb-note">₹1,999 /mo - Images, captions & scheduling.</div></label>
                 <div class="cb-price">₹1,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_basic_blog" aria-label="Blog single post" data-plan="basic" data-price="2999" id="b-blog">
                 <label for="b-blog" class="meta"><strong>Blog - Single Post (500–700 words)</strong><div class="cb-note">₹2,999 /mo - SEO blog with basic formatting.</div></label>
                 <div class="cb-price">₹2,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_basic_security" aria-label="Monthly Security Scan" data-plan="basic" data-price="799" id="b-sec">
                 <label for="b-sec" class="meta"><strong>Monthly Security Scan</strong><div class="cb-note">₹799 /mo - Malware scan & guidance.</div></label>
                 <div class="cb-price">₹799</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_basic_devhours" aria-label="Extra Dev Hours 3 hours" data-plan="basic" data-price="2499" id="b-dev">
                 <label for="b-dev" class="meta"><strong>Extra Dev Hours (3 hrs bundle)</strong><div class="cb-note">₹2,499 /mo - Small fixes & updates.</div></label>
@@ -238,39 +348,46 @@
               </div>
             </div>
 
-            <!-- Standard -->
+            <!-- Standard add-ons -->
             <div class="cb-card">
               <h5>For Standard - One-time</h5>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_standard_care" aria-label="Site Care maintenance monitoring" data-plan="standard" data-price="2999" id="s-care">
                 <label for="s-care" class="meta"><strong>Site Care (Maintenance + Monitoring)</strong><div class="cb-note">₹2,999 /mo - Uptime monitoring, weekly backups, 48-hr SLA.</div></label>
                 <div class="cb-price">₹2,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_standard_local" aria-label="Local Growth Pack" data-plan="standard" data-price="2499" id="s-local">
                 <label for="s-local" class="meta"><strong>Local Growth Pack</strong><div class="cb-note">₹2,499 /mo - GBP + citations + local keyword tweaks.</div></label>
                 <div class="cb-price">₹2,499</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_standard_social" aria-label="Social Growth 8-12 posts" data-plan="standard" data-price="4999" id="s-social">
                 <label for="s-social" class="meta"><strong>Social Growth (8–12 posts / mo)</strong><div class="cb-note">₹4,999 /mo - Posts, scheduling & monthly note.</div></label>
                 <div class="cb-price">₹4,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_standard_content" aria-label="Content pack 2 blogs" data-plan="standard" data-price="5499" id="s-content">
                 <label for="s-content" class="meta"><strong>Content Pack (2 blogs / mo)</strong><div class="cb-note">₹5,499 /mo - 2 posts with keyword research.</div></label>
                 <div class="cb-price">₹5,499</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_standard_tech" aria-label="Technical SEO monitoring" data-plan="standard" data-price="3499" id="s-tech">
                 <label for="s-tech" class="meta"><strong>Technical SEO Monitoring</strong><div class="cb-note">₹3,499 /mo - Crawl errors, sitemap & fixes.</div></label>
                 <div class="cb-price">₹3,499</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_standard_ads" aria-label="Small Ads Management" data-plan="standard" data-price="6999" id="s-ads">
                 <label for="s-ads" class="meta"><strong>Small Ads Management</strong><div class="cb-note">₹6,999 /mo - Campaign setup & optimisations (ad spend extra).</div></label>
                 <div class="cb-price">₹6,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_standard_priority" aria-label="Priority Support" data-plan="standard" data-price="1999" id="s-prio">
                 <label for="s-prio" class="meta"><strong>Priority Support</strong><div class="cb-note">₹1,999 /mo - 24-hr response & priority fixes.</div></label>
@@ -278,34 +395,40 @@
               </div>
             </div>
 
-            <!-- Premium -->
+            <!-- Premium add-ons -->
             <div class="cb-card">
               <h5>For Premium - One-time</h5>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_premium_seo" aria-label="Advanced SEO and outreach" data-plan="premium" data-price="9999" id="p-seo">
                 <label for="p-seo" class="meta"><strong>Advanced SEO & Outreach</strong><div class="cb-note">₹9,999 /mo - Outreach + technical & on-page work.</div></label>
                 <div class="cb-price">₹9,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_premium_content" aria-label="Content Suite 4 long blogs" data-plan="premium" data-price="12999" id="p-content">
                 <label for="p-content" class="meta"><strong>Content Suite (4 long blogs)</strong><div class="cb-note">₹12,999 /mo - 4 long-form pieces + calendar.</div></label>
                 <div class="cb-price">₹12,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_premium_social" aria-label="Social + short video pack" data-plan="premium" data-price="8999" id="p-social">
                 <label for="p-social" class="meta"><strong>Social + Short Video Pack</strong><div class="cb-note">₹8,999 /mo - 12–20 posts + 2–4 short videos.</div></label>
                 <div class="cb-price">₹8,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_premium_ads" aria-label="Paid Ads Full Management" data-plan="premium" data-price="19999" id="p-ads">
                 <label for="p-ads" class="meta"><strong>Paid Ads Full Management</strong><div class="cb-note">₹19,999 /mo - Strategy & optimisation (ad spend extra).</div></label>
                 <div class="cb-price">₹19,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_premium_manager" aria-label="Dedicated Account Manager" data-plan="premium" data-price="9999" id="p-am">
                 <label for="p-am" class="meta"><strong>Dedicated Account Manager</strong><div class="cb-note">₹9,999 /mo - Bi-weekly checkins & roadmap ownership.</div></label>
                 <div class="cb-price">₹9,999</div>
               </div>
+
               <div class="cb-addon">
                 <input type="checkbox" class="addon-check" name="addon_premium_cro" aria-label="CRO and A/B testing" data-plan="premium" data-price="7499" id="p-cro">
                 <label for="p-cro" class="meta"><strong>CRO & A/B Testing</strong><div class="cb-note">₹7,499 /mo - One test & analysis monthly.</div></label>
@@ -333,7 +456,7 @@
 
       </section>
 
-      <!-- CONTACT FORM -->
+      <!-- CONTACT FORM (moved above FAQs) -->
       <section class="section" id="contact-section" aria-label="Contact form section">
         <div>
           <h2>Get a tailored estimate - we’ll prepare a prioritized plan</h2>
@@ -385,7 +508,7 @@
         </div>
       </section>
 
-      <!-- CTA & FAQs (unchanged) -->
+      <!-- CTA & FAQs -->
       <section class="section">
         <div class="row">
           <div class="col-md-8">
@@ -419,7 +542,7 @@
     </div>
   </main>
 
-  <!-- Footer (unchanged) -->
+  <!-- Footer -->
   <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="row g-4">
@@ -463,8 +586,7 @@
   <!-- Submission & UI scripts -->
   <script>
   (function(){
-    // === CONFIG: replace with your deployed Apps Script Web App URL ===
-    // Example: const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxx.../exec';
+    // === CONFIG: replace with your deployed Apps Script Web App URL if changed ===
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwdw-aBUMllgT5g_4-WEGJZymUlm-xgaPX7Alf3Hup_-OKBuQHDJ5zUkUNMWtKfJVgC/exec';
 
     // Utility: format INR
@@ -677,7 +799,7 @@
       });
     })();
 
-    // Accessibility improvement
+    // Accessibility improvement: make sure keyboard users can click copy button easily
     if (copyBtn) copyBtn.setAttribute('aria-pressed', 'false');
 
   })();
@@ -694,6 +816,7 @@
       toggle.setAttribute('aria-expanded', val ? 'true' : 'false');
     }
 
+    // on desktop widths, show/hide by adding/removing .show (keeps Bootstrap functionality intact)
     dropdown.addEventListener('mouseenter', () => {
       if (window.innerWidth >= 992) {
         dropdown.classList.add('show');
@@ -711,13 +834,17 @@
       }
     });
 
+    // keep keyboard/click behaviour native (Bootstrap handles it)
+    // update aria-expanded if Bootstrap toggles the menu via click (for consistency)
     toggle.addEventListener('click', () => {
+      // small delay to let bootstrap toggle classes
       setTimeout(() => {
         const isOpen = dropdown.classList.contains('show') || (dropdown.querySelector('.dropdown-menu') && dropdown.querySelector('.dropdown-menu').classList.contains('show'));
         setExpanded(!!isOpen);
       }, 20);
     });
 
+    // Ensure state on window resize: close hover-opened menus when switching to mobile
     window.addEventListener('resize', () => {
       if (window.innerWidth < 992) {
         dropdown.classList.remove('show');
