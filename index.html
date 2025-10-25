@@ -14,9 +14,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <!-- Primary title (brand at the end for clarity) -->
-  <title>Web Development & Digital Marketing Agency | Companies Builder</title>
+  <title>Web Development and Digital Marketing Agency | Companies Builder</title>
 
-  <meta name="description" content="Companies Builder: premium web development, digital marketing, SEO and social media marketing for startups & SMBs in Hyderabad, Bangalore and India. Request a free demo - we build responsive, SEO-optimized websites that convert." />
+  <meta name="description" content="Companies Builder is a web development and digital marketing agency. We build responsive, SEO-optimized websites, and run data-driven campaigns that grow revenue." />
   <meta name="keywords" content="web development Hyderabad, digital marketing agency, digital marketing services, SEO services Hyderabad, social media marketing Bangalore, web design India, responsive websites, Companies Builder" />
   <link rel="canonical" href="https://companiesbuilder.com/" />
 
@@ -31,8 +31,8 @@
 
   <!-- Open Graph / Twitter -->
   <meta property="og:site_name" content="Companies Builder" />
-  <meta property="og:title" content="Companies Builder — Web Development, SEO & Social Media Marketing" />
-  <meta property="og:description" content="Premium web development, SEO and social media services for startups and SMBs. Based in Hyderabad & Bangalore. Request a free demo." />
+  <meta property="og:title" content="Web Development and Digital Marketing Agency | Companies Builder" />
+  <meta property="og:description" content="Companies Builder is a web development and digital marketing agency. We build responsive, SEO-optimized websites, and run data-driven campaigns that grow revenue. For startups and SMBs. Request a free demo." />
   <meta property="og:url" content="https://companiesbuilder.com/" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/companies-builder-hero-bg.webp" />
   <meta property="og:type" content="website" />
@@ -76,6 +76,36 @@
       font-family: 'Roboto', Arial, sans-serif;
     }
 
+    /* NAVBAR buttons: Pricing (yellow->orange) and Request a Demo (forest green) */
+    .nav-btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:6px 12px;     /* keep similar sizing to your previous buttons */
+      height:34px;          /* keep height consistent */
+      border-radius:6px;
+      color:#fff !important;
+      font-weight:600;
+      text-decoration:none;
+      border:0;
+      transition:transform .16s ease, box-shadow .16s ease;
+    }
+    .nav-btn:focus { outline:3px solid rgba(0,0,0,0.06); outline-offset:2px; }
+
+    /* Pricing - yellow to orange */
+    .nav-pricing {
+      background: linear-gradient(90deg, #ffd54f 0%, #ff9800 100%);
+      box-shadow: 0 6px 16px rgba(255,152,0,0.12);
+    }
+    .nav-pricing:hover { transform:translateY(-2px); filter:brightness(.98); }
+
+    /* Request a Demo - forest green */
+    .nav-demo {
+      background: linear-gradient(90deg,#0b8a69 0%,#38ef7d 100%);
+      box-shadow: 0 6px 16px rgba(56,239,125,0.12);
+    }
+    .nav-demo:hover { transform:translateY(-2px); filter:brightness(.98); }
+    
     /* -------------------------
        Global link & button hover
        ------------------------- */
@@ -374,7 +404,15 @@
 
           <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
+          <!-- Pricing button (yellow->orange) -->
+          <li class="nav-item ms-2">
+            <a class="nav-btn nav-pricing" href="/pricing">Pricing</a>
+          </li>
+
+          <!-- Request a Demo (forest green) -->
+          <li class="nav-item ms-2">
+            <a class="nav-btn nav-demo" href="/demo/">Request a Demo</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -383,14 +421,14 @@
   <!-- HERO -->
   <header class="hero" role="banner" aria-label="Hero">
     <div class="container">
-      <h1>We build premium websites and growth engines for businesses.</h1>
+      <h1>We deliver web development and digital marketing services that move your business forward.</h1>
       <p class="lead">Custom web development and digital marketing strategies, designed to generate leads and scale revenue.</p>
       <div class="d-flex justify-content-center gap-3 mt-3">
         <a class="btn btn-demo btn-lg" href="/demo/">Get a Free Demo</a>
         <a class="btn btn-explore btn-lg" href="/services/">Explore Services</a>
       </div>
       <div class="mt-4 d-flex justify-content-center gap-3 align-items-center flex-wrap">
-        <small class="text-white-50">Serving Hyderabad, Bangalore, Mumbai, India</small>
+        <small class="text-white-50">Launch faster. Rank higher. Convert more.</small>
       </div>
     </div>
   </header>
