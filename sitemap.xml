@@ -85,8 +85,15 @@
   </url>
 
   <url>
-    <loc>https://companiesbuilder.com/blogs/articles/digital-marketing-agency-in-hyderabad//</loc>
+    <loc>https://companiesbuilder.com/blogs/articles/digital-marketing-agency-in-hyderabad/</loc>
     <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://companiesbuilder.com/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
