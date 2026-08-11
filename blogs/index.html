@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-563QE3BQWN');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-563QE3BQWN');
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- Title (brand at the end for clarity) -->
-  <title>Blogs | Companies Builder — Web Development, SEO & Social Media Marketing</title>
-
-  <meta name="description" content="Explore Companies Builder’s blog for expert insights on web development, SEO, and digital marketing trends in Hyderabad, Bangalore, Mumbai, and across India." />
-  <meta name="keywords" content="blogs, articles, web development, SEO, digital marketing, Companies Builder, Hyderabad, Bangalore, Mumbai, India" />
+  <!-- Title & meta (brand + primary keywords) -->
+  <title>CompaniesBuilder Blogs & Articles | SEO, Web Dev, Digital Marketing</title>
+  <meta name="description" content="Read CompaniesBuilder blogs and articles on SEO, web development, web designing, social media marketing, PPC ads and digital marketing for businesses across India." />
+  <meta name="keywords" content="CompaniesBuilder blogs, CompaniesBuilder articles, digital marketing blog, web development blog, SEO blog, social media marketing, PPC campaigns, web designing, Hyderabad, Bangalore, Mumbai, India" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="CompaniesBuilder" />
   <link rel="canonical" href="https://companiesbuilder.com/blogs/" />
 
   <!-- Favicons -->
@@ -28,21 +28,24 @@
   <meta name="theme-color" content="#0d6efd" />
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:site_name" content="Companies Builder" />
-  <meta property="og:title" content="Blogs - Companies Builder | Web Development, SEO & Social Media Marketing" />
-  <meta property="og:description" content="Expert insights on web development, SEO, and digital marketing trends for businesses in Hyderabad, Bangalore, Mumbai, and across India." />
+  <meta property="og:site_name" content="CompaniesBuilder" />
+  <meta property="og:title" content="CompaniesBuilder Blogs & Articles | SEO, Web Dev, Digital Marketing" />
+  <meta property="og:description" content="Expert CompaniesBuilder blogs and articles on web development, SEO, social media marketing and PPC for businesses in Hyderabad, Bangalore, Mumbai and across India." />
   <meta property="og:url" content="https://companiesbuilder.com/blogs/" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@companiesbuilder" />
-  <meta name="twitter:title" content="Blogs - Companies Builder | Web Development, SEO & Social Media Marketing" />
-  <meta name="twitter:description" content="Expert insights on web development, SEO, and digital marketing trends for businesses in Hyderabad, Bangalore, Mumbai, and across India." />
+  <meta name="twitter:title" content="CompaniesBuilder Blogs & Articles | SEO, Web Dev, Digital Marketing" />
+  <meta name="twitter:description" content="Expert CompaniesBuilder blogs and articles on web development, SEO, social media marketing and PPC for businesses across India." />
   <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
 
-  <!-- Preconnect & fonts -->
+  <!-- Preconnect, LCP preload & fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" as="image" href="/assets/images/BGhero.png" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- Bootstrap & icons -->
@@ -55,85 +58,148 @@
   <style>
     :root {
       --brand: #0d6efd;
+      --brand-2: #0a58ca;
       --accent: #ff6a1a;
-      --muted: #6c757d;
-      --card-start: #f6f9ff;
-      --card-end: #eef6ff;
+      --muted: #64748b;
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text: #0f1724;
+      --border: rgba(15,23,42,.08);
       font-family: 'Roboto', Arial, sans-serif;
     }
+    [data-theme="dark"] {
+      --bg: #0a0f1c;
+      --surface: #121a2c;
+      --text: #eef2f9;
+      --muted: #93a0b8;
+      --border: rgba(255,255,255,.08);
+    }
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { background: var(--bg); color: var(--text); transition: background-color .25s ease, color .25s ease; }
 
-    /* Global link hover */
+    /* Skip link */
+    .skip-link { position:absolute; left:-999px; top:auto; background:var(--brand); color:#fff; padding:.6rem 1rem; z-index:2000; border-radius:0 0 8px 0; font-weight:600; }
+    .skip-link:focus { left:0; top:0; }
+
     a, .nav-link, .dropdown-item { transition: color .16s ease, transform .12s ease; }
     a:hover, .nav-link:hover, .dropdown-item:hover { color: var(--brand) !important; text-decoration: none; }
 
-    /* Buttons: lift effect */
     .btn { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
     .btn:hover, .btn:focus { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,.12); }
-    .btn-demo { background: linear-gradient(90deg,var(--brand),#0a58ca); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
-    .btn-demo:hover, .btn-demo:focus { color: #fff; background: linear-gradient(90deg,#0a58ca,var(--brand)); }
+    .btn-demo { background: linear-gradient(90deg,var(--brand),var(--brand-2)); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
+    .btn-demo:hover, .btn-demo:focus { color: #fff; background: linear-gradient(90deg,var(--brand-2),var(--brand)); }
 
-    /* Blog buttons: no text or background color change on hover */
     .blog-card .btn-outline-primary {
-      color: var(--brand);
-      border-color: var(--brand);
-      background-color: transparent;
+      color: var(--brand); border-color: var(--brand); background-color: transparent;
     }
-    .blog-card .btn-outline-primary:hover,
-    .blog-card .btn-outline-primary:focus {
-      color: var(--brand) !important;
-      border-color: var(--brand);
-      background-color: transparent !important;
-      transform: translateY(-4px);
-      box-shadow: 0 14px 40px rgba(11,22,60,.12);
+    .blog-card .btn-outline-primary:hover, .blog-card .btn-outline-primary:focus {
+      color: var(--brand) !important; border-color: var(--brand); background-color: transparent !important;
+      transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,.12);
     }
+
+    /* Navbar frosted-glass on scroll */
+    .navbar { transition: background-color .3s ease, box-shadow .3s ease, backdrop-filter .3s ease; }
+    .navbar.scrolled { background-color: rgba(13,17,26,.85) !important; backdrop-filter: blur(12px); box-shadow: 0 6px 30px rgba(0,0,0,.25); }
+    .theme-toggle-btn { border: 1px solid rgba(255,255,255,.35); background: transparent; color: #fff; width: 38px; height: 38px; border-radius: 50%; display:inline-flex; align-items:center; justify-content:center; }
+    .theme-toggle-btn:hover { background: rgba(255,255,255,.12); transform: translateY(-2px); }
 
     /* Hero */
     .hero {
-      padding: 120px 0 70px;
-      background-image: url('/assets/images/BGhero.png');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      padding: 130px 0 60px;
+      background-image: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55)), url('/assets/images/BGhero.png');
+      background-size: cover; background-position: center;
+      color: #fff; text-align: center; position: relative; overflow: hidden;
     }
-    .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.28); pointer-events:none; }
     .hero .container { position: relative; z-index: 2; }
-    .hero h1 { font-size: clamp(1.75rem, 3.5vw, 3rem); line-height: 1.05; font-weight: 800; margin-bottom: .5rem; letter-spacing: -0.02em; }
-    .hero p.lead { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 18px; }
+    .hero .eyebrow { display:inline-flex; align-items:center; gap:.4rem; background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); padding:.35rem .9rem; border-radius:999px; font-size:.8rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; margin-bottom:1rem; backdrop-filter: blur(6px); }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.08; font-weight: 800; margin-bottom: .75rem; letter-spacing: -0.02em; overflow-wrap: break-word; }
+    .hero p.lead { font-size: 1.08rem; color: #eef1f6; margin: 0 auto 22px; max-width: 720px; }
+    .breadcrumb-bar { font-size:.85rem; color:#e5e9f0; margin-bottom:1rem; }
+    .breadcrumb-bar a { color:#e5e9f0; }
+    .breadcrumb-bar a:hover { color:#fff !important; }
 
-    /* Blog card movement */
-    .blog-card { border-radius:12px; overflow:hidden; transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s; border:1px solid rgba(13,110,253,0.04); background:#fff; }
-    .blog-card:hover { transform:translateY(-10px) scale(1.01); box-shadow:0 22px 60px rgba(11,22,60,.08); }
-    /* UPDATED: Increased image height from 180px to 240px */
-    .blog-card img { height:240px; object-fit:cover; width:100%; display:block; }
+    /* Filter / search bar */
+    .filter-bar { background: var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.1rem 1.25rem; box-shadow: 0 10px 40px rgba(11,22,60,.05); margin-top:-52px; position:relative; z-index:5; }
+    .filter-pills { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .filter-pill { border:1px solid var(--border); background:transparent; color:var(--text); font-size:.82rem; font-weight:600; padding:.4rem .95rem; border-radius:999px; cursor:pointer; transition: all .18s ease; }
+    .filter-pill:hover { border-color:var(--brand); color:var(--brand); }
+    .filter-pill.active { background: linear-gradient(90deg,var(--brand),var(--brand-2)); border-color:transparent; color:#fff; }
+    
+    /* Search Wrap Layout Fixes */
+    .search-wrap { position:relative; width: 100%; }
+    #blogSearch { border:1px solid var(--border); background:var(--bg); color:var(--text); border-radius:999px; padding:.55rem 1rem .55rem 2.4rem; }
+    .search-wrap i { position:absolute; left:.9rem; top:50%; transform:translateY(-50%); color:var(--muted); }
+    @media (min-width: 992px) {
+      .search-wrap { max-width: 280px; }
+    }
 
-    /* Small type adjustments */
-    .muted-small { color:var(--muted); font-size:.95rem; }
+    /* Featured card */
+    .featured-card { border-radius:20px; overflow:hidden; background:var(--surface); border:1px solid var(--border); box-shadow: 0 20px 60px rgba(11,22,60,.08); }
+    .featured-card img { width:100%; height:100%; object-fit:cover; aspect-ratio:16/10; display:block; }
+    .featured-card:hover img { transform:scale(1.04); }
+    .featured-card .img-wrap { overflow:hidden; }
+    .featured-card .img-wrap img { transition: transform .5s ease; }
 
-    /* Dropdown hover */
+    /* Blog cards */
+    .blog-card { border-radius:16px; overflow:hidden; transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s; border:1px solid var(--border); background:var(--surface); height:100%; }
+    .blog-card:hover { transform:translateY(-10px); box-shadow:0 22px 60px rgba(11,22,60,.10); }
+    .blog-card .img-wrap { overflow:hidden; }
+    .blog-card img { aspect-ratio:16/10; width:100%; object-fit:cover; display:block; transition: transform .5s ease; }
+    .blog-card:hover img { transform: scale(1.06); }
+    .muted-small { color:var(--muted); font-size:.92rem; }
+    .card-meta { font-size:.8rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; }
+    .card-meta .dot { width:3px; height:3px; background:var(--muted); border-radius:50%; }
+
+    /* Category badges */
+    .badge-cat { font-size:.68rem; font-weight:700; padding:.3rem .65rem; border-radius:999px; letter-spacing:.03em; text-transform:uppercase; display:inline-block; }
+    .badge-seo { background:rgba(13,110,253,.14); color:#0d6efd; }
+    .badge-webdev { background:rgba(111,66,193,.14); color:#6f42c1; }
+    .badge-ppc { background:rgba(255,106,26,.14); color:#e05e0f; }
+    .badge-dm { background:rgba(214,51,132,.14); color:#d63384; }
+    .badge-news { background:rgba(25,135,84,.14); color:#198754; }
+    .badge-new { background: linear-gradient(90deg,var(--accent),#ff8a3d); color:#fff; }
+    .badge-featured { background: linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff; }
+
+    /* Reveal on scroll */
+    .reveal { opacity:0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in-view { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+    /* Newsletter */
+    .newsletter-section { background: linear-gradient(120deg, var(--brand), var(--brand-2)); border-radius:24px; color:#fff; padding: 3rem 2rem; }
+    .newsletter-section input[type="email"] { border-radius:999px; border:none; padding:.8rem 1.2rem; width:100%; }
+    .newsletter-section .btn-newsletter { border-radius:999px; background:#fff; color:var(--brand); font-weight:700; padding:.8rem 1.6rem; border:none; }
+    .newsletter-section .btn-newsletter:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.2); color:var(--brand); }
+
     .nav-item.dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu { margin-top: 0; }
+    .no-results { display:none; text-align:center; padding: 3rem 1rem; color:var(--muted); }
 
     @media (max-width:991px) {
-      .hero { padding-top:100px; padding-bottom:50px; }
+      .hero { padding-top:105px; padding-bottom:70px; }
+      .filter-bar { margin-top:-30px; }
+      .featured-card img { height: auto; }
     }
-
-    /* Optional: tiny meta line */
-    .card-meta { font-size: .85rem; color: var(--muted); margin-bottom: .35rem; display: block; }
   </style>
+
   <!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243796428.js"></script>
-<!-- End of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243796428.js"></script>
+  <!-- End of HubSpot Embed Code -->
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="/assets/images/CB-logo.png" alt="Companies Builder" height="34" class="me-2" loading="lazy" />
-        <span class="fw-bold">Companies Builder</span>
+        <img src="/assets/images/CB-logo.png" alt="CompaniesBuilder" height="34" class="me-2" loading="lazy" />
+        <span class="fw-bold">CompaniesBuilder</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,9 +219,14 @@
               <li><a class="dropdown-item fw-bold" href="/services/">All Services</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link active" href="/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-sm btn-outline-light" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
@@ -164,135 +235,256 @@
   <!-- HERO -->
   <header class="hero" role="banner" aria-label="Blogs hero">
     <div class="container">
-      <h1>Our Blog</h1>
-      <p class="lead">Stay updated with the latest insights on web development, SEO, and digital marketing trends.</p>
+      <div class="breadcrumb-bar">
+        <a href="/">Home</a> <span class="mx-1">/</span> <span aria-current="page">Blogs</span>
+      </div>
+      <span class="eyebrow"><i class="bi bi-stars"></i> CompaniesBuilder Blog</span>
+      <h1>CompaniesBuilder Blogs & Articles</h1>
+      <p class="lead">Practical, no-fluff insights on digital marketing, SEO, web development, web designing, social media marketing, PPC and ad campaigns &mdash; written by the CompaniesBuilder team for businesses across India.</p>
     </div>
   </header>
 
-  <!-- Blog Section -->
+  <!-- Filter / Search bar -->
+  <div class="container">
+    <div class="filter-bar d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+      <div class="filter-pills" role="tablist" aria-label="Filter blog posts by category">
+        <button class="filter-pill active" data-category="all" type="button">All Posts</button>
+        <button class="filter-pill" data-category="dm" type="button">Digital Marketing</button>
+        <button class="filter-pill" data-category="seo" type="button">SEO</button>
+        <button class="filter-pill" data-category="webdev" type="button">Web Development</button>
+        <button class="filter-pill" data-category="ppc" type="button">PPC & Ads</button>
+        <button class="filter-pill" data-category="news" type="button">Company News</button>
+      </div>
+      <div class="search-wrap">
+        <i class="bi bi-search"></i>
+        <input type="search" id="blogSearch" class="form-control" placeholder="Search articles..." aria-label="Search blog articles" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
   <main id="main" class="mt-5" tabindex="-1">
-    <section class="py-5">
+
+    <!-- Featured post -->
+    <section class="py-4">
       <div class="container">
-        <div class="row g-3">
-          <!-- Blog Post 1 -->
-          <div class="col-md-4">
-            <article class="blog-card h-100">
-              <a href="/blogs/articles/seo/">
-                <img loading="lazy" src="/assets/images/Companies-builder-seo.webp" alt="SEO Strategies 2025" class="img-fluid" />
+        <article class="featured-card reveal">
+          <div class="row g-0">
+            <div class="col-lg-6 img-wrap">
+              <a href="https://companiesbuilder.com/blogs/articles/what-is-digital-marketing-how-it-works-types-strategies-benefits-explained/">
+                <img src="https://i.ibb.co/Y6FvFRn/what-is-digital-marketing.png" alt="What Is Digital Marketing? How It Works, Types, Strategies & Benefits Explained" loading="eager" fetchpriority="high" decoding="async" />
               </a>
-              <div class="p-3">
-                <span class="card-meta">August 9, 2025 • Companies Builder</span>
-                <h4 class="h6 mb-1">
-                  <a href="/blogs/articles/seo/" class="text-decoration-none">Search Engine Optimization in 2025</a>
-                </h4>
-                <p class="small muted-small mb-2">Boost your small business with top SEO strategies for 2025.</p>
-                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/seo/">Read More</a>
+            </div>
+            <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center">
+              <div class="d-flex gap-2 mb-3">
+                <span class="badge-cat badge-featured"><i class="bi bi-star-fill me-1"></i>Featured</span>
+                <span class="badge-cat badge-new">New</span>
+                <span class="badge-cat badge-dm">Digital Marketing</span>
+              </div>
+              <div class="card-meta"><i class="bi bi-calendar3"></i> October 6, 2025 <span class="dot"></span> CompaniesBuilder <span class="dot"></span> <i class="bi bi-clock"></i> 9 min read</div>
+              <h2 class="h3 mb-2">
+                <a href="https://companiesbuilder.com/blogs/articles/what-is-digital-marketing-how-it-works-types-strategies-benefits-explained/" class="text-decoration-none" style="color:inherit;">What Is Digital Marketing? How It Works, Types, Strategies & Benefits Explained</a>
+              </h2>
+              <p class="muted-small mb-4">A complete, beginner-friendly guide to digital marketing &mdash; how it works, the main types, proven strategies, and the real business benefits, explained in plain language.</p>
+              <div>
+                <a class="btn btn-demo btn-sm px-4" href="https://companiesbuilder.com/blogs/articles/what-is-digital-marketing-how-it-works-types-strategies-benefits-explained/">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Blog grid -->
+    <section class="py-4">
+      <div class="container">
+        <div class="row g-4" id="blogGrid">
+
+          <!-- New: Top Digital Marketing Services -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="dm">
+              <div class="img-wrap">
+                <a href="https://companiesbuilder.com/blogs/articles/top-digital-marketing-services-growth-solutions/">
+                  <img loading="lazy" decoding="async" src="https://i.ibb.co/HfjktHv1/top-digital-marketing-services.png" alt="Top Digital Marketing Services & Growth Solutions" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2">
+                  <span class="badge-cat badge-new">New</span>
+                  <span class="badge-cat badge-dm">Digital Marketing</span>
+                </div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> October 13, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 7 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="https://companiesbuilder.com/blogs/articles/top-digital-marketing-services-growth-solutions/" class="text-decoration-none" style="color:inherit;">Top Digital Marketing Services & Growth Solutions</a>
+                </h3>
+                <p class="small muted-small mb-3">Explore the top digital marketing services that drive measurable growth, from SEO and PPC to social media and content marketing.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://companiesbuilder.com/blogs/articles/top-digital-marketing-services-growth-solutions/">Read More</a>
               </div>
             </article>
           </div>
 
-          <!-- Blog Post 2 -->
-          <div class="col-md-4">
-            <article class="blog-card h-100">
-              <a href="/blogs/articles/web-development-with-responsive-design/">
-                <img loading="lazy" src="/assets/images/Companies-builder-web.webp" alt="Responsive Design" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <span class="card-meta">August 9, 2025 • Companies Builder</span>
-                <h4 class="h6 mb-1">
-                  <a href="/blogs/articles/web-development-with-responsive-design/" class="text-decoration-none">The Power of Responsive Design</a>
-                </h4>
-                <p class="small muted-small mb-2">Why mobile-friendly websites are critical for success.</p>
-                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/web-development-with-responsive-design/">Read More</a>
+          <!-- Guide to Choosing a Top Digital Marketing Agency -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="dm">
+              <div class="img-wrap">
+                <a href="/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/">
+                  <img loading="lazy" decoding="async" src="https://i.ibb.co/wNMF8std/companies-builder-digital-marketing-agency.png" alt="The Best Guide to Choosing a Top Digital Marketing Agency" />
+                </a>
               </div>
-            </article>
-          </div>
-
-          <!-- Blog Post 3 -->
-          <div class="col-md-4">
-            <article class="blog-card h-100">
-              <a href="/blogs/articles/maximizing-ppc-campaigns/">
-                <img loading="lazy" src="/assets/images/Companies-builder-ppc.jpg" alt="Maximizing PPC" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <span class="card-meta">August 9, 2025 • Companies Builder</span>
-                <h4 class="h6 mb-1">
-                  <a href="/blogs/articles/maximizing-ppc-campaigns/" class="text-decoration-none">Maximizing PPC Campaigns</a>
-                </h4>
-                <p class="small muted-small mb-2">Tips to optimize your ad spend for better ROI.</p>
-                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/maximizing-ppc-campaigns/">Read More</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Voice Search Card -->
-          <div class="col-md-4">
-            <article class="blog-card h-100">
-              <a href="/blogs/articles/voice-search-optimization-2025/">
-                <img loading="lazy" src="/assets/images/Companies-builder-voice-search.png" alt="Voice Search Optimization Strategies" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <span class="card-meta">August 30, 2025 • Companies Builder</span>
-                <h4 class="h6 mb-1">
-                  <a href="/blogs/articles/voice-search-optimization-2025/" class="text-decoration-none">Voice Search Optimization in 2025</a>
-                </h4>
-                <p class="small muted-small mb-2">Prepare your site for voice search with natural language, local SEO & featured snippet tactics.</p>
-                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/voice-search-optimization-2025/">Read More</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Card for the created blog page ("Meet Companies Builder") -->
-          <div class="col-md-4">
-            <article class="blog-card h-100">
-              <a href="/blogs/articles/companies-builder-top-web-development-and-digital-marketing-company/">
-                <img loading="lazy" src="/assets/images/Companies-builder-growth-partner.webp" alt="Meet Companies Builder: Growth Partner" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <span class="card-meta">September 6, 2025 • Companies Builder</span>
-                <h4 class="h6 mb-1">
-                  <a href="/blogs/articles/companies-builder-top-web-development-and-digital-marketing-company/" class="text-decoration-none">Meet Companies Builder: Your Growth Partner for Web Development & Digital Marketing</a>
-                </h4>
-                <p class="small muted-small mb-2">We build fast, secure websites and run growth-first digital marketing for businesses.</p>
-                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/companies-builder-top-web-development-and-digital-marketing-company/">Read More</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Digital Marketing Agency in Hyderabad Card -->
-          <div class="col-md-4">
-            <article class="blog-card h-100">
-              <a href="/blogs/articles/digital-marketing-agency-in-hyderabad/">
-                <img loading="lazy" src="https://i.ibb.co/Rp9xNLgw/companies-builder-marketing-agency.png" alt="Digital Marketing Agency in Hyderabad" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <span class="card-meta">September 15, 2025 • Companies Builder</span>
-                <h4 class="h6 mb-1">
-                  <a href="/blogs/articles/digital-marketing-agency-in-hyderabad/" class="text-decoration-none">Digital Marketing Agency in Hyderabad</a>
-                </h4>
-                <p class="small muted-small mb-2">Discover how partnering with a top digital marketing agency in Hyderabad can elevate your brand and drive business growth.</p>
-                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/digital-marketing-agency-in-hyderabad/">Read More</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Guide to Choosing a Top Digital Marketing Agency Card -->
-          <div class="col-md-4">
-            <article class="blog-card h-100">
-              <a href="/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/">
-                <img loading="lazy" src="https://i.ibb.co/wNMF8std/companies-builder-digital-marketing-agency.png" alt="The Best Guide to Choosing a Top Digital Marketing Agency" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <span class="card-meta">September 22, 2025 • Companies Builder</span>
-                <h4 class="h6 mb-1">
-                  <a href="/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/" class="text-decoration-none">The Best Guide to Choosing a Top Digital Marketing Agency</a>
-                </h4>
-                <p class="small muted-small mb-2">Learn the essential factors and tips for selecting the perfect digital marketing partner for your business.</p>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2"><span class="badge-cat badge-dm">Digital Marketing</span></div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> September 22, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 8 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/" class="text-decoration-none" style="color:inherit;">The Best Guide to Choosing a Top Digital Marketing Agency</a>
+                </h3>
+                <p class="small muted-small mb-3">Learn the essential factors and tips for selecting the perfect digital marketing partner for your business.</p>
                 <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/">Read More</a>
               </div>
             </article>
           </div>
 
+          <!-- Digital Marketing Agency in Hyderabad -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="dm">
+              <div class="img-wrap">
+                <a href="/blogs/articles/digital-marketing-agency-in-hyderabad/">
+                  <img loading="lazy" decoding="async" src="https://i.ibb.co/Rp9xNLgw/companies-builder-marketing-agency.png" alt="Digital Marketing Agency in Hyderabad" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2"><span class="badge-cat badge-dm">Digital Marketing</span></div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> September 15, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 6 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="/blogs/articles/digital-marketing-agency-in-hyderabad/" class="text-decoration-none" style="color:inherit;">Digital Marketing Agency in Hyderabad</a>
+                </h3>
+                <p class="small muted-small mb-3">Discover how partnering with a top digital marketing agency in Hyderabad can elevate your brand and drive business growth.</p>
+                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/digital-marketing-agency-in-hyderabad/">Read More</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Meet CompaniesBuilder -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="news">
+              <div class="img-wrap">
+                <a href="/blogs/articles/companies-builder-top-web-development-and-digital-marketing-company/">
+                  <img loading="lazy" decoding="async" src="/assets/images/Companies-builder-growth-partner.webp" alt="Meet CompaniesBuilder: Growth Partner" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2"><span class="badge-cat badge-news">Company News</span></div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> September 6, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 6 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="/blogs/articles/companies-builder-top-web-development-and-digital-marketing-company/" class="text-decoration-none" style="color:inherit;">Meet CompaniesBuilder: Your Growth Partner for Web Development & Digital Marketing</a>
+                </h3>
+                <p class="small muted-small mb-3">We build fast, secure websites and run growth-first digital marketing for businesses.</p>
+                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/companies-builder-top-web-development-and-digital-marketing-company/">Read More</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Voice Search -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="seo">
+              <div class="img-wrap">
+                <a href="/blogs/articles/voice-search-optimization-2025/">
+                  <img loading="lazy" decoding="async" src="/assets/images/Companies-builder-voice-search.png" alt="Voice Search Optimization Strategies" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2"><span class="badge-cat badge-seo">SEO</span></div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> August 30, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 5 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="/blogs/articles/voice-search-optimization-2025/" class="text-decoration-none" style="color:inherit;">Voice Search Optimization in 2025</a>
+                </h3>
+                <p class="small muted-small mb-3">Prepare your site for voice search with natural language, local SEO & featured snippet tactics.</p>
+                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/voice-search-optimization-2025/">Read More</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- PPC -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="ppc">
+              <div class="img-wrap">
+                <a href="/blogs/articles/maximizing-ppc-campaigns/">
+                  <img loading="lazy" decoding="async" src="/assets/images/Companies-builder-ppc.jpg" alt="Maximizing PPC Campaigns" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2"><span class="badge-cat badge-ppc">PPC & Ads</span></div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> August 9, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 5 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="/blogs/articles/maximizing-ppc-campaigns/" class="text-decoration-none" style="color:inherit;">Maximizing PPC Campaigns</a>
+                </h3>
+                <p class="small muted-small mb-3">Tips to optimize your ad spend for better ROI.</p>
+                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/maximizing-ppc-campaigns/">Read More</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Responsive Design -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="webdev">
+              <div class="img-wrap">
+                <a href="/blogs/articles/web-development-with-responsive-design/">
+                  <img loading="lazy" decoding="async" src="/assets/images/Companies-builder-web.webp" alt="The Power of Responsive Design" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2"><span class="badge-cat badge-webdev">Web Development</span></div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> August 9, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 4 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="/blogs/articles/web-development-with-responsive-design/" class="text-decoration-none" style="color:inherit;">The Power of Responsive Design</a>
+                </h3>
+                <p class="small muted-small mb-3">Why mobile-friendly websites are critical for success.</p>
+                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/web-development-with-responsive-design/">Read More</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- SEO 2025 -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="seo">
+              <div class="img-wrap">
+                <a href="/blogs/articles/seo/">
+                  <img loading="lazy" decoding="async" src="/assets/images/Companies-builder-seo.webp" alt="SEO Strategies 2025" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2"><span class="badge-cat badge-seo">SEO</span></div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> August 9, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 6 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="/blogs/articles/seo/" class="text-decoration-none" style="color:inherit;">Search Engine Optimization in 2025</a>
+                </h3>
+                <p class="small muted-small mb-3">Boost your small business with top SEO strategies for 2025.</p>
+                <a class="btn btn-outline-primary btn-sm" href="/blogs/articles/seo/">Read More</a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+        <p class="no-results" id="noResults">No articles match your search. Try a different keyword or category.</p>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5">
+      <div class="container">
+        <div class="newsletter-section reveal">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <h2 class="h3 fw-bold mb-2">Get CompaniesBuilder articles in your inbox</h2>
+              <p class="mb-0 opacity-75">SEO, web development and digital marketing insights, delivered when we publish something worth reading. No spam.</p>
+            </div>
+            <div class="col-lg-5">
+              <form id="newsletterForm" class="d-flex flex-column flex-sm-row gap-2">
+                <input type="email" required placeholder="Enter your email" aria-label="Email address" />
+                <button type="submit" class="btn-newsletter">Subscribe</button>
+              </form>
+              <p id="newsletterMsg" class="small mt-2 mb-0"></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -303,7 +495,7 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-3">
-          <h5>Companies Builder</h5>
+          <h5>CompaniesBuilder</h5>
           <p class="small text-white-50">Your trusted partner for web development and digital marketing excellence.</p>
         </div>
         <div class="col-md-3">
@@ -332,33 +524,154 @@
           <p class="small mb-0">Phone: <a href="tel:+916302787953" class="text-white-50">+91 6302787953</a></p>
         </div>
       </div>
-      <div class="text-center mt-4 small">&copy; 2025 Companies Builder. All rights reserved.</div>
+      <div class="text-center mt-4 small">&copy; <span id="year">2025</span> CompaniesBuilder. All rights reserved.</div>
     </div>
   </footer>
 
-  <!-- Structured Data (Organization + WebSite) -->
+  <!-- Structured Data: Organization -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
-    "name":"Companies Builder",
+    "name":"CompaniesBuilder",
     "url":"https://companiesbuilder.com",
     "logo":"https://companiesbuilder.com/assets/images/CB-logo.png",
     "contactPoint":[{"@type":"ContactPoint","telephone":"+91 6302787953","contactType":"customer service","areaServed":"IN","availableLanguage":["en"]}]
   }
   </script>
 
+  <!-- Structured Data: WebSite -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebSite",
     "url":"https://companiesbuilder.com",
-    "name":"Companies Builder",
+    "name":"CompaniesBuilder",
     "potentialAction":{"@type":"SearchAction","target":"https://companiesbuilder.com/?s={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://companiesbuilder.com/"},
+      {"@type":"ListItem","position":2,"name":"Blogs","item":"https://companiesbuilder.com/blogs/"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Blog + all posts -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"CompaniesBuilder Blog",
+    "url":"https://companiesbuilder.com/blogs/",
+    "publisher":{"@type":"Organization","name":"CompaniesBuilder","logo":{"@type":"ImageObject","url":"https://companiesbuilder.com/assets/images/CB-logo.png"}},
+    "blogPost":[
+      {"@type":"BlogPosting","headline":"Top Digital Marketing Services & Growth Solutions","url":"https://companiesbuilder.com/blogs/articles/top-digital-marketing-services-growth-solutions/","image":"https://i.ibb.co/HfjktHv1/top-digital-marketing-services.png","datePublished":"2025-10-13","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"What Is Digital Marketing? How It Works, Types, Strategies & Benefits Explained","url":"https://companiesbuilder.com/blogs/articles/what-is-digital-marketing-how-it-works-types-strategies-benefits-explained/","image":"https://i.ibb.co/Y6FvFRn/what-is-digital-marketing.png","datePublished":"2025-10-06","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"The Best Guide to Choosing a Top Digital Marketing Agency","url":"https://companiesbuilder.com/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/","image":"https://i.ibb.co/wNMF8std/companies-builder-digital-marketing-agency.png","datePublished":"2025-09-22","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"Digital Marketing Agency in Hyderabad","url":"https://companiesbuilder.com/blogs/articles/digital-marketing-agency-in-hyderabad/","image":"https://i.ibb.co/Rp9xNLgw/companies-builder-marketing-agency.png","datePublished":"2025-09-15","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"Meet CompaniesBuilder: Your Growth Partner for Web Development & Digital Marketing","url":"https://companiesbuilder.com/blogs/articles/companies-builder-top-web-development-and-digital-marketing-company/","image":"https://companiesbuilder.com/assets/images/Companies-builder-growth-partner.webp","datePublished":"2025-09-06","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"Voice Search Optimization in 2025","url":"https://companiesbuilder.com/blogs/articles/voice-search-optimization-2025/","image":"https://companiesbuilder.com/assets/images/Companies-builder-voice-search.png","datePublished":"2025-08-30","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"Maximizing PPC Campaigns","url":"https://companiesbuilder.com/blogs/articles/maximizing-ppc-campaigns/","image":"https://companiesbuilder.com/assets/images/Companies-builder-ppc.jpg","datePublished":"2025-08-09","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"The Power of Responsive Design","url":"https://companiesbuilder.com/blogs/articles/web-development-with-responsive-design/","image":"https://companiesbuilder.com/assets/images/Companies-builder-web.webp","datePublished":"2025-08-09","author":{"@type":"Organization","name":"CompaniesBuilder"}},
+      {"@type":"BlogPosting","headline":"Search Engine Optimization in 2025","url":"https://companiesbuilder.com/blogs/articles/seo/","image":"https://companiesbuilder.com/assets/images/Companies-builder-seo.webp","datePublished":"2025-08-09","author":{"@type":"Organization","name":"CompaniesBuilder"}}
+    ]
   }
   </script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Page interactivity: dark mode, filter/search, scroll effects -->
+  <script>
+    (function () {
+      // Dark mode
+      var root = document.documentElement;
+      var toggleBtn = document.getElementById('themeToggle');
+      function applyTheme(t) {
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('cb-theme', t);
+        toggleBtn.querySelector('i').className = t === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
+      }
+      var saved = localStorage.getItem('cb-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+      toggleBtn.addEventListener('click', function () {
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+
+      // Navbar frosted-glass on scroll
+      var navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', function () {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      }, { passive: true });
+
+      // Scroll reveal
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+
+      // Category filter + search
+      var pills = document.querySelectorAll('.filter-pill');
+      var searchInput = document.getElementById('blogSearch');
+      var cards = document.querySelectorAll('.blog-card[data-category]');
+      var noResults = document.getElementById('noResults');
+      var activeCategory = 'all';
+
+      function applyFilters() {
+        var q = (searchInput.value || '').trim().toLowerCase();
+        var visible = 0;
+        cards.forEach(function (card) {
+          var cat = card.getAttribute('data-category');
+          var matchesCategory = activeCategory === 'all' || cat === activeCategory;
+          var matchesSearch = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+          var show = matchesCategory && matchesSearch;
+          card.closest('.col-blog').style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        noResults.style.display = visible ? 'none' : 'block';
+      }
+
+      pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          pills.forEach(function (p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          activeCategory = pill.getAttribute('data-category');
+          applyFilters();
+        });
+      });
+      searchInput.addEventListener('input', applyFilters);
+
+      // Newsletter (front-end only placeholder)
+      var form = document.getElementById('newsletterForm');
+      var msg = document.getElementById('newsletterMsg');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        msg.textContent = "Thanks! You're subscribed to CompaniesBuilder updates.";
+        msg.style.color = '#e8fff0';
+        form.reset();
+      });
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
