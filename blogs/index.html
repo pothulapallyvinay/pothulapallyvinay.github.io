@@ -11,7 +11,6 @@
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <!-- Title & meta (brand + primary keywords) -->
   <title>CompaniesBuilder Blogs & Articles | SEO, Web Dev, Digital Marketing</title>
   <meta name="description" content="Read CompaniesBuilder blogs and articles on SEO, web development, web designing, social media marketing, PPC ads and digital marketing for businesses across India." />
@@ -19,14 +18,12 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="CompaniesBuilder" />
   <link rel="canonical" href="https://companiesbuilder.com/blogs/" />
-
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
   <link rel="icon" href="/assets/images/logo-cb.png" />
   <meta name="theme-color" content="#0d6efd" />
-
   <!-- Open Graph / Twitter -->
   <meta property="og:site_name" content="CompaniesBuilder" />
   <meta property="og:title" content="CompaniesBuilder Blogs & Articles | SEO, Web Dev, Digital Marketing" />
@@ -41,20 +38,16 @@
   <meta name="twitter:title" content="CompaniesBuilder Blogs & Articles | SEO, Web Dev, Digital Marketing" />
   <meta name="twitter:description" content="Expert CompaniesBuilder blogs and articles on web development, SEO, social media marketing and PPC for businesses across India." />
   <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/BGhero.png" />
-
   <!-- Preconnect, LCP preload & fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preload" as="image" href="/assets/images/BGhero.png" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
   <!-- Bootstrap & icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-
   <!-- Site stylesheet -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
-
   <style>
     :root {
       --brand: #0d6efd;
@@ -81,19 +74,15 @@
     html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body { background: var(--bg); color: var(--text); transition: background-color .25s ease, color .25s ease; }
-
     /* Skip link */
     .skip-link { position:absolute; left:-999px; top:auto; background:var(--brand); color:#fff; padding:.6rem 1rem; z-index:2000; border-radius:0 0 8px 0; font-weight:600; }
     .skip-link:focus { left:0; top:0; }
-
     a, .nav-link, .dropdown-item { transition: color .16s ease, transform .12s ease; }
     a:hover, .nav-link:hover, .dropdown-item:hover { color: var(--brand) !important; text-decoration: none; }
-
     .btn { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
     .btn:hover, .btn:focus { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,.12); }
     .btn-demo { background: linear-gradient(90deg,var(--brand),var(--brand-2)); border: none; color: #fff; box-shadow: 0 8px 30px rgba(13,110,253,.12); }
     .btn-demo:hover, .btn-demo:focus { color: #fff; background: linear-gradient(90deg,var(--brand-2),var(--brand)); }
-
     .blog-card .btn-outline-primary {
       color: var(--brand); border-color: var(--brand); background-color: transparent;
     }
@@ -101,13 +90,11 @@
       color: var(--brand) !important; border-color: var(--brand); background-color: transparent !important;
       transform: translateY(-4px); box-shadow: 0 14px 40px rgba(11,22,60,.12);
     }
-
     /* Navbar frosted-glass on scroll */
     .navbar { transition: background-color .3s ease, box-shadow .3s ease, backdrop-filter .3s ease; }
     .navbar.scrolled { background-color: rgba(13,17,26,.85) !important; backdrop-filter: blur(12px); box-shadow: 0 6px 30px rgba(0,0,0,.25); }
     .theme-toggle-btn { border: 1px solid rgba(255,255,255,.35); background: transparent; color: #fff; width: 38px; height: 38px; border-radius: 50%; display:inline-flex; align-items:center; justify-content:center; }
     .theme-toggle-btn:hover { background: rgba(255,255,255,.12); transform: translateY(-2px); }
-
     /* Hero */
     .hero {
       padding: 130px 0 60px;
@@ -122,14 +109,12 @@
     .breadcrumb-bar { font-size:.85rem; color:#e5e9f0; margin-bottom:1rem; }
     .breadcrumb-bar a { color:#e5e9f0; }
     .breadcrumb-bar a:hover { color:#fff !important; }
-
     /* Filter / search bar */
     .filter-bar { background: var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.1rem 1.25rem; box-shadow: 0 10px 40px rgba(11,22,60,.05); margin-top:-52px; position:relative; z-index:5; }
     .filter-pills { display:flex; flex-wrap:wrap; gap:.5rem; }
     .filter-pill { border:1px solid var(--border); background:transparent; color:var(--text); font-size:.82rem; font-weight:600; padding:.4rem .95rem; border-radius:999px; cursor:pointer; transition: all .18s ease; }
     .filter-pill:hover { border-color:var(--brand); color:var(--brand); }
     .filter-pill.active { background: linear-gradient(90deg,var(--brand),var(--brand-2)); border-color:transparent; color:#fff; }
-    
     /* Search Wrap Layout Fixes */
     .search-wrap { position:relative; width: 100%; }
     #blogSearch { border:1px solid var(--border); background:var(--bg); color:var(--text); border-radius:999px; padding:.55rem 1rem .55rem 2.4rem; }
@@ -137,14 +122,12 @@
     @media (min-width: 992px) {
       .search-wrap { max-width: 280px; }
     }
-
     /* Featured card */
     .featured-card { border-radius:20px; overflow:hidden; background:var(--surface); border:1px solid var(--border); box-shadow: 0 20px 60px rgba(11,22,60,.08); }
     .featured-card img { width:100%; height:100%; object-fit:cover; aspect-ratio:16/10; display:block; }
     .featured-card:hover img { transform:scale(1.04); }
     .featured-card .img-wrap { overflow:hidden; }
     .featured-card .img-wrap img { transition: transform .5s ease; }
-
     /* Blog cards */
     .blog-card { border-radius:16px; overflow:hidden; transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s; border:1px solid var(--border); background:var(--surface); height:100%; }
     .blog-card:hover { transform:translateY(-10px); box-shadow:0 22px 60px rgba(11,22,60,.10); }
@@ -154,7 +137,6 @@
     .muted-small { color:var(--muted); font-size:.92rem; }
     .card-meta { font-size:.8rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; }
     .card-meta .dot { width:3px; height:3px; background:var(--muted); border-radius:50%; }
-
     /* Category badges */
     .badge-cat { font-size:.68rem; font-weight:700; padding:.3rem .65rem; border-radius:999px; letter-spacing:.03em; text-transform:uppercase; display:inline-block; }
     .badge-seo { background:rgba(13,110,253,.14); color:#0d6efd; }
@@ -164,36 +146,30 @@
     .badge-news { background:rgba(25,135,84,.14); color:#198754; }
     .badge-new { background: linear-gradient(90deg,var(--accent),#ff8a3d); color:#fff; }
     .badge-featured { background: linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff; }
-
     /* Reveal on scroll */
     .reveal { opacity:0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in-view { opacity:1; transform:translateY(0); }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
-
     /* Newsletter */
     .newsletter-section { background: linear-gradient(120deg, var(--brand), var(--brand-2)); border-radius:24px; color:#fff; padding: 3rem 2rem; }
     .newsletter-section input[type="email"] { border-radius:999px; border:none; padding:.8rem 1.2rem; width:100%; }
     .newsletter-section .btn-newsletter { border-radius:999px; background:#fff; color:var(--brand); font-weight:700; padding:.8rem 1.6rem; border:none; }
     .newsletter-section .btn-newsletter:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.2); color:var(--brand); }
-
     .nav-item.dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu { margin-top: 0; }
     .no-results { display:none; text-align:center; padding: 3rem 1rem; color:var(--muted); }
-
     @media (max-width:991px) {
       .hero { padding-top:105px; padding-bottom:70px; }
       .filter-bar { margin-top:-30px; }
       .featured-card img { height: auto; }
     }
   </style>
-
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243796428.js"></script>
   <!-- End of HubSpot Embed Code -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
     <div class="container">
@@ -231,7 +207,6 @@
       </div>
     </div>
   </nav>
-
   <!-- HERO -->
   <header class="hero" role="banner" aria-label="Blogs hero">
     <div class="container">
@@ -243,7 +218,6 @@
       <p class="lead">Practical, no-fluff insights on digital marketing, SEO, web development, web designing, social media marketing, PPC and ad campaigns &mdash; written by the CompaniesBuilder team for businesses across India.</p>
     </div>
   </header>
-
   <!-- Filter / Search bar -->
   <div class="container">
     <div class="filter-bar d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
@@ -261,10 +235,8 @@
       </div>
     </div>
   </div>
-
   <!-- Main -->
   <main id="main" class="mt-5" tabindex="-1">
-
     <!-- Featured post -->
     <section class="py-4">
       <div class="container">
@@ -294,13 +266,33 @@
         </article>
       </div>
     </section>
-
     <!-- Blog grid -->
     <section class="py-4">
       <div class="container">
         <div class="row g-4" id="blogGrid">
-
-          <!-- New: Website Development Cost in India -->
+          <!-- New: Creative Social Media Marketing Agency -->
+          <div class="col-md-6 col-lg-4 col-blog">
+            <article class="blog-card reveal" data-category="dm">
+              <div class="img-wrap">
+                <a href="https://companiesbuilder.com/blogs/articles/social-media-marketing-agency/">
+                  <img loading="lazy" decoding="async" src="https://i.ibb.co/HDbJ7JLQ/companies-builder-social-media-marketing-agency.png" alt="Creative Social Media Marketing Agency | High Engagement & Audience Reach" />
+                </a>
+              </div>
+              <div class="p-3 p-lg-4">
+                <div class="d-flex gap-2 mb-2">
+                  <span class="badge-cat badge-new">New</span>
+                  <span class="badge-cat badge-dm">Digital Marketing</span>
+                </div>
+                <span class="card-meta"><i class="bi bi-calendar3"></i> August 24, 2026 <span class="dot"></span> <i class="bi bi-clock"></i> 9 min read</span>
+                <h3 class="h6 mb-2">
+                  <a href="https://companiesbuilder.com/blogs/articles/social-media-marketing-agency/" class="text-decoration-none" style="color:inherit;">Creative Social Media Marketing Agency | High Engagement & Audience Reach</a>
+                </h3>
+                <p class="small muted-small mb-3">B2B social media marketing and full-service social media management services built to grow engagement, leads, and audience reach.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://companiesbuilder.com/blogs/articles/social-media-marketing-agency/">Read More</a>
+              </div>
+            </article>
+          </div>
+          <!-- Website Development Cost in India -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="webdev">
               <div class="img-wrap">
@@ -310,7 +302,6 @@
               </div>
               <div class="p-3 p-lg-4">
                 <div class="d-flex gap-2 mb-2">
-                  <span class="badge-cat badge-new">New</span>
                   <span class="badge-cat badge-webdev">Web Development</span>
                 </div>
                 <span class="card-meta"><i class="bi bi-calendar3"></i> August 12, 2026 <span class="dot"></span> <i class="bi bi-clock"></i> 15 min read</span>
@@ -322,7 +313,6 @@
               </div>
             </article>
           </div>
-
           <!-- Top Digital Marketing Services -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="dm">
@@ -333,7 +323,6 @@
               </div>
               <div class="p-3 p-lg-4">
                 <div class="d-flex gap-2 mb-2">
-                  <span class="badge-cat badge-new">New</span>
                   <span class="badge-cat badge-dm">Digital Marketing</span>
                 </div>
                 <span class="card-meta"><i class="bi bi-calendar3"></i> October 13, 2025 <span class="dot"></span> <i class="bi bi-clock"></i> 7 min read</span>
@@ -345,7 +334,6 @@
               </div>
             </article>
           </div>
-
           <!-- Guide to Choosing a Top Digital Marketing Agency -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="dm">
@@ -365,7 +353,6 @@
               </div>
             </article>
           </div>
-
           <!-- Digital Marketing Agency in Hyderabad -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="dm">
@@ -385,7 +372,6 @@
               </div>
             </article>
           </div>
-
           <!-- Meet CompaniesBuilder -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="news">
@@ -405,7 +391,6 @@
               </div>
             </article>
           </div>
-
           <!-- Voice Search -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="seo">
@@ -425,7 +410,6 @@
               </div>
             </article>
           </div>
-
           <!-- PPC -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="ppc">
@@ -445,7 +429,6 @@
               </div>
             </article>
           </div>
-
           <!-- Responsive Design -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="webdev">
@@ -465,7 +448,6 @@
               </div>
             </article>
           </div>
-
           <!-- SEO 2025 -->
           <div class="col-md-6 col-lg-4 col-blog">
             <article class="blog-card reveal" data-category="seo">
@@ -485,12 +467,10 @@
               </div>
             </article>
           </div>
-
         </div>
         <p class="no-results" id="noResults">No articles match your search. Try a different keyword or category.</p>
       </div>
     </section>
-
     <!-- Newsletter -->
     <section class="py-5">
       <div class="container">
@@ -512,7 +492,6 @@
       </div>
     </section>
   </main>
-
   <!-- FOOTER -->
   <footer class="bg-dark text-white py-5">
     <div class="container">
@@ -550,7 +529,6 @@
       <div class="text-center mt-4 small">&copy; <span id="year">2025</span> CompaniesBuilder. All rights reserved.</div>
     </div>
   </footer>
-
   <!-- Structured Data: Organization -->
   <script type="application/ld+json">
   {
@@ -562,7 +540,6 @@
     "contactPoint":[{"@type":"ContactPoint","telephone":"+91 6302787953","contactType":"customer service","areaServed":"IN","availableLanguage":["en"]}]
   }
   </script>
-
   <!-- Structured Data: WebSite -->
   <script type="application/ld+json">
   {
@@ -573,7 +550,6 @@
     "potentialAction":{"@type":"SearchAction","target":"https://companiesbuilder.com/?s={search_term_string}","query-input":"required name=search_term_string"}
   }
   </script>
-
   <!-- Structured Data: Breadcrumb -->
   <script type="application/ld+json">
   {
@@ -585,7 +561,6 @@
     ]
   }
   </script>
-
   <!-- Structured Data: Blog + all posts -->
   <script type="application/ld+json">
   {
@@ -595,6 +570,7 @@
     "url":"https://companiesbuilder.com/blogs/",
     "publisher":{"@type":"Organization","name":"CompaniesBuilder","logo":{"@type":"ImageObject","url":"https://companiesbuilder.com/assets/images/CB-logo.png"}},
     "blogPost":[
+      {"@type":"BlogPosting","headline":"Creative Social Media Marketing Agency | High Engagement & Audience Reach","url":"https://companiesbuilder.com/blogs/articles/social-media-marketing-agency/","image":"https://i.ibb.co/HDbJ7JLQ/companies-builder-social-media-marketing-agency.png","datePublished":"2026-08-24","author":{"@type":"Organization","name":"CompaniesBuilder"}},
       {"@type":"BlogPosting","headline":"Website Development Cost in India (2026 Pricing Guide)","url":"https://companiesbuilder.com/blogs/articles/website-development-cost-in-india/","image":"https://i.ibb.co/3Yd2X97H/website-development-cost-in-india.png","datePublished":"2026-08-12","author":{"@type":"Organization","name":"CompaniesBuilder"}},
       {"@type":"BlogPosting","headline":"Top Digital Marketing Services & Growth Solutions","url":"https://companiesbuilder.com/blogs/articles/top-digital-marketing-services-growth-solutions/","image":"https://i.ibb.co/HfjktHv1/top-digital-marketing-services.png","datePublished":"2025-10-13","author":{"@type":"Organization","name":"CompaniesBuilder"}},
       {"@type":"BlogPosting","headline":"What Is Digital Marketing? How It Works, Types, Strategies & Benefits Explained","url":"https://companiesbuilder.com/blogs/articles/what-is-digital-marketing-how-it-works-types-strategies-benefits-explained/","image":"https://i.ibb.co/Y6FvFRn/what-is-digital-marketing.png","datePublished":"2025-10-06","author":{"@type":"Organization","name":"CompaniesBuilder"}},
@@ -608,10 +584,8 @@
     ]
   }
   </script>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-
   <!-- Page interactivity: dark mode, filter/search, scroll effects -->
   <script>
     (function () {
@@ -629,13 +603,11 @@
       toggleBtn.addEventListener('click', function () {
         applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
       });
-
       // Navbar frosted-glass on scroll
       var navbar = document.querySelector('.navbar');
       window.addEventListener('scroll', function () {
         navbar.classList.toggle('scrolled', window.scrollY > 40);
       }, { passive: true });
-
       // Scroll reveal
       var revealEls = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
@@ -651,14 +623,12 @@
       } else {
         revealEls.forEach(function (el) { el.classList.add('in-view'); });
       }
-
       // Category filter + search
       var pills = document.querySelectorAll('.filter-pill');
       var searchInput = document.getElementById('blogSearch');
       var cards = document.querySelectorAll('.blog-card[data-category]');
       var noResults = document.getElementById('noResults');
       var activeCategory = 'all';
-
       function applyFilters() {
         var q = (searchInput.value || '').trim().toLowerCase();
         var visible = 0;
@@ -672,7 +642,6 @@
         });
         noResults.style.display = visible ? 'none' : 'block';
       }
-
       pills.forEach(function (pill) {
         pill.addEventListener('click', function () {
           pills.forEach(function (p) { p.classList.remove('active'); });
@@ -682,7 +651,6 @@
         });
       });
       searchInput.addEventListener('input', applyFilters);
-
       // Newsletter integration logic based on homepage script
       var newsForm = document.getElementById('newsletterForm');
       var newsMsg = document.getElementById('newsletterMsg');
@@ -726,7 +694,6 @@
             });
         });
       }
-
       // Footer year
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
