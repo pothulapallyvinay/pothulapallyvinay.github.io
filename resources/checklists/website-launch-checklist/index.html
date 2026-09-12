@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-563QE3BQWN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-563QE3BQWN');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <title>The Complete Website Launch Checklist | Companies Builder</title>
+  <meta name="description"
+    content="A 50+ point technical website launch checklist covering architecture, SEO, performance, security, and analytics. Interactive, saveable, and printable. Built by Companies Builder." />
+  <meta name="keywords"
+    content="website launch checklist, pre-launch checklist, website go-live checklist, technical SEO checklist, core web vitals checklist, website migration checklist" />
+  <meta name="author" content="Companies Builder" />
+  <meta name="publisher" content="Companies Builder" />
+  <link rel="canonical" href="https://companiesbuilder.com/resources/checklists/website-launch-checklist" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-cb-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-cb-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-cb-16.png" />
+  <link rel="icon" href="/assets/images/logo-cb.png" />
+  <meta name="msapplication-TileColor" content="#0e1424" />
+  <meta name="theme-color" content="#0e1424" />
+  <meta property="og:site_name" content="Companies Builder" />
+  <meta property="og:title" content="The Complete Website Launch Checklist | Companies Builder" />
+  <meta property="og:description"
+    content="A 50+ point technical website launch checklist covering architecture, SEO, performance, security, and analytics. Interactive, saveable, and printable." />
+  <meta property="og:url" content="https://companiesbuilder.com/website-launch-checklist" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/companies-builder-hero-bg.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@companiesbuilder" />
+  <meta name="twitter:title" content="The Complete Website Launch Checklist | Companies Builder" />
+  <meta name="twitter:description"
+    content="A 50+ point technical website launch checklist covering architecture, SEO, performance, security, and analytics." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/companies-builder-hero-bg.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <script id="hs-script-loader" async defer src="https://js-na2.hs-scripts.com/243796428.js"></script>
+
+  <!-- JSON-LD: TechArticle -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"The Complete Website Launch Checklist","description":"A 50+ point technical website launch checklist covering architecture, crawlability, SEO, performance, security, compliance, analytics, and conversion verification.","author":{"@type":"Organization","name":"Companies Builder","url":"https://companiesbuilder.com"},"publisher":{"@type":"Organization","name":"Companies Builder","url":"https://companiesbuilder.com","logo":{"@type":"ImageObject","url":"https://companiesbuilder.com/assets/images/CB-logo.png"}},"datePublished":"2026-09-12","dateModified":"2026-09-12","mainEntityOfPage":"https://companiesbuilder.com/website-launch-checklist","proficiencyLevel":"Expert"}
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far in advance should I start this checklist before my launch date?","acceptedAnswer":{"@type":"Answer","text":"Begin the Architecture and Technical SEO phase (Phase 1) at least 14 business days before the target launch. Phases 2 and 3 run concurrently and need 7–10 days. Security and compliance (Phase 4) should be locked 5 days out to allow certificate propagation and header testing. Analytics verification (Phase 5) requires 48–72 hours of live data collection after deployment to confirm data integrity."}},{"@type":"Question","name":"What is the single most damaging mistake teams make at launch?","acceptedAnswer":{"@type":"Answer","text":"Failing to implement a complete 301 redirect map from the old URL structure to the new one. Every indexed URL that returns a 404 instead of a 301 bleeds accumulated PageRank, drops existing keyword rankings, and generates soft-404 errors in Search Console. For sites with 500+ indexed pages, this can result in a 30–60% organic traffic loss within the first two weeks post-launch."}},{"@type":"Question","name":"Do I need to re-submit my sitemap after launch?","acceptedAnswer":{"@type":"Answer","text":"Yes. Even if your sitemap URL hasn't changed, resubmit it in both Google Search Console and Bing Webmaster Tools immediately after launch. This signals to crawlers that the site structure has been updated and accelerates re-indexing. Additionally, use the URL Inspection tool in Search Console to request indexing for your highest-priority landing pages manually."}},{"@type":"Question","name":"How do I verify my Core Web Vitals won't fail after launch?","acceptedAnswer":{"@type":"Answer","text":"Run Lighthouse CI in your deployment pipeline against the production build (not localhost) to catch regressions before they reach users. After launch, monitor the Core Web Vitals report in Search Console. In the interim, use PageSpeed Insights (lab data) and web-vitals.js (real-user monitoring piped to GA4 or a custom endpoint) to get immediate signal. Target LCP under 2.5s, CLS under 0.1, and INP under 200ms at the 75th percentile."}}]}
+  </script>
+
+  <style>
+    :root {
+      --navy-950: #060910;
+      --navy-900: #0e1424;
+      --navy-800: #161d33;
+      --navy-700: #212a48;
+      --ink: #eef0f9;
+      --ink-dim: #9aa3be;
+      --paper: #f4f5fb;
+      --paper-card: #fff;
+      --ink-on-paper: #141826;
+      --muted-on-paper: #5b6478;
+      --violet: #6c63ff;
+      --violet-light: #8b83ff;
+      --blue: #3d8bff;
+      --blue-light: #60a5fa;
+      --amber: #ffb020;
+      --green: #22d3a0;
+      --pink: #f471b5;
+      --line-dark: rgba(255, 255, 255, .08);
+      --line-light: rgba(15, 20, 40, .07);
+      --grad-brand: linear-gradient(135deg, #6c63ff, #3d8bff);
+      --grad-amber: linear-gradient(135deg, #ffcf5c, #ffb020);
+      --grad-green: linear-gradient(135deg, #22d3a0, #3d8bff);
+      --grad-pink: linear-gradient(135deg, #f471b5, #6c63ff);
+      --font-display: 'Space Grotesk', Arial, sans-serif;
+      --font-body: 'Inter', Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 20px;
+      --radius-btn: 10px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .08);
+      --shadow-dark: 0 24px 80px rgba(0, 0, 0, .4);
+      --ease: .28s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--ink-on-paper);
+      background: var(--paper);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: var(--font-display);
+      letter-spacing: -.02em
+    }
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .72rem;
+      font-weight: 600;
+      display: inline-block
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      background: #fff;
+      color: var(--violet);
+      padding: 10px 16px;
+      z-index: 9999;
+      border-radius: 0 0 8px 0;
+      font-weight: 700
+    }
+
+    .skip-link:focus {
+      left: 0;
+      top: 0
+    }
+
+    .grad-text {
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(6, 9, 16, .78) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line-dark);
+      transition: background var(--ease), box-shadow var(--ease);
+      padding: 12px 0
+    }
+
+    .navbar.is-scrolled {
+      background: rgba(6, 9, 16, .95) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .4)
+    }
+
+    .navbar-brand img {
+      height: 36px;
+      width: auto;
+      display: inline-block
+    }
+
+    .navbar-brand span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, .78) !important;
+      font-weight: 500;
+      font-size: .92rem;
+      padding: 6px 14px !important;
+      position: relative;
+      transition: color var(--ease)
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 2px;
+      height: 2px;
+      background: var(--grad-brand);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--ease);
+      border-radius: 2px
+    }
+
+    .nav-link:hover {
+      color: #fff !important
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1)
+    }
+
+    .dropdown-menu {
+      background: #0e1424;
+      border: 1px solid var(--line-dark);
+      border-radius: 12px;
+      padding: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+      min-width: 220px
+    }
+
+    .dropdown-item {
+      color: var(--ink-dim);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: .9rem;
+      transition: background var(--ease), color var(--ease)
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      color: #fff;
+      background: rgba(108, 99, 255, .15)
+    }
+
+    @media(min-width:992px) {
+      .navbar .dropdown:hover>.dropdown-menu {
+        display: block;
+        margin-top: 0
+      }
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      height: 38px;
+      border-radius: var(--radius-btn);
+      font-weight: 700;
+      font-size: .875rem;
+      text-decoration: none;
+      border: 0;
+      transition: transform .16s ease, box-shadow .16s ease;
+      white-space: nowrap
+    }
+
+    .nav-pricing {
+      background: var(--grad-amber);
+      color: #0e1424 !important;
+      box-shadow: 0 6px 20px rgba(255, 176, 32, .3)
+    }
+
+    .nav-demo {
+      background: var(--grad-brand);
+      color: #fff !important;
+      box-shadow: 0 6px 20px rgba(108, 99, 255, .35)
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px)
+    }
+
+    /* HERO SECTION */
+    .checklist-hero {
+      background: var(--navy-950);
+      position: relative;
+      overflow: hidden;
+      padding: 140px 0 80px
+    }
+
+    .checklist-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(108, 99, 255, .18), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(61, 139, 255, .12), transparent 50%);
+      pointer-events: none
+    }
+
+    .checklist-hero .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108, 99, 255, .12);
+      border: 1px solid rgba(108, 99, 255, .25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 20px
+    }
+
+    .checklist-hero .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    .checklist-hero .hero-badge span {
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      font-weight: 600
+    }
+
+    .checklist-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 20px
+    }
+
+    .checklist-hero h1 .accent {
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .checklist-hero .hero-lead {
+      color: var(--ink-dim);
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      max-width: 620px;
+      line-height: 1.7;
+      margin-bottom: 12px
+    }
+
+    .checklist-hero .hero-sub {
+      color: rgba(154, 163, 190, .65);
+      font-size: .88rem
+    }
+
+    /* SECTION SHELLS */
+    .band-paper {
+      background: var(--paper)
+    }
+
+    .band-white {
+      background: var(--paper-card)
+    }
+
+    .band-dark {
+      background: var(--navy-950);
+      color: var(--ink)
+    }
+
+    .band-dark-2 {
+      background: var(--navy-900);
+      color: var(--ink)
+    }
+
+    .section-pad {
+      padding: 96px 0
+    }
+
+    .section-pad-sm {
+      padding: 64px 0
+    }
+
+    .section-head {
+      max-width: 680px
+    }
+
+    .section-head .eyebrow {
+      color: var(--violet)
+    }
+
+    .band-dark .section-head .eyebrow,
+    .band-dark-2 .section-head .eyebrow {
+      color: var(--amber)
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+      margin: 12px 0 14px;
+      line-height: 1.15
+    }
+
+    .section-head p {
+      color: var(--muted-on-paper);
+      font-size: 1.02rem;
+      line-height: 1.65
+    }
+
+    .band-dark .section-head p,
+    .band-dark-2 .section-head p {
+      color: var(--ink-dim)
+    }
+
+    /* PROGRESS BAR */
+    .progress-bar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-light);
+      padding: 14px 0
+    }
+
+    .progress-track {
+      height: 8px;
+      background: rgba(15, 20, 40, .06);
+      border-radius: 100px;
+      overflow: hidden
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--grad-brand);
+      border-radius: 100px;
+      transition: width .5s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .progress-label {
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--muted-on-paper);
+      letter-spacing: .04em
+    }
+
+    .progress-actions .btn-tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: .82rem;
+      text-decoration: none;
+      border: 1px solid var(--line-light);
+      background: var(--paper-card);
+      color: var(--ink-on-paper);
+      cursor: pointer;
+      transition: background var(--ease), border-color var(--ease), transform var(--ease)
+    }
+
+    .progress-actions .btn-tool:hover {
+      background: var(--paper);
+      border-color: rgba(108, 99, 255, .3);
+      transform: translateY(-1px)
+    }
+
+    .progress-actions .btn-tool.btn-reset {
+      color: #dc3545;
+      border-color: rgba(220, 53, 69, .2)
+    }
+
+    .progress-actions .btn-tool.btn-reset:hover {
+      background: rgba(220, 53, 69, .06);
+      border-color: rgba(220, 53, 69, .35)
+    }
+
+    /* PHASE CARDS */
+    .phase-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      transition: box-shadow var(--ease)
+    }
+
+    .phase-card:hover {
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .1)
+    }
+
+    .phase-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .95rem;
+      flex-shrink: 0
+    }
+
+    .phase-badge.violet {
+      background: rgba(108, 99, 255, .1);
+      color: var(--violet)
+    }
+
+    .phase-badge.green {
+      background: rgba(34, 211, 160, .1);
+      color: var(--green)
+    }
+
+    .phase-badge.amber {
+      background: rgba(255, 176, 32, .1);
+      color: var(--amber)
+    }
+
+    .phase-badge.pink {
+      background: rgba(244, 113, 181, .1);
+      color: var(--pink)
+    }
+
+    .phase-badge.blue {
+      background: rgba(61, 139, 255, .1);
+      color: var(--blue)
+    }
+
+    .phase-title {
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      color: var(--ink-on-paper);
+      margin-bottom: 4px
+    }
+
+    .phase-subtitle {
+      font-size: .88rem;
+      color: var(--muted-on-paper)
+    }
+
+    /* CHECKLIST ITEMS */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(15, 20, 40, .04);
+      cursor: pointer;
+      transition: opacity .15s ease
+    }
+
+    .checklist-item:last-child {
+      border-bottom: 0
+    }
+
+    .checklist-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border: 2px solid rgba(15, 20, 40, .18);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all .2s cubic-bezier(.4, 0, .2, 1);
+      position: relative;
+      background: #fff;
+      margin-top: 2px
+    }
+
+    .checklist-checkbox:hover {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, .1)
+    }
+
+    .checklist-checkbox:checked {
+      background: var(--violet);
+      border-color: var(--violet)
+    }
+
+    .checklist-checkbox:checked::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 6px;
+      height: 12px;
+      border: solid #fff;
+      border-width: 0 2.5px 2.5px 0;
+      transform: rotate(45deg)
+    }
+
+    .checklist-item.is-checked .item-label {
+      color: var(--muted-on-paper);
+      text-decoration: line-through;
+      text-decoration-color: rgba(15, 20, 40, .15)
+    }
+
+    .checklist-item.is-checked .item-detail {
+      color: rgba(91, 100, 120, .6)
+    }
+
+    .item-label {
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--ink-on-paper);
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 6px
+    }
+
+    .item-detail {
+      font-size: .88rem;
+      color: var(--muted-on-paper);
+      line-height: 1.7
+    }
+
+    .item-detail code {
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      background: rgba(108, 99, 255, .06);
+      color: var(--violet);
+      padding: 2px 7px;
+      border-radius: 5px;
+      border: 1px solid rgba(108, 99, 255, .1)
+    }
+
+    /* FAQ */
+    .faq-item {
+      border: 1px solid var(--line-light);
+      border-radius: 14px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: var(--paper-card);
+      transition: border-color var(--ease), box-shadow var(--ease)
+    }
+
+    .faq-item[open] {
+      border-color: rgba(108, 99, 255, .3);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, .08)
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px 24px;
+      font-weight: 600;
+      color: var(--ink-on-paper);
+      font-size: .975rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(108, 99, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet);
+      font-size: 1rem;
+      line-height: 1;
+      transition: background var(--ease)
+    }
+
+    .faq-item[open] .faq-icon {
+      background: rgba(108, 99, 255, .2)
+    }
+
+    .faq-item summary .faq-icon::after {
+      content: "+"
+    }
+
+    .faq-item[open] summary .faq-icon::after {
+      content: "\2212"
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--muted-on-paper);
+      font-size: .95rem;
+      line-height: 1.7
+    }
+
+    /* CONTACT */
+    .contact-band {
+      background: var(--navy-950);
+      position: relative;
+      overflow: hidden
+    }
+
+    .contact-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 25%, rgba(108, 99, 255, .2), transparent 50%), radial-gradient(circle at 85% 75%, rgba(61, 139, 255, .15), transparent 50%);
+      pointer-events: none
+    }
+
+    .contact-card {
+      position: relative;
+      z-index: 2;
+      background: var(--paper-card);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, .4)
+    }
+
+    .contact-card .form-label {
+      font-weight: 600;
+      color: var(--ink-on-paper);
+      font-size: .875rem;
+      margin-bottom: 6px
+    }
+
+    .contact-card .form-control,
+    .contact-card .form-select {
+      border-radius: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--line-light);
+      font-size: .925rem;
+      transition: border-color var(--ease), box-shadow var(--ease)
+    }
+
+    .contact-card .form-control:focus,
+    .contact-card .form-select:focus {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, .12);
+      outline: none
+    }
+
+    .btn-submit {
+      background: var(--grad-brand);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      box-shadow: 0 12px 40px rgba(108, 99, 255, .35);
+      transition: transform var(--ease), box-shadow var(--ease);
+      cursor: pointer
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(108, 99, 255, .45)
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid var(--line-dark)
+    }
+
+    .footer-brand-desc {
+      color: var(--ink-dim);
+      font-size: .875rem;
+      line-height: 1.6;
+      max-width: 280px
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-dim);
+      text-decoration: none;
+      font-size: .9rem;
+      transition: background var(--ease), color var(--ease)
+    }
+
+    .footer-social a:hover {
+      background: rgba(108, 99, 255, .2);
+      color: var(--violet-light)
+    }
+
+    .site-footer h3 {
+      color: #fff;
+      font-size: .92rem;
+      font-weight: 700;
+      margin-bottom: 16px
+    }
+
+    .site-footer ul li {
+      margin-bottom: 8px
+    }
+
+    .site-footer a {
+      color: var(--ink-dim);
+      text-decoration: none;
+      font-size: .875rem;
+      transition: color var(--ease)
+    }
+
+    .site-footer a:hover {
+      color: #fff
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line-dark);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--ink-dim);
+      font-size: .8rem
+    }
+
+    .footer-bottom a {
+      color: var(--ink-dim);
+      text-decoration: none
+    }
+
+    .footer-bottom a:hover {
+      color: #fff
+    }
+
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 211, 160, .1);
+      border: 1px solid rgba(34, 211, 160, .2);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: .72rem;
+      color: var(--green)
+    }
+
+    .footer-badge::before {
+      content: "\25CF";
+      font-size: .5rem
+    }
+
+    /* UTILITY BTNS */
+    .btn-primary-grad {
+      background: var(--grad-brand);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: var(--radius-btn);
+      box-shadow: 0 10px 30px rgba(108, 99, 255, .3);
+      transition: transform var(--ease), box-shadow var(--ease);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .btn-primary-grad:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(108, 99, 255, .4);
+      color: #fff
+    }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--navy-950);
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      padding: 48px;
+      box-shadow: var(--shadow-dark)
+    }
+
+    .cta-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 40%, rgba(108, 99, 255, .22), transparent 50%),
+        radial-gradient(circle at 80% 60%, rgba(61, 139, 255, .18), transparent 50%);
+      pointer-events: none
+    }
+
+    .cta-banner * {
+      position: relative;
+      z-index: 2
+    }
+
+    /* SCROLL REVEAL */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none
+    }
+
+    [data-reveal][data-delay="1"] {
+      transition-delay: .1s
+    }
+
+    [data-reveal][data-delay="2"] {
+      transition-delay: .2s
+    }
+
+    [data-reveal][data-delay="3"] {
+      transition-delay: .3s
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none
+      }
+    }
+
+    /* POPUP MODAL */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(6, 9, 16, .65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s ease, visibility .4s ease
+    }
+
+    .popup-overlay.is-active {
+      opacity: 1;
+      visibility: visible
+    }
+
+    .popup-card {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      background: var(--paper-card);
+      border-radius: 24px;
+      padding: 0;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, .45), 0 0 0 1px rgba(108, 99, 255, .15);
+      transform: translateY(30px) scale(.96);
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+      overflow: hidden
+    }
+
+    .popup-overlay.is-active .popup-card {
+      transform: translateY(0) scale(1)
+    }
+
+    .popup-header {
+      background: var(--navy-950);
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .popup-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 40%, rgba(108, 99, 255, .25), transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(61, 139, 255, .2), transparent 55%);
+      pointer-events: none
+    }
+
+    .popup-header-content {
+      position: relative;
+      z-index: 2
+    }
+
+    .popup-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 176, 32, .12);
+      border: 1px solid rgba(255, 176, 32, .25);
+      border-radius: 100px;
+      padding: 4px 12px;
+      margin-bottom: 14px
+    }
+
+    .popup-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite
+    }
+
+    .popup-badge span {
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 600
+    }
+
+    .popup-header h3 {
+      color: #fff;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      line-height: 1.3
+    }
+
+    .popup-header p {
+      color: var(--ink-dim);
+      font-size: .88rem;
+      margin: 0;
+      line-height: 1.5
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .15);
+      background: rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background var(--ease), color var(--ease), transform var(--ease)
+    }
+
+    .popup-close:hover {
+      background: rgba(255, 255, 255, .18);
+      color: #fff;
+      transform: rotate(90deg)
+    }
+
+    .popup-body {
+      padding: 28px 32px 32px
+    }
+
+    .popup-body .form-group {
+      margin-bottom: 16px
+    }
+
+    .popup-body .form-label {
+      font-weight: 600;
+      color: var(--ink-on-paper);
+      font-size: .825rem;
+      margin-bottom: 6px;
+      display: block
+    }
+
+    .popup-body .form-control,
+    .popup-body .form-select {
+      width: 100%;
+      border-radius: 10px;
+      padding: 11px 14px;
+      border: 1.5px solid var(--line-light);
+      font-size: .9rem;
+      font-family: var(--font-body);
+      transition: border-color var(--ease), box-shadow var(--ease);
+      outline: none;
+      background: var(--paper-card)
+    }
+
+    .popup-body .form-control:focus,
+    .popup-body .form-select:focus {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, .12)
+    }
+
+    .popup-body .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    @media(max-width: 480px) {
+      .popup-body .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .popup-card {
+        max-width: 100%
+      }
+
+      .popup-header {
+        padding: 24px 20px 20px
+      }
+
+      .popup-body {
+        padding: 20px
+      }
+    }
+
+    .popup-submit {
+      width: 100%;
+      background: var(--grad-brand);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 13px 24px;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(108, 99, 255, .3);
+      transition: transform var(--ease), box-shadow var(--ease);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px
+    }
+
+    .popup-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(108, 99, 255, .4)
+    }
+
+    .popup-submit:disabled {
+      opacity: .7;
+      cursor: not-allowed;
+      transform: none
+    }
+
+    .popup-privacy {
+      text-align: center;
+      font-size: .75rem;
+      color: var(--muted-on-paper);
+      margin-top: 14px
+    }
+
+    .popup-privacy i {
+      color: var(--green);
+      margin-right: 4px
+    }
+
+    .popup-success {
+      text-align: center;
+      padding: 20px 0
+    }
+
+    .popup-success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(34, 211, 160, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.5rem;
+      color: var(--green)
+    }
+
+    .popup-success h4 {
+      color: var(--ink-on-paper);
+      font-size: 1.1rem;
+      margin-bottom: 6px
+    }
+
+    .popup-success p {
+      color: var(--muted-on-paper);
+      font-size: .88rem
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      @page {
+        margin: 1.5cm 2cm;
+        size: A4
+      }
+
+      body {
+        font-size: 11pt !important;
+        color: #000 !important;
+        background: #fff !important
+      }
+
+      .navbar,
+      .progress-bar-sticky,
+      .site-footer,
+      .contact-band,
+      .cta-banner-wrap,
+      .popup-overlay,
+      .progress-actions,
+      .no-print,
+      button {
+        display: none !important
+      }
+
+      .phase-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 16pt !important
+      }
+
+      .checklist-item {
+        page-break-inside: avoid;
+        break-inside: avoid
+      }
+
+      .checklist-checkbox {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact
+      }
+
+      .checklist-checkbox:checked {
+        background: var(--violet) !important;
+        border-color: var(--violet) !important
+      }
+
+      #print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 24pt;
+        padding-bottom: 12pt;
+        border-bottom: 2px solid #060910
+      }
+
+      #print-header h2 {
+        font-size: 18pt;
+        font-weight: 800;
+        color: #060910;
+        margin: 0
+      }
+
+      #print-header p {
+        font-size: 10pt;
+        color: #5b6478;
+        margin: 4pt 0 0 0
+      }
+
+      a {
+        color: #000 !important;
+        text-decoration: none !important
+      }
+
+      .faq-section-wrap {
+        page-break-before: always
+      }
+
+      .checklist-hero {
+        display: none !important
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Print-only header -->
+  <div id="print-header" style="display:none">
+    <h2>The Complete Website Launch Checklist</h2>
+    <p>companiesbuilder.com &middot; Generated on <span id="print-date"></span></p>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Companies Builder home">
+        <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
+        <span>Companies Builder</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="/services/web-development-and-designing/"><i
+                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/"><i
+                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/"><i
+                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="/services/b2b-digital-marketing-agency/"><i
+                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
+              <li>
+                <hr class="dropdown-divider my-1">
+              </li>
+              <li><a class="dropdown-item fw-bold" href="/services/"><i class="bi bi-grid me-2 opacity-75"></i>All
+                  Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Resources</a>
+            <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
+              <li><a class="dropdown-item" href="/website-launch-checklist"><i
+                    class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="checklist-hero" role="banner">
+    <div class="container">
+      <div style="max-width:720px" data-reveal>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>Free Technical Resource</span>
+        </div>
+        <h1>The Complete Website<br><span class="accent">Launch Checklist</span></h1>
+        <p class="hero-lead">50+ actionable pre-launch tasks across architecture, SEO, performance, security, and
+          analytics. Every item includes the exact technical action, verification method, and the business consequence
+          of
+          skipping it.</p>
+        <p class="hero-sub"><i class="bi bi-cloud-check me-1"></i> Your progress saves automatically in your browser.
+          Check items off, close the tab, and pick up where you left off.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- STICKY PROGRESS BAR -->
+  <div class="progress-bar-sticky no-print">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+        <div class="d-flex align-items-center gap-3 flex-grow-1">
+          <div class="progress-track flex-grow-1" style="max-width:280px">
+            <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+          <span class="progress-label" id="progress-text">0% &middot; 0/0 tasks</span>
+        </div>
+        <div class="progress-actions d-flex gap-2">
+          <button class="btn-tool" onclick="handlePrint()" aria-label="Print or save checklist as PDF">
+            <i class="bi bi-printer"></i> Print / PDF
+          </button>
+          <button class="btn-tool btn-reset" onclick="resetAll()" aria-label="Reset all checklist progress">
+            <i class="bi bi-arrow-counterclockwise"></i> Reset
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main">
+    <section class="band-paper section-pad">
+      <div class="container" style="max-width:860px">
+
+        <!-- ========== PHASE 1 ========== -->
+        <div class="phase-card" data-reveal>
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="phase-badge violet">1</div>
+            <div>
+              <h2 class="phase-title">Architecture, Crawlability &amp; Technical SEO</h2>
+              <p class="phase-subtitle">Structural foundation - get this wrong and nothing downstream matters.</p>
+            </div>
+          </div>
+
+          <label class="checklist-item" data-id="1-1">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Canonical tag audit" />
+            <div>
+              <span class="item-label">Audit and set absolute canonical URLs on every indexable page</span>
+              <p class="item-detail">Inspect every page's <code>&lt;link rel="canonical"&gt;</code> tag. Use absolute
+                URLs (including protocol and domain) - never relative paths. Validate with Screaming Frog's "Canonicals"
+                tab or <code>curl -s URL | grep canonical</code>. <strong>Consequence:</strong> Relative or missing
+                canonicals cause duplicate content indexing, dilute PageRank across URL variants, and can split ranking
+                equity across dozens of phantom pages.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-2">
+            <input type="checkbox" class="checklist-checkbox" aria-label="301 redirect map" />
+            <div>
+              <span class="item-label">Execute a complete 301 redirect map from old URLs to new URLs</span>
+              <p class="item-detail">Crawl the existing production site to extract every indexed URL. Map each to its
+                new destination. Handle edge cases: query strings (<code>/page?ref=abc</code>), trailing slashes, and
+                HTTP→HTTPS protocol upgrades. Test every redirect with <code>curl -I -L oldurl</code> and confirm a
+                single 301 hop - no chains. <strong>Consequence:</strong> Unmapped URLs return 404s, instantly
+                evaporating accumulated ranking authority. Redirect chains bleed ~15% PageRank per hop.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-3">
+            <input type="checkbox" class="checklist-checkbox" aria-label="XML sitemap generation" />
+            <div>
+              <span class="item-label">Generate XML sitemaps with index splitting for large sites</span>
+              <p class="item-detail">Generate an XML sitemap containing only indexable, canonical, 200-status URLs. For
+                sites exceeding 10,000 URLs, split into sitemap index files with category-based child sitemaps (e.g.,
+                <code>sitemap-blog.xml</code>, <code>sitemap-products.xml</code>). Validate with
+                <code>xmllint --schema sitemap.xsd sitemap.xml</code>. <strong>Consequence:</strong> Malformed sitemaps
+                are silently ignored by Googlebot. Oversized single-file sitemaps (&gt;50MB / 50,000 URLs) are partially
+                processed, leaving deep pages undiscovered.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-4">
+            <input type="checkbox" class="checklist-checkbox" aria-label="robots.txt validation" />
+            <div>
+              <span class="item-label">Validate robots.txt syntax and directive logic</span>
+              <p class="item-detail">Confirm <code>/robots.txt</code> is served at the domain root with a 200 status
+                code. Verify <code>User-agent</code> directives, <code>Disallow</code> rules, and the
+                <code>Sitemap:</code> directive. Test with Google Search Console's robots.txt Tester.
+                <strong>Consequence:</strong> A single misplaced <code>Disallow: /</code> blocks the entire site from
+                indexing. Leftover staging <code>noindex</code> directives from development are a top-5 launch failure
+                cause.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-5">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Custom 404 page" />
+            <div>
+              <span class="item-label">Configure a custom 404 error page with correct HTTP status codes</span>
+              <p class="item-detail">Create a branded 404 page with navigation, search, and links to high-value pages.
+                Verify it returns an actual <code>HTTP 404</code> status - not a soft 404. Test with
+                <code>curl -o /dev/null -s -w "%{http_code}" https://domain.com/nonexistent</code>.
+                <strong>Consequence:</strong> Soft 404s waste crawl budget and pollute your index. Google explicitly
+                penalizes sites with excessive soft 404 patterns.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-6">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Open Graph and Twitter Cards" />
+            <div>
+              <span class="item-label">Implement Open Graph and Twitter Card meta tags on every page</span>
+              <p class="item-detail">Add <code>og:title</code>, <code>og:description</code>, <code>og:image</code>
+                (1200×630px minimum), <code>og:url</code>, and <code>og:type</code> tags. Set <code>twitter:card</code>
+                to <code>summary_large_image</code>. Validate with Facebook's Sharing Debugger and Twitter's Card
+                Validator. <strong>Consequence:</strong> Missing OG tags produce ugly, text-only link previews -
+                reducing click-through rates on shared links by 30–50% compared to rich image cards.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-7">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Structured data" />
+            <div>
+              <span class="item-label">Implement JSON-LD structured data (Organization, WebSite, LocalBusiness)</span>
+              <p class="item-detail">Add <code>Organization</code> schema on the homepage with logo, social profiles,
+                and contact info. Add <code>WebSite</code> schema with a <code>SearchAction</code> for sitelinks search
+                box eligibility. For physical locations, add <code>LocalBusiness</code> schema. Validate with Google's
+                Rich Results Test. <strong>Consequence:</strong> Without structured data, you forfeit rich result
+                eligibility - knowledge panels, sitelinks search boxes, local packs.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-8">
+            <input type="checkbox" class="checklist-checkbox" aria-label="URL normalization" />
+            <div>
+              <span class="item-label">Enforce consistent URL structure (trailing slash, case, protocol)</span>
+              <p class="item-detail">Choose a single canonical URL format and enforce it server-side with 301 redirects.
+                Test that <code>/About</code>, <code>/about/</code>, and <code>http://domain.com/about</code> all
+                resolve to the same canonical. <strong>Consequence:</strong> Multiple URL variants fragment link equity
+                and create duplicate content signals, harming crawl efficiency and ranking consolidation.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-9">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Breadcrumb navigation" />
+            <div>
+              <span class="item-label">Implement breadcrumb navigation with BreadcrumbList schema</span>
+              <p class="item-detail">Add visible breadcrumb trails on all pages below the homepage. Mark them up with
+                <code>BreadcrumbList</code> JSON-LD schema listing each <code>ListItem</code> with
+                <code>position</code>, <code>name</code>, and <code>item</code> URL. Validate with Google's Rich Results
+                Test. <strong>Consequence:</strong> Breadcrumb schema enables breadcrumb-style URLs in SERPs, improving
+                CTR and providing Google with a clear site hierarchy signal.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="1-10">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Hreflang tags" />
+            <div>
+              <span class="item-label">Configure hreflang tags for multi-language or multi-region sites</span>
+              <p class="item-detail">If serving content in multiple languages, add
+                <code>&lt;link rel="alternate" hreflang="xx"&gt;</code> tags. Include a self-referencing hreflang and an
+                <code>x-default</code> fallback. Validate bidirectional return links with Screaming Frog's hreflang
+                audit. <strong>Consequence:</strong> Missing or asymmetric hreflang annotations cause Google to serve
+                the wrong language version, cannibalizing traffic between regional pages.
+              </p>
+            </div>
+          </label>
+        </div>
+
+        <!-- ========== PHASE 2 ========== -->
+        <div class="phase-card" data-reveal>
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="phase-badge green">2</div>
+            <div>
+              <h2 class="phase-title">On-Page Elements &amp; Content Integrity</h2>
+              <p class="phase-subtitle">Every page must be technically sound and content-complete before launch.</p>
+            </div>
+          </div>
+
+          <label class="checklist-item" data-id="2-1">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Title tag audit" />
+            <div>
+              <span class="item-label">Audit title tags for uniqueness, length, and pixel width</span>
+              <p class="item-detail">Every page must have a unique <code>&lt;title&gt;</code> tag. Keep titles under 60
+                characters or 580 pixels. Place the primary keyword within the first 50 characters. Check pixel
+                rendering with SERP snippet preview tools. <strong>Consequence:</strong> Duplicate or truncated titles
+                reduce CTR from search results. Google may auto-rewrite your title if it deems it unhelpful.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-2">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Meta description audit" />
+            <div>
+              <span class="item-label">Write unique meta descriptions within 150–160 characters per page</span>
+              <p class="item-detail">Write action-oriented meta descriptions for every indexable page. Include a value
+                proposition and a soft call-to-action. Avoid duplicating descriptions across pages.
+                <strong>Consequence:</strong> Missing meta descriptions let Google auto-generate snippets - often
+                irrelevant previews that suppress CTR by 20–30%.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-3">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Heading hierarchy audit" />
+            <div>
+              <span class="item-label">Enforce strict heading tag hierarchy (single H1, logical H2/H3 nesting)</span>
+              <p class="item-detail">Each page must have exactly one <code>&lt;h1&gt;</code>. Subheadings must follow
+                logical hierarchy - never skip from H2 to H4. Remove decorative headings. Audit with HeadingsMap or
+                <code>document.querySelectorAll('h1, h2, h3, h4, h5, h6')</code>. <strong>Consequence:</strong> Multiple
+                H1s dilute topical focus. Broken hierarchies impair screen reader navigation (WCAG 1.3.1) and weaken
+                featured snippet extraction.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-4">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Internal link audit" />
+            <div>
+              <span class="item-label">Run a full internal link audit: fix broken links, optimize anchor text</span>
+              <p class="item-detail">Flag all internal links returning 4xx or 5xx. Replace generic anchors ("click
+                here") with keyword-relevant phrases. Update links pointing to intermediate redirects - link directly to
+                final URLs. <strong>Consequence:</strong> Broken internal links waste crawl budget and orphan pages.
+                Generic anchors miss topical relevance signals. Internal redirect chains add latency and leak PageRank.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-5">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Image optimization" />
+            <div>
+              <span class="item-label">Optimize all images: next-gen formats, srcset, explicit dimensions</span>
+              <p class="item-detail">Convert images to AVIF (primary) with WebP fallback using
+                <code>&lt;picture&gt;</code> elements. Define responsive <code>srcset</code> and <code>sizes</code>. Set
+                explicit <code>width</code> and <code>height</code> on every <code>&lt;img&gt;</code>. Add descriptive
+                <code>alt</code> text. Lazy-load below-fold images with <code>loading="lazy"</code>.
+                <strong>Consequence:</strong> Missing dimensions cause CLS failures. Legacy formats are 25–50% larger
+                than AVIF/WebP, inflating LCP times.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-6">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Form testing" />
+            <div>
+              <span class="item-label">Test all forms: CSRF protection, validation, email delivery, SPF/DKIM</span>
+              <p class="item-detail">Submit every form with valid and invalid data. Confirm CSRF tokens are validated
+                server-side. Verify transactional emails arrive in inbox - not spam. Validate SPF, DKIM, and DMARC
+                records with <code>dig TXT domain.com</code> or MXToolbox. <strong>Consequence:</strong> Missing CSRF
+                tokens expose forms to CSRF attacks. Failed SPF/DKIM causes emails to land in spam, silently breaking
+                lead capture.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-7">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Content proofreading" />
+            <div>
+              <span class="item-label">Proofread all content: eliminate placeholder text and broken dynamic
+                fields</span>
+              <p class="item-detail">Search the DOM for <code>lorem ipsum</code>, <code>TODO</code>,
+                <code>[placeholder]</code>, <code>{{variable}}</code>, and test content. Verify CMS custom fields render
+                correctly. Use <code>grep -ri "lorem\|TODO\|placeholder" ./public</code>. <strong>Consequence:</strong>
+                Placeholder text on production destroys credibility and is indexed by search engines.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-8">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Favicon and app icons" />
+            <div>
+              <span class="item-label">Deploy complete favicon set and web app manifest</span>
+              <p class="item-detail">Generate <code>favicon.ico</code> (32×32), <code>apple-touch-icon.png</code>
+                (180×180), and Android/Windows tile PNGs. Create a <code>site.webmanifest</code> with <code>name</code>,
+                <code>theme_color</code>, and icon references. <strong>Consequence:</strong> Missing favicons make your
+                site look unfinished in browser tabs, bookmarks, and mobile home screen shortcuts.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-9">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Accessibility audit" />
+            <div>
+              <span class="item-label">Run an accessibility baseline audit (WCAG 2.1 Level AA)</span>
+              <p class="item-detail">Scan with axe DevTools or Lighthouse Accessibility. Fix missing <code>alt</code>
+                attributes, insufficient contrast ratios (&lt;4.5:1), missing form labels, and non-keyboard-navigable
+                elements. Test tab order and focus states. <strong>Consequence:</strong> Accessibility failures expose
+                the business to ADA/EAA legal liability and exclude ~15% of the global population.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="2-10">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Cross-browser testing" />
+            <div>
+              <span class="item-label">Cross-browser and cross-device rendering validation</span>
+              <p class="item-detail">Test on Chrome, Firefox, Safari, and Edge (latest two versions). Validate on
+                physical iOS Safari and Android Chrome. Confirm responsive breakpoints at 375px, 768px, 1024px, 1280px,
+                and 1536px. <strong>Consequence:</strong> Safari and Firefox render CSS grid/flexbox differently.
+                Untested layouts break for 15–30% of traffic, increasing bounce rates.</p>
+            </div>
+          </label>
+        </div>
+
+        <!-- ========== PHASE 3 ========== -->
+        <div class="phase-card" data-reveal>
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="phase-badge amber">3</div>
+            <div>
+              <h2 class="phase-title">Performance, Core Web Vitals &amp; Asset Optimization</h2>
+              <p class="phase-subtitle">Speed is a ranking factor. These items directly impact CWV scores and user
+                experience.</p>
+            </div>
+          </div>
+
+          <label class="checklist-item" data-id="3-1">
+            <input type="checkbox" class="checklist-checkbox" aria-label="LCP optimization" />
+            <div>
+              <span class="item-label">Optimize Largest Contentful Paint (LCP) to under 2.5 seconds</span>
+              <p class="item-detail">Identify the LCP element on each key page with Lighthouse. Preload the LCP image
+                with <code>&lt;link rel="preload" as="image"&gt;</code>. Self-host fonts with
+                <code>font-display: swap</code>. Inline critical CSS. <strong>Consequence:</strong> LCP above 2.5s at
+                the 75th percentile fails Core Web Vitals, triggering a ranking demotion. Every 100ms of delay
+                correlates with ~1% conversion drop.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-2">
+            <input type="checkbox" class="checklist-checkbox" aria-label="CLS mitigation" />
+            <div>
+              <span class="item-label">Eliminate Cumulative Layout Shift (CLS) - target under 0.1</span>
+              <p class="item-detail">Reserve explicit dimensions for images, videos, iframes, and ad slots. Use CSS
+                <code>aspect-ratio</code> for responsive embeds. Avoid injecting content above existing content after
+                load. Profile with the Web Vitals Chrome extension. <strong>Consequence:</strong> CLS above 0.1 fails
+                Core Web Vitals and causes misclicks - particularly damaging on mobile.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-3">
+            <input type="checkbox" class="checklist-checkbox" aria-label="INP optimization" />
+            <div>
+              <span class="item-label">Improve Interaction to Next Paint (INP) to under 200ms</span>
+              <p class="item-detail">Break up long tasks (&gt;50ms) using <code>requestIdleCallback</code>,
+                <code>scheduler.yield()</code>, or <code>setTimeout(fn, 0)</code>. Defer or async-load all third-party
+                scripts. Avoid synchronous DOM reads followed by writes (forced reflow). <strong>Consequence:</strong>
+                INP replaced FID as a Core Web Vital in March 2024. Scores above 200ms are penalized.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-4">
+            <input type="checkbox" class="checklist-checkbox" aria-label="HTTP compression" />
+            <div>
+              <span class="item-label">Enable Brotli compression with Gzip fallback on the server</span>
+              <p class="item-detail">Configure text-based assets with Brotli (<code>Content-Encoding: br</code>) as
+                primary and Gzip as fallback. Verify with
+                <code>curl -H "Accept-Encoding: br" -I https://domain.com</code>. <strong>Consequence:</strong> Brotli
+                achieves 15–25% better compression than Gzip. Uncompressed transfers are 3–5× larger, inflating TTFB and
+                LCP.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-5">
+            <input type="checkbox" class="checklist-checkbox" aria-label="HTTP/2 or HTTP/3" />
+            <div>
+              <span class="item-label">Verify HTTP/2 or HTTP/3 protocol is active</span>
+              <p class="item-detail">Test with <code>curl --http2 -I https://domain.com</code> or the Chrome DevTools
+                Network Protocol column. If behind a CDN, verify HTTP/3 is enabled. <strong>Consequence:</strong>
+                HTTP/1.1 limits concurrent connections to ~6 per domain. HTTP/2 multiplexing reduces load times by
+                20–40% for asset-heavy pages.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-6">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Cache-control headers" />
+            <div>
+              <span class="item-label">Set proper cache-control headers for static and dynamic resources</span>
+              <p class="item-detail">Set <code>Cache-Control: public, max-age=31536000, immutable</code> for
+                fingerprinted static assets. Set <code>Cache-Control: no-cache</code> for HTML documents. Verify with
+                <code>curl -I</code>. <strong>Consequence:</strong> Missing cache headers force browsers to re-download
+                assets on every visit. Over-caching HTML causes users to see stale content.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-7">
+            <input type="checkbox" class="checklist-checkbox" aria-label="CSS and JS minification" />
+            <div>
+              <span class="item-label">Minify, tree-shake, and bundle CSS and JavaScript</span>
+              <p class="item-detail">Run production builds with minification and tree-shaking enabled. Verify no unused
+                CSS ships to production. Confirm no dev-mode libraries ship (React warnings, source maps). Check bundle
+                sizes with <code>webpack-bundle-analyzer</code>. <strong>Consequence:</strong> Unminified bundles are
+                30–60% larger, degrading INP and TBT scores.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-8">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Third-party script audit" />
+            <div>
+              <span class="item-label">Audit and defer all third-party scripts</span>
+              <p class="item-detail">Inventory every third-party script. Load non-critical scripts with
+                <code>defer</code> or <code>async</code>, or load dynamically after <code>DOMContentLoaded</code>. Use
+                Chrome's "Third-party badges" and <code>performance.getEntriesByType('resource')</code>.
+                <strong>Consequence:</strong> A single synchronous third-party script can block rendering for 2–5
+                seconds. Third-party scripts are the #1 cause of INP failures.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-9">
+            <input type="checkbox" class="checklist-checkbox" aria-label="CDN configuration" />
+            <div>
+              <span class="item-label">Configure CDN edge caching and origin shield</span>
+              <p class="item-detail">Deploy static assets through a CDN with edge locations near your audience. Verify
+                assets are served from edge nodes (check <code>X-Cache: HIT</code> or <code>cf-cache-status</code>
+                headers). Set up cache purge in CI/CD. <strong>Consequence:</strong> Serving from origin adds 50–300ms
+                of latency for distant users. CDN cache misses during launch can overload the origin.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="3-10">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Resource hints" />
+            <div>
+              <span class="item-label">Implement resource hints: preconnect, prefetch, and preload</span>
+              <p class="item-detail">Add <code>&lt;link rel="preconnect"&gt;</code> for critical third-party origins.
+                Use <code>&lt;link rel="preload"&gt;</code> for hero images and critical fonts. Apply
+                <code>&lt;link rel="prefetch"&gt;</code> for next-page resources. Avoid over-preloading.
+                <strong>Consequence:</strong> DNS+TCP+TLS to a new origin takes 100–300ms. Preconnect eliminates this.
+                Missing preloads for LCP assets add 200–500ms to LCP times.
+              </p>
+            </div>
+          </label>
+        </div>
+
+        <!-- ========== PHASE 4 ========== -->
+        <div class="phase-card" data-reveal>
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="phase-badge pink">4</div>
+            <div>
+              <h2 class="phase-title">Security, Compliance &amp; Infrastructure</h2>
+              <p class="phase-subtitle">Non-negotiable hardening tasks - one oversight here can end careers.</p>
+            </div>
+          </div>
+
+          <label class="checklist-item" data-id="4-1">
+            <input type="checkbox" class="checklist-checkbox" aria-label="HSTS header" />
+            <div>
+              <span class="item-label">Enable HSTS and eliminate mixed content</span>
+              <p class="item-detail">Set
+                <code>Strict-Transport-Security: max-age=63072000; includeSubDomains; preload</code>. Submit to
+                hstspreload.org. Scan for mixed content with <code>grep -r "http://" ./public</code>.
+                <strong>Consequence:</strong> Without HSTS, browsers allow HTTP downgrade attacks. Mixed content breaks
+                the padlock icon and Chrome blocks mixed active content.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-2">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Security headers" />
+            <div>
+              <span class="item-label">Implement CSP, X-Frame-Options, and X-Content-Type-Options</span>
+              <p class="item-detail">Deploy <code>Content-Security-Policy</code> restricting script sources. Set
+                <code>X-Frame-Options: DENY</code>. Set <code>X-Content-Type-Options: nosniff</code>. Start CSP in
+                report-only mode, then enforce. Verify at securityheaders.com. <strong>Consequence:</strong> Missing CSP
+                enables XSS injection. Missing X-Frame-Options enables clickjacking. These are OWASP Top 10 risks.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-3">
+            <input type="checkbox" class="checklist-checkbox" aria-label="SSL/TLS verification" />
+            <div>
+              <span class="item-label">Verify SSL/TLS certificate chain and configure automated renewal</span>
+              <p class="item-detail">Run <code>openssl s_client -connect domain.com:443</code> to inspect the
+                certificate chain. Verify SAN entries cover all subdomains. Confirm auto-renewal via ACME/Certbot. Test
+                with SSL Labs - target A+. <strong>Consequence:</strong> An expired SSL certificate triggers browser
+                warnings that block all traffic. Broken chains cause trust errors in specific browsers.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-4">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Cookie consent" />
+            <div>
+              <span class="item-label">Implement cookie consent mechanism and publish legal pages</span>
+              <p class="item-detail">Deploy a consent banner that blocks non-essential cookies until consent is granted.
+                Publish Privacy Policy, Terms of Service, and Cookie Policy in the footer. For CCPA, include a "Do Not
+                Sell" link. Verify no tracking fires before consent. <strong>Consequence:</strong> GDPR fines up to €20M
+                or 4% of annual turnover. CCPA violations carry $7,500 per intentional violation.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-5">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Backup and rollback" />
+            <div>
+              <span class="item-label">Verify automated backups and rollback protocol</span>
+              <p class="item-detail">Confirm automated snapshots are running for database and file system. Test a full
+                restore to staging. Document the rollback procedure. Set a rollback decision window (e.g., "if
+                conversion drops &gt;50% in 4 hours, rollback"). <strong>Consequence:</strong> Without a tested rollback
+                plan, catastrophic launch failures have no recovery path. Average unplanned downtime costs
+                $9,000/minute.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-6">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Access control audit" />
+            <div>
+              <span class="item-label">Audit permissions, remove staging credentials, disable debug endpoints</span>
+              <p class="item-detail">Revoke temporary accounts. Remove debug endpoints (<code>/debug</code>,
+                <code>/phpinfo</code>). Ensure <code>.env</code>, <code>.git</code>, and source maps aren't publicly
+                accessible. Test with <code>curl -I https://domain.com/.env</code>. <strong>Consequence:</strong>
+                Exposed <code>.env</code> files leak database credentials and API keys. Accessible <code>.git</code>
+                directories expose your entire source code.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-7">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Rate limiting" />
+            <div>
+              <span class="item-label">Configure rate limiting, bot protection, and DDoS mitigation</span>
+              <p class="item-detail">Implement rate limiting on auth endpoints, API routes, and forms. Enable bot
+                challenges for suspicious traffic. Test failover with <code>k6</code> or <code>artillery</code>.
+                <strong>Consequence:</strong> Launch announcements attract bot traffic. Unprotected forms get spammed
+                within hours, polluting CRM data.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-8">
+            <input type="checkbox" class="checklist-checkbox" aria-label="DNS TTL" />
+            <div>
+              <span class="item-label">Lower DNS TTL before launch and verify propagation plan</span>
+              <p class="item-detail">48 hours before launch, lower TTL to 300 seconds. After stable (24–48h
+                post-launch), raise to 3600–86400. Verify with <code>dig +short domain.com</code> and whatsmydns.net.
+                <strong>Consequence:</strong> High TTL during cutover means some users see the old site for up to 24
+                hours. Rollback is delayed by the same duration.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-9">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Uptime monitoring" />
+            <div>
+              <span class="item-label">Configure uptime monitoring and incident alerting</span>
+              <p class="item-detail">Set up external monitoring polling critical pages every 60 seconds from multiple
+                locations. Configure Slack/PagerDuty alerts. Create a status page. Test by temporarily returning a 503.
+                <strong>Consequence:</strong> Without monitoring, downtime goes undetected for an average of 3.5 hours.
+                Each hour compounds revenue loss.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="4-10">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Environment parity" />
+            <div>
+              <span class="item-label">Validate staging-to-production environment parity</span>
+              <p class="item-detail">Confirm production matches staging: OS, runtime versions, database engine,
+                environment variables. Verify production <code>.env</code> values point to production endpoints. Run
+                your full test suite against the production build. <strong>Consequence:</strong> Environment drift
+                causes "it works on staging" failures. A mismatched runtime version can cause silent data corruption.
+              </p>
+            </div>
+          </label>
+        </div>
+
+        <!-- ========== PHASE 5 ========== -->
+        <div class="phase-card" data-reveal>
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="phase-badge blue">5</div>
+            <div>
+              <h2 class="phase-title">Tracking, Analytics &amp; Conversion Verification</h2>
+              <p class="phase-subtitle">If you can't measure it, you can't prove the launch succeeded.</p>
+            </div>
+          </div>
+
+          <label class="checklist-item" data-id="5-1">
+            <input type="checkbox" class="checklist-checkbox" aria-label="GTM deployment" />
+            <div>
+              <span class="item-label">Deploy Google Tag Manager container and verify in Preview mode</span>
+              <p class="item-detail">Install the GTM container in <code>&lt;head&gt;</code> and immediately after
+                <code>&lt;body&gt;</code>. Verify with Preview &amp; Debug mode. Confirm the container ID matches
+                production. <strong>Consequence:</strong> A missing GTM container means zero analytics data from launch
+                day - irreplaceable baseline data is lost.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-2">
+            <input type="checkbox" class="checklist-checkbox" aria-label="GA4 event tracking" />
+            <div>
+              <span class="item-label">Configure GA4 event tracking and key conversion events</span>
+              <p class="item-detail">Set up GA4 with the correct Measurement ID. Configure enhanced measurement and
+                custom events for form submissions (<code>generate_lead</code>), CTA clicks, tel: links, video
+                engagements. Mark key events as conversions. Verify in GA4 DebugView. <strong>Consequence:</strong> GA4
+                does not retroactively process events. Unconfigured conversion events mean unmeasurable launch-day ROI.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-3">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Search Console" />
+            <div>
+              <span class="item-label">Verify Google Search Console and Bing Webmaster Tools properties</span>
+              <p class="item-detail">Add and verify the production domain (use Domain property type for full coverage).
+                Submit XML sitemap in both platforms. Request indexing for the homepage and top 10 priority pages.
+                <strong>Consequence:</strong> Without Search Console, you have no visibility into indexing errors, crawl
+                issues, manual actions, or search performance data.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-4">
+            <input type="checkbox" class="checklist-checkbox" aria-label="CRM webhook validation" />
+            <div>
+              <span class="item-label">Validate CRM webhooks and lead routing pipeline</span>
+              <p class="item-detail">Submit test entries through every form and verify they arrive in production CRM
+                with correct field mapping. Confirm lead assignment rules, notification emails, and automated sequences
+                trigger. <strong>Consequence:</strong> Broken webhooks silently drop leads. If forms don't reach the
+                CRM, sales sees zero inquiries - those leads are unrecoverable.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-5">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Ad pixel verification" />
+            <div>
+              <span class="item-label">Install and verify advertising pixels (Meta, LinkedIn, Google Ads)</span>
+              <p class="item-detail">Deploy pixels through GTM (not hardcoded). Configure conversion events. Verify with
+                Meta Pixel Helper, LinkedIn Insight Tag checker, and Google Tag Assistant. Ensure pixels respect cookie
+                consent. <strong>Consequence:</strong> Missing pixels mean paid campaigns cannot optimize for
+                conversions - costing 3–5× more per conversion.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-6">
+            <input type="checkbox" class="checklist-checkbox" aria-label="UTM validation" />
+            <div>
+              <span class="item-label">Validate UTM parameter tracking and campaign attribution</span>
+              <p class="item-detail">Test that UTM parameters persist through navigation and are captured in form hidden
+                fields or GA4 session data. Verify values in GA4 Traffic Acquisition. Confirm canonicals strip UTMs.
+                <strong>Consequence:</strong> Broken UTM tracking makes it impossible to attribute leads to campaigns,
+                making marketing spend unaccountable.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-7">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Error monitoring" />
+            <div>
+              <span class="item-label">Set up front-end error monitoring and server-side logging</span>
+              <p class="item-detail">Deploy Sentry, LogRocket, or Bugsnag for JavaScript exceptions. Configure
+                server-side structured logging with error alerting. Set up log aggregation to detect 5xx spikes.
+                <strong>Consequence:</strong> Without monitoring, JS errors in specific browsers go undetected, silently
+                blocking conversions for a segment of users.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-8">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Analytics filter" />
+            <div>
+              <span class="item-label">Filter internal traffic and bot traffic from analytics</span>
+              <p class="item-detail">Create IP filters in GA4 to exclude team IPs and VPN ranges. Enable bot filtering.
+                In GTM, suppress tags when a custom cookie (e.g., <code>internal_user=true</code>) is set.
+                <strong>Consequence:</strong> Unfiltered internal traffic inflates pageviews and skews conversion
+                funnels - especially damaging in the first week when baselines are set.
+              </p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-9">
+            <input type="checkbox" class="checklist-checkbox" aria-label="Funnel explorations" />
+            <div>
+              <span class="item-label">Define GA4 funnel explorations for critical user journeys</span>
+              <p class="item-detail">Build funnel explorations for each conversion path (e.g., Homepage → Service Page →
+                Contact → Thank You). Define steps using page_view events or custom events. Create comparison segments
+                (mobile vs. desktop, organic vs. paid). <strong>Consequence:</strong> Without funnels configured before
+                launch, you cannot identify where users drop off - diagnosing issues requires weeks of retroactive
+                analysis.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="5-10">
+            <input type="checkbox" class="checklist-checkbox" aria-label="dataLayer verification" />
+            <div>
+              <span class="item-label">Verify the dataLayer implementation for all dynamic variables</span>
+              <p class="item-detail">Confirm <code>window.dataLayer</code> is initialized before the GTM container.
+                Verify all custom pushes (e.g., <code>dataLayer.push({event: 'form_submit', form_id: 'contact'})</code>)
+                fire correctly. Use GTM Preview's "Data Layer" tab. Test edge cases. <strong>Consequence:</strong> A
+                malformed dataLayer breaks all downstream tags - analytics, pixels, and remarketing all fail silently.
+              </p>
+            </div>
+          </label>
+        </div>
+
+        <!-- ========== FAQ ========== -->
+        <div class="faq-section-wrap" data-reveal>
+          <div class="section-head mb-4" style="max-width:620px">
+            <span class="eyebrow">FAQ</span>
+            <h2>Frequently asked questions about website launches</h2>
+            <p>Common technical launch questions - answered without the fluff.</p>
+          </div>
+
+          <details class="faq-item" data-reveal>
+            <summary>How far in advance should I start this checklist before my launch date?<span class="faq-icon"
+                aria-hidden="true"></span></summary>
+            <div class="faq-answer">Begin the Architecture and Technical SEO phase (Phase 1) at least 14 business days
+              before the target launch. Phases 2 and 3 run concurrently and need 7–10 days. Security and compliance
+              (Phase 4) should be locked 5 days out to allow certificate propagation and header testing. Analytics
+              verification (Phase 5) requires 48–72 hours of live data collection after deployment to confirm data
+              integrity. Compressing this timeline increases the probability of shipping broken redirects, missing
+              tracking, or failing Core Web Vitals in the 28-day CrUX assessment window.</div>
+          </details>
+
+          <details class="faq-item" data-reveal>
+            <summary>What is the single most damaging mistake teams make at launch?<span class="faq-icon"
+                aria-hidden="true"></span></summary>
+            <div class="faq-answer">Failing to implement a complete 301 redirect map from the old URL structure to the
+              new one. Every indexed URL that returns a 404 instead of a 301 bleeds accumulated PageRank, drops existing
+              keyword rankings, and generates soft-404 errors in Search Console. For sites with 500+ indexed pages, this
+              can result in a 30–60% organic traffic loss within the first two weeks post-launch. Always crawl the
+              production site with Screaming Frog or Sitebulb before DNS cutover and map every legacy URL.</div>
+          </details>
+
+          <details class="faq-item" data-reveal>
+            <summary>Do I need to re-submit my sitemap after launch?<span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">Yes. Even if your sitemap URL hasn't changed, resubmit it in both Google Search
+              Console and Bing Webmaster Tools immediately after launch. This signals to crawlers that the site
+              structure has been updated and accelerates re-indexing. Additionally, use the URL Inspection tool to
+              request indexing for your highest-priority landing pages manually. Monitor the Coverage report daily for
+              the first week to catch unexpected "Excluded" or "Error" statuses.</div>
+          </details>
+
+          <details class="faq-item" data-reveal>
+            <summary>How do I verify my Core Web Vitals won't fail after launch?<span class="faq-icon"
+                aria-hidden="true"></span></summary>
+            <div class="faq-answer">Run Lighthouse CI in your deployment pipeline against the production build (not
+              localhost) to catch regressions before they reach users. After launch, monitor the Core Web Vitals report
+              in Search Console - but understand this data is based on a 28-day rolling average from CrUX, so field data
+              won't reflect your new site immediately. In the interim, use PageSpeed Insights (lab data) and <code
+                style="font-family:var(--font-mono);font-size:.8rem;background:rgba(108,99,255,.06);color:var(--violet);padding:2px 6px;border-radius:4px">web-vitals.js</code>
+              (real-user monitoring piped to GA4) to get immediate signal. Target LCP under 2.5s, CLS under 0.1, and INP
+              under 200ms at the 75th percentile.</div>
+          </details>
+        </div>
+
+        <!-- ========== CTA BANNER ========== -->
+        <div class="cta-banner-wrap mt-5" data-reveal>
+          <div class="cta-banner text-center">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-4"
+              style="background:rgba(255,176,32,.12);border:1px solid rgba(255,176,32,.25);border-radius:100px">
+              <span style="width:6px;height:6px;background:var(--amber);border-radius:50%;display:inline-block"></span>
+              <span
+                style="font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);font-weight:600">Zero-Risk
+                Migration</span>
+            </div>
+            <h2 style="color:#fff;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:14px">Want this checklist executed
+              for you?</h2>
+            <p style="color:var(--ink-dim);max-width:580px;margin:0 auto 28px;font-size:1rem;line-height:1.7">Our
+              engineering team handles full-stack website launches - from redirect mapping and Core Web Vitals
+              optimization to GTM deployment and CRM integration. Book a 30-minute architectural review and we'll scope
+              the migration with a fixed timeline and fixed price.</p>
+            <a href="https://companiesbuilder.com/contact" class="btn-primary-grad">Book an Architectural Review <i
+                class="bi bi-arrow-right"></i></a>
+            <p style="color:rgba(154,163,190,.6);font-size:.82rem;margin-top:16px">No commitment required. We'll tell
+              you honestly if you don't need us.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-band section-pad" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-7 text-center" data-reveal>
+            <span class="eyebrow" style="color:var(--amber)">Get Started</span>
+            <h2 id="contact-heading" style="color:#fff;margin-top:12px;font-size:clamp(1.6rem,2.8vw,2.2rem)">Request a
+              free digital growth audit</h2>
+            <p style="color:var(--ink-dim)">Fill in the quick form below and our team will send you a tailored audit,
+              quick-win recommendations and clear next steps for your business.</p>
+          </div>
+        </div>
+        <div class="contact-card" data-reveal>
+          <form id="homeContactForm" name="home-contact" novalidate>
+            <div class="row gx-3 gy-3 align-items-end">
+              <div class="col-md-3">
+                <label for="hname" class="form-label">Name *</label>
+                <input id="hname" name="your-name" class="form-control" autocomplete="name" placeholder="Your name"
+                  required>
+              </div>
+              <div class="col-md-3">
+                <label for="hemail" class="form-label">Email *</label>
+                <input id="hemail" type="email" name="your-email" class="form-control" autocomplete="email"
+                  placeholder="your@email.com" required>
+              </div>
+              <div class="col-md-3">
+                <label for="hphone" class="form-label">Phone *</label>
+                <input id="hphone" type="tel" name="your-number" pattern="[0-9]{10}" class="form-control"
+                  autocomplete="tel" placeholder="10-digit mobile" required>
+              </div>
+              <div class="col-md-3">
+                <label for="hcta" class="form-label">I need help with</label>
+                <select id="hcta" name="interest" class="form-control form-select">
+                  <option>Website Launch / Migration</option>
+                  <option>Web Development</option>
+                  <option>SEO Services</option>
+                  <option>Social Media Marketing</option>
+                  <option>Google Ads</option>
+                  <option>Full Digital Plan</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="hmessage" class="form-label">Tell us about your project</label>
+                <textarea id="hmessage" name="message" rows="3" class="form-control"
+                  placeholder="Briefly describe your business goals or challenges..."></textarea>
+              </div>
+              <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3 mt-2">
+                <p class="small mb-0" style="color:var(--muted-on-paper)"><i class="bi bi-shield-lock me-1"></i>Your
+                  details are safe. We do not share your data.</p>
+                <button type="submit" class="btn-submit" id="homeSubmitBtn">Request Free Audit &rarr;</button>
+              </div>
+            </div>
+          </form>
+          <div id="homeSuccess" style="display:none;margin-top:16px" class="text-success" role="status"><i
+              class="bi bi-check-circle me-2"></i>Thanks! We received your request and will contact you within 24 hours.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-4 col-lg-3">
+          <a href="/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
+            <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36"
+              style="height:36px;width:auto;display:inline-block">
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies
+              Builder</span>
+          </a>
+          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving
+            startups and SMBs across India.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Twitter / X"><i
+                class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/resources/checklists/">Checklists</a></li>
+            <li><a href="/blogs/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h3>Services</h3>
+          <ul class="list-unstyled">
+            <li><a href="/services/web-development-and-designing/">Web Development &amp; Design</a></li>
+            <li><a href="/services/seo-services-in-hyderabad/">SEO Services in Hyderabad</a></li>
+            <li><a href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+            <li><a href="/services/b2b-digital-marketing-agency/">B2B Digital Marketing</a></li>
+            <li><a href="/demo/">Request a Demo</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-lg-3">
+          <h3>Get in Touch</h3>
+          <ul class="list-unstyled">
+            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope"
+                  style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
+            <li style="margin-bottom:10px"><a href="tel:+916302787953"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone"
+                  style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
+            <li><a href="/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check"
+                  style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+          </ul>
+          <div style="margin-top:16px">
+            <a href="https://www.designrush.com/agency/profile/companies-builder" target="_blank" rel="noopener">
+              <img src="/assets/images/companies-builder-verified_agency.svg"
+                alt="Companies Builder DesignRush verified digital marketing agency"
+                style="max-width:100px;height:auto;filter:brightness(1.15)">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Companies Builder. All rights reserved.</span>
+        <span class="footer-badge">Hyderabad, India</span>
+        <span><a href="/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a
+            href="/sitemap.xml">Sitemap</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script>
+    // Navbar scroll
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Scroll reveal
+    (function () {
+      var items = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window) || !items.length) { items.forEach(function (el) { el.classList.add('is-visible') }); return }
+      var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target) } }) }, { threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el) });
+    })();
+
+    // Contact form
+    (function () {
+      var scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+      var form = document.getElementById('homeContactForm');
+      var success = document.getElementById('homeSuccess');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = document.getElementById('homeSubmitBtn');
+        btn.disabled = true; btn.textContent = 'Sending...';
+        var data = new FormData(form);
+        data.append('timestamp', new Date().toISOString());
+        data.append('source', 'Website Launch Checklist Page');
+        fetch(scriptURL, { method: 'POST', body: data })
+          .then(function (r) { return r.text() })
+          .then(function (text) {
+            if (text && text.trim() === 'Success') {
+              success.style.display = 'block'; form.reset();
+              if (window.gtag) { try { gtag('event', 'generate_lead', { event_category: 'Contact Form', event_label: 'Checklist Contact Form', value: 1 }) } catch (err) { } }
+              setTimeout(function () { success.style.display = 'none' }, 8000);
+            } else { alert('Something went wrong. Please try again or call us directly.') }
+            btn.disabled = false; btn.textContent = 'Request Free Audit \u2192';
+          })
+          .catch(function (err) {
+            console.error('Form error:', err);
+            alert('Error submitting form. Please try again.');
+            btn.disabled = false; btn.textContent = 'Request Free Audit \u2192';
+          });
+      });
+    })();
+
+    // CHECKLIST LOGIC
+    (function () {
+      'use strict';
+      var STORAGE_KEY = 'cb_launch_checklist_state';
+      var items = document.querySelectorAll('.checklist-item');
+      var checkboxes = document.querySelectorAll('.checklist-checkbox');
+      var progressFill = document.getElementById('progress-fill');
+      var progressText = document.getElementById('progress-text');
+      var printDateEl = document.getElementById('print-date');
+      var totalItems = checkboxes.length;
+
+      if (printDateEl) {
+        printDateEl.textContent = new Date().toLocaleDateString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        });
+      }
+
+      function loadState() {
+        try {
+          var saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) return JSON.parse(saved);
+        } catch (e) { }
+        return {};
+      }
+
+      function saveState(state) {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { }
+      }
+
+      function updateProgress() {
+        var checked = 0;
+        checkboxes.forEach(function (cb) { if (cb.checked) checked++; });
+        var percent = totalItems > 0 ? Math.round((checked / totalItems) * 100) : 0;
+        progressFill.style.width = percent + '%';
+        progressText.textContent = percent + '% \u00B7 ' + checked + '/' + totalItems + ' tasks';
+      }
+
+      function init() {
+        var state = loadState();
+        items.forEach(function (item) {
+          var id = item.getAttribute('data-id');
+          var checkbox = item.querySelector('.checklist-checkbox');
+          if (state[id]) {
+            checkbox.checked = true;
+            item.classList.add('is-checked');
+          }
+          checkbox.addEventListener('change', function () {
+            var currentState = loadState();
+            if (checkbox.checked) {
+              currentState[id] = true;
+              item.classList.add('is-checked');
+            } else {
+              delete currentState[id];
+              item.classList.remove('is-checked');
+            }
+            saveState(currentState);
+            updateProgress();
+          });
+        });
+        updateProgress();
+      }
+
+      window.resetAll = function () {
+        if (!confirm('Reset all progress? This will uncheck every item and clear your saved state.')) return;
+        checkboxes.forEach(function (cb) { cb.checked = false; });
+        items.forEach(function (item) { item.classList.remove('is-checked'); });
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) { }
+        updateProgress();
+      };
+
+      window.handlePrint = function () { window.print(); };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+  <!-- POPUP CONTACT FORM -->
+  <div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup-card">
+      <div class="popup-header">
+        <button class="popup-close" id="popupClose" aria-label="Close popup"><i class="bi bi-x-lg"></i></button>
+        <div class="popup-header-content">
+          <div class="popup-badge">
+            <span class="popup-badge-dot"></span>
+            <span>Free Consultation</span>
+          </div>
+          <h3 id="popupTitle">Get a Free Digital Growth Audit</h3>
+          <p>Tell us about your business and we will send you a personalized strategy within 24 hours.</p>
+        </div>
+      </div>
+      <div class="popup-body">
+        <form id="popupContactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="popupName" class="form-label">Your Name *</label>
+              <input id="popupName" name="your-name" class="form-control" autocomplete="name" placeholder="John Doe"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="popupPhone" class="form-label">Phone *</label>
+              <input id="popupPhone" type="tel" name="your-number" class="form-control" autocomplete="tel"
+                placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="popupEmail" class="form-label">Email *</label>
+            <input id="popupEmail" type="email" name="your-email" class="form-control" autocomplete="email"
+              placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="popupService" class="form-label">I need help with</label>
+            <select id="popupService" name="interest" class="form-control form-select">
+              <option value="Website Launch / Migration">Website Launch / Migration</option>
+              <option value="Web Development">Web Development</option>
+              <option value="SEO Services">SEO Services</option>
+              <option value="Social Media Marketing">Social Media Marketing</option>
+              <option value="Google Ads">Google Ads</option>
+              <option value="Full Digital Plan">Full Digital Plan</option>
+            </select>
+          </div>
+          <button type="submit" class="popup-submit" id="popupSubmitBtn">
+            <i class="bi bi-send" aria-hidden="true"></i> Get My Free Audit
+          </button>
+        </form>
+        <div id="popupSuccess" style="display:none" class="popup-success">
+          <div class="popup-success-icon"><i class="bi bi-check-lg"></i></div>
+          <h4>Thank you!</h4>
+          <p>We received your request and will contact you within 24 hours.</p>
+        </div>
+        <p class="popup-privacy"><i class="bi bi-shield-lock-fill"></i>Your data is safe. We never share your
+          information.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('popupOverlay');
+      var closeBtn = document.getElementById('popupClose');
+      var form = document.getElementById('popupContactForm');
+      var successEl = document.getElementById('popupSuccess');
+      var submitBtn = document.getElementById('popupSubmitBtn');
+      var scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+
+      function openPopup() {
+        overlay.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePopup() {
+        overlay.classList.remove('is-active');
+        document.body.style.overflow = '';
+        sessionStorage.setItem('cb_popup_closed', '1');
+      }
+
+      if (!sessionStorage.getItem('cb_popup_closed')) {
+        setTimeout(openPopup, 3000);
+      }
+
+      closeBtn.addEventListener('click', closePopup);
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closePopup();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-active')) closePopup();
+      });
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="bi bi-arrow-repeat" aria-hidden="true" style="animation:spin 1s linear infinite"></i> Sending...';
+
+          var data = new FormData(form);
+          data.append('timestamp', new Date().toISOString());
+          data.append('source', 'Popup Form - Launch Checklist');
+
+          fetch(scriptURL, { method: 'POST', body: data })
+            .then(function (r) { return r.text(); })
+            .then(function (text) {
+              if (text && text.trim() === 'Success') {
+                form.style.display = 'none';
+                successEl.style.display = 'block';
+                if (window.gtag) {
+                  try {
+                    gtag('event', 'generate_lead', {
+                      event_category: 'Contact Form',
+                      event_label: 'Popup Contact Form - Launch Checklist',
+                      value: 1
+                    });
+                  } catch (err) { }
+                }
+                setTimeout(closePopup, 4000);
+              } else {
+                alert('Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="bi bi-send" aria-hidden="true"></i> Get My Free Audit';
+              }
+            })
+            .catch(function (err) {
+              console.error('Popup form error:', err);
+              alert('Error submitting form. Please try again.');
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<i class="bi bi-send" aria-hidden="true"></i> Get My Free Audit';
+            });
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
