@@ -2206,52 +2206,53 @@
 <body>
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="main-nav" aria-label="Main navigation">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="https://companiesbuilder.com/">
-        <img src="/assets/images/CB-logo.png" alt="Companies Builder" height="34" class="me-2" loading="eager" />
-        <span class="fw-bold">Companies Builder</span>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Companies Builder home">
+        <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
+        <span>Companies Builder</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/about/">About</a></li>
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="https://companiesbuilder.com/services/" id="servicesDrop"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
-              <li><a class="dropdown-item"
-                  href="https://companiesbuilder.com/services/web-development-and-designing/">Web Development &amp;
-                  Designing</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO
-                  Services</a></li>
-              <li><a class="dropdown-item"
-                  href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media
-                  Marketing</a></li>
-              <li><a class="dropdown-item fw-bold"
-                  href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/" aria-current="page">B2B
-                  Digital Marketing</a></li>
+              <li><a class="dropdown-item" href="/services/web-development-and-designing/"><i
+                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/"><i
+                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/"><i
+                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="/services/b2b-digital-marketing-agency/"><i
+                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
               <li>
-                <hr class="dropdown-divider" />
+                <hr class="dropdown-divider my-1">
               </li>
-              <li><a class="dropdown-item fw-bold" href="https://companiesbuilder.com/services/">All Services</a></li>
+              <li><a class="dropdown-item fw-bold" href="/services/"><i class="bi bi-grid me-2 opacity-75"></i>All
+                  Services</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/blogs/">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/contact/">Contact</a></li>
-          <li class="nav-item ms-2">
-            <a class="nav-btn nav-pricing" href="https://companiesbuilder.com/pricing"
-              style="display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;height:34px;border-radius:6px;color:#fff;font-weight:600;text-decoration:none;border:0;background:linear-gradient(90deg,#ffd54f 0%,#ff9800 100%);box-shadow:0 6px 16px rgba(255,152,0,0.12);transition:transform .16s ease;">Pricing</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Resources</a>
+            <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
+              <li><a class="dropdown-item" href="/resources/checklists/"><i
+                    class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+            </ul>
           </li>
-          <li class="nav-item ms-2">
-            <a class="nav-btn nav-demo" href="https://companiesbuilder.com/demo/"
-              style="display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;height:34px;border-radius:6px;color:#fff;font-weight:600;text-decoration:none;border:0;background:linear-gradient(90deg,#0b8a69 0%,#38ef7d 100%);box-shadow:0 6px 16px rgba(56,239,125,0.12);transition:transform .16s ease;">Request
-              a Demo</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="/tools/seo-auditor/">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
@@ -2978,78 +2979,72 @@
     </div>
   </section>
   <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
+  <!-- FOOTER -->
+  <footer class="site-footer py-5">
     <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a href="https://companiesbuilder.com" class="footer__logo" aria-label="CompaniesBuilder">
-            <span class="footer__logo-icon">
-              <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="CompaniesBuilder logo" width="32"
-                height="32" loading="lazy" />
-            </span>
-            <span>Companies<span class="gradient-text">Builder</span></span>
+      <div class="row g-4 pb-4">
+        <div class="col-md-4 col-lg-3">
+          <a href="/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
+            <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36"
+              style="height:36px;width:auto;display:inline-block">
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies
+              Builder</span>
           </a>
-          <p class="footer__desc">CompaniesBuilder is a performance-driven B2B digital marketing agency specialising in
-            scalable lead generation strategies that fill your pipeline with high-quality, sales-ready prospects.</p>
-          <div class="footer__socials">
-            <a href="https://www.linkedin.com/company/companiesbuilder" class="footer__social-link"
-              aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://twitter.com/companiesbuilder" class="footer__social-link" aria-label="Twitter/X"
-              target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.facebook.com/companiesbuilder" class="footer__social-link" aria-label="Facebook"
-              target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/companiesbuilder" class="footer__social-link" aria-label="Instagram"
-              target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving
+            startups and SMBs across India.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Twitter / X"><i
+                class="bi bi-twitter-x"></i></a>
           </div>
         </div>
-        <div class="footer__col">
-          <div
-            style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 700; color: var(--clr-white); margin-bottom: 20px;">
-            Services</div>
-          <nav class="footer__links" aria-label="Services">
-            <a href="https://companiesbuilder.com/services/web-development-and-designing/">Web Development and
-              Designing</a>
-            <a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO Services</a>
-            <a href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media
-              Marketing</a>
-            <a href="https://companiesbuilder.com/services/">View All Services</a>
-          </nav>
+        <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/resources/checklists/">Checklists</a></li>
+            <li><a href="/tools/seo-auditor/" aria-current="page">SEO Auditor</a></li>
+            <li><a href="/blogs/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
         </div>
-        <div class="footer__col">
-          <div
-            style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 700; color: var(--clr-white); margin-bottom: 20px;">
-            Company</div>
-          <nav class="footer__links" aria-label="Company">
-            <a href="https://companiesbuilder.com/about/">About Us</a>
-            <a href="https://companiesbuilder.com/blogs/">Blogs & Insights</a>
-            <a href="https://companiesbuilder.com/pricing">Pricing</a>
-            <a href="https://companiesbuilder.com/demo/">Request a Demo</a>
-            <a href="https://companiesbuilder.com/contact/">Contact</a>
-          </nav>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h3>Services</h3>
+          <ul class="list-unstyled">
+            <li><a href="/services/web-development-and-designing/">Web Development &amp; Design</a></li>
+            <li><a href="/services/seo-services-in-hyderabad/">SEO Services in Hyderabad</a></li>
+            <li><a href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+            <li><a href="/services/b2b-digital-marketing-agency/">B2B Digital Marketing</a></li>
+            <li><a href="/demo/">Request a Demo</a></li>
+          </ul>
         </div>
-        <div class="footer__col">
-          <div
-            style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 700; color: var(--clr-white); margin-bottom: 20px;">
-            Contact</div>
-          <div class="footer__links">
-            <a href="mailto:info@companiesbuilder.com"><i class="fa-solid fa-envelope"
-                style="margin-right:8px;color:var(--clr-blue);" aria-hidden="true"></i>info@companiesbuilder.com</a>
-            <a href="tel:+916302787953"><i class="fa-solid fa-phone" style="margin-right:8px;color:var(--clr-blue);"
-                aria-hidden="true"></i>+91 63027 87953</a>
-            <a href="https://companiesbuilder.com/contact/"><i class="fa-solid fa-calendar"
-                style="margin-right:8px;color:var(--clr-blue);" aria-hidden="true"></i>Book a Strategy Call</a>
-            <a href="https://companiesbuilder.com"><i class="fa-solid fa-globe"
-                style="margin-right:8px;color:var(--clr-blue);" aria-hidden="true"></i>companiesbuilder.com</a>
-          </div>
+        <div class="col-md-3 col-lg-3">
+          <h3>Get in Touch</h3>
+          <ul class="list-unstyled">
+            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope"
+                  style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
+            <li style="margin-bottom:10px"><a href="tel:+916302787953"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone"
+                  style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
+            <li><a href="/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check"
+                  style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 CompaniesBuilder. All rights reserved. B2B Digital Marketing Agency</p>
-        <div class="footer__bottom-links">
-          <a href="https://companiesbuilder.com/privacy/">Privacy Policy</a>
-          <a href="https://companiesbuilder.com/terms/">Terms of Service</a>
-          <a href="https://companiesbuilder.com/sitemap.xml">Sitemap</a>
-        </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Companies Builder. All rights reserved.</span>
+        <span class="footer-badge">Hyderabad, India</span>
+        <span><a href="/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a
+            href="/sitemap.xml">Sitemap</a></span>
       </div>
     </div>
   </footer>
