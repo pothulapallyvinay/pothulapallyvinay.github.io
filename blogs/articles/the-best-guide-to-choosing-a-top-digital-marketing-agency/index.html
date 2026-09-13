@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -558,6 +558,295 @@
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243796428.js"></script>
   <!-- End of HubSpot Embed Code -->
+<!-- SHARED HEADER FOOTER OVERRIDE -->  <style>
+    :root {
+      --navy-950: #060910;
+      --navy-900: #0e1424;
+      --navy-800: #161d33;
+      --navy-700: #212a48;
+      --ink: #eef0f9;
+      --ink-dim: #9aa3be;
+      --paper: #f4f5fb;
+      --paper-card: #fff;
+      --ink-on-paper: #141826;
+      --muted-on-paper: #5b6478;
+      --violet: #6c63ff;
+      --violet-light: #8b83ff;
+      --blue: #3d8bff;
+      --blue-light: #60a5fa;
+      --amber: #ffb020;
+      --green: #22d3a0;
+      --pink: #f471b5;
+      --red: #ff4b4b;
+      --line-dark: rgba(255, 255, 255, .08);
+      --line-light: rgba(15, 20, 40, .07);
+      --grad-brand: linear-gradient(135deg, #6c63ff, #3d8bff);
+      --grad-amber: linear-gradient(135deg, #ffcf5c, #ffb020);
+      --font-display: 'Space Grotesk', Arial, sans-serif;
+      --font-body: 'Inter', Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 20px;
+      --radius-btn: 10px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .08);
+      --shadow-dark: 0 24px 80px rgba(0, 0, 0, .4);
+      --ease: .28s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    body {
+      font-family: var(--font-body) !important;
+      color: var(--ink-on-paper) !important;
+      background: var(--paper) !important;
+    }
+
+    nav.navbar,
+    .navbar {
+      background: rgba(6, 9, 16, .78) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid var(--line-dark) !important;
+      transition: background var(--ease), box-shadow var(--ease) !important;
+      padding: 12px 0 !important;
+      box-shadow: none !important;
+    }
+
+    .navbar.is-scrolled,
+    nav.navbar.is-scrolled {
+      background: rgba(6, 9, 16, .95) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .4) !important;
+    }
+
+    .navbar-brand,
+    a.navbar-brand {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+    }
+
+    .navbar-brand img,
+    a.navbar-brand img {
+      height: 36px !important;
+      width: auto !important;
+      display: inline-block !important;
+    }
+
+    .navbar-brand span,
+    a.navbar-brand span {
+      font-family: var(--font-display) !important;
+      font-weight: 700 !important;
+      font-size: 1.05rem !important;
+      color: #fff !important;
+      letter-spacing: -.02em !important;
+    }
+
+    .navbar .nav-link,
+    .nav-link {
+      color: rgba(255, 255, 255, .78) !important;
+      font-weight: 500 !important;
+      font-size: .92rem !important;
+      padding: 6px 14px !important;
+      position: relative !important;
+      transition: color var(--ease) !important;
+    }
+
+    .navbar .nav-link::after,
+    .nav-link::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 14px !important;
+      right: 14px !important;
+      bottom: 2px !important;
+      height: 2px !important;
+      background: var(--grad-brand) !important;
+      transform: scaleX(0) !important;
+      transform-origin: left !important;
+      transition: transform var(--ease) !important;
+      border-radius: 2px !important;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus,
+    .navbar .nav-link.active,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active {
+      color: #fff !important;
+    }
+
+    .navbar .nav-link:hover::after,
+    .navbar .nav-link:focus::after,
+    .navbar .nav-link.active::after,
+    .nav-link:hover::after,
+    .nav-link:focus::after,
+    .nav-link.active::after {
+      transform: scaleX(1) !important;
+    }
+
+    .navbar .dropdown-menu,
+    .dropdown-menu {
+      background: #0e1424 !important;
+      border: 1px solid var(--line-dark) !important;
+      border-radius: 12px !important;
+      padding: 8px !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .5) !important;
+      min-width: 220px !important;
+    }
+
+    .navbar .dropdown-item,
+    .dropdown-item {
+      color: var(--ink-dim) !important;
+      border-radius: 8px !important;
+      padding: 10px 14px !important;
+      font-size: .9rem !important;
+      transition: background var(--ease), color var(--ease) !important;
+    }
+
+    .navbar .dropdown-item:hover,
+    .navbar .dropdown-item:focus,
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      color: #fff !important;
+      background: rgba(108, 99, 255, .15) !important;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu,
+      nav.navbar .dropdown:hover > .dropdown-menu {
+        display: block !important;
+        margin-top: 0 !important;
+      }
+    }
+
+    .nav-btn,
+    .navbar .nav-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 8px 16px !important;
+      height: 38px !important;
+      border-radius: var(--radius-btn) !important;
+      font-weight: 700 !important;
+      font-size: .875rem !important;
+      text-decoration: none !important;
+      border: 0 !important;
+      transition: transform .16s ease, box-shadow .16s ease !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+    }
+
+    .nav-pricing,
+    .navbar .nav-pricing {
+      background: var(--grad-amber) !important;
+      color: #0e1424 !important;
+      box-shadow: 0 6px 20px rgba(255, 176, 32, .3) !important;
+    }
+
+    .nav-demo,
+    .navbar .nav-demo {
+      background: var(--grad-brand) !important;
+      color: #fff !important;
+      box-shadow: 0 6px 20px rgba(108, 99, 255, .35) !important;
+    }
+
+    .nav-btn:hover,
+    .nav-btn:focus,
+    .navbar .nav-btn:hover,
+    .navbar .nav-btn:focus {
+      transform: translateY(-2px) !important;
+    }
+
+    footer.site-footer,
+    .site-footer {
+      background: #0b1220 !important;
+      border-top: 1px solid rgba(255,255,255,.08) !important;
+      color: rgba(255,255,255,.82) !important;
+      padding-top: 3rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    .site-footer h3,
+    footer.site-footer h3 {
+      color: #fff !important;
+      font-size: 1rem !important;
+      margin-bottom: 1rem !important;
+      font-weight: 700 !important;
+      font-family: var(--font-display) !important;
+    }
+
+    .site-footer ul li,
+    footer.site-footer ul li {
+      margin-bottom: 0.7rem !important;
+      list-style: none !important;
+    }
+
+    .site-footer a,
+    footer.site-footer a {
+      color: rgba(255,255,255,.72) !important;
+      text-decoration: none !important;
+      transition: color var(--ease) !important;
+    }
+
+    .site-footer a:hover,
+    .site-footer a:focus,
+    footer.site-footer a:hover,
+    footer.site-footer a:focus {
+      color: #fff !important;
+      text-decoration: none !important;
+    }
+
+    .footer-brand-desc,
+    .site-footer .footer-brand-desc {
+      color: rgba(255,255,255,.72) !important;
+      line-height: 1.7 !important;
+      margin-bottom: 1.2rem !important;
+    }
+
+    .footer-social,
+    .site-footer .footer-social {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .footer-social a,
+    .site-footer .footer-social a {
+      width: 38px !important;
+      height: 38px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      background: rgba(255,255,255,.06) !important;
+      border: 1px solid rgba(255,255,255,.08) !important;
+      color: #fff !important;
+    }
+
+    .footer-bottom,
+    .site-footer .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08) !important;
+      padding-top: 1rem !important;
+      margin-top: 1.2rem !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+      color: rgba(255,255,255,.7) !important;
+      font-size: .9rem !important;
+    }
+
+    .footer-badge,
+    .site-footer .footer-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      border-radius: 999px !important;
+      padding: 6px 12px !important;
+      background: rgba(108, 99, 255, .12) !important;
+      color: #fff !important;
+      border: 1px solid rgba(108, 99, 255, .25) !important;
+    }
+  </style>
 </head>
 <body>
   <div class="progress-bar-fixed" id="readProgress"></div>
@@ -1034,3 +1323,4 @@
   </script>
 </body>
 </html>
+

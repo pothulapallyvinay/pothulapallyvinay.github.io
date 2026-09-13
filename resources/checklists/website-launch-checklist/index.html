@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-IN">
 
 <head>
@@ -60,7 +60,7 @@
 
   <!-- JSON-LD: FAQPage -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far in advance should I start this checklist before my launch date?","acceptedAnswer":{"@type":"Answer","text":"Begin the Architecture and Technical SEO phase (Phase 1) at least 14 business days before the target launch. Phases 2 and 3 run concurrently and need 7–10 days. Security and compliance (Phase 4) should be locked 5 days out to allow certificate propagation and header testing. Analytics verification (Phase 5) requires 48–72 hours of live data collection after deployment to confirm data integrity."}},{"@type":"Question","name":"What is the single most damaging mistake teams make at launch?","acceptedAnswer":{"@type":"Answer","text":"Failing to implement a complete 301 redirect map from the old URL structure to the new one. Every indexed URL that returns a 404 instead of a 301 bleeds accumulated PageRank, drops existing keyword rankings, and generates soft-404 errors in Search Console. For sites with 500+ indexed pages, this can result in a 30–60% organic traffic loss within the first two weeks post-launch."}},{"@type":"Question","name":"Do I need to re-submit my sitemap after launch?","acceptedAnswer":{"@type":"Answer","text":"Yes. Even if your sitemap URL hasn't changed, resubmit it in both Google Search Console and Bing Webmaster Tools immediately after launch. This signals to crawlers that the site structure has been updated and accelerates re-indexing. Additionally, use the URL Inspection tool in Search Console to request indexing for your highest-priority landing pages manually."}},{"@type":"Question","name":"How do I verify my Core Web Vitals won't fail after launch?","acceptedAnswer":{"@type":"Answer","text":"Run Lighthouse CI in your deployment pipeline against the production build (not localhost) to catch regressions before they reach users. After launch, monitor the Core Web Vitals report in Search Console. In the interim, use PageSpeed Insights (lab data) and web-vitals.js (real-user monitoring piped to GA4 or a custom endpoint) to get immediate signal. Target LCP under 2.5s, CLS under 0.1, and INP under 200ms at the 75th percentile."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far in advance should I start this checklist before my launch date?","acceptedAnswer":{"@type":"Answer","text":"Begin the Architecture and Technical SEO phase (Phase 1) at least 14 business days before the target launch. Phases 2 and 3 run concurrently and need 7â€“10 days. Security and compliance (Phase 4) should be locked 5 days out to allow certificate propagation and header testing. Analytics verification (Phase 5) requires 48â€“72 hours of live data collection after deployment to confirm data integrity."}},{"@type":"Question","name":"What is the single most damaging mistake teams make at launch?","acceptedAnswer":{"@type":"Answer","text":"Failing to implement a complete 301 redirect map from the old URL structure to the new one. Every indexed URL that returns a 404 instead of a 301 bleeds accumulated PageRank, drops existing keyword rankings, and generates soft-404 errors in Search Console. For sites with 500+ indexed pages, this can result in a 30â€“60% organic traffic loss within the first two weeks post-launch."}},{"@type":"Question","name":"Do I need to re-submit my sitemap after launch?","acceptedAnswer":{"@type":"Answer","text":"Yes. Even if your sitemap URL hasn't changed, resubmit it in both Google Search Console and Bing Webmaster Tools immediately after launch. This signals to crawlers that the site structure has been updated and accelerates re-indexing. Additionally, use the URL Inspection tool in Search Console to request indexing for your highest-priority landing pages manually."}},{"@type":"Question","name":"How do I verify my Core Web Vitals won't fail after launch?","acceptedAnswer":{"@type":"Answer","text":"Run Lighthouse CI in your deployment pipeline against the production build (not localhost) to catch regressions before they reach users. After launch, monitor the Core Web Vitals report in Search Console. In the interim, use PageSpeed Insights (lab data) and web-vitals.js (real-user monitoring piped to GA4 or a custom endpoint) to get immediate signal. Target LCP under 2.5s, CLS under 0.1, and INP under 200ms at the 75th percentile."}}]}
   </script>
 
   <style>
@@ -1303,6 +1303,295 @@
       }
     }
   </style>
+<!-- SHARED HEADER FOOTER OVERRIDE -->  <style>
+    :root {
+      --navy-950: #060910;
+      --navy-900: #0e1424;
+      --navy-800: #161d33;
+      --navy-700: #212a48;
+      --ink: #eef0f9;
+      --ink-dim: #9aa3be;
+      --paper: #f4f5fb;
+      --paper-card: #fff;
+      --ink-on-paper: #141826;
+      --muted-on-paper: #5b6478;
+      --violet: #6c63ff;
+      --violet-light: #8b83ff;
+      --blue: #3d8bff;
+      --blue-light: #60a5fa;
+      --amber: #ffb020;
+      --green: #22d3a0;
+      --pink: #f471b5;
+      --red: #ff4b4b;
+      --line-dark: rgba(255, 255, 255, .08);
+      --line-light: rgba(15, 20, 40, .07);
+      --grad-brand: linear-gradient(135deg, #6c63ff, #3d8bff);
+      --grad-amber: linear-gradient(135deg, #ffcf5c, #ffb020);
+      --font-display: 'Space Grotesk', Arial, sans-serif;
+      --font-body: 'Inter', Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 20px;
+      --radius-btn: 10px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .08);
+      --shadow-dark: 0 24px 80px rgba(0, 0, 0, .4);
+      --ease: .28s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    body {
+      font-family: var(--font-body) !important;
+      color: var(--ink-on-paper) !important;
+      background: var(--paper) !important;
+    }
+
+    nav.navbar,
+    .navbar {
+      background: rgba(6, 9, 16, .78) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid var(--line-dark) !important;
+      transition: background var(--ease), box-shadow var(--ease) !important;
+      padding: 12px 0 !important;
+      box-shadow: none !important;
+    }
+
+    .navbar.is-scrolled,
+    nav.navbar.is-scrolled {
+      background: rgba(6, 9, 16, .95) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .4) !important;
+    }
+
+    .navbar-brand,
+    a.navbar-brand {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+    }
+
+    .navbar-brand img,
+    a.navbar-brand img {
+      height: 36px !important;
+      width: auto !important;
+      display: inline-block !important;
+    }
+
+    .navbar-brand span,
+    a.navbar-brand span {
+      font-family: var(--font-display) !important;
+      font-weight: 700 !important;
+      font-size: 1.05rem !important;
+      color: #fff !important;
+      letter-spacing: -.02em !important;
+    }
+
+    .navbar .nav-link,
+    .nav-link {
+      color: rgba(255, 255, 255, .78) !important;
+      font-weight: 500 !important;
+      font-size: .92rem !important;
+      padding: 6px 14px !important;
+      position: relative !important;
+      transition: color var(--ease) !important;
+    }
+
+    .navbar .nav-link::after,
+    .nav-link::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 14px !important;
+      right: 14px !important;
+      bottom: 2px !important;
+      height: 2px !important;
+      background: var(--grad-brand) !important;
+      transform: scaleX(0) !important;
+      transform-origin: left !important;
+      transition: transform var(--ease) !important;
+      border-radius: 2px !important;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus,
+    .navbar .nav-link.active,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active {
+      color: #fff !important;
+    }
+
+    .navbar .nav-link:hover::after,
+    .navbar .nav-link:focus::after,
+    .navbar .nav-link.active::after,
+    .nav-link:hover::after,
+    .nav-link:focus::after,
+    .nav-link.active::after {
+      transform: scaleX(1) !important;
+    }
+
+    .navbar .dropdown-menu,
+    .dropdown-menu {
+      background: #0e1424 !important;
+      border: 1px solid var(--line-dark) !important;
+      border-radius: 12px !important;
+      padding: 8px !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .5) !important;
+      min-width: 220px !important;
+    }
+
+    .navbar .dropdown-item,
+    .dropdown-item {
+      color: var(--ink-dim) !important;
+      border-radius: 8px !important;
+      padding: 10px 14px !important;
+      font-size: .9rem !important;
+      transition: background var(--ease), color var(--ease) !important;
+    }
+
+    .navbar .dropdown-item:hover,
+    .navbar .dropdown-item:focus,
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      color: #fff !important;
+      background: rgba(108, 99, 255, .15) !important;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu,
+      nav.navbar .dropdown:hover > .dropdown-menu {
+        display: block !important;
+        margin-top: 0 !important;
+      }
+    }
+
+    .nav-btn,
+    .navbar .nav-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 8px 16px !important;
+      height: 38px !important;
+      border-radius: var(--radius-btn) !important;
+      font-weight: 700 !important;
+      font-size: .875rem !important;
+      text-decoration: none !important;
+      border: 0 !important;
+      transition: transform .16s ease, box-shadow .16s ease !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+    }
+
+    .nav-pricing,
+    .navbar .nav-pricing {
+      background: var(--grad-amber) !important;
+      color: #0e1424 !important;
+      box-shadow: 0 6px 20px rgba(255, 176, 32, .3) !important;
+    }
+
+    .nav-demo,
+    .navbar .nav-demo {
+      background: var(--grad-brand) !important;
+      color: #fff !important;
+      box-shadow: 0 6px 20px rgba(108, 99, 255, .35) !important;
+    }
+
+    .nav-btn:hover,
+    .nav-btn:focus,
+    .navbar .nav-btn:hover,
+    .navbar .nav-btn:focus {
+      transform: translateY(-2px) !important;
+    }
+
+    footer.site-footer,
+    .site-footer {
+      background: #0b1220 !important;
+      border-top: 1px solid rgba(255,255,255,.08) !important;
+      color: rgba(255,255,255,.82) !important;
+      padding-top: 3rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    .site-footer h3,
+    footer.site-footer h3 {
+      color: #fff !important;
+      font-size: 1rem !important;
+      margin-bottom: 1rem !important;
+      font-weight: 700 !important;
+      font-family: var(--font-display) !important;
+    }
+
+    .site-footer ul li,
+    footer.site-footer ul li {
+      margin-bottom: 0.7rem !important;
+      list-style: none !important;
+    }
+
+    .site-footer a,
+    footer.site-footer a {
+      color: rgba(255,255,255,.72) !important;
+      text-decoration: none !important;
+      transition: color var(--ease) !important;
+    }
+
+    .site-footer a:hover,
+    .site-footer a:focus,
+    footer.site-footer a:hover,
+    footer.site-footer a:focus {
+      color: #fff !important;
+      text-decoration: none !important;
+    }
+
+    .footer-brand-desc,
+    .site-footer .footer-brand-desc {
+      color: rgba(255,255,255,.72) !important;
+      line-height: 1.7 !important;
+      margin-bottom: 1.2rem !important;
+    }
+
+    .footer-social,
+    .site-footer .footer-social {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .footer-social a,
+    .site-footer .footer-social a {
+      width: 38px !important;
+      height: 38px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      background: rgba(255,255,255,.06) !important;
+      border: 1px solid rgba(255,255,255,.08) !important;
+      color: #fff !important;
+    }
+
+    .footer-bottom,
+    .site-footer .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08) !important;
+      padding-top: 1rem !important;
+      margin-top: 1.2rem !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+      color: rgba(255,255,255,.7) !important;
+      font-size: .9rem !important;
+    }
+
+    .footer-badge,
+    .site-footer .footer-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      border-radius: 999px !important;
+      padding: 6px 12px !important;
+      background: rgba(108, 99, 255, .12) !important;
+      color: #fff !important;
+      border: 1px solid rgba(108, 99, 255, .25) !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -1449,7 +1738,7 @@
               <span class="item-label">Execute a complete 301 redirect map from old URLs to new URLs</span>
               <p class="item-detail">Crawl the existing production site to extract every indexed URL. Map each to its
                 new destination. Handle edge cases: query strings (<code>/page?ref=abc</code>), trailing slashes, and
-                HTTP→HTTPS protocol upgrades. Test every redirect with <code>curl -I -L oldurl</code> and confirm a
+                HTTPâ†’HTTPS protocol upgrades. Test every redirect with <code>curl -I -L oldurl</code> and confirm a
                 single 301 hop - no chains. <strong>Consequence:</strong> Unmapped URLs return 404s, instantly
                 evaporating accumulated ranking authority. Redirect chains bleed ~15% PageRank per hop.</p>
             </div>
@@ -1501,10 +1790,10 @@
             <div>
               <span class="item-label">Implement Open Graph and Twitter Card meta tags on every page</span>
               <p class="item-detail">Add <code>og:title</code>, <code>og:description</code>, <code>og:image</code>
-                (1200×630px minimum), <code>og:url</code>, and <code>og:type</code> tags. Set <code>twitter:card</code>
+                (1200Ã—630px minimum), <code>og:url</code>, and <code>og:type</code> tags. Set <code>twitter:card</code>
                 to <code>summary_large_image</code>. Validate with Facebook's Sharing Debugger and Twitter's Card
                 Validator. <strong>Consequence:</strong> Missing OG tags produce ugly, text-only link previews -
-                reducing click-through rates on shared links by 30–50% compared to rich image cards.</p>
+                reducing click-through rates on shared links by 30â€“50% compared to rich image cards.</p>
             </div>
           </label>
 
@@ -1582,11 +1871,11 @@
           <label class="checklist-item" data-id="2-2">
             <input type="checkbox" class="checklist-checkbox" aria-label="Meta description audit" />
             <div>
-              <span class="item-label">Write unique meta descriptions within 150–160 characters per page</span>
+              <span class="item-label">Write unique meta descriptions within 150â€“160 characters per page</span>
               <p class="item-detail">Write action-oriented meta descriptions for every indexable page. Include a value
                 proposition and a soft call-to-action. Avoid duplicating descriptions across pages.
                 <strong>Consequence:</strong> Missing meta descriptions let Google auto-generate snippets - often
-                irrelevant previews that suppress CTR by 20–30%.
+                irrelevant previews that suppress CTR by 20â€“30%.
               </p>
             </div>
           </label>
@@ -1624,7 +1913,7 @@
                 <code>&lt;picture&gt;</code> elements. Define responsive <code>srcset</code> and <code>sizes</code>. Set
                 explicit <code>width</code> and <code>height</code> on every <code>&lt;img&gt;</code>. Add descriptive
                 <code>alt</code> text. Lazy-load below-fold images with <code>loading="lazy"</code>.
-                <strong>Consequence:</strong> Missing dimensions cause CLS failures. Legacy formats are 25–50% larger
+                <strong>Consequence:</strong> Missing dimensions cause CLS failures. Legacy formats are 25â€“50% larger
                 than AVIF/WebP, inflating LCP times.
               </p>
             </div>
@@ -1659,8 +1948,8 @@
             <input type="checkbox" class="checklist-checkbox" aria-label="Favicon and app icons" />
             <div>
               <span class="item-label">Deploy complete favicon set and web app manifest</span>
-              <p class="item-detail">Generate <code>favicon.ico</code> (32×32), <code>apple-touch-icon.png</code>
-                (180×180), and Android/Windows tile PNGs. Create a <code>site.webmanifest</code> with <code>name</code>,
+              <p class="item-detail">Generate <code>favicon.ico</code> (32Ã—32), <code>apple-touch-icon.png</code>
+                (180Ã—180), and Android/Windows tile PNGs. Create a <code>site.webmanifest</code> with <code>name</code>,
                 <code>theme_color</code>, and icon references. <strong>Consequence:</strong> Missing favicons make your
                 site look unfinished in browser tabs, bookmarks, and mobile home screen shortcuts.
               </p>
@@ -1685,7 +1974,7 @@
               <p class="item-detail">Test on Chrome, Firefox, Safari, and Edge (latest two versions). Validate on
                 physical iOS Safari and Android Chrome. Confirm responsive breakpoints at 375px, 768px, 1024px, 1280px,
                 and 1536px. <strong>Consequence:</strong> Safari and Firefox render CSS grid/flexbox differently.
-                Untested layouts break for 15–30% of traffic, increasing bounce rates.</p>
+                Untested layouts break for 15â€“30% of traffic, increasing bounce rates.</p>
             </div>
           </label>
         </div>
@@ -1745,7 +2034,7 @@
               <p class="item-detail">Configure text-based assets with Brotli (<code>Content-Encoding: br</code>) as
                 primary and Gzip as fallback. Verify with
                 <code>curl -H "Accept-Encoding: br" -I https://domain.com</code>. <strong>Consequence:</strong> Brotli
-                achieves 15–25% better compression than Gzip. Uncompressed transfers are 3–5× larger, inflating TTFB and
+                achieves 15â€“25% better compression than Gzip. Uncompressed transfers are 3â€“5Ã— larger, inflating TTFB and
                 LCP.
               </p>
             </div>
@@ -1758,7 +2047,7 @@
               <p class="item-detail">Test with <code>curl --http2 -I https://domain.com</code> or the Chrome DevTools
                 Network Protocol column. If behind a CDN, verify HTTP/3 is enabled. <strong>Consequence:</strong>
                 HTTP/1.1 limits concurrent connections to ~6 per domain. HTTP/2 multiplexing reduces load times by
-                20–40% for asset-heavy pages.</p>
+                20â€“40% for asset-heavy pages.</p>
             </div>
           </label>
 
@@ -1781,7 +2070,7 @@
               <p class="item-detail">Run production builds with minification and tree-shaking enabled. Verify no unused
                 CSS ships to production. Confirm no dev-mode libraries ship (React warnings, source maps). Check bundle
                 sizes with <code>webpack-bundle-analyzer</code>. <strong>Consequence:</strong> Unminified bundles are
-                30–60% larger, degrading INP and TBT scores.</p>
+                30â€“60% larger, degrading INP and TBT scores.</p>
             </div>
           </label>
 
@@ -1792,7 +2081,7 @@
               <p class="item-detail">Inventory every third-party script. Load non-critical scripts with
                 <code>defer</code> or <code>async</code>, or load dynamically after <code>DOMContentLoaded</code>. Use
                 Chrome's "Third-party badges" and <code>performance.getEntriesByType('resource')</code>.
-                <strong>Consequence:</strong> A single synchronous third-party script can block rendering for 2–5
+                <strong>Consequence:</strong> A single synchronous third-party script can block rendering for 2â€“5
                 seconds. Third-party scripts are the #1 cause of INP failures.
               </p>
             </div>
@@ -1804,7 +2093,7 @@
               <span class="item-label">Configure CDN edge caching and origin shield</span>
               <p class="item-detail">Deploy static assets through a CDN with edge locations near your audience. Verify
                 assets are served from edge nodes (check <code>X-Cache: HIT</code> or <code>cf-cache-status</code>
-                headers). Set up cache purge in CI/CD. <strong>Consequence:</strong> Serving from origin adds 50–300ms
+                headers). Set up cache purge in CI/CD. <strong>Consequence:</strong> Serving from origin adds 50â€“300ms
                 of latency for distant users. CDN cache misses during launch can overload the origin.</p>
             </div>
           </label>
@@ -1816,8 +2105,8 @@
               <p class="item-detail">Add <code>&lt;link rel="preconnect"&gt;</code> for critical third-party origins.
                 Use <code>&lt;link rel="preload"&gt;</code> for hero images and critical fonts. Apply
                 <code>&lt;link rel="prefetch"&gt;</code> for next-page resources. Avoid over-preloading.
-                <strong>Consequence:</strong> DNS+TCP+TLS to a new origin takes 100–300ms. Preconnect eliminates this.
-                Missing preloads for LCP assets add 200–500ms to LCP times.
+                <strong>Consequence:</strong> DNS+TCP+TLS to a new origin takes 100â€“300ms. Preconnect eliminates this.
+                Missing preloads for LCP assets add 200â€“500ms to LCP times.
               </p>
             </div>
           </label>
@@ -1875,7 +2164,7 @@
               <span class="item-label">Implement cookie consent mechanism and publish legal pages</span>
               <p class="item-detail">Deploy a consent banner that blocks non-essential cookies until consent is granted.
                 Publish Privacy Policy, Terms of Service, and Cookie Policy in the footer. For CCPA, include a "Do Not
-                Sell" link. Verify no tracking fires before consent. <strong>Consequence:</strong> GDPR fines up to €20M
+                Sell" link. Verify no tracking fires before consent. <strong>Consequence:</strong> GDPR fines up to â‚¬20M
                 or 4% of annual turnover. CCPA violations carry $7,500 per intentional violation.</p>
             </div>
           </label>
@@ -1921,8 +2210,8 @@
             <input type="checkbox" class="checklist-checkbox" aria-label="DNS TTL" />
             <div>
               <span class="item-label">Lower DNS TTL before launch and verify propagation plan</span>
-              <p class="item-detail">48 hours before launch, lower TTL to 300 seconds. After stable (24–48h
-                post-launch), raise to 3600–86400. Verify with <code>dig +short domain.com</code> and whatsmydns.net.
+              <p class="item-detail">48 hours before launch, lower TTL to 300 seconds. After stable (24â€“48h
+                post-launch), raise to 3600â€“86400. Verify with <code>dig +short domain.com</code> and whatsmydns.net.
                 <strong>Consequence:</strong> High TTL during cutover means some users see the old site for up to 24
                 hours. Rollback is delayed by the same duration.
               </p>
@@ -2018,7 +2307,7 @@
               <p class="item-detail">Deploy pixels through GTM (not hardcoded). Configure conversion events. Verify with
                 Meta Pixel Helper, LinkedIn Insight Tag checker, and Google Tag Assistant. Ensure pixels respect cookie
                 consent. <strong>Consequence:</strong> Missing pixels mean paid campaigns cannot optimize for
-                conversions - costing 3–5× more per conversion.</p>
+                conversions - costing 3â€“5Ã— more per conversion.</p>
             </div>
           </label>
 
@@ -2062,8 +2351,8 @@
             <input type="checkbox" class="checklist-checkbox" aria-label="Funnel explorations" />
             <div>
               <span class="item-label">Define GA4 funnel explorations for critical user journeys</span>
-              <p class="item-detail">Build funnel explorations for each conversion path (e.g., Homepage → Service Page →
-                Contact → Thank You). Define steps using page_view events or custom events. Create comparison segments
+              <p class="item-detail">Build funnel explorations for each conversion path (e.g., Homepage â†’ Service Page â†’
+                Contact â†’ Thank You). Define steps using page_view events or custom events. Create comparison segments
                 (mobile vs. desktop, organic vs. paid). <strong>Consequence:</strong> Without funnels configured before
                 launch, you cannot identify where users drop off - diagnosing issues requires weeks of retroactive
                 analysis.</p>
@@ -2095,9 +2384,9 @@
             <summary>How far in advance should I start this checklist before my launch date?<span class="faq-icon"
                 aria-hidden="true"></span></summary>
             <div class="faq-answer">Begin the Architecture and Technical SEO phase (Phase 1) at least 14 business days
-              before the target launch. Phases 2 and 3 run concurrently and need 7–10 days. Security and compliance
+              before the target launch. Phases 2 and 3 run concurrently and need 7â€“10 days. Security and compliance
               (Phase 4) should be locked 5 days out to allow certificate propagation and header testing. Analytics
-              verification (Phase 5) requires 48–72 hours of live data collection after deployment to confirm data
+              verification (Phase 5) requires 48â€“72 hours of live data collection after deployment to confirm data
               integrity. Compressing this timeline increases the probability of shipping broken redirects, missing
               tracking, or failing Core Web Vitals in the 28-day CrUX assessment window.</div>
           </details>
@@ -2108,7 +2397,7 @@
             <div class="faq-answer">Failing to implement a complete 301 redirect map from the old URL structure to the
               new one. Every indexed URL that returns a 404 instead of a 301 bleeds accumulated PageRank, drops existing
               keyword rankings, and generates soft-404 errors in Search Console. For sites with 500+ indexed pages, this
-              can result in a 30–60% organic traffic loss within the first two weeks post-launch. Always crawl the
+              can result in a 30â€“60% organic traffic loss within the first two weeks post-launch. Always crawl the
               production site with Screaming Frog or Sitebulb before DNS cutover and map every legacy URL.</div>
           </details>
 
@@ -2561,3 +2850,4 @@
 </body>
 
 </html>
+
