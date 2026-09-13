@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -476,7 +476,74 @@
       border: 1px solid rgba(108, 99, 255, .25) !important;
     }
   </style>
-</head>
+  <style>
+    .theme-toggle-btn {
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+      box-shadow: 0 0 0 0 rgba(108,99,255,.25);
+    }
+    .theme-toggle-btn:hover,
+    .theme-toggle-btn:focus {
+      background: rgba(255,255,255,.12);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(108,99,255,.2);
+      outline: none;
+    }
+    .theme-toggle-btn i {
+      font-size: 1rem;
+      line-height: 1;
+    }
+    html[data-theme="dark"] {
+      --page-bg: #0b1220;
+      --page-surface: #101a2a;
+      --page-text: #edf2fe;
+      --page-muted: #b7c1d9;
+      --page-border: rgba(255,255,255,.08);
+    }
+    html[data-theme="dark"] body {
+      background: var(--page-bg) !important;
+      color: var(--page-text) !important;
+    }
+    html[data-theme="dark"] .card,
+    html[data-theme="dark"] .value,
+    html[data-theme="dark"] .mission,
+    html[data-theme="dark"] .contact-premium,
+    html[data-theme="dark"] .filter-bar,
+    html[data-theme="dark"] .featured-card,
+    html[data-theme="dark"] .blog-card,
+    html[data-theme="dark"] .newsletter-section {
+      background: var(--page-surface) !important;
+      color: var(--page-text) !important;
+      border-color: var(--page-border) !important;
+    }
+    html[data-theme="dark"] .muted-small,
+    html[data-theme="dark"] .card-meta,
+    html[data-theme="dark"] .text-muted,
+    html[data-theme="dark"] .no-results,
+    html[data-theme="dark"] .hero p.lead,
+    html[data-theme="dark"] .footer-brand-desc,
+    html[data-theme="dark"] .site-footer a,
+    html[data-theme="dark"] .site-footer {
+      color: var(--page-muted) !important;
+    }
+    html[data-theme="dark"] .dropdown-menu {
+      background: #0e1424 !important;
+      border-color: rgba(255,255,255,.08) !important;
+    }
+    html[data-theme="dark"] .dropdown-item {
+      color: #c9d1ea !important;
+    }
+  </style></head>
 <body>
   <!-- NAV -->
   <!-- NAVBAR -->
@@ -525,6 +592,7 @@
           <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
@@ -739,6 +807,27 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-</body>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      function applyTheme(value) {
+        root.setAttribute('data-theme', value);
+        localStorage.setItem('cb-theme', value);
+        var icon = btn.querySelector('i');
+        if (icon) {
+          icon.className = value === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
+        }
+      }
+      var saved = localStorage.getItem('cb-theme');
+      var preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(saved || (preferDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script></body>
 </html>
+
 
