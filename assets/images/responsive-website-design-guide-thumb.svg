@@ -1,0 +1,66 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071321"/>
+      <stop offset="0.52" stop-color="#0D1C34"/>
+      <stop offset="1" stop-color="#123F86"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="108" y1="72" x2="413" y2="402" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6C63FF"/>
+      <stop offset="1" stop-color="#47A4FF"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#31D0AA"/>
+      <stop offset="1" stop-color="#7DE7C8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1013" cy="102" r="160" fill="#1E4FBA" fill-opacity="0.28"/>
+  <circle cx="206" cy="490" r="180" fill="#59C7FF" fill-opacity="0.14"/>
+
+  <g opacity="0.18">
+    <path d="M0 108H1200" stroke="white" stroke-width="1"/>
+    <path d="M0 270H1200" stroke="white" stroke-width="1"/>
+    <path d="M0 432H1200" stroke="white" stroke-width="1"/>
+  </g>
+
+  <g>
+    <rect x="72" y="48" width="220" height="46" rx="23" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+    <circle cx="102" cy="71" r="13" fill="url(#accent)"/>
+    <path d="M95 71L101 77L111 65" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="128" y="77" fill="#F5F7FF" font-size="20" font-family="Inter, Arial, sans-serif" font-weight="700">Companies Builder</text>
+  </g>
+
+  <g>
+    <rect x="86" y="152" width="402" height="290" rx="24" fill="#0E1830" fill-opacity="0.7" stroke="rgba(255,255,255,0.12)"/>
+    <rect x="108" y="178" width="358" height="18" rx="9" fill="#1B2947"/>
+    <rect x="108" y="214" width="278" height="10" rx="5" fill="#2B3F68"/>
+    <rect x="108" y="240" width="314" height="10" rx="5" fill="#2B3F68"/>
+    <rect x="108" y="266" width="246" height="10" rx="5" fill="#2B3F68"/>
+    <rect x="108" y="314" width="160" height="82" rx="14" fill="url(#accent)"/>
+    <rect x="286" y="314" width="160" height="82" rx="14" fill="url(#green)"/>
+    <text x="136" y="367" fill="white" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="700">96%</text>
+    <text x="300" y="367" fill="white" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="700">Fast</text>
+  </g>
+
+  <g>
+    <rect x="538" y="152" width="258" height="350" rx="24" fill="#0F1B32" fill-opacity="0.82" stroke="rgba(255,255,255,0.12)"/>
+    <rect x="564" y="176" width="206" height="18" rx="9" fill="#1A294B"/>
+    <rect x="564" y="215" width="170" height="12" rx="6" fill="#2C446F"/>
+    <rect x="564" y="244" width="154" height="12" rx="6" fill="#2C446F"/>
+    <rect x="564" y="292" width="206" height="150" rx="18" fill="url(#accent)"/>
+    <path d="M594 408L630 356L674 382L724 314" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g>
+    <rect x="792" y="152" width="330" height="170" rx="24" fill="#0F1B32" fill-opacity="0.68" stroke="rgba(255,255,255,0.14)"/>
+    <text x="822" y="212" fill="#E9F0FF" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="800">Responsive</text>
+    <text x="822" y="276" fill="#AFC6FF" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="600">Website Design</text>
+  </g>
+
+  <g>
+    <rect x="0" y="520" width="1200" height="110" fill="#0A1324"/>
+    <text x="70" y="568" fill="#E9F1FF" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700">Responsive Website Design</text>
+    <text x="930" y="568" fill="#9BB4DB" font-size="18" font-family="Inter, Arial, sans-serif" font-weight="600">companiesbuilder.com</text>
+  </g>
+</svg>
