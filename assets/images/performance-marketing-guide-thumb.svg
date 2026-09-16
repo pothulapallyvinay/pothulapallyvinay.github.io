@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Performance Marketing Guide</title>
+  <desc id="desc">A branded Companies Builder guide to performance marketing, measurement, and growth.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060910"/>
+      <stop offset="0.58" stop-color="#17274a"/>
+      <stop offset="1" stop-color="#3d8bff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3a0"/>
+      <stop offset="1" stop-color="#ffb020"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <path d="M0 630 C210 550 300 660 480 575 S820 480 1200 550 V750 H0Z" fill="#060910" opacity=".55"/>
+  <g opacity=".14" stroke="#fff" stroke-width="2">
+    <path d="M0 90H1200M0 170H1200M0 250H1200M0 330H1200M0 410H1200"/>
+    <path d="M120 0V500M260 0V500M400 0V500M540 0V500M680 0V500M820 0V500M960 0V500M1100 0V500"/>
+  </g>
+  <rect x="150" y="72" width="88" height="88" rx="18" fill="#fff" opacity=".98"/>
+  <image href="CB-logo.png" x="164" y="86" width="60" height="60" preserveAspectRatio="xMidYMid meet"/>
+  <text x="270" y="112" fill="#b7c1d9" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">COMPANIES BUILDER</text>
+  <text x="150" y="282" fill="#fff" font-family="Arial, sans-serif" font-size="68" font-weight="800">Performance</text>
+  <text x="150" y="360" fill="#fff" font-family="Arial, sans-serif" font-size="68" font-weight="800">Marketing</text>
+  <rect x="154" y="397" width="300" height="8" rx="4" fill="url(#accent)"/>
+  <text x="150" y="455" fill="#dce7ff" font-family="Arial, sans-serif" font-size="25">A practical guide to measurable growth</text>
+  <rect x="0" y="692" width="1200" height="58" fill="#060910" opacity=".95"/>
+  <text x="72" y="729" fill="#b7c1d9" font-family="Arial, sans-serif" font-size="21">companiesbuilder.com  •  SEO  •  PPC  •  CRO  •  Analytics</text>
+</svg>
