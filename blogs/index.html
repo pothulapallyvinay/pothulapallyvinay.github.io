@@ -123,17 +123,21 @@
       .search-wrap { max-width: 280px; }
     }
     /* Featured card */
-    .featured-card { border-radius:20px; overflow:hidden; background:var(--surface); border:1px solid var(--border); box-shadow: 0 20px 60px rgba(11,22,60,.08); }
-    .featured-card img { width:100%; height:100%; object-fit:contain; display:block; }
+    .featured-card { border-radius:20px; overflow:hidden; background:var(--surface); border:1px solid var(--border); box-shadow: 0 20px 60px rgba(11,22,60,.08); height: 100%; display: flex; }
+    .featured-card img { width:100%; height:100%; object-fit:contain; aspect-ratio:16/10; display:block; background: var(--surface); }
     .featured-card:hover img { transform:scale(1.04); }
-    .featured-card .img-wrap { overflow:hidden; }
+    .featured-card .img-wrap { overflow:hidden; height: 100%; }
+    .featured-card .img-wrap a { display: block; height: 100%; }
     .featured-card .img-wrap img { transition: transform .5s ease; }
     /* Blog cards */
-    .blog-card { border-radius:16px; overflow:hidden; transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s; border:1px solid var(--border); background:var(--surface); height:100%; }
+    .blog-card { border-radius:16px; overflow:hidden; transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s; border:1px solid var(--border); background:var(--surface); height:100%; display: flex; flex-direction: column; }
     .blog-card:hover { transform:translateY(-10px); box-shadow:0 22px 60px rgba(11,22,60,.10); }
     .blog-card .img-wrap { overflow:hidden; }
-    .blog-card img { aspect-ratio:16/9; width:100%; object-fit:contain; background: var(--surface); display:block; transition: transform .5s ease; }
+    .blog-card img { aspect-ratio:16/10; width:100%; height:100%; object-fit:contain; background: var(--surface); display:block; transition: transform .5s ease; }
     .blog-card:hover img { transform: scale(1.06); }
+    .blog-card > div:last-child { display: flex; flex-direction: column; flex-grow: 1; }
+    .blog-card > div:last-child > a.btn { margin-top: auto; align-self: flex-start; }
+    
     .muted-small { color:var(--muted); font-size:.92rem; }
     .card-meta { font-size:.8rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; }
     .card-meta .dot { width:3px; height:3px; background:var(--muted); border-radius:50%; }
@@ -162,6 +166,7 @@
       .hero { padding-top:105px; padding-bottom:70px; }
       .filter-bar { margin-top:-30px; }
       .featured-card img { height: auto; }
+      .featured-card { flex-direction: column; }
     }
   </style>
   <!-- Start of HubSpot Embed Code -->
