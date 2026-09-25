@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <title>Free SEO Audit Tool | SEO &amp; Website Checker | Companies Builder</title>
+  <meta name="description" content="Run a free SEO audit of your website and identify important SEO, performance, accessibility, and best-practice issues with practical recommendations." />
+  <meta name="keywords"
+    content="free SEO auditor, website performance checker, AI SEO tool, Core Web Vitals checker, website audit tool, SEO checker India, Companies Builder tools" />
+  <meta name="author" content="Companies Builder" />
+  <link rel="canonical" href="https://companiesbuilder.com/tools/seo-auditor/" />
+  <meta name="geo.region" content="IN-TG" />
+  <meta name="geo.placename" content="Hyderabad" />
+  <link rel="icon" type="image/x-icon" href="https://companiesbuilder.com/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Companies Builder" />
+  <meta property="og:title" content="Free SEO Audit Tool | Companies Builder" />
+  <meta property="og:description" content="Run a free SEO audit of your website and identify important SEO, performance, accessibility, and best-practice issues with practical recommendations." />
+  <meta property="og:url" content="https://companiesbuilder.com/tools/seo-auditor/" />
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/seo-hero.jpg" />
+  <meta property="og:image:alt"
+    content="AI SEO Auditor dashboard showing Core Web Vitals scores and performance metrics" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free SEO Audit Tool | Companies Builder" />
+  <meta name="twitter:description" content="Run a free SEO audit of your website and identify important SEO, performance, accessibility, and best-practice issues with practical recommendations." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/seo-hero.jpg" />
+  <meta name="twitter:image:alt" content="AI SEO Auditor dashboard by Companies Builder" />
+
+  
+  <!-- Schema.org JSON-LD BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://companiesbuilder.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Free SEO Tools",
+        "item": "https://companiesbuilder.com/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SEO Auditor",
+        "item": "https://companiesbuilder.com/tools/seo-auditor/"
+      }
+    ]
+  }
+  </script>
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"AI SEO & Website Performance Auditor","url":"https://companiesbuilder.com/tools/seo-auditor/","description":"A free AI-powered tool that audits website SEO, performance, accessibility and best practices using Google PageSpeed Insights.","applicationCategory":"BusinessApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"publisher":{"@type":"Organization","name":"Companies Builder","url":"https://companiesbuilder.com/"}}
+  </script>
+
+  <link rel="icon" href="/tools/assets/images/logo-cb.png" />
+  <meta name="theme-color" content="#0e1424" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       Companies Builder â€“ SEO Auditor (Fully Inlined Styles)
+       Design system matches homepage.html exactly.
+    ============================================================ */
+    :root {
+      --navy-950: #060910;
+      --navy-900: #0e1424;
+      --navy-800: #161d33;
+      --navy-700: #212a48;
+      --ink: #eef0f9;
+      --ink-dim: #9aa3be;
+      --paper: #f4f5fb;
+      --paper-card: #fff;
+      --ink-on-paper: #141826;
+      --muted-on-paper: #5b6478;
+      --violet: #6c63ff;
+      --violet-light: #8b83ff;
+      --blue: #3d8bff;
+      --blue-light: #60a5fa;
+      --amber: #ffb020;
+      --green: #22d3a0;
+      --pink: #f471b5;
+      --red: #ff4b4b;
+      --line-dark: rgba(255, 255, 255, .08);
+      --line-light: rgba(15, 20, 40, .07);
+      --grad-brand: linear-gradient(135deg, #6c63ff, #3d8bff);
+      --grad-amber: linear-gradient(135deg, #ffcf5c, #ffb020);
+      --font-display: 'Space Grotesk', Arial, sans-serif;
+      --font-body: 'Inter', Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 20px;
+      --radius-btn: 10px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .08);
+      --shadow-dark: 0 24px 80px rgba(0, 0, 0, .4);
+      --ease: .28s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--ink-on-paper);
+      background: var(--paper);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: var(--font-display);
+      letter-spacing: -.02em
+    }
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .72rem;
+      font-weight: 600;
+      display: inline-block;
+      color: var(--violet)
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      background: #fff;
+      color: var(--violet);
+      padding: 10px 16px;
+      z-index: 9999;
+      border-radius: 0 0 8px 0;
+      font-weight: 700
+    }
+
+    .skip-link:focus {
+      left: 0;
+      top: 0
+    }
+
+    .grad-text {
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(6, 9, 16, .78) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line-dark);
+      transition: background var(--ease), box-shadow var(--ease);
+      padding: 12px 0
+    }
+
+    .navbar.is-scrolled {
+      background: rgba(6, 9, 16, .95) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .4)
+    }
+
+    .navbar-brand img {
+      height: 36px;
+      width: auto;
+      display: inline-block
+    }
+
+    .navbar-brand span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, .78) !important;
+      font-weight: 500;
+      font-size: .92rem;
+      padding: 6px 14px !important;
+      position: relative;
+      transition: color var(--ease)
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 2px;
+      height: 2px;
+      background: var(--grad-brand);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--ease);
+      border-radius: 2px
+    }
+
+    .nav-link:hover {
+      color: #fff !important
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1)
+    }
+
+    .dropdown-menu {
+      background: #0e1424;
+      border: 1px solid var(--line-dark);
+      border-radius: 12px;
+      padding: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+      min-width: 220px
+    }
+
+    .dropdown-item {
+      color: var(--ink-dim);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: .9rem;
+      transition: background var(--ease), color var(--ease)
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      color: #fff;
+      background: rgba(108, 99, 255, .15)
+    }
+
+    @media(min-width:992px) {
+      .navbar .dropdown:hover>.dropdown-menu {
+        display: block;
+        margin-top: 0
+      }
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      height: 38px;
+      border-radius: var(--radius-btn);
+      font-weight: 700;
+      font-size: .875rem;
+      text-decoration: none;
+      border: 0;
+      transition: transform .16s ease, box-shadow .16s ease;
+      white-space: nowrap
+    }
+
+    .nav-pricing {
+      background: var(--grad-amber);
+      color: #0e1424 !important;
+      box-shadow: 0 6px 20px rgba(255, 176, 32, .3)
+    }
+
+    .nav-demo {
+      background: var(--grad-brand);
+      color: #fff !important;
+      box-shadow: 0 6px 20px rgba(108, 99, 255, .35)
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px)
+    }
+
+    /* HERO */
+    .hero-section {
+      background: var(--navy-950);
+      position: relative;
+      overflow: hidden;
+      padding: 140px 0 80px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+      opacity: .6
+    }
+
+    .hero-orb-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(108, 99, 255, .35), transparent 70%);
+      top: -150px;
+      right: -100px;
+      animation: orb-float 12s ease-in-out infinite alternate
+    }
+
+    .hero-orb-2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(61, 139, 255, .25), transparent 70%);
+      bottom: -100px;
+      left: -80px;
+      animation: orb-float 16s ease-in-out infinite alternate-reverse
+    }
+
+    .hero-orb-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(34, 211, 160, .2), transparent 70%);
+      top: 40%;
+      left: 40%;
+      animation: orb-float 10s ease-in-out infinite alternate
+    }
+
+    @keyframes orb-float {
+      from {
+        transform: translateY(0) scale(1)
+      }
+
+      to {
+        transform: translateY(-40px) scale(1.08)
+      }
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none
+    }
+
+    .auditor-hero-layout {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      width: 100%
+    }
+
+    .auditor-hero-text {
+      position: relative
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108, 99, 255, .12);
+      border: 1px solid rgba(108, 99, 255, .3);
+      border-radius: 100px;
+      padding: 6px 14px 6px 8px;
+      margin-bottom: 24px
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 176, 32, .6)
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(255, 176, 32, 0)
+      }
+    }
+
+    .hero-badge span {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 600
+    }
+
+    .hero-section h1 {
+      color: #fff;
+      font-size: clamp(2rem, 3.4vw, 3.2rem);
+      line-height: 1.08;
+      font-weight: 700;
+      margin-bottom: 18px
+    }
+
+    .hero-section h1 .accent {
+      background: var(--grad-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .hero-lead {
+      color: var(--ink-dim);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 28px
+    }
+
+    .audit-stats {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap
+    }
+
+    .audit-stat {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid var(--line-dark);
+      border-radius: 12px;
+      text-align: center;
+      min-width: 80px
+    }
+
+    .audit-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1
+    }
+
+    .audit-stat-lbl {
+      font-size: .7rem;
+      color: var(--ink-dim);
+      margin-top: 4px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .attempt-bar {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 176, 32, .1);
+      border: 1px solid rgba(255, 176, 32, .25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: .8rem;
+      color: var(--amber);
+      font-family: var(--font-mono);
+      margin-bottom: 20px;
+      font-weight: 600
+    }
+
+    .attempt-bar.depleted {
+      background: rgba(255, 75, 75, .1);
+      border-color: rgba(255, 75, 75, .25);
+      color: #ff4b4b
+    }
+
+    .auditor-form {
+      margin-bottom: 20px
+    }
+
+    .auditor-form-inner {
+      display: flex;
+      align-items: center;
+      background: rgba(14, 20, 36, .85);
+      border: 1.5px solid rgba(108, 99, 255, .3);
+      border-radius: 100px;
+      padding: 8px 8px 8px 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+      backdrop-filter: blur(12px)
+    }
+
+    .auditor-form-inner:focus-within {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, .18), 0 24px 60px rgba(0, 0, 0, .5)
+    }
+
+    .auditor-icon {
+      color: var(--ink-dim);
+      font-size: 1rem;
+      margin-right: 10px;
+      flex-shrink: 0
+    }
+
+    .auditor-input {
+      flex-grow: 1;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      min-width: 0
+    }
+
+    .auditor-input:focus {
+      outline: none
+    }
+
+    .auditor-input::placeholder {
+      color: rgba(255, 255, 255, .35)
+    }
+
+    .btn-analyze {
+      background: var(--grad-brand);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: transform var(--ease), box-shadow var(--ease);
+      white-space: nowrap;
+      flex-shrink: 0
+    }
+
+    .btn-analyze:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(108, 99, 255, .45)
+    }
+
+    .btn-analyze:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none
+    }
+
+    @media(max-width:575px) {
+      .navbar-brand span {
+        font-size: .92rem
+      }
+
+      .navbar-nav {
+        padding-top: 8px
+      }
+
+      .nav-btn {
+        width: 100%
+      }
+
+      .auditor-form-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        border-radius: 24px;
+        padding: 14px 14px 12px
+      }
+
+      .auditor-icon {
+        margin-right: 0
+      }
+
+      .auditor-input {
+        width: 100%
+      }
+
+      .btn-analyze {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px
+      }
+
+      .audit-stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px
+      }
+
+      .audit-stat {
+        min-width: 0
+      }
+
+      .hero-trust {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px
+      }
+
+      .hero-trust-pill {
+        justify-content: center
+      }
+
+      .hero-section h1 {
+        font-size: clamp(2.25rem, 11vw, 3rem)
+      }
+    }
+
+    .loading-indicator {
+      display: none;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px
+    }
+
+    .loading-dots {
+      display: flex;
+      gap: 6px
+    }
+
+    .loading-dots span {
+      width: 8px;
+      height: 8px;
+      background: var(--violet);
+      border-radius: 50%;
+      animation: dot-bounce 1.2s ease-in-out infinite
+    }
+
+    .loading-dots span:nth-child(2) {
+      animation-delay: .2s
+    }
+
+    .loading-dots span:nth-child(3) {
+      animation-delay: .4s
+    }
+
+    @keyframes dot-bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: translateY(0)
+      }
+
+      40% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .loading-text {
+      color: var(--ink-dim);
+      font-family: var(--font-mono);
+      font-size: .85rem;
+      margin: 0
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px
+    }
+
+    .hero-trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: .78rem;
+      color: var(--ink-dim)
+    }
+
+    .hero-trust-pill i {
+      color: var(--blue-light);
+      font-size: .85rem
+    }
+
+    .hero-visual {
+      position: relative
+    }
+
+    .hero-img-frame {
+      position: relative;
+      border-radius: 24px;
+      padding: 3px;
+      background: linear-gradient(135deg, rgba(108, 99, 255, .6), rgba(61, 139, 255, .6));
+      box-shadow: var(--shadow-dark)
+    }
+
+    .hero-img-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none
+    }
+
+    .hero-float {
+      position: absolute;
+      background: rgba(14, 20, 36, .92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 16px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .4)
+    }
+
+    .hero-float-1 {
+      bottom: -20px;
+      left: -28px
+    }
+
+    .hero-float-2 {
+      top: -18px;
+      right: -20px
+    }
+
+    .hero-float-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0
+    }
+
+    .hero-float-icon.green {
+      background: rgba(34, 211, 160, .15);
+      color: var(--green)
+    }
+
+    .hero-float-icon.violet {
+      background: rgba(108, 99, 255, .15);
+      color: var(--violet-light)
+    }
+
+    .hero-float-val {
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      line-height: 1.2
+    }
+
+    .hero-float-lbl {
+      color: var(--ink-dim);
+      font-size: .68rem;
+      margin-top: 2px
+    }
+
+    @media(max-width:991px) {
+      .auditor-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .hero-section {
+        padding: 120px 0 80px;
+        min-height: auto
+      }
+
+      .hero-visual {
+        max-width: 460px;
+        margin: 0 auto
+      }
+
+      .hero-float-1 {
+        left: -12px;
+        bottom: -16px
+      }
+
+      .hero-float-2 {
+        right: -12px;
+        top: -12px
+      }
+    }
+
+    @media(max-width:575px) {
+      .hero-float {
+        display: none
+      }
+
+      .hero-section {
+        padding: 100px 0 60px
+      }
+    }
+
+    /* RESULTS */
+    #results-section {
+      display: none;
+      background: var(--navy-950);
+      padding: 60px 0;
+      border-top: 1px solid var(--line-dark)
+    }
+
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px
+    }
+
+    @media(max-width:767px) {
+      .scores-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    .score-card {
+      background: var(--navy-900);
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow-dark);
+      transition: transform var(--ease)
+    }
+
+    .score-card:hover {
+      transform: translateY(-4px)
+    }
+
+    .gauge-container {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin-bottom: 12px
+    }
+
+    .gauge-svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%
+    }
+
+    .gauge-bg {
+      fill: none;
+      stroke: var(--navy-800);
+      stroke-width: 8
+    }
+
+    .gauge-progress {
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 339.292;
+      stroke-dashoffset: 339.292;
+      transition: stroke-dashoffset 1.5s cubic-bezier(.4, 0, .2, 1), stroke .3s
+    }
+
+    .gauge-value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff
+    }
+
+    .score-label {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 2px
+    }
+
+    .score-desc {
+      color: var(--ink-dim);
+      font-size: .7rem;
+      font-family: var(--font-mono);
+      text-align: center
+    }
+
+    .bento-grid {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 40px
+    }
+
+    .bento-full {
+      grid-column: 1 / -1
+    }
+
+    .action-card {
+      background: var(--navy-900);
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 32px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .action-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(108, 99, 255, .05), transparent 60%);
+      pointer-events: none
+    }
+
+    .action-card h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .action-card h3 i {
+      color: var(--amber);
+      font-size: 1.1rem;
+      background: rgba(255, 176, 32, .1);
+      padding: 8px;
+      border-radius: 8px
+    }
+
+    .issue-list {
+      list-style: none;
+      padding: 0
+    }
+
+    .issue-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line-dark)
+    }
+
+    .issue-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0
+    }
+
+    .issue-icon {
+      color: var(--red);
+      font-size: 1.3rem;
+      margin-top: 2px
+    }
+
+    .issue-content {
+      flex-grow: 1
+    }
+
+    .issue-content h4 {
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 6px
+    }
+
+    .issue-content p {
+      color: var(--ink-dim);
+      font-size: .9rem;
+      line-height: 1.5;
+      margin-bottom: 10px
+    }
+
+    .ai-fix {
+      background: rgba(108, 99, 255, .1);
+      border-left: 3px solid var(--violet);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: .9rem;
+      color: var(--ink);
+      line-height: 1.5
+    }
+
+    .ai-fix strong {
+      color: var(--violet-light);
+      display: block;
+      margin-bottom: 4px;
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .results-cta {
+      background: linear-gradient(135deg, rgba(108, 99, 255, .15), rgba(61, 139, 255, .1));
+      border: 1px solid rgba(108, 99, 255, .25);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-bottom: 0
+    }
+
+    /* Download Report */
+    .download-report-section {
+      text-align: center;
+      margin: 40px 0;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(34, 211, 160, .08), rgba(61, 139, 255, .08));
+      border: 1px solid rgba(34, 211, 160, .2);
+      border-radius: var(--radius);
+    }
+
+    .download-report-section h3 {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .download-report-section p {
+      color: var(--ink-dim);
+      font-size: .95rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-download-report {
+      background: var(--grad-brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border: none;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 12px 40px rgba(108, 99, 255, .35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn-download-report:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(108, 99, 255, .5);
+    }
+
+    /* Report Gate Modal */
+    .report-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .7);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .report-modal-overlay.active {
+      display: flex;
+    }
+
+    .report-modal {
+      background: var(--navy-900);
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, .6);
+    }
+
+    .report-modal h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .report-modal .modal-subtitle {
+      color: var(--ink-dim);
+      font-size: .9rem;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .report-modal .form-group {
+      margin-bottom: 18px;
+    }
+
+    .report-modal label {
+      display: block;
+      color: var(--ink);
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .report-modal input {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--navy-950);
+      border: 1px solid var(--line-dark);
+      border-radius: 10px;
+      color: #fff;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .report-modal input:focus {
+      border-color: var(--violet);
+    }
+
+    .report-modal input::placeholder {
+      color: var(--ink-dim);
+    }
+
+    .report-modal .btn-submit-report {
+      width: 100%;
+      background: var(--grad-brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 30px rgba(108, 99, 255, .3);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .report-modal .btn-submit-report:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(108, 99, 255, .45);
+    }
+
+    .report-modal .btn-close-modal {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--ink-dim);
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+    }
+
+    .report-modal .btn-close-modal:hover {
+      color: #fff;
+    }
+
+    .report-modal .form-note {
+      color: var(--ink-dim);
+      font-size: .75rem;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    @media(max-width: 575px) {
+      .report-modal {
+        margin: 20px;
+        padding: 32px 24px;
+      }
+    }
+
+    .results-cta-inner {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap
+    }
+
+    .results-cta-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: rgba(108, 99, 255, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--violet-light);
+      flex-shrink: 0
+    }
+
+    .results-cta h2 {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 6px
+    }
+
+    .results-cta p {
+      color: var(--ink-dim);
+      font-size: .9rem;
+      margin: 0;
+      max-width: 500px
+    }
+
+    .results-cta .btn-hero-primary {
+      margin-left: auto;
+      white-space: nowrap
+    }
+
+    @media(max-width:767px) {
+      .results-cta-inner {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .results-cta .btn-hero-primary {
+        margin-left: 0
+      }
+    }
+
+    /* BUTTONS */
+    .btn-hero {
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      transition: transform var(--ease), box-shadow var(--ease)
+    }
+
+    .btn-hero-primary {
+      background: var(--grad-brand);
+      color: #fff;
+      box-shadow: 0 12px 40px rgba(108, 99, 255, .4)
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(108, 99, 255, .5);
+      color: #fff
+    }
+
+    /* SECTIONS */
+    .band-paper {
+      background: var(--paper)
+    }
+
+    .band-dark {
+      background: var(--navy-950);
+      color: var(--ink)
+    }
+
+    .section-pad {
+      padding: 96px 0
+    }
+
+    .section-head {
+      max-width: 680px
+    }
+
+    .section-head .eyebrow {
+      color: var(--violet)
+    }
+
+    .band-dark .section-head .eyebrow {
+      color: var(--amber)
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+      margin: 12px 0 14px;
+      line-height: 1.15
+    }
+
+    .section-head p {
+      color: var(--muted-on-paper);
+      font-size: 1.02rem;
+      line-height: 1.65
+    }
+
+    .band-dark .section-head h2 {
+      color: #fff
+    }
+
+    .band-dark .section-head p {
+      color: var(--ink-dim)
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    @media(max-width:991px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:575px) {
+      .why-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .why-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      transition: transform var(--ease), box-shadow var(--ease)
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 32px 80px rgba(20, 24, 38, .14)
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px
+    }
+
+    .why-icon.violet {
+      background: rgba(108, 99, 255, .12);
+      color: var(--violet)
+    }
+
+    .why-icon.green {
+      background: rgba(34, 211, 160, .12);
+      color: var(--green)
+    }
+
+    .why-icon.amber {
+      background: rgba(255, 176, 32, .12);
+      color: var(--amber)
+    }
+
+    .why-icon.blue {
+      background: rgba(61, 139, 255, .12);
+      color: var(--blue)
+    }
+
+    .why-card h3 {
+      color: var(--ink-on-paper);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .why-card p {
+      color: var(--muted-on-paper);
+      font-size: .88rem;
+      line-height: 1.6
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px
+    }
+
+    @media(max-width:767px) {
+      .steps-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .step-card {
+      background: var(--navy-900);
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .step-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(108, 99, 255, .07), transparent 60%);
+      pointer-events: none
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(108, 99, 255, .25);
+      line-height: 1;
+      margin-bottom: 16px
+    }
+
+    .step-card h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 10px
+    }
+
+    .step-card p {
+      color: var(--ink-dim);
+      font-size: .9rem;
+      line-height: 1.6
+    }
+
+    /* CONTACT */
+    .contact-band {
+      background: var(--navy-950);
+      position: relative;
+      overflow: hidden
+    }
+
+    .contact-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 25%, rgba(108, 99, 255, .2), transparent 50%), radial-gradient(circle at 85% 75%, rgba(61, 139, 255, .15), transparent 50%);
+      pointer-events: none
+    }
+
+    .contact-card {
+      position: relative;
+      z-index: 2;
+      background: var(--paper-card);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, .4)
+    }
+
+    .contact-card .form-label {
+      font-weight: 600;
+      color: var(--ink-on-paper);
+      font-size: .875rem;
+      margin-bottom: 6px
+    }
+
+    .contact-card .form-control,
+    .contact-card .form-select {
+      border-radius: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--line-light);
+      font-size: .925rem;
+      transition: border-color var(--ease), box-shadow var(--ease)
+    }
+
+    .contact-card .form-control:focus,
+    .contact-card .form-select:focus {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, .12);
+      outline: none
+    }
+
+    .btn-submit {
+      background: var(--grad-brand);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      box-shadow: 0 12px 40px rgba(108, 99, 255, .35);
+      transition: transform var(--ease), box-shadow var(--ease);
+      cursor: pointer
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(108, 99, 255, .45)
+    }
+
+    .btn-submit:disabled {
+      opacity: .7;
+      cursor: not-allowed;
+      transform: none
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy-950);
+      border-top: 1px solid var(--line-dark)
+    }
+
+    .footer-brand-desc {
+      color: var(--ink-dim);
+      font-size: .875rem;
+      line-height: 1.6;
+      max-width: 280px
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-dim);
+      text-decoration: none;
+      font-size: .9rem;
+      transition: background var(--ease), color var(--ease)
+    }
+
+    .footer-social a:hover {
+      background: rgba(108, 99, 255, .2);
+      color: var(--violet-light)
+    }
+
+    .site-footer h3 {
+      color: #fff;
+      font-size: .92rem;
+      font-weight: 700;
+      margin-bottom: 16px
+    }
+
+    .site-footer ul li {
+      margin-bottom: 8px
+    }
+
+    .site-footer a {
+      color: var(--ink-dim);
+      text-decoration: none;
+      font-size: .875rem;
+      transition: color var(--ease)
+    }
+
+    .site-footer a:hover {
+      color: #fff
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line-dark);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--ink-dim);
+      font-size: .8rem
+    }
+
+    .footer-bottom a {
+      color: var(--ink-dim);
+      text-decoration: none
+    }
+
+    .footer-bottom a:hover {
+      color: #fff
+    }
+
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 211, 160, .1);
+      border: 1px solid rgba(34, 211, 160, .2);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: .72rem;
+      color: var(--green)
+    }
+
+    .footer-badge::before {
+      content: "\25CF";
+      font-size: .5rem
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <style>
+    .theme-toggle-btn {
+      border: 1px solid rgba(255, 255, 255, .35);
+      background: rgba(255, 255, 255, .06);
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+      box-shadow: 0 0 0 0 rgba(108, 99, 255, .25);
+    }
+
+    .theme-toggle-btn:hover,
+    .theme-toggle-btn:focus {
+      background: rgba(255, 255, 255, .12);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(108, 99, 255, .2);
+      outline: none;
+    }
+
+    .theme-toggle-btn i {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    html[data-theme="dark"] {
+      --page-bg: #0b1220;
+      --page-surface: #101a2a;
+      --page-text: #edf2fe;
+      --page-muted: #b7c1d9;
+      --page-border: rgba(255, 255, 255, .08);
+    }
+
+    html[data-theme="dark"] body {
+      background: var(--page-bg) !important;
+      color: var(--page-text) !important;
+    }
+
+    html[data-theme="dark"] .card,
+    html[data-theme="dark"] .value,
+    html[data-theme="dark"] .mission,
+    html[data-theme="dark"] .contact-premium,
+    html[data-theme="dark"] .filter-bar,
+    html[data-theme="dark"] .featured-card,
+    html[data-theme="dark"] .blog-card,
+    html[data-theme="dark"] .newsletter-section {
+      background: var(--page-surface) !important;
+      color: var(--page-text) !important;
+      border-color: var(--page-border) !important;
+    }
+
+    html[data-theme="dark"] .muted-small,
+    html[data-theme="dark"] .card-meta,
+    html[data-theme="dark"] .text-muted,
+    html[data-theme="dark"] .no-results,
+    html[data-theme="dark"] .hero p.lead,
+    html[data-theme="dark"] .footer-brand-desc,
+    html[data-theme="dark"] .site-footer a,
+    html[data-theme="dark"] .site-footer {
+      color: var(--page-muted) !important;
+    }
+
+    html[data-theme="dark"] .dropdown-menu {
+      background: #0e1424 !important;
+      border-color: rgba(255, 255, 255, .08) !important;
+    }
+
+    html[data-theme="dark"] .dropdown-item {
+      color: #c9d1ea !important;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <!-- NAVBAR -->
+  <!-- GLOBAL NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Companies Builder home">
+        <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
+        <span>Companies Builder</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="/" data-nav="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/" data-nav="about">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" data-nav="services">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="/services/web-development-and-designing/"><i
+                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="/services/seo-services-in-hyderabad/"><i
+                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="/services/social-media-marketing-company-in-hyderabad/"><i
+                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="/services/b2b-digital-marketing-agency/"><i
+                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item fw-bold" href="/services/"><i class="bi bi-grid me-2 opacity-75"></i>All Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-nav="resources">Resources</a>
+            <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
+              <li><a class="dropdown-item" href="/resources/checklists/"><i class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+              <li><a class="dropdown-item" href="/write-for-us/"><i class="bi bi-pencil-square me-2 opacity-75"></i>Write for Us</a></li>
+              <li><a class="dropdown-item" href="/careers/"><i class="bi bi-briefcase me-2 opacity-75"></i>Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/careers/" data-nav="careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="/tools/" data-nav="tools" class="nav-link active" aria-current="page">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/" data-nav="blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/" data-nav="contact">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section" id="home" role="banner" aria-label="Free AI SEO Auditor tool by Companies Builder">
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="auditor-hero-layout">
+        <!-- LEFT: Text + Form -->
+        <div class="auditor-hero-text">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Free Tool &middot; Companies Builder</span>
+          </div>
+          <h1>Free <span class="accent">SEO Audit</span> Tool</h1>
+          <p class="hero-lead">Run a free SEO audit of your website and get a clear overview of important SEO, performance, accessibility, and best-practice signals. Enter a public webpage URL below to analyze it and receive a prioritized action plan.</p>
+
+          <div class="audit-stats">
+            <div class="audit-stat"><span class="audit-stat-num">4</span><span class="audit-stat-lbl">Metrics
+                Scored</span></div>
+            <div class="audit-stat"><span class="audit-stat-num">5</span><span class="audit-stat-lbl">Free Audits</span>
+            </div>
+            <div class="audit-stat"><span class="audit-stat-num">AI</span><span class="audit-stat-lbl">Action
+                Plan</span></div>
+          </div>
+
+          <div class="attempt-bar" id="attempt-bar" aria-live="polite">
+            <i class="bi bi-bar-chart-steps me-2"></i>
+            <span id="attempt-text">5 free audits remaining</span>
+          </div>
+
+          <div id="limitBannerContainer"></div>
+
+          <form class="auditor-form" id="auditor-form" role="search" aria-label="Website URL audit form">
+            <div class="auditor-form-inner">
+              <i class="bi bi-globe2 auditor-icon" aria-hidden="true"></i>
+              <input type="url" class="auditor-input" id="url-input" placeholder="https://yourwebsite.com" required
+                autocomplete="url" aria-label="Enter website URL to audit" />
+              <button type="submit" class="btn-analyze" id="btn-analyze">
+                <i class="bi bi-magic me-2" aria-hidden="true"></i>Analyze
+              </button>
+            </div>
+          </form>
+
+          <div class="loading-indicator" id="loading-indicator" role="status" aria-live="polite">
+            <div class="loading-dots"><span></span><span></span><span></span></div>
+            <p class="loading-text" id="loading-text">Our AI is scanning your website...</p>
+          </div>
+
+          <div class="hero-trust">
+            <span class="hero-trust-pill"><i class="bi bi-shield-check" aria-hidden="true"></i> No sign-up needed</span>
+            <span class="hero-trust-pill"><i class="bi bi-lightning-charge" aria-hidden="true"></i> Results in ~20
+              sec</span>
+            <span class="hero-trust-pill"><i class="bi bi-google" aria-hidden="true"></i> Powered by PageSpeed
+              API</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Hero Image -->
+        <div class="hero-visual" data-reveal>
+          <div class="hero-img-frame">
+            <img src="https://companiesbuilder.com/assets/images/seo-hero.jpg"
+              alt="AI SEO Auditor dashboard showing Core Web Vitals scores and performance metrics for a website analysis"
+              width="600" height="450" fetchpriority="high" decoding="async">
+          </div>
+          <div class="hero-float hero-float-1">
+            <div class="hero-float-icon green"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></div>
+            <div>
+              <div class="hero-float-val">Core Web Vitals</div>
+              <div class="hero-float-lbl">Instant LCP, INP &amp; CLS check</div>
+            </div>
+          </div>
+          <div class="hero-float hero-float-2">
+            <div class="hero-float-icon violet"><i class="bi bi-robot" aria-hidden="true"></i></div>
+            <div>
+              <div class="hero-float-val">AI Action Plan</div>
+              <div class="hero-float-lbl">Fix-it checklist, auto-generated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- RESULTS SECTION -->
+  <div id="results-section" role="region" aria-label="Audit results" aria-live="polite">
+    <div class="container">
+      <div class="scores-grid">
+        <div class="score-card">
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="gauge-bg" cx="60" cy="60" r="54"></circle>
+              <circle class="gauge-progress" id="gauge-performance" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="gauge-value" id="val-performance">0</div>
+          </div>
+          <div class="score-label">Performance</div>
+          <div class="score-desc">Page speed &amp; loading</div>
+        </div>
+        <div class="score-card">
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="gauge-bg" cx="60" cy="60" r="54"></circle>
+              <circle class="gauge-progress" id="gauge-accessibility" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="gauge-value" id="val-accessibility">0</div>
+          </div>
+          <div class="score-label">Accessibility</div>
+          <div class="score-desc">WCAG compliance</div>
+        </div>
+        <div class="score-card">
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="gauge-bg" cx="60" cy="60" r="54"></circle>
+              <circle class="gauge-progress" id="gauge-best-practices" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="gauge-value" id="val-best-practices">0</div>
+          </div>
+          <div class="score-label">Best Practices</div>
+          <div class="score-desc">Security &amp; modern web</div>
+        </div>
+        <div class="score-card">
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="gauge-bg" cx="60" cy="60" r="54"></circle>
+              <circle class="gauge-progress" id="gauge-seo" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="gauge-value" id="val-seo">0</div>
+          </div>
+          <div class="score-label">SEO</div>
+          <div class="score-desc">Search engine readiness</div>
+        </div>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-full action-card">
+          <h3><i class="bi bi-robot" aria-hidden="true"></i> AI Action Plan</h3>
+          <ul class="issue-list" id="action-plan-list"></ul>
+        </div>
+      </div>
+
+      <!-- Download Full Report Section -->
+      <div class="download-report-section" id="downloadReportSection">
+        <h3><i class="bi bi-file-earmark-pdf me-2"></i>Want the Full SEO Report?</h3>
+        <p>Get a comprehensive, downloadable PDF report with all scores, issues, and AI recommendations for this audit.</p>
+        <button class="btn-download-report" id="btnDownloadReport">
+          <i class="bi bi-download"></i> Download Full Report
+        </button>
+      </div>
+
+      <div class="results-cta" id="contact-cta">
+        <div class="results-cta-inner">
+          <div class="results-cta-icon"><i class="bi bi-headset" aria-hidden="true"></i></div>
+          <div>
+            <h2>Overwhelmed by these issues?</h2>
+            <p>The team at Companies Builder fixes exactly these issues and turns your website into a lead-generation
+              machine. Let us handle the technical side so you can focus on your business.</p>
+          </div>
+          <a href="#contact-section" class="btn-hero btn-hero-primary" id="cta-scroll-contact">
+            <i class="bi bi-rocket-takeoff" aria-hidden="true"></i> Get a Free Audit &amp; Strategy
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Report Gate Modal -->
+  <div class="report-modal-overlay" id="reportModalOverlay">
+    <div class="report-modal">
+      <button class="btn-close-modal" id="btnCloseReportModal" aria-label="Close">&times;</button>
+      <h3><i class="bi bi-file-earmark-pdf me-2" style="color: var(--violet-light);"></i>Download Your Report</h3>
+      <p class="modal-subtitle">Enter your details below and we will generate your personalized SEO audit report.</p>
+      <form id="reportLeadForm">
+        <div class="form-group">
+          <label for="reportName">Full Name *</label>
+          <input type="text" id="reportName" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="reportEmail">Business Email *</label>
+          <input type="email" id="reportEmail" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="reportPhone">Phone Number</label>
+          <input type="tel" id="reportPhone" placeholder="+91 XXXXX XXXXX" />
+        </div>
+        <button type="submit" class="btn-submit-report" id="btnSubmitReport">
+          <i class="bi bi-download"></i> Generate & Download Report
+        </button>
+      </form>
+      <p class="form-note">We respect your privacy. Your information is used only to deliver the report.</p>
+    </div>
+  </div>
+
+  
+  <main id="main">
+    
+    <!-- WHAT IS AN SEO AUDIT? -->
+    <section class="band-paper section-pad" id="what-is-seo-audit">
+      <div class="container">
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0 section-head" data-reveal>
+            <span class="eyebrow">The Basics</span>
+            <h2>What Is an SEO Audit?</h2>
+            <p>An SEO audit is a comprehensive diagnostic process that evaluates a website's health, visibility, and compliance with search engine best practices. While many people think of SEO purely as "keywords," modern search engine optimization involves complex technical layers that determine how well a page is crawled, understood, and experienced by users.</p>
+            <p>Website owners perform SEO audits to identify technical roadblocks that might be preventing their content from ranking as highly as it deserves. This involves checking <strong>technical SEO</strong> (like page speed, mobile performance, and indexability) alongside <strong>on-page SEO</strong> (like metadata, headings, and image optimization).</p>
+            <p>It's important to understand that a free SEO audit tool is a diagnostic starting point, not a magic bullet. Identifying and fixing technical issues ensures your website is accessible and easily understood by search engines, creating a strong foundation for your broader marketing strategy.</p>
+          </div>
+          <div class="col-lg-5 offset-lg-1" data-reveal>
+            <div style="background: var(--navy-900); padding: 32px; border-radius: var(--radius); color: #fff; box-shadow: var(--shadow-dark);">
+              <h3 style="font-size: 1.25rem; margin-bottom: 16px; color: var(--blue-light);"><i class="bi bi-info-circle me-2"></i> Diagnostic, Not a Guarantee</h3>
+              <p style="color: var(--ink-dim); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">An automated audit analyzes structural and performance signals based on best practices. It does not predict exactly how Google's internal algorithm will rank your page. A high score means your page is technically sound, but search visibility also depends heavily on content relevance, user intent, and domain authority.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT DOES IT CHECK? -->
+    <section class="band-dark section-pad" id="what-does-it-check">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center section-head" data-reveal>
+            <span class="eyebrow">Features</span>
+            <h2>What Does This SEO Audit Check?</h2>
+            <p>This tool analyzes a specific, public webpage URL and returns targeted data organized into four critical categories. Here is exactly what our auditor evaluates when you click "Analyze".</p>
+          </div>
+        </div>
+        <div class="bento-grid">
+          
+          <div class="why-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);" data-reveal>
+            <div class="why-icon green"><i class="bi bi-search"></i></div>
+            <h3 style="color: #fff;">SEO &amp; On-Page Signals</h3>
+            <p style="color: var(--ink-dim);">We check if the page has a proper title tag, an appropriate meta description, a defined canonical URL, and a logical heading structure (H1, H2, H3). We also look for missing image alt text, word count estimations, and broken links found directly in the DOM.</p>
+          </div>
+          
+          <div class="why-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);" data-reveal>
+            <div class="why-icon violet"><i class="bi bi-speedometer2"></i></div>
+            <h3 style="color: #fff;">Performance &amp; Speed</h3>
+            <p style="color: var(--ink-dim);">Using Lighthouse data, the tool calculates a performance score by analyzing loading metrics. It specifically returns data on Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS), highlighting render-blocking resources or bloated code.</p>
+          </div>
+          
+          <div class="why-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);" data-reveal>
+            <div class="why-icon amber"><i class="bi bi-person-check"></i></div>
+            <h3 style="color: #fff;">Accessibility Checks</h3>
+            <p style="color: var(--ink-dim);">The audit provides an automated accessibility score by checking common issues like color contrast, form labels, and semantic structure. Note: This automated check is a helpful signal but does not constitute a full manual WCAG compliance audit.</p>
+          </div>
+          
+          <div class="why-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);" data-reveal>
+            <div class="why-icon blue"><i class="bi bi-shield-check"></i></div>
+            <h3 style="color: #fff;">Best Practices</h3>
+            <p style="color: var(--ink-dim);">The tool flags general web development best practices, including whether the page is served securely over HTTPS and if it avoids using outdated or vulnerable frontend APIs that could degrade user trust.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- FREE SEO AUDIT EXPLANATION -->
+    <section class="band-paper section-pad" id="free-seo-audit">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 section-head" data-reveal>
+            <span class="eyebrow">Getting Started</span>
+            <h2>Free SEO Audit for Your Website</h2>
+            <p>You can run an SEO check on any public webpage completely for free, without needing to register or provide a credit card.</p>
+            <ul style="list-style: none; padding: 0; margin-top: 24px;">
+              <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                <div>
+                  <strong>No Account Required:</strong> Just paste your URL and click analyze.
+                </div>
+              </li>
+              <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                <div>
+                  <strong>Fast Processing:</strong> The audit typically takes about 15-20 seconds to fetch and parse the data.
+                </div>
+              </li>
+              <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                <div>
+                  <strong>Usage Limits:</strong> You can run up to 5 free audits per session to help you test a few key pages on your site.
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0" data-reveal>
+            <img src="/assets/images/seo-hero.jpg" alt="SEO Audit Dashboard showing a score" class="img-fluid rounded shadow-lg" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO PERFORM AN SEO AUDIT -->
+    <section class="band-dark section-pad" id="how-to-perform">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center section-head" data-reveal>
+            <span class="eyebrow">The Process</span>
+            <h2>How to Perform an SEO Audit</h2>
+            <p>Using an automated tool makes the technical analysis easy, but understanding how to integrate it into your workflow is just as important.</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-4" data-reveal>
+            <div style="background: var(--navy-900); padding: 32px; border-radius: var(--radius); height: 100%; border: 1px solid var(--line-dark);">
+              <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;"><span style="color: var(--violet-light); font-family: var(--font-mono); margin-right: 8px;">01</span> Choose Your Page</h3>
+              <p style="color: var(--ink-dim); font-size: 0.95rem; margin-bottom: 0;">Start with your most important URLs. This is usually your homepage, top service pages, or highest-converting landing pages.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-reveal>
+            <div style="background: var(--navy-900); padding: 32px; border-radius: var(--radius); height: 100%; border: 1px solid var(--line-dark);">
+              <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;"><span style="color: var(--violet-light); font-family: var(--font-mono); margin-right: 8px;">02</span> Run the Scan</h3>
+              <p style="color: var(--ink-dim); font-size: 0.95rem; margin-bottom: 0;">Enter the URL into our tool. Ensure you enter the exact public URL (including HTTPS) so the crawler can access it properly.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-reveal>
+            <div style="background: var(--navy-900); padding: 32px; border-radius: var(--radius); height: 100%; border: 1px solid var(--line-dark);">
+              <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;"><span style="color: var(--violet-light); font-family: var(--font-mono); margin-right: 8px;">03</span> Review the Findings</h3>
+              <p style="color: var(--ink-dim); font-size: 0.95rem; margin-bottom: 0;">Look at your four primary scores (Performance, Accessibility, Best Practices, SEO). Identify which area needs the most immediate attention.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-reveal>
+            <div style="background: var(--navy-900); padding: 32px; border-radius: var(--radius); height: 100%; border: 1px solid var(--line-dark);">
+              <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;"><span style="color: var(--violet-light); font-family: var(--font-mono); margin-right: 8px;">04</span> Fix and Verify</h3>
+              <p style="color: var(--ink-dim); font-size: 0.95rem; margin-bottom: 0;">Use the Action Plan provided by the tool to implement fixes on your website. Once the changes are live, re-run the audit to verify the improvements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO AUDIT CHECKLIST -->
+    <section class="band-paper section-pad" id="seo-checklist">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8 section-head" data-reveal>
+            <span class="eyebrow">Reference</span>
+            <h2>SEO Audit Checklist</h2>
+            <p>Use this practical checklist to understand what elements our tool looks for, and what manual elements you might need to check yourself.</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-4" data-reveal>
+            <div style="background: #fff; padding: 32px; border-radius: var(--radius); border: 1px solid var(--line-light); height: 100%;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 20px;">On-Page &amp; Technical SEO</h3>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-primary me-2"></i> Title tag is present and optimized length</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-primary me-2"></i> Meta description exists and is compelling</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-primary me-2"></i> Exactly one H1 tag is used</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-primary me-2"></i> Images have descriptive alt text</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-primary me-2"></i> Canonical URL is properly defined</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-primary me-2"></i> Internal and external links are functioning</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-reveal>
+            <div style="background: #fff; padding: 32px; border-radius: var(--radius); border: 1px solid var(--line-light); height: 100%;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 20px;">Performance &amp; Experience</h3>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-success me-2"></i> Fast LCP (Largest Contentful Paint)</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-success me-2"></i> Minimal CLS (Visual stability)</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-success me-2"></i> HTTPS secure connection active</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-success me-2"></i> Sufficient color contrast for text</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-success me-2"></i> Buttons and forms have accessible labels</li>
+                <li style="margin-bottom: 12px;"><i class="bi bi-check2-circle text-success me-2"></i> Mobile viewport is configured properly</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT DOES A REPORT INCLUDE? -->
+    <section class="band-dark section-pad" id="report-details">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0 section-head" data-reveal>
+            <span class="eyebrow">The Results</span>
+            <h2>What Does an SEO Audit Report Include?</h2>
+            <p>When our tool finishes processing your page, it provides a straightforward, easy-to-read dashboard.</p>
+            <p><strong>The Four Gauges:</strong> You'll see scores from 0 to 100 for Performance, Accessibility, Best Practices, and SEO. These give you a quick bird's-eye view of your page's overall health.</p>
+            <p><strong>The Action Plan:</strong> Below the scores, the tool generates a prioritized list of findings. If we detect issues like a missing title, slow render-blocking scripts, or missing image alt text, they are listed here.</p>
+            <p><strong>Plain-English Fixes:</strong> We don't just give you a technical error code. Our system translates technical Lighthouse findings into an "AI Action Plan" recommendation, telling you exactly what a developer or content writer needs to do to fix the issue.</p>
+          </div>
+          <div class="col-lg-5 offset-lg-1" data-reveal>
+            <div style="background: rgba(108, 99, 255, 0.1); border-left: 4px solid var(--violet); padding: 24px; border-radius: 0 12px 12px 0;">
+              <h4 style="color: #fff; font-size: 1.1rem;">Example Finding:</h4>
+              <p style="color: var(--ink-dim); font-size: 0.9rem; margin-bottom: 12px;"><em>"Slow Loading Speed (LCP)"</em></p>
+              <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px;">
+                <span style="color: var(--violet-light); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-mono);">Recommendation:</span>
+                <p style="color: #fff; font-size: 0.9rem; margin-top: 4px; margin-bottom: 0;">Optimize your main hero image or server response time. Compressing large images and using a CDN can fix this instantly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SITEWIDE VS PAGE LEVEL & WHEN TO RUN -->
+    <section class="band-paper section-pad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-reveal>
+            <div class="section-head mb-4">
+              <h2>SEO Audit of a Website: What Should You Look For?</h2>
+            </div>
+            <p>It's important to differentiate between a <strong>page-level audit</strong> and a full <strong>sitewide audit</strong>. </p>
+            <p>Our free tool performs a <em>page-level</em> SEO audit. It analyzes the specific URL you provide to evaluate its individual structure, content, and performance. This is perfect for optimizing a crucial landing page or a new blog post.</p>
+            <p>A comprehensive <em>site SEO audit</em>, on the other hand, involves crawling thousands of URLs, analyzing the overall site architecture, looking at domain-wide backlink profiles, and digging into Google Search Console data. While our tool checks individual page health perfectly, larger businesses will eventually need professional SEO services for deep sitewide analysis.</p>
+          </div>
+          <div class="col-lg-5 offset-lg-1" data-reveal>
+            <div class="section-head mb-4">
+              <h2>When Should You Run a Site SEO Audit?</h2>
+            </div>
+            <ul style="list-style-type: disc; padding-left: 20px; color: var(--ink-on-paper);">
+              <li style="margin-bottom: 10px;"><strong>Launching a new website:</strong> Ensure everything is indexing properly from day one.</li>
+              <li style="margin-bottom: 10px;"><strong>Redesigning or Migrating:</strong> Prevent traffic drops when changing platforms or URLs.</li>
+              <li style="margin-bottom: 10px;"><strong>Diagnosing visibility drops:</strong> If your organic traffic suddenly falls, an audit can help locate technical errors.</li>
+              <li style="margin-bottom: 10px;"><strong>Before an SEO campaign:</strong> Always fix technical roadblocks before investing in new content or link building.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS & CORE WEB VITALS -->
+    <section class="band-dark section-pad">
+      <div class="container">
+        
+        <div class="row mb-5 pb-4 border-bottom" style="border-color: rgba(255,255,255,0.1) !important;">
+          <div class="col-lg-12 section-head text-center mx-auto" data-reveal>
+            <h2>How the SEO Auditor Works</h2>
+            <p>When you submit a URL, our application requests data simultaneously from the Google PageSpeed Insights/Lighthouse API and our internal HTML parser. We extract the raw data, score your metadata and headings, and translate the technical JSON responses into the clear, actionable categories you see on the dashboard.</p>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-4 mb-4 mb-lg-0 section-head" data-reveal>
+            <h2>Understanding Core Web Vitals</h2>
+            <p>Core Web Vitals are important page-experience metrics that measure loading performance, responsiveness, and visual stability. While important, remember that search visibility depends on many factors beyond these metrics.</p>
+          </div>
+          <div class="col-lg-7 offset-lg-1" data-reveal>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1);">
+                  <h4 style="color: #fff; font-size: 1.1rem;">Largest Contentful Paint (LCP)</h4>
+                  <p style="color: var(--ink-dim); font-size: 0.9rem; margin-bottom: 8px;">Measures loading performance. It marks the time the largest text or image block is rendered.</p>
+                  <span style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;">Good: &lt;= 2.5 seconds</span>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1);">
+                  <h4 style="color: #fff; font-size: 1.1rem;">Interaction to Next Paint (INP)</h4>
+                  <p style="color: var(--ink-dim); font-size: 0.9rem; margin-bottom: 8px;">Measures responsiveness. It calculates how quickly the page responds to a user's click or tap.</p>
+                  <span style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;">Good: &lt; 200 milliseconds</span>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1);">
+                  <h4 style="color: #fff; font-size: 1.1rem;">Cumulative Layout Shift (CLS)</h4>
+                  <p style="color: var(--ink-dim); font-size: 0.9rem; margin-bottom: 8px;">Measures visual stability. It checks if elements on the page jump around while the page is loading.</p>
+                  <span style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;">Good: &lt; 0.1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- LAB DATA VS FIELD DATA & TRANSPARENCY -->
+    <section class="band-paper section-pad">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-lg-6 mb-5 mb-lg-0" data-reveal>
+            <div class="section-head mb-4">
+              <h2>Lab Data and Real-World Performance</h2>
+            </div>
+            <p>Our tool relies on Lighthouse, which provides <strong>Lab Data</strong>. Lab data is collected in a controlled environment (a simulated mobile or desktop device over a simulated network). </p>
+            <p>This is excellent for diagnosing issues and debugging performance consistently. However, it may differ slightly from <strong>Field Data</strong> (real-world user experiences), which Google collects through the Chrome User Experience Report (CrUX). Always use lab data to fix issues, but monitor your Search Console for real-world field data trends over time.</p>
+          </div>
+          
+          <div class="col-lg-5 offset-lg-1" data-reveal>
+            <div class="section-head mb-4">
+              <h2>What This SEO Audit Does Not Tell You</h2>
+            </div>
+            <p>To be completely transparent, a single automated tool has limitations as a diagnostic instrument:</p>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 8px; color: var(--ink-on-paper);"><i class="bi bi-x-circle text-danger me-2"></i> It does not guarantee Google rankings.</li>
+              <li style="margin-bottom: 8px; color: var(--ink-on-paper);"><i class="bi bi-x-circle text-danger me-2"></i> It does not analyze your backlink profile.</li>
+              <li style="margin-bottom: 8px; color: var(--ink-on-paper);"><i class="bi bi-x-circle text-danger me-2"></i> It does not perform competitor analysis.</li>
+              <li style="margin-bottom: 8px; color: var(--ink-on-paper);"><i class="bi bi-x-circle text-danger me-2"></i> It does not access your Google Analytics data.</li>
+              <li style="margin-bottom: 8px; color: var(--ink-on-paper);"><i class="bi bi-x-circle text-danger me-2"></i> It does not crawl your entire website structure.</li>
+            </ul>
+            <p class="mt-3 text-muted small">For these deeper insights, you require manual professional SEO analysis.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNAL LINK HUB -->
+    <section class="band-dark section-pad border-top border-secondary">
+      <div class="container text-center">
+        <div class="section-head mx-auto mb-5" data-reveal>
+          <h2>Continue Your Website SEO Check</h2>
+          <p>Looking to focus on a specific aspect of your optimization? Use our other specialized free SEO tools.</p>
+        </div>
+        
+        <div class="row justify-content-center" data-reveal>
+          <div class="col-auto mb-3"><a href="/tools/" class="btn btn-outline-light">Free SEO Tools Hub</a></div>
+          <div class="col-auto mb-3"><a href="/tools/speed-checker/" class="btn btn-outline-light">Check your Core Web Vitals</a></div>
+          <div class="col-auto mb-3"><a href="/tools/sitemap-generator/" class="btn btn-outline-light">Generate an XML sitemap</a></div>
+          <div class="col-auto mb-3"><a href="/tools/local-seo/" class="btn btn-outline-light">Review local SEO signals</a></div>
+          <div class="col-auto mb-3"><a href="/tools/meta-tag-generator/" class="btn btn-outline-light">Create SEO meta tags</a></div>
+          <div class="col-auto mb-3"><a href="/tools/schema-generator/" class="btn btn-outline-light">Generate JSON-LD schema markup</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="band-paper section-pad">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center section-head" data-reveal>
+            <h2>Frequently Asked Questions About SEO Audits</h2>
+          </div>
+        </div>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-reveal>
+            <div class="accordion" id="seoFaqAccordion">
+              
+              <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    What is the difference between an SEO audit and an SEO checker?
+                  </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#seoFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    Typically, the terms are used interchangeably. An "SEO checker" often refers to a quick, automated tool that scans a single URL (like this one). A full "SEO audit" usually refers to a comprehensive, sitewide manual review conducted by an SEO professional.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Are free SEO audit tools accurate?
+                  </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#seoFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    Yes, for the specific technical metrics they measure. Our tool relies directly on Google's own Lighthouse and PageSpeed Insights APIs, ensuring the technical data reflects modern standards. However, automated tools cannot measure subjective factors like content quality, brand authority, or user intent satisfaction.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    How often should I run an SEO audit?
+                  </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#seoFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    We recommend running a quick page-level audit whenever you publish a highly important piece of content or make changes to your page templates. A full sitewide professional audit should be done annually, or immediately before any major website redesign or migration.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    Can an SEO audit guarantee higher Google rankings?
+                  </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#seoFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    No. An SEO audit identifies technical roadblocks and areas for optimization. Fixing these issues ensures Google can properly crawl and understand your site, which is a prerequisite for ranking, but rankings are ultimately determined by search algorithms analyzing content relevance, competition, and off-page authority.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                    What should I fix first after an SEO audit?
+                  </button>
+                </h2>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#seoFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    Prioritize critical crawlability issues first (e.g., broken links, missing canonicals, missing H1s). Next, focus on severe performance bottlenecks that drastically slow down your Largest Contentful Paint (LCP). Our tool's action plan automatically bubbles the highest priority warnings to the top of your list.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-band section-pad" id="contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-7 text-center" data-reveal>
+            <span class="eyebrow" style="color:var(--amber)">SEO Services</span>
+            <h2 id="contact-heading" style="color:#fff;margin-top:12px;font-size:clamp(1.6rem,2.8vw,2.2rem)">Need a More Detailed SEO Audit?</h2>
+            <p style="color:var(--ink-dim)">If your business needs implementation support, professional website optimization, or a deep-dive technical SEO audit beyond an automated tool, CompaniesBuilder provides expert <a href="/services/seo/" class="text-info text-decoration-none">SEO services</a>. Fill in the form below to get started.</p>
+          </div>
+        </div>
+        <div class="contact-card" data-reveal>
+          <form id="homeContactForm" name="home-contact" novalidate>
+            <div class="row gx-3 gy-3 align-items-end">
+              <div class="col-md-3">
+                <label for="hname" class="form-label">Name *</label>
+                <input id="hname" name="your-name" class="form-control" autocomplete="name" placeholder="Your name" required>
+              </div>
+              <div class="col-md-3">
+                <label for="hemail" class="form-label">Email *</label>
+                <input id="hemail" type="email" name="your-email" class="form-control" autocomplete="email" placeholder="your@email.com" required>
+              </div>
+              <div class="col-md-3">
+                <label for="hphone" class="form-label">Phone *</label>
+                <input id="hphone" type="tel" name="your-number" pattern="[0-9]{10}" class="form-control" autocomplete="tel" placeholder="10-digit mobile" required>
+              </div>
+              <div class="col-md-3">
+                <label for="hcta" class="form-label">I need help with</label>
+                <select id="hcta" name="interest" class="form-control form-select">
+                  <option>Full SEO Strategy</option>
+                  <option>Professional SEO Audit</option>
+                  <option>Web Development</option>
+                  <option>Google Ads</option>
+                  <option>Full Digital Plan</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="hmessage" class="form-label">Tell us about your project</label>
+                <textarea id="hmessage" name="message" rows="3" class="form-control" placeholder="Briefly describe your website goals or challenges..."></textarea>
+              </div>
+              <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3 mt-2">
+                <p class="small mb-0" style="color:var(--muted-on-paper)"><i class="bi bi-shield-lock me-1"></i>Your details are safe. We do not share your data.</p>
+                <button type="submit" class="btn-submit" id="homeSubmitBtn">Request SEO Consultation &rarr;</button>
+              </div>
+            </div>
+          </form>
+          <div id="homeSuccess" style="display:none;margin-top:16px" class="text-success" role="status">
+            <i class="bi bi-check-circle me-2"></i>Thanks! We received your request and will contact you within 24 hours.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+  <!-- GLOBAL FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-4 col-lg-3">
+          <a href="/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
+            <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36"
+              style="height:36px;width:auto;display:inline-block">
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies
+              Builder</span>
+          </a>
+          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving
+            startups and SMBs across India.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61579509437210" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/CB_technologies" target="_blank" rel="noopener" aria-label="Twitter / X"><i
+                class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/careers/">Careers</a></li>
+            <li><a href="/resources/checklists/">Checklists</a></li>
+            <li><a href="/tools/">Free SEO Tools</a></li>
+            <li><a href="/blogs/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/write-for-us/">Write for Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h3>Services</h3>
+          <ul class="list-unstyled">
+            <li><a href="/services/web-development-and-designing/">Web Development &amp; Design</a></li>
+            <li><a href="/services/seo-services-in-hyderabad/">SEO Services in Hyderabad</a></li>
+            <li><a href="/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+            <li><a href="/services/b2b-digital-marketing-agency/">B2B Digital Marketing</a></li>
+            <li><a href="/demo/">Request a Demo</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-lg-3">
+          <h3>Get in Touch</h3>
+          <ul class="list-unstyled">
+            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope"
+                  style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
+            <li style="margin-bottom:10px"><a href="tel:+916302787953"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone"
+                  style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
+            <li><a href="/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check"
+                  style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Companies Builder. All rights reserved.</span>
+        <span class="footer-badge">Hyderabad, India</span>
+        <span><a href="/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a
+            href="/sitemap.xml">Sitemap</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    /* â”€â”€ PAGE SCRIPTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    // Navbar scroll effect
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Reveal on scroll
+    (function () {
+      var items = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window) || !items.length) { items.forEach(function (el) { el.classList.add('is-visible') }); return; }
+      var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target) } }) }, { threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el) });
+    })();
+
+    // Contact form (Google Script)
+    (function () {
+      var scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+      var form = document.getElementById('homeContactForm');
+      var success = document.getElementById('homeSuccess');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = document.getElementById('homeSubmitBtn');
+        btn.disabled = true; btn.textContent = 'Sending...';
+        var data = new FormData(form);
+        data.append('timestamp', new Date().toISOString());
+        data.append('source', 'SEO Auditor Tool');
+        fetch(scriptURL, { method: 'POST', body: data })
+          .then(function (r) { return r.text() })
+          .then(function (text) {
+            if (text && text.trim() === 'Success') {
+              success.style.display = 'block'; form.reset();
+              setTimeout(function () { success.style.display = 'none' }, 8000);
+            } else { alert('Something went wrong. Please try again or call us directly.') }
+            btn.disabled = false; btn.textContent = 'Request Free Audit \u2192';
+          })
+          .catch(function (err) {
+            alert('Error submitting form. Please try again.');
+            btn.disabled = false; btn.textContent = 'Request Free Audit \u2192';
+          });
+      });
+    })();
+
+    // CTA scroll
+    (function () {
+      var ctaBtn = document.getElementById('cta-scroll-contact');
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    })();
+
+    /* ── SEO AUDITOR APP ─────────────────────────────── */
+    const API_KEY = 'AIzaSyBDBrBTAY0g1ftPaZkaJYqPV-DInrDFGP8';
+    const TOOL_ID = 'seo-auditor';
+    let lastAuditData = null; // Store audit results for report generation
+
+    function updateAttemptText() {
+      const count = CompaniesBuilderTools.getUsageCount(TOOL_ID);
+      const remaining = CompaniesBuilderTools.MAX_FREE_ATTEMPTS - count;
+      const attemptText = document.getElementById('attempt-text');
+      const attemptBar = document.getElementById('attempt-bar');
+      if (attemptText) {
+        if (remaining <= 0) {
+          attemptText.textContent = 'Free limit reached';
+          if (attemptBar) attemptBar.style.background = 'rgba(255,75,75,0.15)';
+          if (attemptBar) attemptBar.style.borderColor = 'rgba(255,75,75,0.4)';
+        } else {
+          attemptText.textContent = remaining + ' free audit' + (remaining !== 1 ? 's' : '') + ' remaining';
+        }
+      }
+      CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateAttemptText();
+
+      const form = document.getElementById('auditor-form');
+      const urlInput = document.getElementById('url-input');
+      const btnAnalyze = document.getElementById('btn-analyze');
+      const loadingIndicator = document.getElementById('loading-indicator');
+      const loadingText = document.getElementById('loading-text');
+      const resultsSection = document.getElementById('results-section');
+      const actionPlanList = document.getElementById('action-plan-list');
+
+      const gauges = {
+        performance: { val: document.getElementById('val-performance'), circle: document.getElementById('gauge-performance') },
+        accessibility: { val: document.getElementById('val-accessibility'), circle: document.getElementById('gauge-accessibility') },
+        'best-practices': { val: document.getElementById('val-best-practices'), circle: document.getElementById('gauge-best-practices') },
+        seo: { val: document.getElementById('val-seo'), circle: document.getElementById('gauge-seo') }
+      };
+
+      const loadingMessages = [
+        "Our AI is scanning your website...",
+        "Analyzing server response times...",
+        "Checking SEO meta tags...",
+        "Evaluating mobile accessibility...",
+        "Running Lighthouse audits...",
+        "Generating your action plan..."
+      ];
+      let messageInterval;
+
+      
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        
+
+        const url = urlInput.value.trim();
+        if (!url) return;
+
+        if (!CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer')) {
+          return;
+        }
+
+        resultsSection.style.display = 'none';
+        btnAnalyze.disabled = true;
+        btnAnalyze.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Analyzing...';
+        loadingIndicator.style.display = 'flex';
+        actionPlanList.innerHTML = '';
+
+        let msgIndex = 0;
+        loadingText.textContent = loadingMessages[0];
+        messageInterval = setInterval(() => {
+          msgIndex = (msgIndex + 1) % loadingMessages.length;
+          loadingText.textContent = loadingMessages[msgIndex];
+        }, 2500);
+
+        
+        try {
+          let finalUrl = url;
+          if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
+            finalUrl = 'https://' + finalUrl;
+          }
+          
+          const [speedRes, auditRes] = await Promise.all([
+             fetch(`/tools/api/speed?url=${encodeURIComponent(finalUrl)}&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo`),
+             fetch(`/tools/api/audit?url=${encodeURIComponent(finalUrl)}`)
+          ]);
+          
+          const speedData = await speedRes.json();
+          const auditData = await auditRes.json();
+
+          if (speedData.error && auditData.error) {
+             throw new Error(speedData.error || auditData.error);
+          }
+
+          clearInterval(messageInterval);
+          
+          // Map to UI
+          const lh = speedData.lighthouseResult || { categories: {} };
+          
+          updateGauge(gauges.performance, lh.categories.performance?.score || 0);
+          updateGauge(gauges.accessibility, lh.categories.accessibility?.score || 0);
+          updateGauge(gauges['best-practices'], lh.categories['best-practices']?.score || 0);
+          
+          // Use our custom SEO score if available
+          updateGauge(gauges.seo, auditData.seoScore !== undefined ? (auditData.seoScore / 100) : (lh.categories.seo?.score || 0));
+
+          // Generate combined action plan
+          const combinedAudits = lh.audits || {};
+          const customActionPlan = auditData.actionPlan || [];
+          
+          generateActionPlan(combinedAudits, customActionPlan);
+
+          CompaniesBuilderTools.incrementUsage(TOOL_ID);
+          updateAttemptText();
+
+          // Store data for report generation
+          lastAuditData = {
+            url: urlInput.value.trim(),
+            date: new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }),
+            scores: {
+              performance: Math.round((lh.categories.performance?.score || 0) * 100),
+              accessibility: Math.round((lh.categories.accessibility?.score || 0) * 100),
+              bestPractices: Math.round((lh.categories['best-practices']?.score || 0) * 100),
+              seo: auditData.seoScore !== undefined ? auditData.seoScore : Math.round((lh.categories.seo?.score || 0) * 100)
+            },
+            issues: Array.from(actionPlanList.querySelectorAll('.issue-item')).map(item => ({
+              title: item.querySelector('h4')?.textContent || '',
+              description: item.querySelector('p')?.textContent || '',
+              recommendation: item.querySelector('.ai-fix')?.textContent?.replace('AI Recommendation:', '').trim() || ''
+            }))
+          };
+
+          loadingIndicator.style.display = 'none';
+          resultsSection.style.display = 'block';
+          resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // Trigger Cross Promotion logic if any issues found (score < 90)
+          if ((lh.categories.performance?.score || 0) < 0.9 || (auditData.seoScore || 0) < 90) {
+              if (window.showCrossPromotion) {
+                  window.showCrossPromotion(resultsSection.querySelector('.container'));
+              }
+          }
+
+        } catch (error) {
+
+          clearInterval(messageInterval);
+          loadingText.textContent = `Error: ${error.message}`;
+          loadingIndicator.querySelector('.loading-dots').style.display = 'none';
+        } finally {
+          // Only re-enable if the limit hasn't been reached
+          if (CompaniesBuilderTools.getUsageCount(TOOL_ID) < CompaniesBuilderTools.MAX_FREE_ATTEMPTS) {
+            btnAnalyze.disabled = false;
+            btnAnalyze.innerHTML = '<i class="bi bi-magic me-2"></i>Analyze';
+          }
+          CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
+          updateAttemptText();
+        }
+      });
+
+      function displayMockData() {
+        clearInterval(messageInterval);
+        updateGauge(gauges.performance, 0.42);
+        updateGauge(gauges.accessibility, 0.88);
+        updateGauge(gauges['best-practices'], 0.75);
+        updateGauge(gauges.seo, 0.91);
+        const mockAudits = {
+          'largest-contentful-paint': { score: 0.2, details: { type: 'numeric' }, description: 'Largest Contentful Paint marks the time at which the largest text or image is painted.' },
+          'unused-css-rules': { score: 0, details: { type: 'numeric' }, description: 'Remove dead rules from stylesheets and defer the loading of CSS not used for above-the-fold content.' },
+          'render-blocking-resources': { score: 0.5, details: { type: 'numeric' }, description: 'Resources are blocking the first paint of your page.' }
+        };
+        generateActionPlan(mockAudits);
+        loadingIndicator.style.display = 'none';
+        resultsSection.style.display = 'block';
+        const banner = document.createElement('div');
+        banner.className = 'alert alert-warning text-center mt-3';
+        banner.innerHTML = '<strong>Preview Mode:</strong> API Quota exceeded. Showing sample results.';
+        resultsSection.querySelector('.container').insertBefore(banner, resultsSection.querySelector('.container').firstChild);
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function updateGauge(gaugeObj, scoreDecimal) {
+        const score = Math.round((scoreDecimal || 0) * 100);
+        gaugeObj.val.textContent = score;
+        const circumference = 339.292;
+        const offset = circumference - (score / 100) * circumference;
+        let color = 'var(--red)';
+        if (score >= 90) color = 'var(--green)';
+        else if (score >= 50) color = 'var(--amber)';
+        setTimeout(() => {
+          gaugeObj.circle.style.strokeDashoffset = offset;
+          gaugeObj.circle.style.stroke = color;
+          gaugeObj.val.style.color = color;
+        }, 50);
+      }
+
+      
+      function generateActionPlan(audits, customActionPlan = []) {
+        const mapping = {
+          'largest-contentful-paint': { icon: 'bi-speedometer2', title: 'Slow Loading Speed (LCP)', aiFix: 'Optimize your main hero image or server response time. Compressing large images and using a CDN can fix this instantly.' },
+          'cumulative-layout-shift': { icon: 'bi-aspect-ratio', title: 'Jumpy Website Layout (CLS)', aiFix: 'Ensure all images and ads have explicit width and height attributes so the browser reserves space before they load.' },
+          'unused-css-rules': { icon: 'bi-filetype-css', title: 'Bloated Code (Unused CSS)', aiFix: 'Purge unused CSS rules. This makes your site load significantly faster, especially on mobile devices.' },
+          'modern-image-formats': { icon: 'bi-image', title: 'Outdated Image Formats', aiFix: 'Convert JPEG/PNG images to next-gen formats like WebP or AVIF. This reduces file sizes by up to 50% without quality loss.' },
+          'render-blocking-resources': { icon: 'bi-hourglass-bottom', title: 'Render-Blocking Scripts', aiFix: 'Defer non-critical JavaScript so users see your content before scripts finish loading.' },
+          'color-contrast': { icon: 'bi-palette', title: 'Poor Color Contrast', aiFix: 'Some text is hard to read for visually impaired users. Adjust CSS colors to meet WCAG accessibility standards.' }
+        };
+        const issues = [...customActionPlan];
+        for (const [key, audit] of Object.entries(audits)) {
+          if (audit.score !== null && audit.score < 0.9 && audit.details) {
+            if (mapping[key]) {
+              issues.push({ icon: mapping[key].icon, title: mapping[key].title, description: audit.description.split('.')[0] + '.', aiFix: mapping[key].aiFix });
+            } else if (audit.title && audit.description && !['document-title', 'meta-description', 'heading-order', 'link-text'].includes(key)) {
+              // Ignore basic lighthouse SEO checks as we handle them via customActionPlan
+              issues.push({ icon: 'bi-exclamation-triangle', title: audit.title, description: audit.description.split('.')[0] + '.', aiFix: 'Have a developer review this technical issue to ensure it isn\'t negatively impacting your search rankings.' });
+            }
+          }
+        }
+        const topIssues = issues.slice(0, 5);
+        if (topIssues.length === 0) {
+          actionPlanList.innerHTML = `<li class="issue-item"><i class="bi bi-check-circle-fill" style="color:var(--green);font-size:1.4rem;margin-top:2px"></i><div class="issue-content"><h4>Your website looks great!</h4><p>Our AI couldn't find any major issues. Keep up the good work!</p></div></li>`;
+          return;
+        }
+        topIssues.forEach(issue => {
+          const li = document.createElement('li');
+          li.className = 'issue-item';
+          li.innerHTML = `<i class="bi ${issue.icon} issue-icon"></i><div class="issue-content"><h4>${issue.title}</h4><p>${issue.description}</p><div class="ai-fix"><strong>AI Recommendation:</strong>${issue.aiFix}</div></div>`;
+          actionPlanList.appendChild(li);
+        });
+      }
+    });
+  </script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      function applyTheme(value) {
+        root.setAttribute('data-theme', value);
+        localStorage.setItem('cb-theme', value);
+        var icon = btn.querySelector('i');
+        if (icon) {
+          icon.className = value === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
+        }
+      }
+      var saved = localStorage.getItem('cb-theme');
+      var preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(saved || (preferDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <script src="/tools/assets/shared.js" defer></script>
+  <script>
+    // Report Download Logic
+    (function() {
+      const btnDownload = document.getElementById('btnDownloadReport');
+      const overlay = document.getElementById('reportModalOverlay');
+      const btnClose = document.getElementById('btnCloseReportModal');
+      const form = document.getElementById('reportLeadForm');
+
+      if (!btnDownload || !overlay || !form) return;
+
+      btnDownload.addEventListener('click', () => {
+        overlay.classList.add('active');
+      });
+
+      btnClose.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) overlay.classList.remove('active');
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('reportName').value.trim();
+        const email = document.getElementById('reportEmail').value.trim();
+        const phone = document.getElementById('reportPhone').value.trim();
+
+        if (!name || !email) return;
+
+        // Store lead data in localStorage for future reference
+        const leads = JSON.parse(localStorage.getItem('cb_report_leads') || '[]');
+        leads.push({ name, email, phone, url: lastAuditData?.url, date: new Date().toISOString() });
+        localStorage.setItem('cb_report_leads', JSON.stringify(leads));
+
+        // Generate the PDF report
+        generatePDFReport(name, email);
+        overlay.classList.remove('active');
+      });
+
+      function getScoreColor(score) {
+        if (score >= 90) return '#22d3a0';
+        if (score >= 50) return '#ffb020';
+        return '#ff4b4b';
+      }
+
+      function getScoreLabel(score) {
+        if (score >= 90) return 'Good';
+        if (score >= 50) return 'Needs Work';
+        return 'Poor';
+      }
+
+      function generatePDFReport(userName, userEmail) {
+        if (!lastAuditData) {
+          alert('No audit data available. Please run an audit first.');
+          return;
+        }
+
+        const d = lastAuditData;
+        const issuesHTML = d.issues.map((issue, i) => `
+          <div style="margin-bottom:20px; padding:16px; background:#f8f9fa; border-left:4px solid #6c63ff; border-radius:0 8px 8px 0;">
+            <h4 style="margin:0 0 6px; font-size:14px; color:#1a1a2e;">${i+1}. ${issue.title}</h4>
+            <p style="margin:0 0 8px; font-size:13px; color:#555;">${issue.description}</p>
+            <div style="background:#eef0ff; padding:10px 14px; border-radius:6px; font-size:13px; color:#4a4a6a;">
+              <strong style="color:#6c63ff;">Recommendation:</strong> ${issue.recommendation}
+            </div>
+          </div>
+        `).join('');
+
+        const reportHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SEO Audit Report - ${d.url}</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color:#1a1a2e; line-height:1.6; }
+    .page { padding:48px; max-width:800px; margin:0 auto; }
+    .header { text-align:center; margin-bottom:40px; padding-bottom:24px; border-bottom:3px solid #6c63ff; }
+    .header img { height:40px; margin-bottom:12px; }
+    .header h1 { font-size:28px; color:#1a1a2e; margin-bottom:4px; }
+    .header p { color:#666; font-size:14px; }
+    .meta-info { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:32px; padding:16px; background:#f5f6ff; border-radius:10px; font-size:13px; }
+    .meta-info span { color:#555; }
+    .meta-info strong { color:#1a1a2e; }
+    .scores-row { display:flex; justify-content:space-around; flex-wrap:wrap; gap:16px; margin-bottom:40px; }
+    .score-box { text-align:center; flex:1; min-width:120px; padding:20px 12px; border-radius:12px; background:#fff; border:2px solid #eee; }
+    .score-box .score-num { font-size:36px; font-weight:800; margin-bottom:4px; }
+    .score-box .score-name { font-size:12px; color:#888; text-transform:uppercase; letter-spacing:.5px; font-weight:600; }
+    .score-box .score-status { font-size:11px; font-weight:700; margin-top:4px; }
+    .section-title { font-size:20px; color:#1a1a2e; margin:32px 0 16px; padding-bottom:8px; border-bottom:2px solid #eee; }
+    .footer { margin-top:48px; padding-top:20px; border-top:2px solid #eee; text-align:center; font-size:12px; color:#999; }
+    .footer a { color:#6c63ff; text-decoration:none; }
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding:24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder" style="height:40px;">
+      <h1>SEO Audit Report</h1>
+      <p>Generated by Companies Builder Free SEO Auditor</p>
+    </div>
+
+    <div class="meta-info">
+      <span><strong>URL:</strong> ${d.url}</span>
+      <span><strong>Date:</strong> ${d.date}</span>
+      <span><strong>Prepared for:</strong> ${userName}</span>
+    </div>
+
+    <h2 class="section-title">Performance Scores</h2>
+    <div class="scores-row">
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.performance)}">${d.scores.performance}</div>
+        <div class="score-name">Performance</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.performance)}">${getScoreLabel(d.scores.performance)}</div>
+      </div>
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.accessibility)}">${d.scores.accessibility}</div>
+        <div class="score-name">Accessibility</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.accessibility)}">${getScoreLabel(d.scores.accessibility)}</div>
+      </div>
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.bestPractices)}">${d.scores.bestPractices}</div>
+        <div class="score-name">Best Practices</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.bestPractices)}">${getScoreLabel(d.scores.bestPractices)}</div>
+      </div>
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.seo)}">${d.scores.seo}</div>
+        <div class="score-name">SEO</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.seo)}">${getScoreLabel(d.scores.seo)}</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Issues Found & AI Recommendations</h2>
+    ${issuesHTML || '<p style="color:#22d3a0; font-weight:600;">No major issues found. Your website looks great!</p>'}
+
+    <h2 class="section-title">Next Steps</h2>
+    <div style="padding:20px; background:#f5f6ff; border-radius:10px; margin-bottom:20px;">
+      <p style="font-size:14px; margin-bottom:12px;">Based on this audit, we recommend the following next steps:</p>
+      <ol style="padding-left:20px; font-size:13px; color:#555;">
+        <li style="margin-bottom:8px;">Address the critical issues identified above, starting with the highest-impact items.</li>
+        <li style="margin-bottom:8px;">Re-run this audit after making changes to verify improvements.</li>
+        <li style="margin-bottom:8px;">Test your site on both mobile and desktop using our <a href="https://companiesbuilder.com/tools/speed-checker/" style="color:#6c63ff;">Speed Checker</a>.</li>
+        <li style="margin-bottom:8px;">For a comprehensive, professional SEO strategy, contact Companies Builder.</li>
+      </ol>
+    </div>
+
+    <div class="footer">
+      <p>&copy; ${new Date().getFullYear()} Companies Builder. All rights reserved.</p>
+      <p><a href="https://companiesbuilder.com">companiesbuilder.com</a> | <a href="mailto:info@companiesbuilder.com">info@companiesbuilder.com</a> | +91 63027 87953</p>
+      <p style="margin-top:8px; font-size:11px;">This report was generated using automated analysis tools. Results may vary. For a comprehensive professional audit, please contact us.</p>
+    </div>
+  </div>
+  <script src="/assets/js/global-nav.js" defer></script>
+</body>
+</html>`;
+
+        // Open in new window and trigger print
+        const reportWindow = window.open('', '_blank');
+        reportWindow.document.write(reportHTML);
+        reportWindow.document.close();
+        reportWindow.onload = function() {
+          reportWindow.print();
+        };
+      }
+    })();
+  </script>
+</body>
+
+</html>
