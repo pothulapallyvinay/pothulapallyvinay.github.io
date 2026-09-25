@@ -633,6 +633,25 @@ jobs.forEach(job => {
         display.style.color = 'var(--green)';
       }
 
+      function getBase64(file) {
+        return new Promise(function (resolve) {
+          if (!file) return resolve(null);
+          var reader = new FileReader();
+          reader.onload = function (ev) {
+            var raw = ev.target.result;
+            var b64 = raw.indexOf(',') > -1 ? raw.split(',')[1] : raw;
+            resolve({
+              data: b64,
+              name: file.name,
+              type: file.type || 'application/octet-stream',
+              size: file.size
+            });
+          };
+          reader.onerror = function () { resolve(null); };
+          reader.readAsDataURL(file);
+        });
+      }
+
       // Form submission
       var form = document.getElementById('jobAppForm');
       var successBox = document.getElementById('appSuccess');
@@ -669,57 +688,71 @@ jobs.forEach(job => {
           submitBtn.innerHTML = '<i class="bi bi-arrow-repeat" style="animation:spin 1s linear infinite"></i> Submitting Application...';
           lastSubmit = now;
 
-          var formData = new FormData(form);
-          formData.append('timestamp', new Date().toISOString());
-          formData.append('source', 'Careers Job Application - ${job.title}');
-          formData.append('your-name', name);
-          formData.append('name', name);
-          formData.append('your-email', email);
-          formData.append('email', email);
-          formData.append('your-number', phone);
-          formData.append('phone', phone);
-          formData.append('interest', 'Job Application: ${job.title}');
+          var fileToUpload = (fileInput && fileInput.files && fileInput.files[0]) ? fileInput.files[0] : null;
 
-          var linkedin = document.getElementById('app-linkedin') ? document.getElementById('app-linkedin').value : '';
-          var portfolio = document.getElementById('app-portfolio') ? document.getElementById('app-portfolio').value : '';
-          var notice = document.getElementById('app-notice') ? document.getElementById('app-notice').value : '';
-          var notes = document.getElementById('app-notes') ? document.getElementById('app-notes').value : '';
+          getBase64(fileToUpload).then(function (fileObj) {
+            var formData = new FormData(form);
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source', 'Careers Job Application - ${job.title}');
+            formData.append('your-name', name);
+            formData.append('name', name);
+            formData.append('your-email', email);
+            formData.append('email', email);
+            formData.append('your-number', phone);
+            formData.append('phone', phone);
+            formData.append('interest', 'Job Application: ${job.title}');
 
-          var compiledMessage = [
-            '=== JOB APPLICATION ===',
-            'Role: ${job.title}',
-            'Name: ' + name,
-            'Email: ' + email,
-            'Phone: ' + phone,
-            'Notice Period: ' + notice,
-            linkedin ? 'LinkedIn: ' + linkedin : '',
-            portfolio ? 'Portfolio: ' + portfolio : '',
-            notes ? 'Notes: ' + notes : ''
-          ].filter(Boolean).join('\\n');
+            if (fileObj) {
+              formData.append('fileData', fileObj.data);
+              formData.append('fileName', fileObj.name);
+              formData.append('fileMimeType', fileObj.type);
+              formData.append('resume', fileObj.name);
+              formData.append('document', fileObj.name);
+              formData.append('documentName', fileObj.name);
+            }
 
-          formData.append('message', compiledMessage);
+            var linkedin = document.getElementById('app-linkedin') ? document.getElementById('app-linkedin').value : '';
+            var portfolio = document.getElementById('app-portfolio') ? document.getElementById('app-portfolio').value : '';
+            var notice = document.getElementById('app-notice') ? document.getElementById('app-notice').value : '';
+            var notes = document.getElementById('app-notes') ? document.getElementById('app-notes').value : '';
 
-          fetch(scriptURL, { method: 'POST', body: formData })
-            .then(function (r) { return r.text(); })
-            .then(function (text) {
-              if (text && text.trim() === 'Success') {
-                form.style.display = 'none';
-                successBox.style.display = 'block';
-                if (window.gtag) {
-                  try { gtag('event', 'job_application_submit', { role: '${job.slug}', job_title: '${job.title}' }); } catch(err) {}
+            var compiledMessage = [
+              '=== JOB APPLICATION ===',
+              'Role: ${job.title}',
+              'Name: ' + name,
+              'Email: ' + email,
+              'Phone: ' + phone,
+              'Notice Period: ' + notice,
+              linkedin ? 'LinkedIn: ' + linkedin : '',
+              portfolio ? 'Portfolio: ' + portfolio : '',
+              fileObj ? 'Attached Document: ' + fileObj.name + ' (' + (fileObj.size / 1024).toFixed(1) + ' KB)' : '',
+              notes ? 'Notes: ' + notes : ''
+            ].filter(Boolean).join('\\n');
+
+            formData.append('message', compiledMessage);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+              .then(function (r) { return r.text(); })
+              .then(function (text) {
+                if (text && text.trim() === 'Success') {
+                  form.style.display = 'none';
+                  successBox.style.display = 'block';
+                  if (window.gtag) {
+                    try { gtag('event', 'job_application_submit', { role: '${job.slug}', job_title: '${job.title}' }); } catch(err) {}
+                  }
+                } else {
+                  alert('Submission received. If you experience an issue, you can also email your CV directly to info@companiesbuilder.com');
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Application for ${job.title}';
                 }
-              } else {
-                alert('Submission received. If you experience an issue, you can also email your CV directly to info@companiesbuilder.com');
+              })
+              .catch(function (err) {
+                console.error('Job app error:', err);
+                alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Application for ${job.title}';
-              }
-            })
-            .catch(function (err) {
-              console.error('Job app error:', err);
-              alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Application for ${job.title}';
-            });
+              });
+          });
         });
       }
     })();
@@ -1216,6 +1249,25 @@ const applyHtml = `<!DOCTYPE html>
         display.style.color = 'var(--green)';
       }
 
+      function getBase64(file) {
+        return new Promise(function (resolve) {
+          if (!file) return resolve(null);
+          var reader = new FileReader();
+          reader.onload = function (ev) {
+            var raw = ev.target.result;
+            var b64 = raw.indexOf(',') > -1 ? raw.split(',')[1] : raw;
+            resolve({
+              data: b64,
+              name: file.name,
+              type: file.type || 'application/octet-stream',
+              size: file.size
+            });
+          };
+          reader.onerror = function () { resolve(null); };
+          reader.readAsDataURL(file);
+        });
+      }
+
       // Submission
       var form = document.getElementById('universalAppForm');
       var successBox = document.getElementById('universalAppSuccess');
@@ -1252,60 +1304,74 @@ const applyHtml = `<!DOCTYPE html>
           submitBtn.innerHTML = '<i class="bi bi-arrow-repeat" style="animation:spin 1s linear infinite"></i> Submitting Application...';
           lastSubmit = now;
 
-          var formData = new FormData(form);
-          formData.append('timestamp', new Date().toISOString());
-          formData.append('source', 'Universal Careers Application');
-          formData.append('your-name', name);
-          formData.append('name', name);
-          formData.append('your-email', email);
-          formData.append('email', email);
-          formData.append('your-number', phone);
-          formData.append('phone', phone);
-          formData.append('interest', 'Job Application: ' + role);
+          var fileToUpload = (fileInput && fileInput.files && fileInput.files[0]) ? fileInput.files[0] : null;
 
-          var linkedin = document.getElementById('cand-linkedin') ? document.getElementById('cand-linkedin').value : '';
-          var portfolio = document.getElementById('cand-portfolio') ? document.getElementById('cand-portfolio').value : '';
-          var notice = document.getElementById('cand-notice') ? document.getElementById('cand-notice').value : '';
-          var salary = document.getElementById('cand-salary') ? document.getElementById('cand-salary').value : '';
-          var intro = document.getElementById('cand-intro') ? document.getElementById('cand-intro').value : '';
+          getBase64(fileToUpload).then(function (fileObj) {
+            var formData = new FormData(form);
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source', 'Universal Careers Application');
+            formData.append('your-name', name);
+            formData.append('name', name);
+            formData.append('your-email', email);
+            formData.append('email', email);
+            formData.append('your-number', phone);
+            formData.append('phone', phone);
+            formData.append('interest', 'Job Application: ' + role);
 
-          var compiledMessage = [
-            '=== UNIVERSAL JOB APPLICATION ===',
-            'Selected Role: ' + role,
-            'Name: ' + name,
-            'Email: ' + email,
-            'Phone: ' + phone,
-            'Experience: ' + exp,
-            'Notice Period: ' + notice,
-            salary ? 'Expected CTC: ' + salary : '',
-            linkedin ? 'LinkedIn: ' + linkedin : '',
-            portfolio ? 'Portfolio: ' + portfolio : '',
-            intro ? 'Cover Note: ' + intro : ''
-          ].filter(Boolean).join('\\n');
+            if (fileObj) {
+              formData.append('fileData', fileObj.data);
+              formData.append('fileName', fileObj.name);
+              formData.append('fileMimeType', fileObj.type);
+              formData.append('resume', fileObj.name);
+              formData.append('document', fileObj.name);
+              formData.append('documentName', fileObj.name);
+            }
 
-          formData.append('message', compiledMessage);
+            var linkedin = document.getElementById('cand-linkedin') ? document.getElementById('cand-linkedin').value : '';
+            var portfolio = document.getElementById('cand-portfolio') ? document.getElementById('cand-portfolio').value : '';
+            var notice = document.getElementById('cand-notice') ? document.getElementById('cand-notice').value : '';
+            var salary = document.getElementById('cand-salary') ? document.getElementById('cand-salary').value : '';
+            var intro = document.getElementById('cand-intro') ? document.getElementById('cand-intro').value : '';
 
-          fetch(scriptURL, { method: 'POST', body: formData })
-            .then(function (r) { return r.text(); })
-            .then(function (text) {
-              if (text && text.trim() === 'Success') {
-                form.style.display = 'none';
-                successBox.style.display = 'block';
-                if (window.gtag) {
-                  try { gtag('event', 'job_application_submit', { role: role }); } catch(err) {}
+            var compiledMessage = [
+              '=== UNIVERSAL JOB APPLICATION ===',
+              'Selected Role: ' + role,
+              'Name: ' + name,
+              'Email: ' + email,
+              'Phone: ' + phone,
+              'Experience: ' + exp,
+              'Notice Period: ' + notice,
+              salary ? 'Expected CTC: ' + salary : '',
+              linkedin ? 'LinkedIn: ' + linkedin : '',
+              portfolio ? 'Portfolio: ' + portfolio : '',
+              fileObj ? 'Attached Document: ' + fileObj.name + ' (' + (fileObj.size / 1024).toFixed(1) + ' KB)' : '',
+              intro ? 'Cover Note: ' + intro : ''
+            ].filter(Boolean).join('\\n');
+
+            formData.append('message', compiledMessage);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+              .then(function (r) { return r.text(); })
+              .then(function (text) {
+                if (text && text.trim() === 'Success') {
+                  form.style.display = 'none';
+                  successBox.style.display = 'block';
+                  if (window.gtag) {
+                    try { gtag('event', 'job_application_submit', { role: role }); } catch(err) {}
+                  }
+                } else {
+                  alert('Submission received. If you experience an issue, please send your resume directly to info@companiesbuilder.com');
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Job Application';
                 }
-              } else {
-                alert('Submission received. If you experience an issue, please send your resume directly to info@companiesbuilder.com');
+              })
+              .catch(function (err) {
+                console.error('Submission error:', err);
+                alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Job Application';
-              }
-            })
-            .catch(function (err) {
-              console.error('Submission error:', err);
-              alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Job Application';
-            });
+              });
+          });
         });
       }
     })();
@@ -1749,6 +1815,25 @@ const poolHtml = `<!DOCTYPE html>
         display.style.color = 'var(--green)';
       }
 
+      function getBase64(file) {
+        return new Promise(function (resolve) {
+          if (!file) return resolve(null);
+          var reader = new FileReader();
+          reader.onload = function (ev) {
+            var raw = ev.target.result;
+            var b64 = raw.indexOf(',') > -1 ? raw.split(',')[1] : raw;
+            resolve({
+              data: b64,
+              name: file.name,
+              type: file.type || 'application/octet-stream',
+              size: file.size
+            });
+          };
+          reader.onerror = function () { resolve(null); };
+          reader.readAsDataURL(file);
+        });
+      }
+
       var form = document.getElementById('talentPoolForm');
       var successBox = document.getElementById('poolSuccess');
       var submitBtn = document.getElementById('poolSubmitBtn');
@@ -1784,58 +1869,72 @@ const poolHtml = `<!DOCTYPE html>
           submitBtn.innerHTML = '<i class="bi bi-arrow-repeat" style="animation:spin 1s linear infinite"></i> Submitting Profile...';
           lastSubmit = now;
 
-          var formData = new FormData(form);
-          formData.append('timestamp', new Date().toISOString());
-          formData.append('source', 'Talent Pool Submission');
-          formData.append('your-name', name);
-          formData.append('name', name);
-          formData.append('your-email', email);
-          formData.append('email', email);
-          formData.append('your-number', phone);
-          formData.append('phone', phone);
-          formData.append('interest', 'Talent Pool: ' + craft);
+          var fileToUpload = (fileInput && fileInput.files && fileInput.files[0]) ? fileInput.files[0] : null;
 
-          var workModel = document.getElementById('pool-pref') ? document.getElementById('pool-pref').value : '';
-          var linkedin = document.getElementById('pool-linkedin') ? document.getElementById('pool-linkedin').value : '';
-          var portfolio = document.getElementById('pool-portfolio') ? document.getElementById('pool-portfolio').value : '';
-          var vision = document.getElementById('pool-vision') ? document.getElementById('pool-vision').value : '';
+          getBase64(fileToUpload).then(function (fileObj) {
+            var formData = new FormData(form);
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source', 'Talent Pool Submission');
+            formData.append('your-name', name);
+            formData.append('name', name);
+            formData.append('your-email', email);
+            formData.append('email', email);
+            formData.append('your-number', phone);
+            formData.append('phone', phone);
+            formData.append('interest', 'Talent Pool: ' + craft);
 
-          var compiledMessage = [
-            '=== TALENT POOL SUBMISSION ===',
-            'Discipline: ' + craft,
-            'Name: ' + name,
-            'Email: ' + email,
-            'Phone: ' + phone,
-            'Experience: ' + exp,
-            'Work Preference: ' + workModel,
-            linkedin ? 'LinkedIn: ' + linkedin : '',
-            portfolio ? 'Portfolio: ' + portfolio : '',
-            vision ? 'Candidate Vision: ' + vision : ''
-          ].filter(Boolean).join('\\n');
+            if (fileObj) {
+              formData.append('fileData', fileObj.data);
+              formData.append('fileName', fileObj.name);
+              formData.append('fileMimeType', fileObj.type);
+              formData.append('resume', fileObj.name);
+              formData.append('document', fileObj.name);
+              formData.append('documentName', fileObj.name);
+            }
 
-          formData.append('message', compiledMessage);
+            var workModel = document.getElementById('pool-pref') ? document.getElementById('pool-pref').value : '';
+            var linkedin = document.getElementById('pool-linkedin') ? document.getElementById('pool-linkedin').value : '';
+            var portfolio = document.getElementById('pool-portfolio') ? document.getElementById('pool-portfolio').value : '';
+            var vision = document.getElementById('pool-vision') ? document.getElementById('pool-vision').value : '';
 
-          fetch(scriptURL, { method: 'POST', body: formData })
-            .then(function (r) { return r.text(); })
-            .then(function (text) {
-              if (text && text.trim() === 'Success') {
-                form.style.display = 'none';
-                successBox.style.display = 'block';
-                if (window.gtag) {
-                  try { gtag('event', 'talent_pool_submit', { discipline: craft }); } catch(err) {}
+            var compiledMessage = [
+              '=== TALENT POOL SUBMISSION ===',
+              'Discipline: ' + craft,
+              'Name: ' + name,
+              'Email: ' + email,
+              'Phone: ' + phone,
+              'Experience: ' + exp,
+              'Work Preference: ' + workModel,
+              linkedin ? 'LinkedIn: ' + linkedin : '',
+              portfolio ? 'Portfolio: ' + portfolio : '',
+              fileObj ? 'Attached Document: ' + fileObj.name + ' (' + (fileObj.size / 1024).toFixed(1) + ' KB)' : '',
+              vision ? 'Candidate Vision: ' + vision : ''
+            ].filter(Boolean).join('\\n');
+
+            formData.append('message', compiledMessage);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+              .then(function (r) { return r.text(); })
+              .then(function (text) {
+                if (text && text.trim() === 'Success') {
+                  form.style.display = 'none';
+                  successBox.style.display = 'block';
+                  if (window.gtag) {
+                    try { gtag('event', 'talent_pool_submit', { discipline: craft }); } catch(err) {}
+                  }
+                } else {
+                  alert('Submission received. If you experience an issue, please send your details directly to info@companiesbuilder.com');
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = '<i class="bi bi-person-plus"></i> Join Companies Builder Talent Network';
                 }
-              } else {
-                alert('Submission received. If you experience an issue, please send your details directly to info@companiesbuilder.com');
+              })
+              .catch(function (err) {
+                console.error('Talent pool error:', err);
+                alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="bi bi-person-plus"></i> Join Companies Builder Talent Network';
-              }
-            })
-            .catch(function (err) {
-              console.error('Talent pool error:', err);
-              alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = '<i class="bi bi-person-plus"></i> Join Companies Builder Talent Network';
-            });
+              });
+          });
         });
       }
     })();

@@ -3194,82 +3194,115 @@
         btn.innerHTML = '<i class="bi bi-arrow-repeat" aria-hidden="true" style="animation:spin 1s linear infinite"></i> Submitting...';
         lastSubmit = now;
 
-        var data = new FormData(form);
-        data.append('timestamp', new Date().toISOString());
-        data.append('source', 'Write for Us - Guest Post Form');
-        data.append('page', '/write-for-us/');
+        function getBase64(file) {
+          return new Promise(function (resolve) {
+            if (!file) return resolve(null);
+            var reader = new FileReader();
+            reader.onload = function (ev) {
+              var raw = ev.target.result;
+              var b64 = raw.indexOf(',') > -1 ? raw.split(',')[1] : raw;
+              resolve({
+                data: b64,
+                name: file.name,
+                type: file.type || 'application/octet-stream',
+                size: file.size
+              });
+            };
+            reader.onerror = function () { resolve(null); };
+            reader.readAsDataURL(file);
+          });
+        }
 
-        // Ensure compatibility across all spreadsheet header conventions
-        var fullName = (document.getElementById('gp-name') && document.getElementById('gp-name').value) || '';
-        var emailVal = (document.getElementById('gp-email') && document.getElementById('gp-email').value) || '';
-        var roleVal = (document.getElementById('gp-role') && document.getElementById('gp-role').value) || '';
-        var compVal = (document.getElementById('gp-company') && document.getElementById('gp-company').value) || '';
-        var webVal = (document.getElementById('gp-website') && document.getElementById('gp-website').value) || '';
-        var titleVal = (document.getElementById('gp-title') && document.getElementById('gp-title').value) || '';
-        var topicVal = (document.getElementById('gp-topic') && document.getElementById('gp-topic').value) || '';
-        var catVal = (document.getElementById('gp-category') && document.getElementById('gp-category').value) || '';
-        var summaryVal = (document.getElementById('gp-summary') && document.getElementById('gp-summary').value) || '';
-        var bioVal = (document.getElementById('gp-bio') && document.getElementById('gp-bio').value) || '';
-        var liVal = (document.getElementById('gp-linkedin') && document.getElementById('gp-linkedin').value) || '';
-        var twVal = (document.getElementById('gp-twitter') && document.getElementById('gp-twitter').value) || '';
-        var pfVal = (document.getElementById('gp-portfolio') && document.getElementById('gp-portfolio').value) || '';
-        var refVal = (document.getElementById('gp-references') && document.getElementById('gp-references').value) || '';
-        var notesVal = (document.getElementById('gp-notes') && document.getElementById('gp-notes').value) || '';
+        var fileInput = document.getElementById('gp-file');
+        var fileToUpload = (fileInput && fileInput.files && fileInput.files[0]) ? fileInput.files[0] : null;
 
-        data.append('your-name', fullName);
-        data.append('name', fullName);
-        data.append('your-email', emailVal);
-        data.append('interest', catVal || topicVal || 'Guest Post Submission');
+        getBase64(fileToUpload).then(function (fileObj) {
+          var data = new FormData(form);
+          data.append('timestamp', new Date().toISOString());
+          data.append('source', 'Write for Us - Guest Post Form');
+          data.append('page', '/write-for-us/');
 
-        // Compile all details into message for standard contact form sheet columns
-        var compiledMessage = [
-          '=== GUEST POST SUBMISSION ===',
-          'Name: ' + fullName,
-          'Email: ' + emailVal,
-          'Role: ' + roleVal,
-          'Company: ' + compVal,
-          'Website: ' + webVal,
-          'Topic: ' + topicVal,
-          'Category: ' + catVal,
-          'Article Title: ' + titleVal,
-          'Summary: ' + summaryVal,
-          'Author Bio: ' + bioVal,
-          liVal ? 'LinkedIn: ' + liVal : '',
-          twVal ? 'Twitter/X: ' + twVal : '',
-          pfVal ? 'Portfolio: ' + pfVal : '',
-          refVal ? 'References: ' + refVal : '',
-          notesVal ? 'Notes to Editor: ' + notesVal : ''
-        ].filter(Boolean).join('\n');
+          // Ensure compatibility across all spreadsheet header conventions
+          var fullName = (document.getElementById('gp-name') && document.getElementById('gp-name').value) || '';
+          var emailVal = (document.getElementById('gp-email') && document.getElementById('gp-email').value) || '';
+          var roleVal = (document.getElementById('gp-role') && document.getElementById('gp-role').value) || '';
+          var compVal = (document.getElementById('gp-company') && document.getElementById('gp-company').value) || '';
+          var webVal = (document.getElementById('gp-website') && document.getElementById('gp-website').value) || '';
+          var titleVal = (document.getElementById('gp-title') && document.getElementById('gp-title').value) || '';
+          var topicVal = (document.getElementById('gp-topic') && document.getElementById('gp-topic').value) || '';
+          var catVal = (document.getElementById('gp-category') && document.getElementById('gp-category').value) || '';
+          var summaryVal = (document.getElementById('gp-summary') && document.getElementById('gp-summary').value) || '';
+          var bioVal = (document.getElementById('gp-bio') && document.getElementById('gp-bio').value) || '';
+          var liVal = (document.getElementById('gp-linkedin') && document.getElementById('gp-linkedin').value) || '';
+          var twVal = (document.getElementById('gp-twitter') && document.getElementById('gp-twitter').value) || '';
+          var pfVal = (document.getElementById('gp-portfolio') && document.getElementById('gp-portfolio').value) || '';
+          var refVal = (document.getElementById('gp-references') && document.getElementById('gp-references').value) || '';
+          var notesVal = (document.getElementById('gp-notes') && document.getElementById('gp-notes').value) || '';
 
-        data.append('message', compiledMessage);
+          data.append('your-name', fullName);
+          data.append('name', fullName);
+          data.append('your-email', emailVal);
+          data.append('interest', catVal || topicVal || 'Guest Post Submission');
 
-        fetch(scriptURL, { method: 'POST', body: data })
-          .then(function (r) { return r.text() })
-          .then(function (text) {
-            if (text && text.trim() === 'Success') {
-              form.style.display = 'none';
-              success.style.display = 'block';
-              if (window.gtag) {
-                try { gtag('event', 'guest_post_submit_success', { event_category: 'Guest Post', event_label: 'Write for Us Form' }) } catch (err) { }
+          if (fileObj) {
+            data.append('fileData', fileObj.data);
+            data.append('fileName', fileObj.name);
+            data.append('fileMimeType', fileObj.type);
+            data.append('document', fileObj.name);
+            data.append('documentName', fileObj.name);
+          }
+
+          // Compile all details into message for standard contact form sheet columns
+          var compiledMessage = [
+            '=== GUEST POST SUBMISSION ===',
+            'Name: ' + fullName,
+            'Email: ' + emailVal,
+            'Role: ' + roleVal,
+            'Company: ' + compVal,
+            'Website: ' + webVal,
+            'Topic: ' + topicVal,
+            'Category: ' + catVal,
+            'Article Title: ' + titleVal,
+            'Summary: ' + summaryVal,
+            'Author Bio: ' + bioVal,
+            liVal ? 'LinkedIn: ' + liVal : '',
+            twVal ? 'Twitter/X: ' + twVal : '',
+            pfVal ? 'Portfolio: ' + pfVal : '',
+            fileObj ? 'Attached Document: ' + fileObj.name + ' (' + (fileObj.size / 1024).toFixed(1) + ' KB)' : '',
+            refVal ? 'References: ' + refVal : '',
+            notesVal ? 'Notes to Editor: ' + notesVal : ''
+          ].filter(Boolean).join('\n');
+
+          data.append('message', compiledMessage);
+
+          fetch(scriptURL, { method: 'POST', body: data })
+            .then(function (r) { return r.text() })
+            .then(function (text) {
+              if (text && text.trim() === 'Success') {
+                form.style.display = 'none';
+                success.style.display = 'block';
+                if (window.gtag) {
+                  try { gtag('event', 'guest_post_submit_success', { event_category: 'Guest Post', event_label: 'Write for Us Form' }) } catch (err) { }
+                }
+              } else {
+                alert('Something went wrong. Please try again or email us directly at info@companiesbuilder.com.');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="bi bi-send" aria-hidden="true"></i> Submit for Editorial Review';
+                if (window.gtag) {
+                  try { gtag('event', 'guest_post_submit_error', { event_category: 'Guest Post', error: 'server_response' }) } catch (err) { }
+                }
               }
-            } else {
-              alert('Something went wrong. Please try again or email us directly at info@companiesbuilder.com.');
+            })
+            .catch(function (err) {
+              console.error('Form error:', err);
+              alert('There was a problem submitting your article. Please try again or contact us at info@companiesbuilder.com.');
               btn.disabled = false;
               btn.innerHTML = '<i class="bi bi-send" aria-hidden="true"></i> Submit for Editorial Review';
               if (window.gtag) {
-                try { gtag('event', 'guest_post_submit_error', { event_category: 'Guest Post', error: 'server_response' }) } catch (err) { }
+                try { gtag('event', 'guest_post_submit_error', { event_category: 'Guest Post', error: 'network' }) } catch (err) { }
               }
-            }
-          })
-          .catch(function (err) {
-            console.error('Form error:', err);
-            alert('There was a problem submitting your article. Please try again or contact us at info@companiesbuilder.com.');
-            btn.disabled = false;
-            btn.innerHTML = '<i class="bi bi-send" aria-hidden="true"></i> Submit for Editorial Review';
-            if (window.gtag) {
-              try { gtag('event', 'guest_post_submit_error', { event_category: 'Guest Post', error: 'network' }) } catch (err) { }
-            }
-          });
+            });
+        });
       });
 
       // Real-time validation cleanup

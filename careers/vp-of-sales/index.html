@@ -969,6 +969,25 @@
         display.style.color = 'var(--green)';
       }
 
+      function getBase64(file) {
+        return new Promise(function (resolve) {
+          if (!file) return resolve(null);
+          var reader = new FileReader();
+          reader.onload = function (ev) {
+            var raw = ev.target.result;
+            var b64 = raw.indexOf(',') > -1 ? raw.split(',')[1] : raw;
+            resolve({
+              data: b64,
+              name: file.name,
+              type: file.type || 'application/octet-stream',
+              size: file.size
+            });
+          };
+          reader.onerror = function () { resolve(null); };
+          reader.readAsDataURL(file);
+        });
+      }
+
       // Form submission
       var form = document.getElementById('jobAppForm');
       var successBox = document.getElementById('appSuccess');
@@ -1005,57 +1024,71 @@
           submitBtn.innerHTML = '<i class="bi bi-arrow-repeat" style="animation:spin 1s linear infinite"></i> Submitting Application...';
           lastSubmit = now;
 
-          var formData = new FormData(form);
-          formData.append('timestamp', new Date().toISOString());
-          formData.append('source', 'Careers Job Application - VP of Sales');
-          formData.append('your-name', name);
-          formData.append('name', name);
-          formData.append('your-email', email);
-          formData.append('email', email);
-          formData.append('your-number', phone);
-          formData.append('phone', phone);
-          formData.append('interest', 'Job Application: VP of Sales');
+          var fileToUpload = (fileInput && fileInput.files && fileInput.files[0]) ? fileInput.files[0] : null;
 
-          var linkedin = document.getElementById('app-linkedin') ? document.getElementById('app-linkedin').value : '';
-          var portfolio = document.getElementById('app-portfolio') ? document.getElementById('app-portfolio').value : '';
-          var notice = document.getElementById('app-notice') ? document.getElementById('app-notice').value : '';
-          var notes = document.getElementById('app-notes') ? document.getElementById('app-notes').value : '';
+          getBase64(fileToUpload).then(function (fileObj) {
+            var formData = new FormData(form);
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source', 'Careers Job Application - VP of Sales');
+            formData.append('your-name', name);
+            formData.append('name', name);
+            formData.append('your-email', email);
+            formData.append('email', email);
+            formData.append('your-number', phone);
+            formData.append('phone', phone);
+            formData.append('interest', 'Job Application: VP of Sales');
 
-          var compiledMessage = [
-            '=== JOB APPLICATION ===',
-            'Role: VP of Sales',
-            'Name: ' + name,
-            'Email: ' + email,
-            'Phone: ' + phone,
-            'Notice Period: ' + notice,
-            linkedin ? 'LinkedIn: ' + linkedin : '',
-            portfolio ? 'Portfolio: ' + portfolio : '',
-            notes ? 'Notes: ' + notes : ''
-          ].filter(Boolean).join('\n');
+            if (fileObj) {
+              formData.append('fileData', fileObj.data);
+              formData.append('fileName', fileObj.name);
+              formData.append('fileMimeType', fileObj.type);
+              formData.append('resume', fileObj.name);
+              formData.append('document', fileObj.name);
+              formData.append('documentName', fileObj.name);
+            }
 
-          formData.append('message', compiledMessage);
+            var linkedin = document.getElementById('app-linkedin') ? document.getElementById('app-linkedin').value : '';
+            var portfolio = document.getElementById('app-portfolio') ? document.getElementById('app-portfolio').value : '';
+            var notice = document.getElementById('app-notice') ? document.getElementById('app-notice').value : '';
+            var notes = document.getElementById('app-notes') ? document.getElementById('app-notes').value : '';
 
-          fetch(scriptURL, { method: 'POST', body: formData })
-            .then(function (r) { return r.text(); })
-            .then(function (text) {
-              if (text && text.trim() === 'Success') {
-                form.style.display = 'none';
-                successBox.style.display = 'block';
-                if (window.gtag) {
-                  try { gtag('event', 'job_application_submit', { role: 'vp-of-sales', job_title: 'VP of Sales' }); } catch(err) {}
+            var compiledMessage = [
+              '=== JOB APPLICATION ===',
+              'Role: VP of Sales',
+              'Name: ' + name,
+              'Email: ' + email,
+              'Phone: ' + phone,
+              'Notice Period: ' + notice,
+              linkedin ? 'LinkedIn: ' + linkedin : '',
+              portfolio ? 'Portfolio: ' + portfolio : '',
+              fileObj ? 'Attached Document: ' + fileObj.name + ' (' + (fileObj.size / 1024).toFixed(1) + ' KB)' : '',
+              notes ? 'Notes: ' + notes : ''
+            ].filter(Boolean).join('\n');
+
+            formData.append('message', compiledMessage);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+              .then(function (r) { return r.text(); })
+              .then(function (text) {
+                if (text && text.trim() === 'Success') {
+                  form.style.display = 'none';
+                  successBox.style.display = 'block';
+                  if (window.gtag) {
+                    try { gtag('event', 'job_application_submit', { role: 'vp-of-sales', job_title: 'VP of Sales' }); } catch(err) {}
+                  }
+                } else {
+                  alert('Submission received. If you experience an issue, you can also email your CV directly to info@companiesbuilder.com');
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Application for VP of Sales';
                 }
-              } else {
-                alert('Submission received. If you experience an issue, you can also email your CV directly to info@companiesbuilder.com');
+              })
+              .catch(function (err) {
+                console.error('Job app error:', err);
+                alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Application for VP of Sales';
-              }
-            })
-            .catch(function (err) {
-              console.error('Job app error:', err);
-              alert('There was an issue submitting. You can also send your resume directly to info@companiesbuilder.com.');
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = '<i class="bi bi-send"></i> Submit Application for VP of Sales';
-            });
+              });
+          });
         });
       }
     })();
