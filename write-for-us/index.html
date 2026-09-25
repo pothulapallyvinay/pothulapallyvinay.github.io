@@ -1817,6 +1817,8 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- NAVBAR -->
+  <!-- GLOBAL NAVBAR -->
+  <!-- GLOBAL NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Companies Builder home">
@@ -1829,11 +1831,11 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/" data-nav="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/" data-nav="about">About</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+              data-bs-toggle="dropdown" aria-expanded="false" data-nav="services">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
               <li><a class="dropdown-item" href="/services/web-development-and-designing/"><i
                     class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
@@ -1848,16 +1850,18 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Resources</a>
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"
+              aria-expanded="false" data-nav="resources">Resources</a>
             <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
               <li><a class="dropdown-item" href="/resources/checklists/"><i class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
-              <li><a class="dropdown-item active" href="/write-for-us/"><i class="bi bi-pencil-square me-2 opacity-75"></i>Write for Us</a></li>
+              <li><a class="dropdown-item" href="/write-for-us/"><i class="bi bi-pencil-square me-2 opacity-75"></i>Write for Us</a></li>
+              <li><a class="dropdown-item" href="/careers/"><i class="bi bi-briefcase me-2 opacity-75"></i>Careers</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="/tools/">Tools</a></li>
-          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/careers/" data-nav="careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="/tools/" data-nav="tools">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/" data-nav="blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/" data-nav="contact">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
@@ -2986,20 +2990,29 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer py-5">
+  <!-- GLOBAL FOOTER -->
+  <!-- GLOBAL FOOTER -->
+  <footer class="site-footer">
     <div class="container">
       <div class="row g-4 pb-4">
         <div class="col-md-4 col-lg-3">
           <a href="/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
-            <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36" style="height:36px;width:auto;display:inline-block">
-            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies Builder</span>
+            <img src="/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36"
+              style="height:36px;width:auto;display:inline-block">
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies
+              Builder</span>
           </a>
-          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving startups and SMBs across India.</p>
+          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving
+            startups and SMBs across India.</p>
           <div class="footer-social">
-            <a href="https://www.facebook.com/profile.php?id=61579509437210" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://x.com/CB_technologies" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61579509437210" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/CB_technologies" target="_blank" rel="noopener" aria-label="Twitter / X"><i
+                class="bi bi-twitter-x"></i></a>
           </div>
         </div>
         <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
@@ -3009,6 +3022,7 @@
             <li><a href="/about/">About Us</a></li>
             <li><a href="/services/">Services</a></li>
             <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/careers/">Careers</a></li>
             <li><a href="/resources/checklists/">Checklists</a></li>
             <li><a href="/tools/">Free SEO Tools</a></li>
             <li><a href="/blogs/">Blog</a></li>
@@ -3029,16 +3043,22 @@
         <div class="col-md-3 col-lg-3">
           <h3>Get in Touch</h3>
           <ul class="list-unstyled">
-            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com" style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope" style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
-            <li style="margin-bottom:10px"><a href="tel:+916302787953" style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone" style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
-            <li><a href="/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check" style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope"
+                  style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
+            <li style="margin-bottom:10px"><a href="tel:+916302787953"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone"
+                  style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
+            <li><a href="/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check"
+                  style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 Companies Builder. All rights reserved.</span>
         <span class="footer-badge">Hyderabad, India</span>
-        <span><a href="/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a href="/sitemap.xml">Sitemap</a></span>
+        <span><a href="/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a
+            href="/sitemap.xml">Sitemap</a></span>
       </div>
     </div>
   </footer>
@@ -3362,6 +3382,7 @@
       });
     })();
   </script>
+  <script src="/assets/js/global-nav.js" defer></script>
 </body>
 
 </html>

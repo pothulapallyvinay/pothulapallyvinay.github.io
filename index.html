@@ -1951,6 +1951,8 @@
 
   <!-- NAVBAR -->
   <!-- NAVBAR -->
+  <!-- GLOBAL NAVBAR -->
+  <!-- GLOBAL NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Companies Builder home">
@@ -1963,11 +1965,11 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/" data-nav="home" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/" data-nav="about">About</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="/services/" id="servicesDrop" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+              data-bs-toggle="dropdown" aria-expanded="false" data-nav="services">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
               <li><a class="dropdown-item" href="/services/web-development-and-designing/"><i
                     class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
@@ -1977,25 +1979,23 @@
                     class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
               <li><a class="dropdown-item" href="/services/b2b-digital-marketing-agency/"><i
                     class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
-              <li>
-                <hr class="dropdown-divider my-1">
-              </li>
-              <li><a class="dropdown-item fw-bold" href="/services/"><i class="bi bi-grid me-2 opacity-75"></i>All
-                  Services</a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item fw-bold" href="/services/"><i class="bi bi-grid me-2 opacity-75"></i>All Services</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Resources</a>
+              aria-expanded="false" data-nav="resources">Resources</a>
             <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
-              <li><a class="dropdown-item" href="/resources/checklists/"><i
-                    class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+              <li><a class="dropdown-item" href="/resources/checklists/"><i class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
               <li><a class="dropdown-item" href="/write-for-us/"><i class="bi bi-pencil-square me-2 opacity-75"></i>Write for Us</a></li>
+              <li><a class="dropdown-item" href="/careers/"><i class="bi bi-briefcase me-2 opacity-75"></i>Careers</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link active" href="/tools/">Tools</a></li>
-          <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/careers/" data-nav="careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="/tools/" data-nav="tools">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/" data-nav="blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/" data-nav="contact">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
@@ -2600,7 +2600,9 @@
   </main>
   <!-- FOOTER -->
   <!-- FOOTER -->
-  <footer class="site-footer py-5">
+  <!-- GLOBAL FOOTER -->
+  <!-- GLOBAL FOOTER -->
+  <footer class="site-footer">
     <div class="container">
       <div class="row g-4 pb-4">
         <div class="col-md-4 col-lg-3">
@@ -2630,6 +2632,7 @@
             <li><a href="/about/">About Us</a></li>
             <li><a href="/services/">Services</a></li>
             <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/careers/">Careers</a></li>
             <li><a href="/resources/checklists/">Checklists</a></li>
             <li><a href="/tools/">Free SEO Tools</a></li>
             <li><a href="/blogs/">Blog</a></li>
@@ -2885,7 +2888,8 @@
         applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
       });
     })();
-  </script></body>
+  </script>  <script src="/assets/js/global-nav.js" defer></script>
+</body>
 
 </html>
 

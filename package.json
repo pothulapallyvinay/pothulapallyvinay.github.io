@@ -1,0 +1,12 @@
+{
+  "name": "companiesbuilder.com",
+  "version": "1.0.0",
+  "description": "Companies Builder - Digital Marketing Agency & Web Development",
+  "scripts": {
+    "sync": "node sync_global_header_footer.js",
+    "build:careers": "node build_all_careers_pages.js && node sync_global_header_footer.js",
+    "verify": "node inspect_nav_footers.js"
+  },
+  "author": "Companies Builder",
+  "license": "ISC"
+}
