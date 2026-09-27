@@ -1,10 +1,11 @@
 /* ==========================================================================
-   COMPANIES BUILDER - CORE TYPOGRAPHY & CONTRAST
-   Ensures crisp headings, high readability, and clean visual hierarchy
-   Day/Night mode has been removed across all pages.
+   COMPANIES BUILDER - CORE TYPOGRAPHY, CONTRAST & CARD SYSTEM
+   Ensures crystal-clear readability, bold headings, high visual contrast,
+   and premium styling across all cards, light sections, dark sections,
+   forms, and pricing elements.
    ========================================================================== */
 
-/* Completely hide and remove day/night mode toggle if present anywhere */
+/* 1. COMPLETELY HIDE & REMOVE DAY/NIGHT TOGGLE */
 #themeToggle,
 .theme-toggle-btn {
   display: none !important;
@@ -12,25 +13,316 @@
   pointer-events: none !important;
 }
 
-/* Ensure light sections have crisp dark text */
-.band-paper h1, .band-paper h2, .band-paper h3, .band-paper h4, .band-paper h5,
-.band-white h1, .band-white h2, .band-white h3, .band-white h4, .band-white h5,
-.bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5,
-.section-light h1, .section-light h2, .section-light h3, .section-light h4, .section-light h5,
-.case-section h1, .case-section h2, .case-section h3, .case-section h4, .case-section h5,
-.section-head h1, .section-head h2, .section-head h3, .section-head h4, .section-head h5 {
+/* 2. UNIVERSAL CARD CONTAINERS (Solid white with subtle blue tint border & shadow) */
+.service-card,
+.value,
+.why-card,
+.demo-card,
+.blog-card,
+.card-plan,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.site-footer *) {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 110, 253, 0.09) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(11, 22, 60, 0.06) !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
+}
+
+.service-card:hover,
+.value:hover,
+.why-card:hover,
+.demo-card:hover,
+.blog-card:hover,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.site-footer *):hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 48px rgba(11, 22, 60, 0.12) !important;
+  border-color: rgba(13, 110, 253, 0.22) !important;
+}
+
+/* 3. UNIVERSAL CARD HEADINGS (Must always be dark on light/white cards) */
+.service-card h1, .service-card h2, .service-card h3, .service-card h4, .service-card h5,
+.value h1, .value h2, .value h3, .value h4, .value h5,
+.why-card h1, .why-card h2, .why-card h3, .why-card h4, .why-card h5,
+.card-plan h1, .card-plan h2, .card-plan h3, .card-plan h4, .card-plan h5,
+.plan-title,
+.cb-card h1, .cb-card h2, .cb-card h3, .cb-card h4, .cb-card h5,
+.demo-card h1, .demo-card h2, .demo-card h3, .demo-card h4, .demo-card h5,
+.blog-card h1, .blog-card h2, .blog-card h3, .blog-card h4, .blog-card h5,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *) h1,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *) h2,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *) h3,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *) h4,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *) h5,
+.contact-premium h1, .contact-premium h2, .contact-premium h3, .contact-premium h4,
+.form-card h1, .form-card h2, .form-card h3, .form-card h4,
+.accordion-button {
+  color: #141826 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+
+/* 4. UNIVERSAL CARD BODY TEXT & SUBTITLES */
+.service-card p,
+.service-card .muted-small,
+.value p,
+.value .muted-small,
+.value div.muted-small,
+.why-card p,
+.card-plan p,
+.card-plan .plan-sub,
+.card-plan .features li,
+.cb-card p,
+.cb-card ul li,
+.card:not(.band-dark *):not(.band-dark-2 *):not(.hero *) p,
+.demo-card p,
+.demo-card .muted-small,
+.blog-card p,
+.contact-premium p,
+.contact-premium .muted-small,
+.contact-premium ul li,
+.form-card p,
+.muted-small,
+p.text-muted:not(.band-dark *):not(.band-dark-2 *):not(.hero *),
+span.text-muted:not(.band-dark *):not(.band-dark-2 *):not(.hero *) {
+  color: #4a5568 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+/* 5. CARD ICONS & BUTTONS */
+.service-card .card-icon-tile {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.12), rgba(35, 212, 255, 0.08)) !important;
+  color: #0d6efd !important;
+  font-size: 1.35rem !important;
+  margin-bottom: 14px !important;
+}
+
+.value .icon {
+  font-size: 1.85rem !important;
+  color: #0d6efd !important;
+  margin-bottom: 12px !important;
+}
+
+.service-card .btn-outline-primary,
+.demo-card .btn-outline-primary {
+  color: #0d6efd !important;
+  border: 1.5px solid #0d6efd !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 6px 14px !important;
+}
+
+.service-card .btn-outline-primary:hover,
+.demo-card .btn-outline-primary:hover {
+  color: #ffffff !important;
+  background: #0d6efd !important;
+}
+
+/* 6. FORM CONTAINERS & CONTROLS */
+.contact-premium,
+.form-card,
+.demo-form-container,
+.contact-form-container,
+.bottom-form,
+.svc-form-container {
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  padding: 30px !important;
+  box-shadow: 0 20px 50px rgba(11, 22, 60, 0.08) !important;
+  border: 1px solid rgba(13, 110, 253, 0.08) !important;
+}
+
+.form-label,
+label:not(.band-dark *):not(.hero *) {
+  color: #141826 !important;
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+  font-size: 0.92rem !important;
+  display: inline-block;
+}
+
+.contact-premium .form-control,
+.form-card .form-control,
+.card .form-control,
+form .form-control,
+form .form-select,
+.contact-form-container .form-control,
+.demo-form-container .form-control {
+  color: #141826 !important;
+  background-color: #f8fafc !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 0.72rem 1rem !important;
+  font-size: 0.95rem !important;
+}
+
+.form-control::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15) !important;
+  color: #141826 !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+}
+
+/* 7. PRICING PAGE EXCELLENCE */
+.card-plan {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  border: 1.5px solid rgba(13, 110, 253, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(11, 22, 60, 0.05) !important;
+}
+
+.card-plan.best {
+  border: 2px solid #0d6efd !important;
+  box-shadow: 0 16px 45px rgba(13, 110, 253, 0.18) !important;
+}
+
+.card-plan .plan-title {
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
   color: #141826 !important;
 }
 
-.band-paper p,
-.band-white p,
-.section-light p,
-.case-section p,
-.section-head p {
+.card-plan .plan-sub {
+  font-size: 0.9rem !important;
+  color: #64748b !important;
+  margin-bottom: 15px !important;
+}
+
+.card-plan .plan-price {
+  font-size: 2.5rem !important;
+  font-weight: 900 !important;
+  color: #0d6efd !important;
+  margin-bottom: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.card-plan .plan-price span {
+  font-size: 1rem !important;
+  color: #64748b !important;
+  font-weight: 500 !important;
+}
+
+.card-plan .features li {
+  color: #334155 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.8rem !important;
+}
+
+.card-plan .tick {
+  color: #0d6efd !important;
+  font-weight: 800 !important;
+  font-size: 1.1rem !important;
+}
+
+#cb-addons {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  border: 1px solid rgba(13, 110, 253, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(11, 22, 60, 0.04) !important;
+}
+
+.cb-card {
+  background: #f8faff !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+  border: 1px solid rgba(13, 110, 253, 0.06) !important;
+}
+
+.cb-card h5 {
+  font-weight: 800 !important;
+  color: #141826 !important;
+  margin-bottom: 16px !important;
+}
+
+.cb-addon {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+}
+
+.cb-addon strong {
+  color: #141826 !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+
+.cb-note {
+  font-size: 0.85rem !important;
+  color: #64748b !important;
+}
+
+.cb-price {
+  font-weight: 800 !important;
+  color: #0d6efd !important;
+  font-size: 1rem !important;
+}
+
+.cb-total {
+  background: linear-gradient(135deg, #0e1424, #161d33) !important;
+  color: #ffffff !important;
+}
+
+.cb-total .text-muted {
+  color: #94a3b8 !important;
+}
+
+#cb-total-price {
+  color: #ffb020 !important;
+}
+
+/* 8. GENERAL LIGHT SECTIONS HEADINGS */
+.py-5:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.site-footer *) h2,
+.py-5:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.site-footer *) h3,
+.section-pad:not(.band-dark):not(.band-dark-2):not(.hero *) h2,
+.section-pad:not(.band-dark):not(.band-dark-2):not(.hero *) h3,
+.bg-light h2, .bg-light h3,
+.bg-white h2, .bg-white h3,
+.band-paper h2, .band-paper h3,
+.band-white h2, .band-white h3,
+.case-section h2, .case-section h3,
+.section-head:not(.band-dark *):not(.band-dark-2 *):not(.hero *) h2,
+.section-head:not(.band-dark *):not(.band-dark-2 *):not(.hero *) h3 {
+  color: #141826 !important;
+  font-weight: 800 !important;
+}
+
+.py-5:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.site-footer *) > .container > div > p,
+.section-head:not(.band-dark *):not(.band-dark-2 *):not(.hero *) p {
   color: #5b6478 !important;
 }
 
-/* Ensure all dark hero sections, banners, dark bands, and footer have bright white text */
+/* 9. DARK SECTIONS & BANNERS (Crisp white headings & light text) */
+.band-dark, .band-dark-2,
+.hero, .hero-section, .wfu-hero, .policy-hero, .checklist-hero, .case-hero, .hub-hero,
+.site-footer, .mid-cta, .final-cta {
+  color: #eef0f9;
+}
+
+.band-dark h1, .band-dark h2, .band-dark h3, .band-dark h4, .band-dark h5,
+.band-dark-2 h1, .band-dark-2 h2, .band-dark-2 h3, .band-dark-2 h4, .band-dark-2 h5,
 .hero h1, .hero h2, .hero h3,
 .hero-section h1, .hero-section h2, .hero-section h3,
 .wfu-hero h1, .wfu-hero h2,
@@ -38,11 +330,12 @@
 .hub-hero h1, .hub-hero h2,
 .checklist-hero h1, .checklist-hero h2,
 .case-hero h1, .case-hero h2,
-.band-dark h1, .band-dark h2, .band-dark h3, .band-dark h4, .band-dark h5,
-.band-dark-2 h1, .band-dark-2 h2, .band-dark-2 h3, .band-dark-2 h4, .band-dark-2 h5,
 .mid-cta h2, .mid-cta h3,
 .cta-card h2, .cta-card h3,
-.site-footer h3, .site-footer h4 {
+.final-cta h1, .final-cta h2, .final-cta h3,
+.site-footer h3, .site-footer h4,
+.band-dark .section-head h2,
+.band-dark-2 .section-head h2 {
   color: #ffffff !important;
 }
 
@@ -50,11 +343,14 @@
 .hero-lead,
 .policy-hero-lead,
 .wfu-hero-lead,
-.checklist-hero .hero-lead {
-  color: rgba(255, 255, 255, 0.85) !important;
+.checklist-hero .hero-lead,
+.final-cta p,
+.band-dark .section-head p,
+.band-dark-2 .section-head p {
+  color: rgba(238, 240, 249, 0.88) !important;
 }
 
-/* Neutralize any legacy data-theme overrides */
+/* 10. NEUTRALIZE LEGACY DATA-THEME ATTRIBUTES */
 html[data-theme="dark"],
 html[data-theme="light"],
 body[data-theme="dark"],
