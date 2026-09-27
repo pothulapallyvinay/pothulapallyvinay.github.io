@@ -59,8 +59,8 @@ const files = getHtmlFiles('.');
 console.log(`Starting synchronization of Global Header & Footer across ${files.length} pages...\n`);
 
 let updatedCount = 0;
-const navRegex = /<nav[^>]*class=["'][^"']*navbar[^"']*["'][\s\S]*?<\/nav>/i;
-const footerRegex = /<footer[\s\S]*?<\/footer>/i;
+const navRegex = /(?:[ \t]*<!-- (?:GLOBAL )?NAVBAR -->\r?\n)*<nav[^>]*class=["'][^"']*navbar[^"']*["'][\s\S]*?<\/nav>/i;
+const footerRegex = /(?:[ \t]*<!-- (?:GLOBAL )?FOOTER -->\r?\n)*<footer[\s\S]*?<\/footer>/i;
 
 files.forEach(filePath => {
   let content = fs.readFileSync(filePath, 'utf8');
@@ -81,6 +81,15 @@ files.forEach(filePath => {
     modified = true;
   } else {
     console.warn(`[WARN] No footer found in ${filePath}`);
+  }
+
+  // 4. Ensure theme.css stylesheet is present before </head>
+  if (!content.includes('theme.css')) {
+    const themeTag = '  <link rel="stylesheet" href="/assets/css/theme.css" />\n</head>';
+    if (content.includes('</head>')) {
+      content = content.replace('</head>', themeTag);
+      modified = true;
+    }
   }
 
   // 3. Ensure global-nav.js script tag is present before </body>

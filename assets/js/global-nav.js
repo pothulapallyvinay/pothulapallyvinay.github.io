@@ -10,8 +10,21 @@
     var root = document.documentElement;
     var btn = document.getElementById('themeToggle');
 
+    // Ensure global theme stylesheet is present
+    if (!document.getElementById('cb-theme-styles')) {
+      var existing = document.querySelector('link[href*="theme.css"]');
+      if (!existing) {
+        var link = document.createElement('link');
+        link.id = 'cb-theme-styles';
+        link.rel = 'stylesheet';
+        link.href = '/assets/css/theme.css';
+        document.head.appendChild(link);
+      }
+    }
+
     function applyTheme(theme) {
       root.setAttribute('data-theme', theme);
+      root.setAttribute('data-bs-theme', theme);
       try {
         localStorage.setItem('cb-theme', theme);
       } catch (e) {}
@@ -33,8 +46,10 @@
     var activeTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
     applyTheme(activeTheme);
 
-    if (btn) {
-      btn.addEventListener('click', function () {
+    if (btn && !btn._cbThemeBound) {
+      btn._cbThemeBound = true;
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
         var current = root.getAttribute('data-theme') || 'dark';
         applyTheme(current === 'dark' ? 'light' : 'dark');
       });
