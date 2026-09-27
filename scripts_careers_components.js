@@ -53,7 +53,6 @@ function getNavbar(activePage = 'careers') {
           <li class="nav-item"><a class="nav-link" href="/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="/pricing">Pricing</a></li>
-          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="/demo/">Request a Demo</a></li>
         </ul>
       </div>
@@ -146,27 +145,6 @@ function getCommonScripts() {
       var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10); };
       document.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
-
-      var root = document.documentElement;
-      var btn = document.getElementById('themeToggle');
-      function applyTheme(t) {
-        root.setAttribute('data-theme', t);
-        localStorage.setItem('cb-theme', t);
-        if (btn) {
-          var i = btn.querySelector('i');
-          if (i) i.className = (t === 'dark') ? 'bi bi-sun' : 'bi bi-moon-stars';
-        }
-      }
-      var saved = localStorage.getItem('cb-theme');
-      var pref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      applyTheme(saved || (pref ? 'dark' : 'light'));
-
-      if (btn) {
-        btn.addEventListener('click', function () {
-          var current = root.getAttribute('data-theme');
-          applyTheme(current === 'dark' ? 'light' : 'dark');
-        });
-      }
     })();
   </script>`;
 }

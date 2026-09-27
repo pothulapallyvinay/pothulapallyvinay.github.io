@@ -1,239 +1,66 @@
 /* ==========================================================================
-   COMPANIES BUILDER - GLOBAL THEME SYSTEM (LIGHT & DARK MODES)
-   High-contrast, accessible typography & adaptive surfaces
+   COMPANIES BUILDER - CORE TYPOGRAPHY & CONTRAST
+   Ensures crisp headings, high readability, and clean visual hierarchy
+   Day/Night mode has been removed across all pages.
    ========================================================================== */
 
-/* --- 1. LIGHT MODE (DEFAULT & [data-theme="light"]) --- */
-:root,
-html[data-theme="light"] {
-  --page-bg: #f4f5fb;
+/* Completely hide and remove day/night mode toggle if present anywhere */
+#themeToggle,
+.theme-toggle-btn {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Ensure light sections have crisp dark text */
+.band-paper h1, .band-paper h2, .band-paper h3, .band-paper h4, .band-paper h5,
+.band-white h1, .band-white h2, .band-white h3, .band-white h4, .band-white h5,
+.bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5,
+.section-light h1, .section-light h2, .section-light h3, .section-light h4, .section-light h5,
+.case-section h1, .case-section h2, .case-section h3, .case-section h4, .case-section h5,
+.section-head h1, .section-head h2, .section-head h3, .section-head h4, .section-head h5 {
+  color: #141826 !important;
+}
+
+.band-paper p,
+.band-white p,
+.section-light p,
+.case-section p,
+.section-head p {
+  color: #5b6478 !important;
+}
+
+/* Ensure all dark hero sections, banners, dark bands, and footer have bright white text */
+.hero h1, .hero h2, .hero h3,
+.hero-section h1, .hero-section h2, .hero-section h3,
+.wfu-hero h1, .wfu-hero h2,
+.policy-hero h1, .policy-hero h2,
+.hub-hero h1, .hub-hero h2,
+.checklist-hero h1, .checklist-hero h2,
+.case-hero h1, .case-hero h2,
+.band-dark h1, .band-dark h2, .band-dark h3, .band-dark h4, .band-dark h5,
+.band-dark-2 h1, .band-dark-2 h2, .band-dark-2 h3, .band-dark-2 h4, .band-dark-2 h5,
+.mid-cta h2, .mid-cta h3,
+.cta-card h2, .cta-card h3,
+.site-footer h3, .site-footer h4 {
+  color: #ffffff !important;
+}
+
+.hero p.lead,
+.hero-lead,
+.policy-hero-lead,
+.wfu-hero-lead,
+.checklist-hero .hero-lead {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Neutralize any legacy data-theme overrides */
+html[data-theme="dark"],
+html[data-theme="light"],
+body[data-theme="dark"],
+body[data-theme="light"] {
+  --page-bg: #ffffff;
   --page-surface: #ffffff;
-  --page-surface-2: #f8faff;
-  --page-heading: #141826;
-  --page-text: #212529;
+  --page-text: #141826;
   --page-muted: #5b6478;
-  --page-border: rgba(15, 20, 40, .08);
-
-  --paper: #f4f5fb;
-  --paper-card: #ffffff;
-  --ink-on-paper: #141826;
-  --muted-on-paper: #5b6478;
-  --line-light: rgba(15, 20, 40, .08);
-}
-
-html[data-theme="light"] body {
-  background: var(--page-bg) !important;
-  color: var(--page-text) !important;
-}
-
-/* Light mode heading colors - crisp dark in light/paper sections */
-html[data-theme="light"] h1:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.case-hero *):not(.site-footer *):not(.cta-card *):not(.mid-cta *),
-html[data-theme="light"] h2:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.case-hero *):not(.site-footer *):not(.cta-card *):not(.mid-cta *),
-html[data-theme="light"] h3:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.case-hero *):not(.site-footer *):not(.cta-card *):not(.mid-cta *),
-html[data-theme="light"] h4:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.case-hero *):not(.site-footer *):not(.cta-card *):not(.mid-cta *),
-html[data-theme="light"] h5:not(.band-dark *):not(.band-dark-2 *):not(.hero *):not(.case-hero *):not(.site-footer *):not(.cta-card *):not(.mid-cta *),
-html[data-theme="light"] .section-head h2,
-html[data-theme="light"] .section-head h3,
-html[data-theme="light"] .section-head h1 {
-  color: #141826 !important;
-}
-
-html[data-theme="light"] .section-head p {
-  color: #5b6478 !important;
-}
-
-/* Light mode surfaces */
-html[data-theme="light"] .band-paper {
-  background: #f4f5fb !important;
-  color: #141826 !important;
-}
-
-html[data-theme="light"] .band-white {
-  background: #ffffff !important;
-  color: #141826 !important;
-}
-
-html[data-theme="light"] .bg-light,
-html[data-theme="light"] section.bg-light {
-  background-color: #f8f9fa !important;
-}
-
-html[data-theme="light"] .card,
-html[data-theme="light"] .testi-card,
-html[data-theme="light"] .case-section,
-html[data-theme="light"] .work-card,
-html[data-theme="light"] .card-wide,
-html[data-theme="light"] .card-half,
-html[data-theme="light"] .card-third,
-html[data-theme="light"] .why-card,
-html[data-theme="light"] .bento > div {
-  background: #ffffff !important;
-  color: #141826 !important;
-  border-color: rgba(15, 20, 40, .08) !important;
-}
-
-html[data-theme="light"] .testi-card p,
-html[data-theme="light"] .card p,
-html[data-theme="light"] .why-card p,
-html[data-theme="light"] .case-section p,
-html[data-theme="light"] .work-card p {
-  color: #5b6478 !important;
-}
-
-html[data-theme="light"] .testi-name,
-html[data-theme="light"] .snapshot-value {
-  color: #141826 !important;
-}
-
-
-/* --- 2. DARK MODE (html[data-theme="dark"]) --- */
-html[data-theme="dark"] {
-  --page-bg: #060910;
-  --page-surface: #0e1424;
-  --page-surface-2: #161d33;
-  --page-heading: #ffffff;
-  --page-text: #edf2fe;
-  --page-muted: #9aa3be;
-  --page-border: rgba(255, 255, 255, .08);
-
-  --paper: #0b1220;
-  --paper-card: #0e1424;
-  --ink-on-paper: #edf2fe;
-  --muted-on-paper: #9aa3be;
-  --line-light: rgba(255, 255, 255, .08);
-}
-
-html[data-theme="dark"] body {
-  background: #060910 !important;
-  color: #edf2fe !important;
-}
-
-/* Dark mode section shells */
-html[data-theme="dark"] .band-paper {
-  background: #0b1220 !important;
-  color: #edf2fe !important;
-}
-
-html[data-theme="dark"] .band-white {
-  background: #060910 !important;
-  color: #edf2fe !important;
-}
-
-html[data-theme="dark"] .bg-light,
-html[data-theme="dark"] section.bg-light {
-  background-color: #0b1220 !important;
-  color: #edf2fe !important;
-}
-
-/* Dark mode headings - crystal clear white */
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4,
-html[data-theme="dark"] h5,
-html[data-theme="dark"] .section-head h2,
-html[data-theme="dark"] .section-head h3,
-html[data-theme="dark"] .section-head h1,
-html[data-theme="dark"] .testi-name,
-html[data-theme="dark"] .why-card h5,
-html[data-theme="dark"] .showcase-title,
-html[data-theme="dark"] .snapshot-value {
-  color: #ffffff !important;
-}
-
-/* Dark mode body text & paragraphs */
-html[data-theme="dark"] p,
-html[data-theme="dark"] .section-head p,
-html[data-theme="dark"] .testi-card p,
-html[data-theme="dark"] .case-section p,
-html[data-theme="dark"] .work-card p,
-html[data-theme="dark"] .why-card p,
-html[data-theme="dark"] .text-muted,
-html[data-theme="dark"] .card-meta,
-html[data-theme="dark"] .muted-small,
-html[data-theme="dark"] .snapshot-label {
-  color: #9aa3be !important;
-}
-
-/* Dark mode cards & interactive components */
-html[data-theme="dark"] .card,
-html[data-theme="dark"] .testi-card,
-html[data-theme="dark"] .case-section,
-html[data-theme="dark"] .testimonial-box,
-html[data-theme="dark"] .work-card,
-html[data-theme="dark"] .snapshot-grid,
-html[data-theme="dark"] .why-card,
-html[data-theme="dark"] .why-row,
-html[data-theme="dark"] .card-wide,
-html[data-theme="dark"] .card-half,
-html[data-theme="dark"] .card-third,
-html[data-theme="dark"] .bento > div,
-html[data-theme="dark"] .filter-bar,
-html[data-theme="dark"] .featured-card,
-html[data-theme="dark"] .blog-card,
-html[data-theme="dark"] .newsletter-section,
-html[data-theme="dark"] .accordion-item {
-  background: #0e1424 !important;
-  color: #edf2fe !important;
-  border-color: rgba(255, 255, 255, .08) !important;
-}
-
-html[data-theme="dark"] .accordion-button {
-  background: #0e1424 !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="dark"] .accordion-button:not(.collapsed) {
-  background: #161d33 !important;
-  color: var(--blue-light, #60a5fa) !important;
-}
-
-html[data-theme="dark"] .accordion-body {
-  background: #0e1424 !important;
-  color: #9aa3be !important;
-}
-
-html[data-theme="dark"] .testimonial-quote {
-  color: #edf2fe !important;
-  border-left-color: var(--violet, #6c63ff) !important;
-}
-
-/* Dark mode form controls */
-html[data-theme="dark"] .form-control,
-html[data-theme="dark"] .form-select {
-  background-color: #0e1424 !important;
-  color: #edf2fe !important;
-  border-color: rgba(255, 255, 255, .15) !important;
-}
-
-html[data-theme="dark"] .form-control:focus,
-html[data-theme="dark"] .form-select:focus {
-  background-color: #161d33 !important;
-  border-color: var(--blue, #3d8bff) !important;
-  color: #ffffff !important;
-}
-
-/* Dark mode dropdowns */
-html[data-theme="dark"] .dropdown-menu {
-  background: #0e1424 !important;
-  border-color: rgba(255, 255, 255, .08) !important;
-}
-
-html[data-theme="dark"] .dropdown-item {
-  color: #c9d1ea !important;
-}
-
-html[data-theme="dark"] .dropdown-item:hover,
-html[data-theme="dark"] .dropdown-item:focus {
-  background: rgba(255, 255, 255, .06) !important;
-  color: #ffffff !important;
-}
-
-/* Dark mode subtle borders & dividers */
-html[data-theme="dark"] hr,
-html[data-theme="dark"] .border-top,
-html[data-theme="dark"] .border-bottom,
-html[data-theme="dark"] .border-start,
-html[data-theme="dark"] .border-end {
-  border-color: rgba(255, 255, 255, .08) !important;
 }

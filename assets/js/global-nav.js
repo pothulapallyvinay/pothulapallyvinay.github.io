@@ -1,59 +1,29 @@
 /**
- * Companies Builder - Global Header, Navigation & Theme Script
- * Controls theme toggling, scroll effects, active menu states, and mobile behavior globally across all pages.
+ * Companies Builder - Global Header & Navigation Script
+ * Controls scroll effects, active menu states, and mobile behavior globally across all pages.
  */
 (function () {
   'use strict';
 
-  // 1. Theme Management (Dark / Light)
-  function initTheme() {
+  // 1. Reset / Remove Theme Attributes & Storage
+  function cleanupTheme() {
     var root = document.documentElement;
-    var btn = document.getElementById('themeToggle');
-
-    // Ensure global theme stylesheet is present
-    if (!document.getElementById('cb-theme-styles')) {
-      var existing = document.querySelector('link[href*="theme.css"]');
-      if (!existing) {
-        var link = document.createElement('link');
-        link.id = 'cb-theme-styles';
-        link.rel = 'stylesheet';
-        link.href = '/assets/css/theme.css';
-        document.head.appendChild(link);
+    root.removeAttribute('data-theme');
+    root.removeAttribute('data-bs-theme');
+    if (document.body) {
+      document.body.removeAttribute('data-theme');
+      document.body.removeAttribute('data-bs-theme');
+    }
+    var toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+      toggleBtn.style.display = 'none';
+      if (toggleBtn.parentElement && toggleBtn.parentElement.classList.contains('nav-item')) {
+        toggleBtn.parentElement.style.display = 'none';
       }
     }
-
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      root.setAttribute('data-bs-theme', theme);
-      try {
-        localStorage.setItem('cb-theme', theme);
-      } catch (e) {}
-
-      if (btn) {
-        var icon = btn.querySelector('i');
-        if (icon) {
-          icon.className = (theme === 'dark') ? 'bi bi-sun' : 'bi bi-moon-stars';
-        }
-      }
-    }
-
-    var savedTheme = null;
     try {
-      savedTheme = localStorage.getItem('cb-theme');
+      localStorage.removeItem('cb-theme');
     } catch (e) {}
-
-    var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var activeTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    applyTheme(activeTheme);
-
-    if (btn && !btn._cbThemeBound) {
-      btn._cbThemeBound = true;
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var current = root.getAttribute('data-theme') || 'dark';
-        applyTheme(current === 'dark' ? 'light' : 'dark');
-      });
-    }
   }
 
   // 2. Navbar Scroll State
@@ -126,15 +96,17 @@
     });
   }
 
+  cleanupTheme();
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
-      initTheme();
+      cleanupTheme();
       initNavScroll();
       initActiveNav();
       initMobileMenu();
     });
   } else {
-    initTheme();
+    cleanupTheme();
     initNavScroll();
     initActiveNav();
     initMobileMenu();
