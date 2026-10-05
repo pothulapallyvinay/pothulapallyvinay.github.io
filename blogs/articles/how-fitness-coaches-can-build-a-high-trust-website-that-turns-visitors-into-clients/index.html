@@ -34,14 +34,45 @@
   <meta name="twitter:image" content="https://i.ibb.co/xt0T9y9H/Sandhya-Arora-Fitness-Hero.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/theme.css" />
   <style>
-    :root { --article-ink:#111827; --article-muted:#5b6678; --article-paper:#f5f7fb; --article-line:#e3e8ef; --article-blue:#0d6efd; --article-orange:#f07832; --article-display:'Space Grotesk',sans-serif; --article-body:'Inter',sans-serif; }
+    :root {
+      --navy-950:#060910; --navy-900:#0e1424; --navy-800:#161d33; --navy-700:#212a48;
+      --ink:#eef0f9; --ink-dim:#9aa3be; --paper:#f4f5fb; --paper-card:#fff;
+      --ink-on-paper:#141826; --muted-on-paper:#5b6478; --violet:#6c63ff;
+      --violet-light:#8b83ff; --blue:#3d8bff; --blue-light:#60a5fa;
+      --amber:#ffb020; --green:#22d3a0; --pink:#f471b5;
+      --line-dark:rgba(255,255,255,.08); --line-light:rgba(15,20,40,.07);
+      --grad-brand:linear-gradient(135deg,#6c63ff,#3d8bff);
+      --grad-amber:linear-gradient(135deg,#ffcf5c,#ffb020);
+      --article-ink:#111827; --article-muted:#5b6678; --article-paper:#f5f7fb;
+      --article-line:#e3e8ef; --article-blue:#0d6efd; --article-orange:#f07832;
+      --article-display:'Space Grotesk',sans-serif; --article-body:'Inter',sans-serif;
+      --font-display:'Space Grotesk',Arial,sans-serif; --font-body:'Inter',Arial,sans-serif;
+      --font-mono:'JetBrains Mono',monospace; --radius-btn:10px;
+      --ease:.28s cubic-bezier(.4,0,.2,1);
+    }
     body { color:var(--article-ink); background:var(--article-paper); font-family:var(--article-body); }
     h1,h2,h3,h4 { font-family:var(--article-display); letter-spacing:0; }
+    .navbar { background:rgba(6,9,16,.78)!important; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--line-dark); transition:background var(--ease),box-shadow var(--ease); padding:12px 0; }
+    .navbar.is-scrolled { background:rgba(6,9,16,.95)!important; box-shadow:0 8px 40px rgba(0,0,0,.4); }
+    .navbar-brand img { height:36px; width:auto; display:inline-block; }
+    .navbar-brand span { font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:#fff; }
+    .navbar .nav-link { color:rgba(255,255,255,.78)!important; font-weight:500; font-size:.92rem; padding:6px 14px!important; position:relative; transition:color var(--ease); }
+    .navbar .nav-link::after { content:""; position:absolute; left:14px; right:14px; bottom:2px; height:2px; background:var(--grad-brand); transform:scaleX(0); transform-origin:left; transition:transform var(--ease); border-radius:2px; }
+    .navbar .nav-link:hover { color:#fff!important; }
+    .navbar .nav-link:hover::after,.navbar .nav-link.active::after { transform:scaleX(1); }
+    .navbar .dropdown-menu { background:#0e1424; border:1px solid var(--line-dark); border-radius:12px; padding:8px; box-shadow:0 20px 60px rgba(0,0,0,.5); min-width:220px; }
+    .navbar .dropdown-item { color:var(--ink-dim); border-radius:8px; padding:10px 14px; font-size:.9rem; transition:background var(--ease),color var(--ease); }
+    .navbar .dropdown-item:hover,.navbar .dropdown-item:focus { color:#fff; background:rgba(108,99,255,.15); }
+    @media (min-width:992px) { .navbar .dropdown:hover>.dropdown-menu { display:block; margin-top:0; } }
+    .navbar .nav-btn { display:inline-flex; align-items:center; justify-content:center; padding:8px 16px; height:38px; border-radius:var(--radius-btn); font-weight:700; font-size:.875rem; text-decoration:none; border:0; transition:transform .16s ease,box-shadow .16s ease; white-space:nowrap; }
+    .navbar .nav-pricing { background:var(--grad-amber); color:#0e1424!important; box-shadow:0 6px 20px rgba(255,176,32,.3); }
+    .navbar .nav-demo { background:var(--grad-brand); color:#fff!important; box-shadow:0 6px 20px rgba(108,99,255,.35); }
+    .navbar .nav-btn:hover { transform:translateY(-2px); }
     .article-hero { position:relative; overflow:hidden; padding:126px 0 64px; color:#fff; background:#101b2b url('/assets/images/BGhero.png') center/cover no-repeat; }
     .article-hero::before { content:""; position:absolute; inset:0; background:linear-gradient(100deg,rgba(8,16,30,.9),rgba(8,16,30,.7) 58%,rgba(8,16,30,.46)); }
     .article-hero .container { position:relative; }
@@ -76,18 +107,62 @@
     .article-author { margin-top:2.5rem; padding:1.25rem 0; border-top:1px solid var(--article-line); border-bottom:1px solid var(--article-line); }
     .article-author h2 { margin:0 0 .35rem; font-size:1rem; }
     .article-author p { margin:0; color:var(--article-muted); font-size:.9rem; }
-    .related-section { padding:56px 0; border-top:1px solid var(--article-line); background:#fff; }
-    .related-section h2 { margin-bottom:1.25rem; font-size:1.55rem; }
-    .related-link { display:block; height:100%; padding:1.1rem 0; border-top:3px solid #e3a273; color:var(--article-ink); text-decoration:none; }
-    .related-link:hover h3 { color:var(--article-blue); }
-    .related-link span { display:block; margin-bottom:.45rem; color:var(--article-muted); font-size:.8rem; }
-    .related-link h3 { font-size:1.05rem; line-height:1.4; }
-    .article-cta { padding:40px 0; color:#fff; background:#17283c; }
-    .article-cta h2 { margin-bottom:.5rem; font-size:1.55rem; }
-    .article-cta p { margin-bottom:0; color:rgba(255,255,255,.78); }
-    @media (max-width:991px) { .article-layout { grid-template-columns:minmax(0,780px); gap:1rem; } .article-aside { position:static; grid-row:1; } .article-toc ol { max-height:none; columns:2; } }
+    .article-author { border-color:var(--article-line); }
+    .article-cta { padding:56px 0; color:#fff; background:linear-gradient(115deg,#0e1424 0%,#17283c 68%,#1d3447 100%); border-top:1px solid rgba(255,255,255,.08); }
+    .article-cta h2 { margin-bottom:.5rem; color:#fff; font-size:1.7rem; }
+    .article-cta p { margin-bottom:0; color:rgba(238,240,249,.78); }
+    .article-cta .btn { min-height:48px; display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:10px; background:var(--grad-amber); color:#141826; box-shadow:0 8px 24px rgba(255,176,32,.2); }
+    .resource-section { padding:76px 0; border-top:1px solid var(--article-line); }
+    .resource-section--paper { background:var(--paper); }
+    .resource-section--white { background:#fff; }
+    .resource-section--dark { background:var(--navy-950); color:var(--ink); border-color:var(--line-dark); }
+    .resource-header { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:28px; }
+    .resource-heading { max-width:700px; }
+    .resource-eyebrow { display:block; margin-bottom:9px; color:#9a621a; font:600 .72rem var(--font-mono); text-transform:uppercase; }
+    .resource-section--dark .resource-eyebrow { color:var(--amber); }
+    .resource-heading h2 { margin:0 0 8px; color:var(--ink-on-paper); font-size:1.8rem; line-height:1.2; }
+    .resource-section--dark .resource-heading h2 { color:#fff; }
+    .resource-heading p { max-width:640px; margin:0; color:var(--muted-on-paper); font-size:.96rem; line-height:1.65; }
+    .resource-section--dark .resource-heading p { color:var(--ink-dim); }
+    .resource-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .resource-card { min-width:0; min-height:230px; display:flex; flex-direction:column; padding:22px; border:1px solid rgba(15,20,40,.09); border-radius:12px; background:#fff; color:var(--ink-on-paper); box-shadow:0 10px 28px rgba(11,22,60,.055); text-decoration:none; transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease; }
+    .resource-card:hover { color:var(--ink-on-paper); border-color:rgba(13,110,253,.24); box-shadow:0 18px 40px rgba(11,22,60,.11); transform:translateY(-4px); }
+    .resource-card-top { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:20px; }
+    .resource-icon { width:46px; height:46px; flex:0 0 46px; display:grid; place-items:center; border:1px solid rgba(13,110,253,.14); border-radius:10px; background:#eef5ff; color:#155fbc; font-size:1.2rem; }
+    .resource-card:nth-child(3n+2) .resource-icon { border-color:rgba(34,160,125,.17); background:#eaf8f3; color:#167859; }
+    .resource-card:nth-child(3n) .resource-icon { border-color:rgba(235,153,46,.2); background:#fff4e2; color:#9a621a; }
+    .resource-label { color:#687386; font:600 .7rem var(--font-mono); text-transform:uppercase; }
+    .resource-card h3 { margin:0 0 9px; color:var(--ink-on-paper); font-size:1.13rem; line-height:1.35; }
+    .resource-card p { margin:0 0 20px; color:#586477; font-size:.9rem; line-height:1.6; }
+    .resource-card-action { display:inline-flex; align-items:center; gap:8px; margin-top:auto; color:#155fbc; font-size:.85rem; font-weight:700; }
+    .resource-card-action i { transition:transform .2s ease; }
+    .resource-card:hover .resource-card-action i { transform:translateX(4px); }
+    .resource-section--dark .resource-card { border-color:var(--line-dark); background:var(--navy-900); color:var(--ink); box-shadow:none; }
+    .resource-section--dark .resource-card:hover { border-color:rgba(96,165,250,.38); background:#121e31; color:#fff; box-shadow:0 16px 36px rgba(0,0,0,.22); }
+    .resource-section--dark .resource-card h3 { color:#fff; }
+    .resource-section--dark .resource-card p { color:var(--ink-dim); }
+    .resource-section--dark .resource-label { color:#aeb9cc; }
+    .resource-explore { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:44px; flex:0 0 auto; padding:0 17px; border:1px solid rgba(255,255,255,.2); border-radius:9px; color:#fff; font-size:.86rem; font-weight:700; text-decoration:none; transition:background .2s ease,border-color .2s ease; }
+    .resource-explore:hover { border-color:rgba(255,255,255,.45); background:rgba(255,255,255,.08); color:#fff; }
+    .resource-card--blog { overflow:hidden; padding:0; }
+    .resource-card--blog img { width:100%; aspect-ratio:16/9; display:block; object-fit:cover; background:#e8edf4; }
+    .resource-card-body { display:flex; flex:1; flex-direction:column; padding:20px 22px 22px; }
+    .resource-card--blog .resource-card-top { margin-bottom:13px; }
+    .site-footer { color:var(--ink); background:var(--navy-950); border-top:1px solid var(--line-dark); }
+    .footer-brand-desc { max-width:280px; color:var(--ink-dim); font-size:.875rem; line-height:1.6; }
+    .footer-social { display:flex; gap:10px; margin-top:16px; }
+    .footer-social a { width:36px; height:36px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line-dark); border-radius:8px; background:rgba(255,255,255,.06); color:var(--ink-dim); font-size:.9rem; text-decoration:none; transition:background var(--ease),color var(--ease); }
+    .footer-social a:hover { background:rgba(108,99,255,.2); color:var(--violet-light); }
+    .site-footer h3 { margin-bottom:16px; color:#fff; font-size:.92rem; font-weight:700; }
+    .site-footer ul li { margin-bottom:8px; }
+    .site-footer a { color:var(--ink-dim); font-size:.875rem; text-decoration:none; transition:color var(--ease); }
+    .site-footer a:hover { color:#fff; }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:20px 0; border-top:1px solid var(--line-dark); color:var(--ink-dim); font-size:.8rem; }
+    .footer-bottom a { color:var(--ink-dim); text-decoration:none; }
+    .footer-bottom a:hover { color:#fff; }
+    @media (max-width:991px) { .article-layout { grid-template-columns:minmax(0,780px); gap:1rem; } .article-aside { position:static; grid-row:1; } .article-toc ol { max-height:none; columns:2; } .resource-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:767px) { .article-hero h1 { font-size:2.1rem; } }
-    @media (max-width:575px) { .article-hero { padding:108px 0 48px; } .article-layout { padding:28px 0 52px; } .article-prose { font-size:.98rem; } .article-prose h2 { font-size:1.35rem; } .article-toc ol { columns:1; } }
+    @media (max-width:575px) { .article-hero { padding:108px 0 48px; } .article-layout { padding:28px 0 52px; } .article-prose { font-size:.98rem; } .article-prose h2 { font-size:1.35rem; } .article-toc ol { columns:1; } .resource-section { padding:52px 0; } .resource-header { align-items:flex-start; flex-direction:column; gap:16px; } .resource-grid { grid-template-columns:1fr; gap:14px; } .resource-card { min-height:0; padding:19px; } .resource-card--blog { padding:0; } .resource-card-body { padding:18px 19px 20px; } .article-cta { padding:40px 0; } }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
   </style>
   <script type="application/ld+json">
@@ -363,13 +438,110 @@
 
   <section class="article-cta" aria-labelledby="contribute-heading"><div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4"><div><h2 id="contribute-heading">Have useful experience to share?</h2><p>Pitch an original, practical article for the Companies Builder audience.</p></div><a class="btn btn-warning fw-bold px-4 py-3" href="/write-for-us/#submit-form">Submit an Article <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a></div></section>
 
-  <section class="related-section" aria-labelledby="services-heading"><div class="container"><h2 id="services-heading">Companies Builder Services</h2><div class="row g-4"><div class="col-md-6 col-lg-4"><a class="related-link" href="/services/web-development-and-designing/"><span>Web Development</span><h3>Web Development &amp; Designing</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/services/seo-services-in-hyderabad/"><span>Search Visibility</span><h3>SEO Services in Hyderabad</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/services/b2b-digital-marketing-agency/"><span>B2B Growth</span><h3>B2B Digital Marketing</h3></a></div></div></div></section>
+  <section class="resource-section resource-section--paper" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="resource-header">
+        <div class="resource-heading">
+          <span class="resource-eyebrow">Build a stronger digital presence</span>
+          <h2 id="services-heading">Companies Builder Services</h2>
+          <p>Strategy, web design and marketing working together to help businesses grow.</p>
+        </div>
+        <a class="resource-explore resource-explore--light" href="/services/">Explore all services <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="resource-grid resource-grid--services">
+        <a class="resource-card" href="/services/web-development-and-designing/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span><span class="resource-label">Web experience</span></div>
+          <h3>Web Development &amp; Designing</h3>
+          <p>Fast, responsive websites built to explain your offer and convert qualified visitors.</p>
+          <span class="resource-card-action">Explore service <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="resource-card" href="/services/seo-services-in-hyderabad/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></span><span class="resource-label">Organic growth</span></div>
+          <h3>SEO Services</h3>
+          <p>Technical and content-led search optimization designed around real customer discovery.</p>
+          <span class="resource-card-action">Explore service <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="resource-card" href="/services/b2b-digital-marketing-agency/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span><span class="resource-label">B2B growth</span></div>
+          <h3>B2B Digital Marketing</h3>
+          <p>Connected campaigns and useful content that support a more predictable sales pipeline.</p>
+          <span class="resource-card-action">Explore service <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <section class="related-section" aria-labelledby="tools-heading"><div class="container"><h2 id="tools-heading">Free SEO Tools</h2><div class="row g-4"><div class="col-md-6 col-lg-4"><a class="related-link" href="/tools/seo-auditor/"><span>Website Analysis</span><h3>SEO Auditor</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/tools/meta-tag-generator/"><span>Content Optimization</span><h3>Meta Tag Generator</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/tools/schema-generator/"><span>Structured Data</span><h3>Schema Generator</h3></a></div></div></div></section>
+  <section class="resource-section resource-section--dark" aria-labelledby="tools-heading">
+    <div class="container">
+      <div class="resource-header">
+        <div class="resource-heading">
+          <span class="resource-eyebrow">Free tools from Companies Builder</span>
+          <h2 id="tools-heading">AI, SEO &amp; Website Tools</h2>
+          <p>Start with our AI-powered SEO auditor, then explore focused tools for speed, local visibility, sitemaps, metadata and structured data.</p>
+        </div>
+        <a class="resource-explore" href="/tools/">Explore all AI tools <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="resource-grid resource-grid--tools">
+        <a class="resource-card" href="/tools/seo-auditor/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-stars" aria-hidden="true"></i></span><span class="resource-label">AI-powered audit</span></div>
+          <h3>SEO Auditor</h3><p>Review search, performance and accessibility signals with practical recommendations.</p>
+          <span class="resource-card-action">Open tool <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="resource-card" href="/tools/speed-checker/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span><span class="resource-label">Performance</span></div>
+          <h3>Speed Checker</h3><p>Check page speed and Core Web Vitals, including LCP, CLS and INP.</p>
+          <span class="resource-card-action">Open tool <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="resource-card" href="/tools/sitemap-generator/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span><span class="resource-label">Technical SEO</span></div>
+          <h3>Sitemap Generator</h3><p>Crawl a website and create a ready-to-submit XML sitemap.</p>
+          <span class="resource-card-action">Open tool <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="resource-card" href="/tools/local-seo/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span><span class="resource-label">Local search</span></div>
+          <h3>Local SEO Checker</h3><p>Review local search signals, NAP consistency and LocalBusiness markup.</p>
+          <span class="resource-card-action">Open tool <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="resource-card" href="/tools/meta-tag-generator/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-card-text" aria-hidden="true"></i></span><span class="resource-label">Metadata</span></div>
+          <h3>Meta Tag Generator</h3><p>Create title tags, descriptions, canonicals and social sharing previews.</p>
+          <span class="resource-card-action">Open tool <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="resource-card" href="/tools/schema-generator/">
+          <div class="resource-card-top"><span class="resource-icon"><i class="bi bi-braces" aria-hidden="true"></i></span><span class="resource-label">Structured data</span></div>
+          <h3>Schema Generator</h3><p>Generate JSON-LD structured data for supported Schema.org types.</p>
+          <span class="resource-card-action">Open tool <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <section class="related-section" aria-labelledby="ai-heading"><div class="container"><h2 id="ai-heading">AI Tools &amp; Marketing Resources</h2><div class="row g-4"><div class="col-md-6 col-lg-4"><a class="related-link" href="/blogs/articles/maximizing-ppc-campaigns/"><span>AI Tools in PPC</span><h3>Maximizing PPC Campaigns: Proven Strategies for Small Businesses in 2025</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/blogs/articles/seo/"><span>AI-Driven SEO</span><h3>SEO for Small Businesses - Top Strategies in 2025</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/blogs/articles/the-best-guide-to-choosing-a-top-digital-marketing-agency/"><span>AI in Advertising</span><h3>The 2026 Guide to Choosing a Top Digital Marketing Agency</h3></a></div></div></div></section>
-
-  <section class="related-section" aria-labelledby="related-heading"><div class="container"><h2 id="related-heading">More From the Companies Builder Blog</h2><div class="row g-4"><div class="col-md-6 col-lg-4"><a class="related-link" href="/blogs/articles/responsive-website-design-guide/"><span>Web Design &amp; Development</span><h3>Responsive Website Design: What It Is, Why It Matters, and How to Build One</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/blogs/articles/seo-audit-tools-guide/"><span>SEO</span><h3>SEO Audit Guide: Tools, Checklist, Reports and What to Fix First</h3></a></div><div class="col-md-6 col-lg-4"><a class="related-link" href="/blogs/articles/voice-search-optimization-2025/"><span>Search &amp; Technology</span><h3>Voice Search Optimization: A Practical Guide for Businesses</h3></a></div></div></div></section>
+  <section class="resource-section resource-section--white" aria-labelledby="related-heading">
+    <div class="container">
+      <div class="resource-header">
+        <div class="resource-heading">
+          <span class="resource-eyebrow">Keep learning</span>
+          <h2 id="related-heading">More From the Companies Builder Blog</h2>
+          <p>Practical guides for stronger websites, search visibility and digital growth.</p>
+        </div>
+        <a class="resource-explore resource-explore--light" href="/blogs/">Browse all articles <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="resource-grid resource-grid--blogs">
+        <a class="resource-card resource-card--blog" href="/blogs/articles/responsive-website-design-guide/">
+          <img src="/assets/images/Companies-builder-web.webp" alt="Responsive website design across desktop and mobile" loading="lazy" decoding="async">
+          <span class="resource-card-body"><span class="resource-card-top"><span class="resource-label">Web Design</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span><h3>Responsive Website Design: What It Is, Why It Matters, and How to Build One</h3><span class="resource-card-action">Read article <i class="bi bi-arrow-right" aria-hidden="true"></i></span></span>
+        </a>
+        <a class="resource-card resource-card--blog" href="/blogs/articles/seo-audit-tools-guide/">
+          <img src="/assets/images/Companies-builder-seo.webp" alt="SEO audit report and website analysis" loading="lazy" decoding="async">
+          <span class="resource-card-body"><span class="resource-card-top"><span class="resource-label">Search Optimization</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span><h3>SEO Audit Guide: Tools, Checklist, Report &amp; Free Website Audit</h3><span class="resource-card-action">Read article <i class="bi bi-arrow-right" aria-hidden="true"></i></span></span>
+        </a>
+        <a class="resource-card resource-card--blog" href="/blogs/articles/voice-search-optimization-2025/">
+          <img src="/assets/images/Companies-builder-voice-search.png" alt="Voice search optimization for business websites" loading="lazy" decoding="async">
+          <span class="resource-card-body"><span class="resource-card-top"><span class="resource-label">Search &amp; Technology</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span><h3>Voice Search Optimization in 2025: Essential Strategies for Small Businesses</h3><span class="resource-card-action">Read article <i class="bi bi-arrow-right" aria-hidden="true"></i></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- GLOBAL FOOTER -->
   <footer class="site-footer">
